@@ -214,7 +214,7 @@ namespace FanKit.Layers
             this.ApplyDepth(depth);
             this.ApplySelect(select);
             this.AssignChild();
-            return InvalidateModes.ClearAndSort;
+            return InvalidateModes.Sort;
         }
 
         /// <include file="doc/docs.xml" path="docs/doc[@for='LayerCollection.GroupMultiple']/*" />
