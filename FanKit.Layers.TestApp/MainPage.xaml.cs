@@ -35,6 +35,9 @@ namespace FanKit.Layers.TestApp
             this.InitializeComponent();
             base.Loaded += (s, e) => this.AutoSuggestBox.Focus(FocusState.Keyboard);
 
+            this.Hyperlink0.Inlines.Add(new Run { Text = nameof(SelectedRangesPage) });
+            this.Hyperlink0.Click += (s, e) => this.Navigate(nameof(SelectedRangesPage));
+
             this.ListView.ItemClick += (s, e) =>
             {
                 if (e.ClickedItem is string item)
