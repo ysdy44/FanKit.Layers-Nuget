@@ -123,6 +123,9 @@
       <DependentUpon>ClipboardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DependencyObjectExtensions.cs" />
+    <Compile Include="DragDropPage.xaml.cs">
+      <DependentUpon>DragDropPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HistoryPanelPage.xaml.cs">
       <DependentUpon>HistoryPanelPage.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="ClipboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DragDropPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
