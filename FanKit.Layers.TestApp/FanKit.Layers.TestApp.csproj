@@ -122,6 +122,7 @@
     <Compile Include="ClipboardPage.xaml.cs">
       <DependentUpon>ClipboardPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DependencyObjectExtensions.cs" />
     <Compile Include="HistoryPanelPage.xaml.cs">
       <DependentUpon>HistoryPanelPage.xaml</DependentUpon>
     </Compile>
