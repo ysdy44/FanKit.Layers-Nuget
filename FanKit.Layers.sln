@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanKit.Layers", "FanKit.Lay
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanKit.Layers.TestApp", "FanKit.Layers.TestApp\FanKit.Layers.TestApp.csproj", "{2695E632-620C-4F38-9D97-2F909FC66D01}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{D346A4EC-9177-4521-B079-EDC83F8F4884}"
+	ProjectSection(SolutionItems) = preProject
+		README-EN.md = README-EN.md
+		README-ZH.md = README-ZH.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
