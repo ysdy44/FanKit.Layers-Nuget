@@ -129,6 +129,15 @@
     <Compile Include="SelectedRangesPage.xaml.cs">
       <DependentUpon>SelectedRangesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TreeView0Page.xaml.cs">
+      <DependentUpon>TreeView0Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TreeView1Page.xaml.cs">
+      <DependentUpon>TreeView1Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TreeView2Page.xaml.cs">
+      <DependentUpon>TreeView2Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UISyncPage.xaml.cs">
       <DependentUpon>UISyncPage.xaml</DependentUpon>
     </Compile>
@@ -164,6 +173,18 @@
     <Page Include="SelectedRangesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TreeView0Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TreeView1Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TreeView2Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UISyncPage.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -35,14 +35,17 @@ namespace FanKit.Layers.TestApp
             this.InitializeComponent();
             base.Loaded += (s, e) => this.AutoSuggestBox.Focus(FocusState.Keyboard);
 
-            this.Hyperlink0.Inlines.Add(new Run { Text = nameof(HistoryPanelPage) });
-            this.Hyperlink0.Click += (s, e) => this.Navigate(nameof(HistoryPanelPage));
+            this.Hyperlink0.Inlines.Add(new Run { Text = nameof(TreeView2Page) });
+            this.Hyperlink0.Click += (s, e) => this.Navigate(nameof(TreeView2Page));
 
-            this.Hyperlink1.Inlines.Add(new Run { Text = nameof(UISyncPage) });
-            this.Hyperlink1.Click += (s, e) => this.Navigate(nameof(UISyncPage));
+            this.Hyperlink1.Inlines.Add(new Run { Text = nameof(HistoryPanelPage) });
+            this.Hyperlink1.Click += (s, e) => this.Navigate(nameof(HistoryPanelPage));
 
-            this.Hyperlink2.Inlines.Add(new Run { Text = nameof(SelectedRangesPage) });
-            this.Hyperlink2.Click += (s, e) => this.Navigate(nameof(SelectedRangesPage));
+            this.Hyperlink2.Inlines.Add(new Run { Text = nameof(UISyncPage) });
+            this.Hyperlink2.Click += (s, e) => this.Navigate(nameof(UISyncPage));
+
+            this.Hyperlink3.Inlines.Add(new Run { Text = nameof(SelectedRangesPage) });
+            this.Hyperlink3.Click += (s, e) => this.Navigate(nameof(SelectedRangesPage));
 
             this.ListView.ItemClick += (s, e) =>
             {
