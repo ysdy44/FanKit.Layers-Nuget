@@ -154,6 +154,12 @@
       <Version>6.2.14</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FanKit.Layers\FanKit.Layers.csproj">
+      <Project>{b220661e-14eb-4195-989e-e669593942f6}</Project>
+      <Name>FanKit.Layers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
