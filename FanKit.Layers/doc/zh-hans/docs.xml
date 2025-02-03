@@ -1,0 +1,2119 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>定义一些常量， 指示如何更改对象的层顺序（也称为z顺序），以便对象可以显示在其他对象的顶部。</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>将一个对象向前移动一步。</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>将一个对象置于顺序的前面。</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>将一个对象向后移动一步。</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>将一个对象置于顺序的后面。</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary>表示一个 <see cref="bool"/> 格式类型的值的更改。</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>要用作操作目标的图层的身份标识符。</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>获取一个值，该值指示新值与旧值是否相等。</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>新值。</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>先前的值。</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>创建更改的扩展。</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary>从一个 <see cref="T:FanKit.Layers.Core.ITreeNode"/> 创建更改。</summary>
+    <param name="item">一个用来创建更改的 <see cref="T:FanKit.Layers.Core.ITreeNode"/>。</param>
+    <returns>一个含有 false 为新值的更改。</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary>从一个 <see cref="T:FanKit.Layers.Core.ITreeNode"/> 创建更改。</summary>
+    <param name="item">一个用来创建更改的 <see cref="T:FanKit.Layers.Core.ITreeNode"/>。</param>
+    <returns>一个含有 true 为新值的更改。</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>当列表视图中的某个项接收到交互时，指定与图层相关的操作选项。</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>标记逻辑树中的指定节点的所有子级节点，然后把它们从可视化树移除。</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>取消选择图层集合中的指定图层及其子代。</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>标记逻辑树中的指定节点的所有子级节点，然后把它们添加到可视化树。</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>隐藏图层集合中的指定图层。</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>锁定图层集合中的指定图层。</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>无。</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>选择图层集合中的指定图层及其子代。</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>只选择图层集合中的指定图层及其子代，然后取消选择其他。</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>只选择图层集合中的指定范围的图层及其子代，然后取消选择其他。</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>显示图层集合中的指定图层。</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>取消锁定图层集合中的指定图层。</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>创建图层相关的选项的扩展。</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>获取一个值，指示是否可以折叠或展开指定节点。</summary>
+    <param name="node">指定节点。</param>
+    <returns>
+如果 <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> 是 **True**，则为 <see cref="F:FanKit.Layers.ClickOptions.Collapse"/>;
+<br/>
+否则为 <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>获取一个值，指示是否可以锁定或取消锁定指定图层。</summary>
+    <param name="layer">指定图层。</param>
+    <returns>
+如果 <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> 是 **True**，则为 <see cref="F:FanKit.Layers.ClickOptions.Unlock"/>;
+<br/>
+否则为 <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>获取一个值，指示是否可以选择或取消选择指定图层。</summary>
+    <param name="layer">指定图层。</param>
+    <returns>
+如果 <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> 是 <see cref="F:FanKit.Layers.SelectMode.Deselected"/>，则为 <see cref="F:FanKit.Layers.ClickOptions.Select"/>;
+<br/>
+如果 <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> 是 <see cref="F:FanKit.Layers.SelectMode.Selected"/>，则为 <see cref="F:FanKit.Layers.ClickOptions.Deselect"/>;
+<br/>
+否则为 <see cref="F:FanKit.Layers.ClickOptions.None"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>获取一个值，指示只选择一个图层或只选择一个范围的图层。</summary>
+    <param name="layer">指定图层。</param>
+    <param name="isShiftKeyDown">如果按下 Shift 键，则为 true；否则为 false。</param>
+    <param name="isControlKeyDown">如果按下 Ctrl 键，则为 true；否则为 false。</param>
+    <returns>
+如果按下 Shift 键，则为 <see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/>;
+<br/>
+如果未按下 Ctrl 键，则为 <see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/>;
+<br/>
+否则为 <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>获取一个值，指示是否可以显示或隐藏指定图层。</summary>
+    <param name="layer">指定图层。</param>
+    <returns>
+如果 <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> 是 **True**，则为 <see cref="F:FanKit.Layers.ClickOptions.Hide"/>;
+<br/>
+否则为 <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>提供复制和粘贴在逻辑树中的节点的方法。</summary>
+    <typeparam name="T">实例的类型。</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>确定选定项是否可以复制到剪贴板。</summary>
+    <returns>如果允许复制到剪贴板，则为 true；否则为 false。</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>确定剪贴板是否具有可以粘贴到逻辑树的选定项。</summary>
+    <returns>如果剪贴板有可以粘贴到文档的选定项，则为 true；否则为 false。</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Clipboard`1"/> 对象。</summary>
+    <param name="logicalTree">逻辑树。</param>
+    <param name="pool">包含所有实例的实例池。</param>
+    <param name="collection">图层集合。</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>创建一个是当前实例的拷贝的新节点。</summary>
+    <returns>一个是当前实例的拷贝的新节点。</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>创建一个是当前实例的拷贝的新节点。</summary>
+    <param name="depth">新节点距离树的根节点的深度。</param>
+    <returns>一个是当前实例的拷贝的新节点。</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>将选定项从逻辑树复制到剪贴板中。</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>获取选定项的数目。</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>将选定项从逻辑树复制到逻辑树中。</summary>
+    <param name="duplicator">为重复操作提供信息。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>将选定项从逻辑树复制到逻辑树中。</summary>
+    <param name="selection">图层集合的选择状态。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>将选定项从剪贴板复制到逻辑树中。</summary>
+    <param name="inserter">为插入操作提供信息。</param>
+    <param name="selects">为重复操作提供信息。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>表示将获取列表视图中指定索引处的项的容器的高度的方法。</summary>
+    <param name="index">要检索的项的索引。</param>
+    <returns>返回列表视图中指定索引处的项的容器的高度。</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>表示将通过一个指定的数据创建并初始化一个新的图层的方法。</summary>
+    <typeparam name="T">图层的类型。</typeparam>
+    <typeparam name="D">数据的类型。</typeparam>
+    <param name="data">指定的数据。</param>
+    <returns>创建的图层。</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>表示将通过一个指定的数据创建并初始化一个新的图层的方法。</summary>
+    <typeparam name="T">图层的类型。</typeparam>
+    <typeparam name="D">数据的类型。</typeparam>
+    <param name="data">指定的数据。</param>
+    <param name="depth">新节点距离树的根节点的深度。</param>
+    <returns>创建的图层。</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>表示将创建一个新的空白图层的方法（在从 XML 元素中加载此图层的内容之前）。</summary>
+    <typeparam name="T">图层的类型。</typeparam>
+    <param name="element">XML 元素。</param>
+    <returns>创建的图层。</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>表示将创建一个新的空白图层的方法（在从 XML 元素中加载此图层的内容之前）。</summary>
+    <typeparam name="T">图层的类型。</typeparam>
+    <param name="element">XML 元素。</param>
+    <param name="depth">新节点距离树的根节点的深度。</param>
+    <returns>创建的图层。</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>表示一个图层相关的更改，包含一个深度的更改的数组。</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>获取或设置一个深度的更改的数组。</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary>表示一个 <see cref="double"/> 格式类型的值的更改。</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>表示一个图层相关的更改，包含两个所选状态更改。</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>获取或设置第一个所选状态更改。</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>获取或设置第二个所选状态更改。</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>包含一组坐标和位移，用于计算相对于列表视图位置的拖动 UI 的区域。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>列表标头的内容的高度。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>列表视图的内容已水平滚动的距离。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>相对于列表视图位置的鼠标指针的 y 坐标。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>列表视图的内容已垂直滚动的距离。</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>相对于列表视图位置的拖动 UI 的区域。</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>定义拖动 UI 的区域的矩形的高度。</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>如果所有值是 0，则为 **true**，否则为 **false**。</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>定义拖动 UI 的区域的矩形的宽度。</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>定义拖动 UI 的区域的矩形的左上角的 X 坐标。</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>定义拖动 UI 的区域的矩形的左上角的 Y 坐标。</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>定义一些常量，指定在拖放操作中拖动源类型。</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>指定无拖动源。</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>拖动源不在逻辑树中。</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>拖动源是一个在逻辑树中被选中的项。</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>拖动源是一个在逻辑树中未被选中的项。</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>提供布局拖放 UI 的方法。拖放 UI 将在放置目标中找到并捕捉最靠近鼠标指针的 UI 向导。</summary>
+    <typeparam name="T">实例的类型。</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>在拖放之前，缓存每一个节点里的 UI 向导的位置。</summary>
+    <param name="width">列表视图的宽度，也是 UI 向导的最大宽度。</param>
+    <param name="zoomFactorForDepth">
+用于深度缩放的缩放因子。
+<br/>
+比如当缩放因子为 16，UI 向导的左边距为 16 * 深度。
+</param>
+    <param name="containerSizeFromIndex">获取列表视图中指定索引处的项的容器的高度。</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary>构造一个 <see cref="T:FanKit.Layers.DragUI`1"/> 对象。</summary>
+    <param name="logicalTree">逻辑树。</param>
+    <param name="visualTree">可视化树。</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>检索逻辑树中放置目标的索引，通过识别最接近鼠标指针的 UI 向导。</summary>
+    <param name="point">一组坐标和位移，用于计算相对于列表视图位置的拖动 UI 的区域。</param>
+    <param name="sourceType">指定在拖放操作中拖动源类型。</param>
+    <returns>逻辑树中放置目标的索引。</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>检索逻辑树中放置目标的索引，通过识别最接近鼠标指针的 UI 向导。</summary>
+    <param name="positionY">相对于列表视图位置的鼠标指针的 y 坐标。</param>
+    <param name="sourceType">指定在拖放操作中拖动源类型。</param>
+    <returns>逻辑树中放置目标的索引。</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>检索相对于列表视图位置的拖动 UI 的区域。</summary>
+    <param name="Indexer">逻辑树中放置目标的索引。</param>
+    <returns>相对于列表视图位置的拖动 UI 的区域。</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>检索相对于列表视图位置的拖动 UI 的区域。</summary>
+    <param name="point">一组坐标和位移，用于计算相对于列表视图位置的拖动 UI 的区域。</param>
+    <param name="Indexer">逻辑树中放置目标的索引。</param>
+    <returns>相对于列表视图位置的拖动 UI 的区域。</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>UI 向导的高度。</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>逻辑树中放置目标的索引。</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+如果 <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> 是 
+<see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>、
+<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> 或 
+<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>，则为 -1；
+<br/>
+否则为逻辑树中放置目标的从零开始的索引。
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>指定拖动源相对于放置目标应插入的位置。</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>为放置操作提供信息。</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>新节点距离树的根节点的深度。</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary>构造一个 <see cref="T:FanKit.Layers.DragDrop.Dropper"/> 对象。</summary>
+    <param name="items">在逻辑树中所有节点的集合。</param>
+    <param name="indexer">逻辑树中放置目标的索引。</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>定义指定拖动源相对于放置目标应插入的位置的常量。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>在逻辑树中的指定同级节点的上方插入节点。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>在逻辑树的底部插入新节点。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>在逻辑树顶部插入新节点。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>在逻辑树中指定节点的底部插入新节点。</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>拖动源不应插入。</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>为重复操作提供信息。</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>获取被重复的图层的数目。</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Options.Duplicator"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>为分组操作提供信息。</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>获取被分组的图层的数目。</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>新节点距离树的根节点的深度。</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>如果数目等于 1，则为被分组的图层的深度的更改；否则为默认值。</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Options.Grouper"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>如果数目等于 1，则为被分组的图层的所选状态的更改；否则为默认值。</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>表示图层相关的的更改的基类。</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>获取所引用图层的全局唯一身份标识符的集合。</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+定义一个带子级的节点。
+<br/>
+例如：
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>在当前节点中获取子级集合。</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>获取在当前节点的子集合中存在的子级的数目。</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>支持克隆，创建一个类的和存在的实例相同的值的新实例。</summary>
+    <typeparam name="T">实例的类型。</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>创建一个是当前实例的拷贝的新节点。</summary>
+    <returns>一个是当前实例的拷贝的新节点。</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>创建一个是当前实例的拷贝的新节点。</summary>
+    <param name="depth">新节点距离树的根节点的深度。</param>
+    <returns>一个是当前实例的拷贝的新节点。</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+定义复合节点的结构。实现类应该能够通知 UI。
+<br/>
+例如：
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // 通知 UI
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">实例的类型。</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>获取是当前节点的子级的节点集合。</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>当在当前节点的子集合中存在的子级的数目改变时发生。</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+表示所有的图层的基类，比如图层组、位图图层和填充图层。
+<br/>
+继承自 <see cref="T:FanKit.Layers.Core.ITreeNode"/> 和 <see cref="T:FanKit.Layers.Core.IChildNode"/> 接口。
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>获取一个值，该值指示此图层是否为一个图层组。</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>获取或设置一个值，该值指示此图层是否锁定。</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>获取或设置一个值，该值指示此图层是否可见。</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>从 XML 元素中加载此图层的内容。</summary>
+    <param name="content">包含图层的内容的 XML 元素。</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>当发生影缩略图的更改发生时发生。</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>将图层的内容保存到 XML 元素。</summary>
+    <param name="structure">XML 对象的结构类型。</param>
+    <param name="children">子级图层</param>
+    <returns>保存图层的内容的 XML 元素。</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>获取或设置此图层的所选状态。</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>表示具有起始索引和结束索引的范围。</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>获取范围的包含结束索引。</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>获取一个值，指示结束索引是否小于起始索引。</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>获取一个值，指示结束索引是否大于起始索引。</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>获取一个值，指示结束索引是否等于起始索引。</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>获取一个负范围（起始索引 0，结束索引 -1）。</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>获取一个正范围（起始索引 0，结束索引 1）</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>获取范围的包含起始索引。</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>获取一个零范围（起始索引 0，结束索引 0）。</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>表示图层集合的选择状态。</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>获取一个空的选择状态。</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Ranges.IndexSelection"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>获取一个值，指示当前选择状态是否为空。</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>获取要移除的项的数目。</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>获取选定项的数目。</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>为插入操作提供信息。</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>新节点距离树的根节点的深度。</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>获取一个值，指示是否图层集合里是否存在任何选定项。</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>逻辑树中第一个选定项的索引。</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Options.Inserter"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>指定新节点相对于选定项应插入的位置。</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>定义指定新节点相对于选定项应插入的位置的常量。</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>在逻辑树中的指定同级节点的上方插入节点。</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>在逻辑树顶部插入新节点。</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary>表示一个 <see cref="int"/> 格式类型的值的更改。</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+定义一些常量， 指示哪些内容需要被重绘。
+<br/>
+此枚举支持其成员值的按位组合。
+例如：
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // 清除 UI 图层
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // 同步到 UI 图层
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>重绘所有图层的缩略图。</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>重绘画布控件的内容。</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+一个按位组合，指示清除之后哪些内容需要重绘。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+一个按位组合，指示分组或打包之后哪些内容需要重绘。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Clear"/> 的撤销操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+一个按位组合，指示展开或折叠一个节点之后哪些内容需要重绘。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>影响“撤销或重做命令是否应该执行”的内容已更改。</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>一个或多个撤销操作已被添加到或已被删除自历史记录。</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>历史记录已被清除。</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>历史记录当前选定项更改。</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>影响“图层命令是否应该执行”的内容已更改。</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>图层集合已更改。</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>图层集合已被清除。</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+一个按位组合，指示锁定或取消锁定一个图层之后哪些内容需要重绘。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Lock"/> 的撤销操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>无。</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>任何内容已更改（用于在调试时输出更改的结果）。</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+一个按位组合，指示重置之后哪些内容需要重绘。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+一个按位组合，指示选择或取消选择一个图层之后哪些内容需要重绘。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>选定项已更改。</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>选定项已被清除。</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Select"/> 的撤销操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+一个按位组合，指示排序之后哪些内容需要重绘。
+<br/>
+<br/>
+例如：
+移除、插入、粘贴、拖放、重新排序、释放、分组、取消分组或重复。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Sort"/> 的撤销操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+当针对内容的修改完成时发生。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+在内容的值更改后发生。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+在输入设备在修改期间更改值时发生。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/> 的撤销操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+在输入设备对内容开始修改时发生。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+一个按位组合，指示可见或取消可见一个图层之后哪些内容需要重绘。
+<br/>
+<br/>
+包含以下成员值：
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Visible"/> 的撤销操作。</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+定义一个带深度的节点。
+<br/>
+例如：
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>获取或设置用于指示当前节点与树的根节点之间的距离的值。</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>获取当前节点的身份标识符。</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>获取或设置用于指示当前树状视图节点是否已展开的值。</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>获取为垃圾回收、拖放、重新排序和同步等行为提供计算值的对象。</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>支持撤销和重做动作，通过创建图层相关的更改。</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>获取图层相关的更改。</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>获取此 <see cref="T:FanKit.Layers.IUndoable"/> 的身份标识符。</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>获取或设置此 <see cref="T:FanKit.Layers.IUndoable"/> 的时期。</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>封装可视化树和实例池，并提供方法以移除、插入、粘贴、拖放、重新排序、释放、分组、取消分组和重复。</summary>
+    <typeparam name="T">实例的类型。</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>清空和分配逻辑树中的每一个节点的子级节点，然后调起 <see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/> 方法。</summary>
+    <param name="updateSelectMode">是否将子级节点的所选状态设置为 <see cref="F:FanKit.Layers.SelectMode.Parent"/>。</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>获取确定图层集合是否支持排列。</summary>
+    <param name="type">指示如何更改对象的层顺序（也称为z顺序），以便对象可以显示在其他对象的顶部。</param>
+    <returns>图层集合是否支持排列。</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>获取确定图层集合是否支持排列。</summary>
+    <param name="type">指示如何更改对象的层顺序（也称为z顺序），以便对象可以显示在其他对象的顶部。</param>
+    <param name="selection">图层集合的选择状态。</param>
+    <returns>图层集合是否支持排列。</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>要插入的新图层。</summary>
+    <param name="indexer">逻辑树中放置目标的索引。</param>
+    <returns>要分组的新图层。</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>获取确定图层集合是否支持重新排序。</summary>
+    <param name="indexer">逻辑树中放置目标的索引。</param>
+    <param name="selection">图层集合的选择状态。</param>
+    <returns>图层集合是否支持重新排序。</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>清空图层集合中所有图层。</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>标记逻辑树中的所有节点的子级节点，然后把它们从可视化树移除。</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>标记逻辑树中的所有节点的子级节点，然后把它们添加到可视化树。</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>将图层集合中所选的多个图层分组。</summary>
+    <param name="grouper">为分组操作提供信息。</param>
+    <param name="newItem">要分组的新图层。</param>
+    <param name="depths">多个目标图层的深度更改。</param>
+    <param name="selects">多个目标图层的所选状态更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>将图层集合中所选的图层分组。</summary>
+    <param name="grouper">为分组操作提供信息。</param>
+    <param name="newItem">要分组的新图层。</param>
+    <param name="depth">目标图层的深度更改。</param>
+    <param name="select">目标图层的所选状态更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>在图层集合里插入一个新图层。</summary>
+    <param name="dropper">为插入操作提供信息。</param>
+    <param name="newItem">要插入的新图层。</param>
+    <param name="selects">多个目标图层的所选状态更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>在图层集合里插入一个新图层。</summary>
+    <param name="inserter">为插入操作提供信息。</param>
+    <param name="newItem">要插入的新图层。</param>
+    <param name="selects">多个目标图层的所选状态更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>在图层集合的顶部插入一个新图层。</summary>
+    <param name="newItem">要插入的新图层。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>在图层集合的顶部插入一个新图层。</summary>
+    <param name="newItem">要插入的新图层。</param>
+    <param name="selects">多个目标图层的所选状态更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary>构造一个 <see cref="T:FanKit.Layers.LayerCollection`1"/> 对象。</summary>
+    <param name="logicalTree">逻辑树。</param>
+    <param name="visualTree">可视化树。</param>
+    <param name="pool">包含所有实例的实例池。</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>将图层集合中所选的多个图层移动到其同级图层之上。</summary>
+    <param name="reorder">为重新排序操作提供信息。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>打包图层集合中所有图层。</summary>
+    <param name="newItem">要打包的新图层。</param>
+    <param name="depths">多个目标图层的深度更改。</param>
+    <param name="selects">多个目标图层的所选状态更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>将图层集合中所选的多个图层释放。</summary>
+    <param name="releaser">为释放操作提供信息。</param>
+    <param name="depths">多个目标图层的深度更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>将图层集合中所选的图层释放。</summary>
+    <param name="releaser">为释放操作提供信息。</param>
+    <param name="depths">多个目标图层的深度更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>将图层集合中目标图层移除。</summary>
+    <param name="remover">为移除操作提供信息。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>将图层集合中目标图层移除。</summary>
+    <param name="selection">图层集合的选择状态。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>将图层集合中所选的多个图层重新排序。</summary>
+    <param name="reorder">为重新排序操作提供信息。</param>
+    <param name="depths">多个目标图层的深度更改。</param>
+    <param name="selectedRanges">图层集合中所选的图层的范围的集合。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>将图层集合中所选的图层重新排序。</summary>
+    <param name="reorder">为重新排序操作提供信息。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>将图层集合中所选的范围的图层重新排序。</summary>
+    <param name="reorder">为重新排序操作提供信息。</param>
+    <param name="depths">多个目标图层的深度更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>清空可视化树、逻辑树、实例池，然后引发 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 事件。</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary>使用自定义数据的 <see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/>。</summary>
+    <typeparam name="D">数据的类型。</typeparam>
+    <param name="listOfData">其元素被复制到逻辑树的集合。</param>
+    <param name="creator">表示将通过一个指定的数据创建并初始化一个新的图层的方法。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>使用自定义数据的 <see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/>。</summary>
+    <typeparam name="D">表示将通过一个指定的数据创建并初始化一个新的图层的方法。</typeparam>
+    <param name="treeOfData">其元素被复制到逻辑树的树。</param>
+    <param name="creator">表示将通过一个指定的数据创建并初始化一个新的图层的方法。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+清空然后初始化逻辑树、可视化树和实例池，然后引发 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 事件。
+<br />
+<br /> 其元素被复制到逻辑树的集合就像：
+<br /> │
+<br /> ├─位图：深度=0
+<br /> ├─位图：深度=0
+<br /> ├─组：深度=0
+<br /> ├─组：深度=1
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─组：深度=0
+<br /> ├─位图：深度=1
+<br /> ├─组：深度=0
+<br /> └─位图：深度=1
+</summary>
+    <param name="list">其元素被复制到逻辑树的集合。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+清空然后初始化逻辑树、可视化树和实例池，然后引发 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 事件。
+<br />
+<br /> 其元素被复制到逻辑树的树就像：
+<br /> │
+<br /> ├─位图：深度
+<br /> ├─位图：深度
+<br /> ├─组：深度
+<br /> │  ├─组：深度
+<br /> │  │  ├─位图：深度
+<br /> │  │  ├─位图：深度
+<br /> │  │  └─位图：深度
+<br /> ├─组：深度
+<br /> │  └─位图：深度
+<br /> ├─组：深度
+<br /> │  └─位图：深度
+</summary>
+    <param name="tree">其元素被复制到逻辑树的树。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+清空然后初始化逻辑树、可视化树和实例池，然后引发 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 事件。
+<br />
+<br /> 其元素被复制到逻辑树的集合就像：
+<br /> │
+<br /> ├─位图：深度=0
+<br /> ├─位图：深度=0
+<br /> ├─组：深度=0
+<br /> ├─组：深度=1
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─组：深度=0
+<br /> ├─位图：深度=1
+<br /> ├─组：深度=0
+<br /> └─位图：深度=1
+</summary>
+    <param name="listOfXml">其元素被复制到逻辑树的集合。</param>
+    <param name="creator">表示将创建一个新的空白图层的方法（在从 XML 元素中加载此图层的内容之前）。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+清空然后初始化逻辑树、可视化树和实例池，然后引发 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 事件。
+<br />
+<br /> 其元素被复制到逻辑树的树就像：
+<br /> │
+<br /> ├─位图：深度
+<br /> ├─位图：深度
+<br /> ├─组：深度
+<br /> │  ├─组：深度
+<br /> │  │  ├─位图：深度
+<br /> │  │  ├─位图：深度
+<br /> │  │  └─位图：深度
+<br /> ├─组：深度
+<br /> │  └─位图：深度
+<br /> ├─组：深度
+<br /> │  └─位图：深度
+</summary>
+    <param name="treeOfXml">其元素被复制到逻辑树的树。</param>
+    <param name="creator">表示将创建一个新的空白图层的方法（在从 XML 元素中加载此图层的内容之前）。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+清空然后初始化逻辑树、可视化树和实例池，然后引发 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 事件。
+<br />
+<br /> 其元素被复制到逻辑树的树就像：
+<br /> │
+<br /> ├─全部节点
+<br /> │  ├─节点：Id=0
+<br /> │  ├─节点：Id=1
+<br /> │  ├─节点：Id=2
+<br /> │  │  ├─节点：Id=3
+<br /> │  │  │  ├─节点：Id=4
+<br /> │  │  │  ├─节点：Id=5
+<br /> │  │  │  └─节点：Id=6
+<br /> │  ├─节点：Id=7
+<br /> │  │  └─节点：Id=8
+<br /> │  ├─节点：Id=9
+<br /> │  │  └─节点：Id=10
+<br /> │  │
+<br /> ├─全部图层
+<br /> │  ├─位图：Id=0
+<br /> │  ├─位图：Id=1
+<br /> │  ├─组：Id=2
+<br /> │  ├─组：Id=3
+<br /> │  ├─位图：Id=4
+<br /> │  ├─位图：Id=5
+<br /> │  ├─位图：Id=6
+<br /> │  ├─组：Id=7
+<br /> │  ├─位图：Id=8
+<br /> │  ├─组：Id=9
+<br /> │  └─位图：Id=10
+</summary>
+    <param name="items">带有身份标识符的所有实例。</param>
+    <param name="nodes">节点组成的树。</param>
+    <param name="creator">表示将创建一个新的空白图层的方法（在从 XML 元素中加载此图层的内容之前）。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>当重置图层集合时发生。</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>将指定图层及其子代的内容保存到 XML 元素中。</summary>
+    <param name="treeNode">将指定图层投影到 XML 元素中的 XML 树节点。</param>
+    <returns>保存指定图层及其子代的内容的 XML 元素。</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>将多个图层及其子代的内容保存到 XML 元素集合中。</summary>
+    <param name="treeNode">投影多个图层到 XML 元素集合中的 XML 树节点集合。</param>
+    <returns>保存多个图层及其子代的内容的 XML 元素集合。</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>使用对逻辑树进行深度展平的标识符集合对逻辑树中的所有节点进行排序。</summary>
+    <param name="ids">对逻辑树进行深度扁平化的身份标识符集合。</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>将逻辑树中所有未折叠的节点同步到可视化树中。</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>同步对可视化树进行深度扁平化的顺序到 UI 图层，类似于 HTML DOM 差异算法。</summary>
+    <param name="items">列表视图中的作为数据源的 UI 图层（比如 <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>）。</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>将图层集合中所选的多个图层取消分组。</summary>
+    <param name="ungrouper">为取消分组操作提供信息。</param>
+    <param name="depths">多个目标图层的深度更改。</param>
+    <param name="selects">多个目标图层的所选状态更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>将图层集合中所选的图层取消分组。</summary>
+    <param name="ungrouper">为取消分组操作提供信息。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>表示对逻辑树进行深度扁平化的集合，并且提供方法以通过索引单独访问逻辑树中的图层（逻辑树由继承自节点的图层组成）。</summary>
+    <typeparam name="T">实例的类型。</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>获取一个值，确定图层集合中所选的图层是否支持释放。</summary>
+    <param name="selection">图层集合的选择状态。</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>取消选择图层集合中的指定图层及其子代。</summary>
+    <param name="item">指定图层。</param>
+    <returns>指定图层及其子代的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>取消选择图层集合中的指定图层及其子代。</summary>
+    <param name="indexer">指定图层的索引。</param>
+    <returns>指定图层及其子代的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>取消选择图层集合中的所有图层。</summary>
+    <returns>多个目标图层的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>返回将图层集合中所选的多个图层分组所需的深度更改。</summary>
+    <param name="grouper">为分组操作提供信息。</param>
+    <returns>将图层集合中所选的多个图层分组所需的深度更改。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>返回将图层集合中所选的图层打包所需的深度更改。</summary>
+    <returns>将图层集合中所选的图层打包所需的深度更改。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>返回将图层集合中所选的多个图层释放所需的深度更改。</summary>
+    <returns>将图层集合中所选的多个图层释放所需的深度更改。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>返回将图层集合中所选的图层重新排序所需的所选状态更改。</summary>
+    <param name="reorder">为重新排序操作提供信息。</param>
+    <returns>将图层集合中所选的图层重新排序所需的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>返回将图层集合中所选的图层重新排序所需的所选状态更改。</summary>
+    <param name="reorder">为重新排序操作提供信息。</param>
+    <param name="selectedRanges">图层集合中所选的图层的范围的集合。</param>
+    <returns>将图层集合中所选的图层重新排序所需的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>返回将图层集合中所选的多个图层取消分组所需的深度更改。</summary>
+    <param name="ungrouper">为取消分组操作提供信息。</param>
+    <returns>将图层集合中所选的多个图层取消分组所需的深度更改。</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>检索属于对逻辑树进行深度扁平化的集合的所有节点的唯一标识符。</summary>
+    <returns>属于逻辑树的所有节点的唯一标识符。</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>将逻辑树的每个节点投影到 XML 树中。</summary>
+    <returns>被投影的 XML 树。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>返回图层集合中所选的图层的范围的集合。</summary>
+    <returns>图层集合中所选的图层的范围的集合。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>返回将图层集合中所选的多个图层分组所需的所选状态更改。</summary>
+    <param name="grouper">为分组操作提供信息。</param>
+    <returns>将图层集合中所选的多个图层分组所需的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>返回将图层集合中所选的图层打包所需的所选状态更改。</summary>
+    <returns>将图层集合中所选的图层打包所需的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>返回将图层集合中所选的多个图层取消分组所需的所选状态更改。</summary>
+    <param name="ungrouper">为取消分组操作提供信息。</param>
+    <returns>将图层集合中所选的多个图层取消分组所需的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>隐藏图层集合中的所有图层。</summary>
+    <returns>多个目标图层的可见性更改。</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>搜索指定的图层，并返回首次出现的图层的索引。</summary>
+    <param name="item">要定位的图层。</param>
+    <returns>首次出现的图层的索引。</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>返回指定图层的索引和指定图层的子代的索引之间的范围。</summary>
+    <param name="item">要定位的图层。</param>
+    <returns>指定图层的索引和指定图层的子代的索引之间的范围。</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>返回两个图层的索引之间的范围。</summary>
+    <param name="newItem">要定位的新图层。</param>
+    <param name="oldIndexer">要定位的旧图层的索引。</param>
+    <returns>两个图层的索引之间的范围。</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>返回两个图层的索引之间的范围。</summary>
+    <param name="newIndexer">要定位的新图层的索引。</param>
+    <param name="oldIndexer">要定位的旧图层的索引。</param>
+    <returns>两个图层的索引之间的范围。</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary>构造一个 <see cref="T:FanKit.Layers.LayerList`1"/> 对象。</summary>
+    <param name="logicalTree">逻辑树。</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+清空然后初始化逻辑树。
+<br />
+<br /> 其元素被复制到逻辑树的集合就像：
+<br /> │
+<br /> ├─位图：深度=0
+<br /> ├─位图：深度=0
+<br /> ├─组：深度=0
+<br /> ├─组：深度=1
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─组：深度=0
+<br /> ├─位图：深度=1
+<br /> ├─组：深度=0
+<br /> └─位图：深度=1
+</summary>
+    <param name="list">其元素被复制到逻辑树的集合。</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+清空然后初始化逻辑树。
+<br />
+<br /> 其元素被复制到逻辑树的树就像：
+<br /> │
+<br /> ├─位图：深度
+<br /> ├─位图：深度
+<br /> ├─组：深度
+<br /> │  ├─组：深度
+<br /> │  │  ├─位图：深度
+<br /> │  │  ├─位图：深度
+<br /> │  │  └─位图：深度
+<br /> ├─组：深度
+<br /> │  └─位图：深度
+<br /> ├─组：深度
+<br /> │  └─位图：深度
+</summary>
+    <param name="tree">其元素被复制到逻辑树的树。</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>选择图层集合中的指定图层及其子代。</summary>
+    <param name="item">指定图层。</param>
+    <returns>指定图层及其子代的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>选择图层集合中的指定图层及其子代。</summary>
+    <param name="indexer">指定图层的索引。</param>
+    <returns>指定图层及其子代的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>选择图层集合中的所有图层。</summary>
+    <returns>多个目标图层的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>只选择图层集合中的指定图层及其子代，然后取消选择其他。</summary>
+    <param name="item">指定图层。</param>
+    <returns>多个目标图层的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>只选择图层集合中的指定图层及其子代，然后取消选择其他。</summary>
+    <param name="indexer">指定图层的索引。</param>
+    <returns>多个目标图层的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>只选择图层集合中的指定范围的图层及其子代，然后取消选择其他。</summary>
+    <param name="range">指定范围。</param>
+    <returns>多个目标图层的所选状态更改。</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>显示图层集合中的所有图层。</summary>
+    <returns>多个目标图层的可见性更改。</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>封装一些工具，比如逻辑树。</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary>构造一个 <see cref="T:FanKit.Layers.LayerManager1`1"/> 对象。</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>封装一些工具，比如逻辑树。</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>封装一些工具，比如逻辑树、可视化树、实例池、拖放 UI 和 UI 图层。</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>封装一些工具，比如可视化树和实例池。</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>拖放 UI。</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary>构造一个 <see cref="T:FanKit.Layers.LayerManager2`1"/> 对象。</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>封装一些工具，比如逻辑树。</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>列表视图中的作为数据源的 UI 图层。</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>封装一些工具，比如逻辑树、可视化树、实例池、拖放 UI 和 UI 图层。</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>剪切板。</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>封装一些工具，比如可视化树和实例池。</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>拖放 UI。</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary>构造一个 <see cref="T:FanKit.Layers.LayerManager3`1"/> 对象。</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>封装一些工具，比如逻辑树。</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>列表视图中的作为数据源的 UI 图层。</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>封装一些工具，比如逻辑树、可视化树、实例池、拖放 UI 、剪切板、撤销堆栈、UI 历史记录和 UI 图层。</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>剪切板。</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>封装一些工具，比如可视化树和实例池。</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>拖放 UI。</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>撤销堆栈。</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary>构造一个 <see cref="T:FanKit.Layers.LayerManager4`2"/> 对象。</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>封装一些工具，比如逻辑树。</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>列表视图中的作为数据源的 UI 历史记录。</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>列表视图中的作为数据源的 UI 图层。</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>定义一些常量， 指示调用哪个方法来导航。</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>无方法。</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>调用 <see cref="M:FanKit.Layers.UndoStack`2.Redo"/> 或 <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/> 以重做。</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>调用 <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> 或 <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>  以重做。</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>调用 <see cref="M:FanKit.Layers.UndoStack`2.Undo"/> 或 <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/> 以撤销。</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>调用 <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> 或 <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>  以撤销。</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>表示一个列表，包含一个要导航到的元素的索引。提供方法来向前和向后导航。</summary>
+    <typeparam name="T">列表里的元素类型。</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>获取表示向后导航历史记录的集合。</summary>
+    <returns>向后导航堆栈。</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>获取一个值，指示后退导航历史记录中是否至少有一个项。</summary>
+    <returns>如果后退导航历史记录中至少有一个项，则为 **true**；如果后退导航历史记录中没有项，则为 **false**。</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>获取一个值，指示前进导航历史记录中是否至少有一个项。</summary>
+    <returns>如果前进导航历史记录中至少有一个项，则为 **true**；如果前进导航历史记录中没有项，则为 **false**。</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>清空要导航到的元素然后移除 <see cref="T:FanKit.Layers.Collections.NavigateList`1"/> 里的所有元素。</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>要导航到的元素的基于零的索引。默认值为 -1。</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>获取要导航到的元素。</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>获取表示向前导航历史记录的集合。</summary>
+    <returns>向前导航堆栈。</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>创建一个源 <see cref="T:FanKit.Layers.Collections.NavigateList`1"/> 中的一个范围的元素的浅层拷贝。</summary>
+    <param name="range">指定范围。</param>
+    <returns>一个源 <see cref="T:FanKit.Layers.Collections.NavigateList`1"/> 中的一个范围的元素的浅层拷贝。</returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>导航到后退导航历史记录中最近的项。</summary>
+    <returns>后退导航历史记录中最近的项。</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>导航到前进导航历史记录中最近的项。</summary>
+    <returns>前进导航历史记录中最近的项。</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>导航到应导航到的元素。</summary>
+    <param name="index">应导航到的元素的索引。</param>
+    <returns>之前导航到的元素的索引和要导航到的元素的索引之间的范围。</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>为垃圾回收、拖放、重新排序和同步等行为提供计算值。</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary>表示一个使用 <see cref="T:FanKit.Layers.IndexRange"/> 的列表。提供方法来移除和移动。</summary>
+    <typeparam name="T">列表里的元素类型。</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>获取在特定范围的元素。</summary>
+    <param name="range">要获取的元素的范围。</param>
+    <returns>在特定范围的元素。</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>移动一个范围的元素到列表里的一个新位置。</summary>
+    <param name="range">要移动的元素的范围。</param>
+    <param name="index">基于零的索引指定范围的元素的新位置</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>移动列表里的一些范围的元素到目标元素的前面。</summary>
+    <param name="ranges">要移动的元素的范围。</param>
+    <param name="target">目标元素。</param>
+    <param name="offset">列表里的新位置的位移。</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>移动列表里的一些范围的元素到第一。</summary>
+    <param name="ranges">要移动的元素的范围。</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>移动列表里的一些范围的元素到最后。</summary>
+    <param name="ranges">要移动的元素的范围。</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>移动列表里的一个范围的元素到第一。</summary>
+    <param name="range">要移动的元素的范围。</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>移动列表里的一个范围的元素到最后。</summary>
+    <param name="range">要移动的元素的范围。</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>移除列表里的一个范围的元素。</summary>
+    <param name="range">要移除的元素的范围。</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>移除列表里的一些范围的元素。</summary>
+    <param name="ranges">要移除的元素的范围。</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>为释放操作提供信息。</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>获取要释放的图层的数目。</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>如果数目等于 1，则为要释放的图层的深度的更改；否则为默认值。</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Options.Releaser"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>定义一些常量， 指示要移除的项的数目。</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>要移除的项的数目等于 0。</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>要移除的项的数量小于所有项的数量。</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>要移除的项的数量等于所有项的数量。</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>为移除操作提供信息。</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>获取要移除的图层的数目。</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Options.Remover"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>为重新排序操作提供信息。</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>获取要重新排序的图层的数目。</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>如果数目等于 1，则为要重新排序的图层的深度的更改；否则为默认值。</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>获取一个值，该值指示放置目标是否是拖动源的同级节点。</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Reorder"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+    <param name="type">指示如何更改对象的层顺序（也称为z顺序），以便对象可以显示在其他对象的顶部。</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Reorder"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+    <param name="type">指示如何更改对象的层顺序（也称为z顺序），以便对象可以显示在其他对象的顶部。</param>
+    <param name="selection">图层集合的选择状态。</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Reorder"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+    <param name="indexer">逻辑树中放置目标的索引。</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Reorder"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+    <param name="indexer">逻辑树中放置目标的索引。</param>
+    <param name="selection">图层集合的选择状态。</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>定义一些常量， 指示要重新排序的项的数目。</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>范围的数量大于 1（范围描述了要重新排序的项）。</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>要重新排序的项的数目等于 0。</summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>要重新排序的项的数目等于 1。</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>范围的数量等于 1（此范围包含了一个节点和它的后代）。</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary>表示一个 <see cref="T:FanKit.Layers.SelectMode"/> 格式类型的值的更改。</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>表示一个图层相关的更改，包含一个所选状态更改的数组。</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>获取或设置一个所选状态更改的数组。</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>逻辑树中指定图层的索引。</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>定义一些常量， 指示选定项的数目。</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>选定项的数目大于 1。</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>选定项的数目等于 0。</summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>选定项的数目等于 1。</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary>指定 <see cref="T:FanKit.Layers.ILayerBase"/> 实例的所选状态。</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary>已取消选择此 <see cref="T:FanKit.Layers.ILayerBase"/> 实例。</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>已选择此 <see cref="T:FanKit.Layers.ILayerBase" /> 实例在逻辑树中的父对象。</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary>已选择此 <see cref="T:FanKit.Layers.ILayerBase"/> 实例。</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>包含所选状态的扩展方法。</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>转换指定的所选状态为布尔值。</summary>
+    <param name="mode">要转换的模式。</param>
+    <returns>如果模式是 <see cref="F:FanKit.Layers.SelectMode.Selected"/>，则为 true；否则为 false。</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>转换指定的布尔值为所选状态。</summary>
+    <param name="value">要转换的布尔值。</param>
+    <returns>
+如果值是 **True**，则为 <see cref="F:FanKit.Layers.SelectMode.Selected"/>；
+<br/>
+否则为 <see cref="F:FanKit.Layers.SelectMode.Deselected"/>。
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>转换指定的所选状态为强调颜色主题笔刷的透明度值。</summary>
+    <param name="mode">要转换的模式。</param>
+    <returns>
+如果模式是 <see cref="F:FanKit.Layers.SelectMode.Deselected"/>，则为 0.0d;
+<br/>
+如果模式是 <see cref="F:FanKit.Layers.SelectMode.Parent"/>，则为 0.5d;
+<br/>
+否则为 1.0d。
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary>表示一个 <see cref="float"/> 格式类型的值的更改。</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>表示一个图层相关的更改，包含两个所有图层的身份标识符的数组（在图层集合改变顺序时）。</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>获取或设置一个所有图层的身份标识符的数组（在图层集合改变顺序之后）。</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>获取或设置一个所有图层的身份标识符的数组（在图层集合改变顺序之前）。</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>检查一个特定 <see cref="T:FanKit.Layers.Core.ITreeNode" /> 是否存在于源集合或目标集合内。</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode" /> 同时存在于源集合和目标集合内。</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode" /> 存在于目标集合内。</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode" /> 存在于源集合内。</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>定义为一个撤销操作指定时期的常量。</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>当前撤销操作（指定的撤销操作历史记录里的索引等于当前选定项）。</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>一个未来的撤销操作（指定的撤销操作在历史记录里的索引大于当前选定项）。</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>一个过去的撤销操作（指定的撤销操作在历史记录里的索引小于当前选定项）。</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+表示一个队列，提供支持撤销和重做动作，并支持垃圾收集的概念。
+<br/>
+<br/>
+垃圾收集：
+<br/>
+(1)
+当堆栈上的操作数量超过限制时，操作将从堆栈底部删除。
+<br/>
+(2)
+标记一个图层为“无用的图层”，如果它不在逻辑树中并且没有更改引用其全局唯一身份标识符。
+<br/>
+(3)
+从实例池里移除所有无用的图层以垃圾收集。
+</summary>
+    <typeparam name="T">实例的类型。</typeparam>
+    <typeparam name="U">操作的类型（一个操作包含一个撤销动作和一个重做动作）。</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>应用重做动作以更改一个目标图层的深度。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>应用重做动作以更改多个目标图层的深度。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>应用重做动作以更改两个目标图层的所选状态。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>应用重做动作以更改一个目标图层的锁定状态。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>应用重做动作以更改一个目标图层的所选状态。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>应用重做动作以更改多个目标图层的所选状态。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>应用重做动作以更改图层集合的顺序。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> 或 <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>。</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>应用重做动作以更改一个目标图层的可见性。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>应用重做动作以更改多个目标图层的可见性。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>应用撤销动作以更改一个目标图层的深度。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>应用撤销动作以更改多个目标图层的深度。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>应用撤销动作以更改两个目标图层的所选状态。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>应用撤销动作以更改一个目标图层的锁定状态。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>应用撤销动作以更改一个目标图层的所选状态。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>应用撤销动作以更改多个目标图层的所选状态。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>应用撤销动作以更改图层集合的顺序。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> 或 <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>。</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>应用撤销动作以更改一个目标图层的可见性。</summary>
+    <param name="change">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>应用撤销动作以更改多个目标图层的可见性。</summary>
+    <param name="changes">要应用的更改。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>获取一个值，该值指示队列是否包含可以要导航到的操作。</summary>
+    <param name="index">要导航到的操作的索引。</param>
+    <returns>
+如果指定索引小于当前操作的索引，则为 <see cref="NavigateAction.Undo"/> 或 <see cref="NavigateAction.UndoRange"/>；
+<br/>
+如果指定索引大于当前操作的索引，则为 <see cref="NavigateAction.Redo"/> 或 <see cref="NavigateAction.RedoRange"/>；
+<br/>
+否则为 <see cref="NavigateAction.None"/>。
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>获取一个值，该值指示重做缓冲区是否包含可以重做的动作。</summary>
+    <returns>如果重做缓冲区包含可以重做的动作，则为 true；否则为 false。</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>获取一个值，该值指示撤销缓冲区是否包含可以撤销的动作。</summary>
+    <returns>如果撤销缓冲区包含可以撤销的动作，则为 true；否则为 false。</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>清空队列，然后销毁所有操作的图层相关的更改。</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+从实例池里移除所有无用的图层以垃圾收集。
+</summary>
+    <returns>无用的图层的数目。</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>创建一个源 <see cref="T:FanKit.Layers.UndoStack`2"/> 中的一个范围的元素的浅层拷贝。</summary>
+    <param name="range">指定范围。</param>
+    <returns>一个源 <see cref="T:FanKit.Layers.UndoStack`2"/> 中的一个范围的元素的浅层拷贝。</returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>导航到指定操作。</summary>
+    <param name="index">要导航到的操作的索引。</param>
+    <returns>之前导航到的操作的索引和要导航到的操作的索引之间的范围。</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+推送新的操作位于撤销堆栈上。
+当堆栈上的操作数量超过限制时，操作将从堆栈底部删除。
+</summary>
+    <param name="item">新的操作。</param>
+    <param name="isGC">如果删除操作时移除无用的图层，则为 ture；否则为 false。</param>
+    <returns>无用的图层的数目。</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>获取下一个操作操作，然后让下一个操作成为当前操作。</summary>
+    <returns>下一个操作（一个操作包含一个重做动作）。</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>从重做缓冲区获取所有重做动作。</summary>
+    <returns>从下一个到最后一个操作（一个操作包含一个重做动作）。</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>获取选定操作的索引。默认值为 -1，指示无选定操作。</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>获取选定操作。</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+将时期同步到所有操作，以更新 UI 状态和行为。
+<br/>
+<br/>
+例如：
+<br/>
+过去操作的索引小于当前索引；
+<br/>
+当前操作的索引等于当前索引；
+<br/>
+未来操作的索引大于当前索引。
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+将时期同步到所有操作，以更新 UI 状态和行为。
+<br/>
+<br/>
+例如：
+<br/>
+过去操作的索引小于指定索引；
+<br/>
+当前操作的索引等于指定索引；
+<br/>
+未来操作的索引大于指定索引。
+</summary>
+    <param name="index">指定的操作的基于零的索引。</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>同步顺序到 UI 历史记录，类似于 HTML DOM 差异算法。</summary>
+    <param name="items">列表视图中的作为数据源的 UI 历史记录（比如 <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>）。</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>获取当前操作，然后让上一个操作成为当前操作。</summary>
+    <returns>当前操作（一个操作包含一个撤销动作）。</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>从撤销缓冲区获取所有撤销动作。</summary>
+    <returns>从当前到第一个操作（一个操作包含一个撤销动作）。</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>获取或设置可存储在队列中的操作的最大数量。</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary>构造一个 <see cref="T:FanKit.Layers.UndoStack`2"/> 对象。</summary>
+    <param name="pool">包含所有实例的实例池。</param>
+    <param name="collection">图层集合。</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>为取消分组操作提供信息。</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>获取被取消分组的图层的数目。</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary>构造一个 <see cref="T:FanKit.Layers.Options.Ungrouper"/> 对象。</summary>
+    <param name="items">图层集合。</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>表示一个图层相关的更改，包含一个可见性的更改的数组。</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>获取或设置一个可见性的更改的数组。</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>创建 XML 对象的扩展。</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>保存节点的深度、身份标识符或子级节点为 XML 对象。</summary>
+    <param name="node">指定节点。</param>
+    <param name="type">XML 对象的结构类型。</param>
+    <param name="children">子级节点</param>
+    <returns>
+如果类型是 <see cref="F:FanKit.Layers.XmlStructure.List"/>，则为 <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/> 的 XML 属性;
+<br/>
+如果类型是 <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/>，则为 <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/> 的 XML 属性;
+<br/>
+否则为子级节点。
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary>指定一个 <see cref="T:FanKit.Layers.Core.ITreeNode"/> 保存的 XML 对象的结构类型。</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+保存为一个带有深度的列表。
+<br />
+<br /> 例如：
+<br /> │
+<br /> ├─位图：深度=0
+<br /> ├─位图：深度=0
+<br /> ├─组：深度=0
+<br /> ├─组：深度=1
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─位图：深度=2
+<br /> ├─组：深度=0
+<br /> ├─位图：深度=1
+<br /> ├─组：深度=0
+<br /> └─位图：深度=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+保存为一个树。
+<br />
+<br /> 例如：
+<br /> │
+<br /> ├─位图
+<br /> ├─位图
+<br /> ├─组
+<br /> │  ├─组
+<br /> │  │  ├─位图
+<br /> │  │  ├─位图
+<br /> │  │  └─位图
+<br /> ├─组
+<br /> │  └─位图
+<br /> ├─组
+<br /> │  └─位图
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+保存为一个节点组成的树和一个带有身份标识符的实例集合。
+<br />
+<br /> 例如：
+<br /> │
+<br /> ├─全部节点
+<br /> │  ├─节点：Id=0
+<br /> │  ├─节点：Id=1
+<br /> │  ├─节点：Id=2
+<br /> │  │  ├─节点：Id=3
+<br /> │  │  │  ├─节点：Id=4
+<br /> │  │  │  ├─节点：Id=5
+<br /> │  │  │  └─节点：Id=6
+<br /> │  ├─节点：Id=7
+<br /> │  │  └─节点：Id=8
+<br /> │  ├─节点：Id=9
+<br /> │  │  └─节点：Id=10
+<br /> │  │
+<br /> ├─全部图层
+<br /> │  ├─位图：Id=0
+<br /> │  ├─位图：Id=1
+<br /> │  ├─组：Id=2
+<br /> │  ├─组：Id=3
+<br /> │  ├─位图：Id=4
+<br /> │  ├─位图：Id=5
+<br /> │  ├─位图：Id=6
+<br /> │  ├─组：Id=7
+<br /> │  ├─位图：Id=8
+<br /> │  ├─组：Id=9
+<br /> │  └─位图：Id=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>定义一个 XML 树节点，它投影逻辑树里的任意节点到 XML 元素里。</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>附加字符串到当前 <see cref="T:System.Text.StringBuilder"/> 对象。</summary>
+    <param name="stringBuilder">当前 <see cref="T:System.Text.StringBuilder"/> 对象。</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>保存节点的身份标识符和子级为 XML 元素。</summary>
+    <param name="elementChildName">XML 元素的子级的名称。</param>
+    <returns>
+如果节点有子级，则为带有身份标识符和子级的 XML 元素；
+<br/>
+否则为仅有身份标识符的 XML 元素。
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary>构造一个 <see cref="T:FanKit.Layers.XmlTreeNode"/> 对象。</summary>
+    <param name="id">节点的身份标识符。</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary>构造一个 <see cref="T:FanKit.Layers.XmlTreeNode"/> 对象。</summary>
+    <param name="element">带有身份标识符和子级的 XML 元素。</param>
+  </doc>
+</docs>
