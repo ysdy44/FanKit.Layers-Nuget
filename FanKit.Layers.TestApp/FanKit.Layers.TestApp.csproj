@@ -122,6 +122,9 @@
     <Compile Include="HistoryPanelPage.xaml.cs">
       <DependentUpon>HistoryPanelPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LayersPanelPage.xaml.cs">
+      <DependentUpon>LayersPanelPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="HistoryPanelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LayersPanelPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

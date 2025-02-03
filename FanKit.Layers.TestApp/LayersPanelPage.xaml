@@ -1,0 +1,226 @@
+﻿<Page
+    x:Class="FanKit.Layers.TestApp.LayersPanelPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:demo="using:FanKit.Layers.Demo"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+
+    <FrameworkElement.Resources>
+        <!--Command-->
+        <demo:DemoOptionCommand x:Key="SelectCommand" Invoked="SelectCommand_Invoked"/>
+        <demo:DemoOptionCommand x:Key="VisibleCommand" Invoked="VisibleCommand_Invoked"/>
+        <demo:DemoOptionCommand x:Key="LockCommand" Invoked="LockCommand_Invoked"/>
+        <demo:DemoOptionCommand x:Key="ExpandCommand" Invoked="ExpandCommand_Invoked"/>
+    </FrameworkElement.Resources>
+
+    <ListView
+        x:Name="ListView"
+        MaxWidth="460"
+        MaxHeight="600"
+        
+        IsItemClickEnabled="True"
+        SelectionMode="None"
+        
+        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+        Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
+        >
+
+        <ListView.Header>
+            <TextBlock Margin="4,0" FontSize="28" FontWeight="SemiLight">
+                LayerManager2
+            </TextBlock>
+        </ListView.Header>
+
+        <ListView.Footer>
+            <CommandBar>
+
+                <AppBarButton x:Name="RemoveButton" IsEnabled="False">
+                    <AppBarButton.Icon>
+                        <SymbolIcon Symbol="Delete"/>
+                    </AppBarButton.Icon>
+                    <AppBarButton.Label>
+                        Remove
+                    </AppBarButton.Label>
+                </AppBarButton>
+
+                <AppBarButton x:Name="InsertButton" IsEnabled="False">
+                    <AppBarButton.Icon>
+                        <SymbolIcon Symbol="ImportAll"/>
+                    </AppBarButton.Icon>
+                    <AppBarButton.Label>
+                        Insert
+                    </AppBarButton.Label>
+                </AppBarButton>
+
+                <AppBarButton x:Name="GroupButton">
+                    <AppBarButton.Icon>
+                        <SymbolIcon Symbol="BackToWindow"/>
+                    </AppBarButton.Icon>
+                    <AppBarButton.Label>
+                        Group
+                    </AppBarButton.Label>
+                </AppBarButton>
+
+                <CommandBar.SecondaryCommands>
+
+                    <AppBarButton x:Name="HideAllButton">
+                        <AppBarButton.Icon>
+                            <SymbolIcon Symbol="Preview"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.Label>
+                            HideAll
+                        </AppBarButton.Label>
+                    </AppBarButton>
+                    <AppBarButton x:Name="ShowAllButton">
+                        <AppBarButton.Icon>
+                            <SymbolIcon Symbol="Page"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.Label>
+                            ShowAll
+                        </AppBarButton.Label>
+                    </AppBarButton>
+
+                    <AppBarSeparator/>
+
+                    <AppBarButton x:Name="DeselectAllButton">
+                        <AppBarButton.Icon>
+                            <SymbolIcon Symbol="ViewAll"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.Label>
+                            DeselectAll
+                        </AppBarButton.Label>
+                    </AppBarButton>
+                    <AppBarButton x:Name="SelectAllButton">
+                        <AppBarButton.Icon>
+                            <SymbolIcon Symbol="SelectAll"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.Label>
+                            SelectAll
+                        </AppBarButton.Label>
+                    </AppBarButton>
+
+                    <AppBarSeparator/>
+
+                    <AppBarButton x:Name="CollapseAllButton">
+                        <AppBarButton.Icon>
+                            <SymbolIcon Symbol="HideBcc"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.Label>
+                            CollapseAll
+                        </AppBarButton.Label>
+                    </AppBarButton>
+                    <AppBarButton x:Name="ExpandAllButton">
+                        <AppBarButton.Icon>
+                            <SymbolIcon Symbol="ShowBcc"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.Label>
+                            ExpandAll
+                        </AppBarButton.Label>
+                    </AppBarButton>
+
+                </CommandBar.SecondaryCommands>
+            </CommandBar>
+        </ListView.Footer>
+
+        <ItemsControl.ItemContainerStyle>
+            <Style TargetType="ListViewItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Transitions">
+                    <Setter.Value>
+                        <TransitionCollection>
+
+                        </TransitionCollection>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+
+        <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="demo:DemoLayer">
+                <Grid>
+                    <Grid.Background>
+                        <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{x:Bind SelectOpacity,Mode=OneWay}"/>
+                    </Grid.Background>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0" MinWidth="{x:Bind DepthWidth, Mode=OneWay}"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ToggleSwitch Grid.Column="1" IsOn="{x:Bind IsGroup, Mode=OneTime}">
+                        <FrameworkElement.Style>
+                            <Style TargetType="ToggleSwitch">
+                                <Setter Property="MinWidth" Value="32"/>
+                                <Setter Property="MinHeight" Value="32"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleSwitch">
+                                            <Grid>
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="ContentStates">
+                                                        <VisualState x:Name="OffContent">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetName="OffContentPresenter" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="OnContent">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetName="OnContentPresenter" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <ContentPresenter x:Name="OffContentPresenter" Opacity="0" Content="{TemplateBinding OffContent}"/>
+                                                <ContentPresenter x:Name="OnContentPresenter" Opacity="0" Content="{TemplateBinding OnContent}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </FrameworkElement.Style>
+                        <ToggleSwitch.OffContent>
+                            <SymbolIcon Symbol="Page" />
+                        </ToggleSwitch.OffContent>
+                        <ToggleSwitch.OnContent>
+                            <SymbolIcon Symbol="Folder" Foreground="#FFD255" />
+                        </ToggleSwitch.OnContent>
+                    </ToggleSwitch>
+
+                    <TextBlock Grid.Column="2" VerticalAlignment="Center">
+                        <Run Text="{x:Bind Title}"/>
+                        <Run>Number Layer</Run>
+                    </TextBlock>
+
+                    <StackPanel Grid.Column="4" Margin="4,0" Orientation="Horizontal">
+                        <Button Margin="0,0,4,0" CommandParameter="{x:Bind}" Command="{StaticResource LockCommand}">
+                            <SymbolIcon Symbol="Link" Opacity="{x:Bind LockButtonOpacity, Mode=OneWay}" />
+                        </Button>
+                        <Button Margin="0,0,4,0" CommandParameter="{x:Bind}" Command="{StaticResource VisibleCommand}">
+                            <SymbolIcon Symbol="View" Opacity="{x:Bind VisibleButtonOpacity, Mode=OneWay}" />
+                        </Button>
+                        <Button Margin="0,0,4,0" CommandParameter="{x:Bind}" Command="{StaticResource SelectCommand}">
+                            <SymbolIcon Symbol="SelectAll"/>
+                        </Button>
+                        <Button CommandParameter="{x:Bind}" Command="{StaticResource ExpandCommand}" IsEnabled="{x:Bind HasChildren, Mode=OneWay}">
+                            <SymbolIcon Symbol="Remove"/>
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+
+    </ListView>
+
+</Page>
