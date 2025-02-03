@@ -1,0 +1,151 @@
+﻿<Page
+    x:Class="FanKit.Layers.TestApp.HistoryPanelPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:demo="using:FanKit.Layers.Demo"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+
+    <SplitView PanePlacement="Right" DisplayMode="Inline" IsPaneOpen="True" OpenPaneLength="260">
+
+        <SplitView.Pane>
+
+            <ListView 
+                x:Name="HistoryListView"
+                ItemsSource="{x:Bind UIHistory, Mode=OneWay}"
+                
+                SelectionMode="None"
+                IsItemClickEnabled="True"
+                
+                ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                >
+
+                <ListView.Header>
+                    <TextBlock Margin="4,0" FontSize="28" FontWeight="SemiLight">
+                        UndoList
+                    </TextBlock>
+                </ListView.Header>
+
+                <ListView.Footer>
+                    <CommandBar>
+
+                        <AppBarButton>
+                            <AppBarButton.Flyout>
+                                <Flyout x:Name="Flyout">
+                                    <Slider x:Name="Slider" IsEnabled="False" Width="200" IsThumbToolTipEnabled="False">
+                                        <Slider.Header>
+                                            <TextBlock>
+                                                <Run>Navigate</Run>
+                                                <LineBreak/>
+                                                <Run>Value:</Run>
+                                                <Run FontWeight="Bold" Text="{x:Bind Slider.Value, Mode=OneWay}"/>
+                                                <LineBreak/>
+                                                <Run>Minimum:</Run>
+                                                <Run FontWeight="Bold" Text="{x:Bind Slider.Minimum, Mode=OneWay}"/>
+                                                <LineBreak/>
+                                                <Run>Maximum:</Run>
+                                                <Run FontWeight="Bold" Text="{x:Bind Slider.Maximum, Mode=OneWay}"/>
+                                            </TextBlock>
+                                        </Slider.Header>
+                                    </Slider>
+                                </Flyout>
+                            </AppBarButton.Flyout>
+                            <AppBarButton.Icon>
+                                <SymbolIcon Symbol="SwitchApps"/>
+                            </AppBarButton.Icon>
+                            <AppBarButton.Label>
+                                Slider
+                            </AppBarButton.Label>
+                        </AppBarButton>
+
+                        <AppBarButton x:Name="UndoButton" IsEnabled="False">
+                            <AppBarButton.Icon>
+                                <SymbolIcon Symbol="Undo"/>
+                            </AppBarButton.Icon>
+                            <AppBarButton.Label>
+                                Undo
+                            </AppBarButton.Label>
+                        </AppBarButton>
+
+                        <AppBarButton x:Name="RedoButton" IsEnabled="False">
+                            <AppBarButton.Icon>
+                                <SymbolIcon Symbol="Redo"/>
+                            </AppBarButton.Icon>
+                            <AppBarButton.Label>
+                                Redo
+                            </AppBarButton.Label>
+                        </AppBarButton>
+
+                    </CommandBar>
+                </ListView.Footer>
+
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Transitions">
+                            <Setter.Value>
+                                <TransitionCollection>
+
+                                </TransitionCollection>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+
+                <ItemsControl.ItemContainerTransitions>
+                    <TransitionCollection>
+
+                    </TransitionCollection>
+                </ItemsControl.ItemContainerTransitions>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="demo:DemoUndo">
+                        <Grid>
+                            <Grid.Background>
+                                <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{x:Bind SelectOpacity, Mode=OneWay}" />
+                            </Grid.Background>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <SymbolIcon Symbol="Clock"/>
+
+                            <TextBlock Grid.Column="1" Text="{x:Bind Description, Mode=OneTime}" VerticalAlignment="Center"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ListView>
+        </SplitView.Pane>
+
+        <Canvas Background="{ThemeResource SystemControlBackgroundChromeBlackMediumBrush}">
+            <TextBlock TextWrapping="WrapWholeWords">
+                <Run>Shortcut keys</Run>
+                <LineBreak/>
+                <Run>Undo: Ctrl+Z</Run>
+                <LineBreak/>
+                <Run>Redo: Ctrl+Y</Run>
+            </TextBlock>
+            <Rectangle
+                x:Name="Rectangle"
+                Canvas.Left="100"
+                Canvas.Top="100"
+                Width="200"
+                Height="200"
+                
+                Fill="{ThemeResource SystemColorControlAccentBrush}"
+                ManipulationMode="TranslateX,TranslateY"
+                />
+        </Canvas>
+
+    </SplitView>
+</Page>
