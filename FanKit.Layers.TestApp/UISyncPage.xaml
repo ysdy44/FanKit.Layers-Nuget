@@ -1,0 +1,118 @@
+﻿<Page
+    x:Class="FanKit.Layers.TestApp.UISyncPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:FanKit.Layers.TestApp"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="180"/>
+        </Grid.RowDefinitions>
+
+        <ListView
+            Margin="4"
+            Width="300"
+            SelectionMode="None"
+            RequestedTheme="Dark"
+            ItemsSource="{x:Bind UINodes, Mode=OneTime}"
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
+            >
+
+            <ListView.Header>
+                <TextBlock Margin="4,0" FontSize="28" FontWeight="SemiLight">
+                    VisualTreeList
+                </TextBlock>
+            </ListView.Header>
+
+            <ListView.Footer>
+                <TextBlock x:Name="SettingTextBlock" TextWrapping="WrapWholeWords">
+                    <!--Text-->
+                </TextBlock>
+            </ListView.Footer>
+
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsStackPanel VerticalAlignment="Top"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Margin" Value="1"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="local:VisualTreeNode">
+                    <Border Margin="{x:Bind DepthMargin, Mode=OneTime}" Background="{ThemeResource SystemColorControlAccentBrush}">
+                        <TextBlock Margin="12,0,0,0" VerticalAlignment="Center">
+                            Node
+                        </TextBlock>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ListView>
+        
+        <ListView
+            x:Name="UIListView"
+            Grid.Row="1"
+            Margin="4"
+            IsItemClickEnabled="True"
+            ItemsSource="{x:Bind TreeGroups, Mode=OneTime}"
+              
+            ScrollViewer.HorizontalScrollMode="Enabled"
+            ScrollViewer.VerticalScrollMode="Disabled"
+            ScrollViewer.HorizontalScrollBarVisibility="Visible"
+            ScrollViewer.VerticalScrollBarVisibility="Disabled"
+            >
+
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsStackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Margin" Value="1"/>
+                    <Setter Property="Width" Value="120"/>
+                    <Setter Property="Padding" Value="2,10"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                    <Setter Property="VerticalContentAlignment" Value="Top"/>
+                    <Setter Property="Background" Value="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="local:VisualTreeGroup">
+                    <ItemsControl ItemsSource="{x:Bind TreeList, Mode=OneTime}">
+
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="ContentPresenter">
+                                <Setter Property="Height" Value="12"/>
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="local:VisualTreeNode">
+                                <Rectangle Width="64" Height="6" Fill="DodgerBlue" Margin="{x:Bind DepthMargin, Mode=OneTime}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ListView>
+
+    </Grid>
+</Page>

@@ -126,6 +126,9 @@
     <Compile Include="SelectedRangesPage.xaml.cs">
       <DependentUpon>SelectedRangesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UISyncPage.xaml.cs">
+      <DependentUpon>UISyncPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -154,6 +157,10 @@
     <Page Include="SelectedRangesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UISyncPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
