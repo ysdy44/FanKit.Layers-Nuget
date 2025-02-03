@@ -1,0 +1,2119 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>Defines constants that indicates how to change the layer order (also known as the z-order) of objects so that objects can appear on top of other objects.</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>Bring an object one step closer to the front.</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>Bring an object to the front of the order.</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>Send an object one step toward the back.</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>Send an object to the back of the order.</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary>Represents a change that contains the value of the <see cref="bool"/> Format Type.</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>The identifier of the layer to use as the operation's target.</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>Gets a value that indicates whether this new value is equal to the old value.</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>The new value.</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>The previous value.</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>Extensions for creating changes.</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary>Creates a change from a <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">A <see cref="T:FanKit.Layers.Core.ITreeNode"/> to create a change.</param>
+    <returns>A change that contains the false as new value.</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary>Creates a change from a <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">A <see cref="T:FanKit.Layers.Core.ITreeNode"/> to create a change.</param>
+    <returns>A change that contains the true as new value.</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>Specifies the layer-related operation options when an item in the list view receives an interaction.</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>Flags all child nodes of specified node in the logical tree and remove them from the visual tree.</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>Deselects specified layer and its descendants in the layer collection.</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>Flags all child nodes of specified node in the logical tree and add them to the visual tree.</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>Hides specified layer in the layer collection.</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>Locks specified layer in the layer collection.</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>None.</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>Selects specified layer and its descendants in the layer collection.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>Only select specified layer and its descendants in the layer collection and then deselect the others.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>Only select specified range of layers and their descendants in the layer collection and then deselect the others.</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>Displays specified layer in the layer collection.</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>Unlocks specified layer in the layer collection.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>Extensions for creating layer-related options.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>Get a value that indicates whether the specified node can be collapsed or expanded.</summary>
+    <param name="node">The specified node.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Collapse"/> if <see cref="P:FanKit.Layers.Core.ITree Node.IsExpanded"/> is **True**;
+<br/>
+otherwise <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>Get a value that indicates whether the specified layer can be locked or unlocked.</summary>
+    <param name="layer">The specified layer.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Unlock"/> if <see cref="P:FanKit.Layers.IlerBase.IsLocked"/> is **True**;
+<br/>
+otherwise <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>Get a value that indicates whether the specified layer can be selected or unselected.</summary>
+    <param name="layer">The specified layer.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Select"/> if <see cref="P:FanKit.Layers.LayerBase.SelectMode"/> is <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.Deselect"/> if <see cref="P:FanKit.Layers.LayerBase.SelectMode"/> is<see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<br/>
+otherwise <see cref="F:FanKit.Layers.ClickOptions.None"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>Get a value that indicates whether only select a layer or only select a range of layers.</summary>
+    <param name="layer">The specified layer.</param>
+    <param name="isShiftKeyDown">True if the Shift key is pressed; otherwise false.</param>
+    <param name="isControlKeyDown">True if the Ctrl key is pressed; otherwise false.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/> if the Shift key is pressed;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/> if the Ctrl key is not pressed;
+<br/>
+otherwise <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>Get a value that indicates whether the specified layer can be displayed or hidden.</summary>
+    <param name="layer">The specified layer.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Hide"/> if <see cref="P:FanKit.Layers.IlerBase.IsVisible"/> is **True**;
+<br/>
+otherwise <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>Provide methods for copying and pasting the node in the logical tree.</summary>
+    <typeparam name="T">The type of instance.</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>Determines whether selected items can be copied to the clipboard.</summary>
+    <returns>True if copying to the clipboard is allowed; otherwise, false.</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>Determines whether the clipboard has selected items that can be pasted into the logical tree.</summary>
+    <returns>True if the clipboard has elected items that can be pasted into the logical tree; otherwise false.</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Clipboard`1"/> object.</summary>
+    <param name="logicalTree">The logical tree.</param>
+    <param name="pool">The instance pool that includes all instances.</param>
+    <param name="collection">The layer collection.</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>Creates a new node that is a copy of the current instance.</summary>
+    <returns>A new node that is a copy of this instance.</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>Creates a new node that is a copy of the current instance.</summary>
+    <param name="depth">The depth of the new node from the root node of the tree.</param>
+    <returns>A new node that is a copy of this instance.</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>Copies the selected items from the logical tree to the clipboard.</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>Gets the number of selected items.</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>Copies the selected items from the logical tree to the logical tree.</summary>
+    <param name="duplicator">Provides information for the duplicating operation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>Copies the selected items from the logical tree to the logical tree.</summary>
+    <param name="selection">The selection state for the layer collection.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>Copies selected items from the clipboard into the logical tree.</summary>
+    <param name="inserter">Provides information for the insertion operation.</param>
+    <param name="selects">Provides information for the duplicating operation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>Represents the method that will getting the height of container for the item at the specified index within the list view.</summary>
+    <param name="index">The index of the item to retrieve.</param>
+    <returns>Returns the height of container for the item at the specified index within the list view.</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>Represents the method that will creates and initializes a new layer from a specified data.</summary>
+    <typeparam name="T">The type of layer.</typeparam>
+    <typeparam name="D">The type of data.</typeparam>
+    <param name="data">The specified data.</param>
+    <returns>The created layer.</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>Represents the method that will creates and initializes a new layer from a specified data.</summary>
+    <typeparam name="T">The type of layer.</typeparam>
+    <typeparam name="D">The type of data.</typeparam>
+    <param name="data">The specified data.</param>
+    <param name="depth">The depth of the new node from the root node of the tree.</param>
+    <returns>The created layer.</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>Represents the method that will creates a new empty layer (before loading the content of the layer from a XML element)。</summary>
+    <typeparam name="T">The type of layer.</typeparam>
+    <param name="element">The XML element.</param>
+    <returns>The created layer.</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>Represents the method that will creates a new empty layer (before loading the content of the layer from a XML element)。</summary>
+    <typeparam name="T">The type of layer.</typeparam>
+    <param name="element">The XML element.</param>
+    <param name="depth">The depth of the new node from the root node of the tree.</param>
+    <returns>The created layer.</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>Represents a layer-related change that includes an array of depth changes.</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>Get or set an array of depth changes.</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary>Represents a change that contains the value of the <see cref="double"/> Format Type.</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>Represents a layer-related change that includes two selected status changes.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>Get or set the first selected status change.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>Get or set the second selected status change.</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>Contains a set of coordinates and offsets used to calculate the area of the drag UI relative to the location of the list view.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>The height of the content of the list header.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>The distance the content of the list view has been scrolled horizontally.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>The y-coordinate of the mouse pointer relative to the location of the list view.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>The distance the content of the list view has been scrolled vertically.</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>The area of the drag UI relative to the location of the list view.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>The height of the rectangle that defines the area of the drag UI.</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>**true** if all values is 0; otherwise, **false**.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>The width of the rectangle that defines the area of the drag UI.</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>The X coordinate at the top-left corner of the rectangle that defines the area of the drag UI.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>The Y coordinate at the top-left corner of the rectangle that defines the area of the drag UI.</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>Defines constants the specify the type of drag source in a drag-and-drop operation.</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>Specifies no drag source.</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>The drag source does not exist in the logical tree.</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>The drag source is a item that were selected in the logical tree.</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>The drag source is a item that were unselected in the logical tree.</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>Provides methods for laying the drag and drop UI. The drag and drop UI will find and snap the UI guide closest to the mouse pointer in the placement target.</summary>
+    <typeparam name="T">The type of instance.</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>Cache the position of the UI guide in each layer before dragging and dropping.</summary>
+    <param name="width">This width of the list view, also the maximum width of the UI guide.</param>
+    <param name="zoomFactorForDepth">
+The zoom factor engaged for depth scaling.
+<br/>
+For example, when the zoom factor is 16, the left margin of the UI guide is 16 * depth.
+</param>
+    <param name="containerSizeFromIndex">Getting the height of container for the item at the specified index within the list view.</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary>Constructs a <see cref="T:FanKit.Layers.DragUI`1"/> object.</summary>
+    <param name="logicalTree">The logical tree.</param>
+    <param name="visualTree">The visual tree.</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>Retrieves the index of the drop target in the logical tree by identifying the UI guide nearest to the mouse pointer.</summary>
+    <param name="point">A set of coordinates and offsets used to calculate the area of the drag UI relative to the location of the list view.</param>
+    <param name="sourceType">Specify the type of drag source in a drag-and-drop operation.</param>
+    <returns>The index of the drop target in the logical tree.</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>Retrieves the index of the drop target in the logical tree by identifying the UI guide nearest to the mouse pointer.</summary>
+    <param name="positionY">The y-coordinate of the mouse pointer relative to the location of the list view.</param>
+    <param name="sourceType">Specify the type of drag source in a drag-and-drop operation.</param>
+    <returns>The index of the drop target in the logical tree.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>Retrieves the area of the drag UI relative to the location of the list view.</summary>
+    <param name="Indexer">The index of the drop target in the logical tree.</param>
+    <returns>The area of the drag UI relative to the location of the list view.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>Retrieves the area of the drag UI relative to the location of the list view.</summary>
+    <param name="point">A set of coordinates and offsets used to calculate the area of the drag UI relative to the location of the list view.</param>
+    <param name="Indexer">The index of the drop target in the logical tree.</param>
+    <returns>The area of the drag UI relative to the location of the list view.</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>The height of UI guide.</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>The index of the drop target in the logical tree.</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+-1 if <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> is 
+<see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>,
+<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> or 
+<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>;
+<br/>
+otherwise, the zero-based index of a drop target in the logical tree.
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>Specifies where the drag source should be inserted relative to the drop target.</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>Provides information for the drop operation.</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>The depth of the new node from the root node of the tree.</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary>Constructs a <see cref="T:FanKit.Layers.DragDrop.Dropper"/> object.</summary>
+    <param name="items">The collection of the all node in the logical tree.</param>
+    <param name="indexer">The index of the drop target in the logical tree.</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>Defines constants that specify where the drag source should be inserted relative to the drop target.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>Inserts a node above the specified sibling node in the logical tree.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>Inserts a new node at the bottom of the logical tree.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>Inserts a new node at the top of the logical tree.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>Insert a new node below the specified node in the logical tree.</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>The drag source should not be inserted.</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>Provides information for the duplicating operation.</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>Gets the number of duplicated layers.</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Options.Duplicator"/> object.</summary>
+    <param name="items">The layer collection.</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>Provides information for the grouping operation.</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>Gets the number of grouped layers.</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>The depth of the new node from the root node of the tree.</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>The change of depth of grouped layer if the number be equal to 1; otherwise, default value.</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Options.Grouper"/> object.</summary>
+    <param name="items">The layer collection.</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>The change of selected status of grouped layer if the number be equal to 1; otherwise, default value.</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>Represents the base class for layer-related changes.</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>Gets an collection of GUIDs of referenced layers.</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+Defines a node with children.
+<br/>
+E.g.
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>Gets a collection of children in the current node.</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>Gets the number of children that exist in current node's child collection.</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>Supports cloning, which creates a new instance of a class with the same value as an existing instance.</summary>
+    <typeparam name="T">The type of instance.</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>Creates a new node that is a copy of the current instance.</summary>
+    <returns>A new node that is a copy of this instance.</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>Creates a new node that is a copy of the current instance.</summary>
+    <param name="depth">The depth of the new node from the root node of the tree.</param>
+    <returns>A new node that is a copy of this instance.</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+Defines the structure for composite nodes. Implementing classes should be capable of notifying UI.
+<br/>
+E.g.
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // Notifying UI
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">The type of instance.</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>Gets the collection of nodes that are children of the current node.</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>Occurs when the number of children that exist in current node's child collection changes.</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+Represents the base class for all the layers, such as layer group, bitmap layer, and fill layer.
+<br/>
+Inherits from the <see cref="T:FanKit.Layers.Core.ITreeNode"/> and <see cref="T:FanKit.Layers.Core.IChildNode"/> interfaces.
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>Gets or sets a value that indicates if this layer is a layer group.</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>Gets or sets a value that indicates if this layer is locked.</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>Gets or sets a value that indicates if this layer is invisible.</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>Loads the content of the layer from a XML element.</summary>
+    <param name="content">The XML element that contains the content of the layer.</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>Occurs when changes occur that affect thumbnail.</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>Saves the content of the layer to a XML element.</summary>
+    <param name="structure">The type of structure of XML object.</param>
+    <param name="children">The children layers.</param>
+    <returns>The XML element for saving the the content of the layer.</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>Gets or sets the selected status of this layer.</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>Represents a range that has start and end indexes.</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>Gets the inclusive end index of the range.</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>Gets a value that indicates whether the end index less than the srart index.</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>Gets a value that indicates whether the end index greater than the srart index.</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>Gets a value indicating whether this end index is equal to the srart index.</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>Gets an negative range (start index 0, end index -1).</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>Gets an negative range (start index 0, end index 1).</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>Gets the inclusive start index of the range.</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>Gets an zero range (start index 0, end index 0).</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>Represents the selection state for the layer collection.</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>Gets an empty selection state.</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Ranges.IndexSelection"/> object.</summary>
+    <param name="items">The layer collection.</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>Gets a value indicating whether or not the current selection state is empty.</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>Gets the number of items to remove.</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>Gets the number of selected items.</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>Provides information for the insertion operation.</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>The depth of the new node from the root node of the tree.</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>Get a value that indicates whether there are any selected items in the layer collection.</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>The index of the first selected item in the logical tree.</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Options.Inserter"/> object.</summary>
+    <param name="items">The layer collection.</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>Specifies where the new node should be inserted relative to the selected items.</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>Defines constants that specify where the new node should be inserted relative to the selected items.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>Inserts a node above the specified sibling node in the logical tree.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>Inserts a new node at the top of the logical tree.</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary>Represents a change that contains the value of the <see cref="int"/> Format Type.</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+Defines constants that indicates which the contents need to be redrawn.
+<br/>
+This enumeration supports a bitwise combination of its member values.
+E.g.
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // Clear the UI layers
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // Sync to the UI layers
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>Redrawn all thumbnails of layers.</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>Redrawn the content of canvas control.</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after clearing.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after grouping or packaging.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary>The undo operation of <see cref="F:FanKit.Layers.InvalidateModes.Clear"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after expanding or unexpanding a node.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>The content that affect whether or not the undo or redo command should execute has changed.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>One or more undo operation are added to or removed from the history.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>The history has been cleared.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>The history currently selected item changes.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>The content that affect whether or not the layer command should execute has changed.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>The layer collection has changed.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>The layer collection has been cleared.</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after locking or unlocking a layer.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary>The undo operation of <see cref="F:FanKit.Layers.InvalidateModes.Lock"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>None.</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>Anything has changed (used to output the result of the change during debugging).</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after resetting.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after selecting or deselecting a layer.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>The selected items has changed.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>The selected items has been cleared.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary>The undo operation of <see cref="F:FanKit.Layers.InvalidateModes.Select"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after sorting.
+<br/>
+<br/>
+E.g.
+removal, insertion, pasting, dropping, reordering, releasing, grouping, ungrouping, or duplication.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary>The undo operation of <see cref="F:FanKit.Layers.InvalidateModes.Sort"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+Occurs when a modification on the content is complete.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+Occurs when the value of content has changed.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+Occurs when the input device changes value during a modification.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary>The undo operation of <see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+Occurs when an input device begins a modification on the content.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+A bitwise combination that indicates which content needs to be redrawn after a layer is visible or invisible.
+<br/>
+<br/>
+Contains the following member values:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary>The undo operation of <see cref="F:FanKit.Layers.InvalidateModes.Visible"/>.</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+Defines a node with depth.
+<br/>
+E.g.
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>Gets or sets a value that indicates how far the current node is from the root node of the tree.</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>Gets the identifier for the current node.</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>Gets or sets a value that indicates whether the cuurent tree view node is expanded.</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>Gets an object that provides calculated values for behaviors such as garbage collection, dropping, reordering, and synchronizing.</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>Supports undo and redo actions, by creating layer-related changes.</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>Gets the layer-related changes.</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>Gets the identifier for the this <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>Gets or sets the time period for the this <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>Encapsulates the visual tree and the instance pool, and provides methods to removal, insertion, pasting, dropping, reordering, releasing, grouping, ungrouping, and duplication.</summary>
+    <typeparam name="T">The type of instance.</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>Clears and assigns the child nodes of each node in the logical tree, and then call the <see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/> method.</summary>
+    <param name="updateSelectMode">Whether sets the selected status of child node to <see cref="F:FanKit.Layers.SelectMode.Parent"/>.</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>Gets a value that determines whether the layer collection supports arrange.</summary>
+    <param name="type">Indicates how to change the layer order (also known as the z-order) of objects so that objects can appear on top of other objects.</param>
+    <returns>Whether the layer collection supports arrange.</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>Gets a value that determines whether the layer collection supports arrange.</summary>
+    <param name="type">Indicates how to change the layer order (also known as the z-order) of objects so that objects can appear on top of other objects.</param>
+    <param name="selection">The selection state for the layer collection.</param>
+    <returns>Whether the layer collection supports arrange.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>The new layer to insert.</summary>
+    <param name="indexer">The index of the drop target in the logical tree.</param>
+    <returns>The new layer to group.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>Gets a value that determines whether the layer collection supports reorder.</summary>
+    <param name="indexer">The index of the drop target in the logical tree.</param>
+    <param name="selection">The selection state for the layer collection.</param>
+    <returns>Whether the layer collection supports reorder.</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>Clears all layers in the layer collection.</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>Flags the child nodes of all nodes in the logical tree and remove them from the visual tree.</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>Flags the child nodes of all nodes in the logical tree and add them to the visual tree.</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>Groups multiple layers that are selected in the layer collection.</summary>
+    <param name="grouper">Provides information for the grouping operation.</param>
+    <param name="newItem">The new layer to group.</param>
+    <param name="depths">The depth changes of the multiple target layers.</param>
+    <param name="selects">The selected status changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>Groups the layer that is selected in the layer collection.</summary>
+    <param name="grouper">Provides information for the grouping operation.</param>
+    <param name="newItem">The new layer to group.</param>
+    <param name="depth">The depth changes of the target layers.</param>
+    <param name="select">The selected status changes of the target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>Inserts a new layer into the layer collection.</summary>
+    <param name="dropper">Provides information for the insertion operation.</param>
+    <param name="newItem">The new layer to insert.</param>
+    <param name="selects">The selected status changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>Inserts a new layer into the layer collection.</summary>
+    <param name="inserter">Provides information for the insertion operation.</param>
+    <param name="newItem">The new layer to insert.</param>
+    <param name="selects">The selected status changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>Inserts a new layer at the top of the layer collection.</summary>
+    <param name="newItem">The new layer to insert.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>Inserts a new layer at the top of the layer collection.</summary>
+    <param name="newItem">The new layer to insert.</param>
+    <param name="selects">The selected status changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary>Constructs a <see cref="T:FanKit.Layers.LayerCollection`1"/> object.</summary>
+    <param name="logicalTree">The logical tree.</param>
+    <param name="visualTree">The visual tree.</param>
+    <param name="pool">The instance pool that includes all instances.</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>Moves multiple layers that are selected in the layer collection above their sibling.</summary>
+    <param name="reorder">Provides information for the reordering operation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>Packages all layers in the layer collection.</summary>
+    <param name="newItem">The new layer to package.</param>
+    <param name="depths">The depth changes of the multiple target layers.</param>
+    <param name="selects">The selected status changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>Releases multiple layers that are selected in the layer collection.</summary>
+    <param name="releaser">Provides information for the releasing operation.</param>
+    <param name="depths">The depth changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>Releases the layer that is selected in the layer collection.</summary>
+    <param name="releaser">Provides information for the releasing operation.</param>
+    <param name="depths">The depth changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>Removes target layers in the layer collection.</summary>
+    <param name="remover">Provides information for the removal operation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>Removes target layers in the layer collection.</summary>
+    <param name="selection">The selection state for the layer collection.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>Reorders multiple layers that are selected in the layer collection.</summary>
+    <param name="reorder">Provides information for the reordering operation.</param>
+    <param name="depths">The depth changes of the multiple target layers.</param>
+    <param name="selectedRanges">The collection of ranges of layers that are selected in the layer collection.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>Reorders the layer that is selected in the layer collection.</summary>
+    <param name="reorder">Provides information for the reordering operation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>Reorders the range of layers that is selected in the layer collection.</summary>
+    <param name="reorder">Provides information for the reordering operation.</param>
+    <param name="depths">The depth changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>Clears the visual tree, the logical tree, the instance pool, and then raise the <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> event.</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary>The <see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/> using custom datas.</summary>
+    <typeparam name="D">The type of data.</typeparam>
+    <param name="listOfData">The collection whose elements are copied to the logical tree.</param>
+    <param name="creator">Represents the method that will creates and initializes a new layer from a specified data.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>The <see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/> using custom datas.</summary>
+    <typeparam name="D">Represents the method that will creates and initializes a new layer from a specified data.</typeparam>
+    <param name="treeOfData">The tree whose elements are copied to the logical tree.</param>
+    <param name="creator">Represents the method that will creates and initializes a new layer from a specified data.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+Clears and initialize the logical tree, the visual tree and the instance pool, and then raise the <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> event.
+<br />
+<br /> The collection whose elements are copied to the logical tree like as:
+<br /> │
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Group: Depth=0
+<br /> ├─Group: Depth=1
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Group: Depth=0
+<br /> ├─Bitmap: Depth=1
+<br /> ├─Group: Depth=0
+<br /> └─Bitmap: Depth=1
+</summary>
+    <param name="list">The collection whose elements are copied to the logical tree.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+Clears and initialize the logical tree, the visual tree and the instance pool, and then raise the <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> event.
+<br />
+<br /> The tree whose elements are copied to the logical tree like as:
+<br /> │
+<br /> ├─Bitmap: Depth
+<br /> ├─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  ├─Group: Depth
+<br /> │  │  ├─Bitmap: Depth
+<br /> │  │  ├─Bitmap: Depth
+<br /> │  │  └─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  └─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  └─Bitmap: Depth
+</summary>
+    <param name="tree">The tree whose elements are copied to the logical tree.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+Clears and initialize the logical tree, the visual tree and the instance pool, and then raise the <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> event.
+<br />
+<br /> The collection whose elements are copied to the logical tree like as:
+<br /> │
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Group: Depth=0
+<br /> ├─Group: Depth=1
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Group: Depth=0
+<br /> ├─Bitmap: Depth=1
+<br /> ├─Group: Depth=0
+<br /> └─Bitmap: Depth=1
+</summary>
+    <param name="listOfXml">The collection whose elements are copied to the logical tree.</param>
+    <param name="creator">Represents the method that will creates a new empty layer (before loading the content of the layer from a XML element)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+Clears and initialize the logical tree, the visual tree and the instance pool, and then raise the <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> event.
+<br />
+<br /> The tree whose elements are copied to the logical tree like as:
+<br /> │
+<br /> ├─Bitmap: Depth
+<br /> ├─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  ├─Group: Depth
+<br /> │  │  ├─Bitmap: Depth
+<br /> │  │  ├─Bitmap: Depth
+<br /> │  │  └─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  └─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  └─Bitmap: Depth
+</summary>
+    <param name="treeOfXml">The tree whose elements are copied to the logical tree.</param>
+    <param name="creator">Represents the method that will creates a new empty layer (before loading the content of the layer from a XML element)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+Clears and initialize the logical tree, the visual tree and the instance pool, and then raise the <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> event.
+<br />
+<br /> The tree whose elements are copied to the logical tree like as:
+<br /> │
+<br /> ├─All Nodes
+<br /> │  ├─Node: Id=0
+<br /> │  ├─Node: Id=1
+<br /> │  ├─Node: Id=2
+<br /> │  │  ├─Node: Id=3
+<br /> │  │  │  ├─Node: Id=4
+<br /> │  │  │  ├─Node: Id=5
+<br /> │  │  │  └─Node: Id=6
+<br /> │  ├─Node: Id=7
+<br /> │  │  └─Node: Id=8
+<br /> │  ├─Node: Id=9
+<br /> │  │  └─Node: Id=10
+<br /> │  │
+<br /> ├─All Layers
+<br /> │  ├─Bitmap: Id=0
+<br /> │  ├─Bitmap: Id=1
+<br /> │  ├─Group: Id=2
+<br /> │  ├─Group: Id=3
+<br /> │  ├─Bitmap: Id=4
+<br /> │  ├─Bitmap: Id=5
+<br /> │  ├─Bitmap: Id=6
+<br /> │  ├─Group: Id=7
+<br /> │  ├─Bitmap: Id=8
+<br /> │  ├─Group: Id=9
+<br /> │  └─Bitmap: Id=10
+</summary>
+    <param name="items">The collection of instance with identifier.</param>
+    <param name="nodes">The tree composed of nodes.</param>
+    <param name="creator">Represents the method that will creates a new empty layer (before loading the content of the layer from a XML element)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>Occurs when resetting the layer collection.</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>Saves the content of the specified layer and its descendants to an XML element.</summary>
+    <param name="treeNode">The XML tree node that projects the specified layer into an XML element.</param>
+    <returns>The XML element for saving the the content of the specified layer and its descendants.</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>Saves the content of multiple layers and their descendants to an collection of XML element.</summary>
+    <param name="treeNode">The collection of XML tree node that projects multiple layers into an collection of XML element.</param>
+    <returns>The collection of XML element for saving the content of multiple layers and their descendants.</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>Sorts the all nodes in the logical tree using the identifier collection that deep-flattens the logical tree.</summary>
+    <param name="ids">The identifier collection that deep-flattens the logical tree.</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>Synchronize all uncollapsed nodes from the logical tree into the visual tree.</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>Synchronize the order that deep-flattens the visual tree to UI layers, similar to HTML DOM differential algorithms.</summary>
+    <param name="items">The UI layers as data source (such as <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) in list view.</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>Ungroups multiple layers that are selected in the layer collection.</summary>
+    <param name="ungrouper">Provides information for the ungrouping operation.</param>
+    <param name="depths">The depth changes of the multiple target layers.</param>
+    <param name="selects">The selected status changes of the multiple target layers.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>Ungroups the layer that is selected in the layer collection.</summary>
+    <param name="ungrouper">Provides information for the ungrouping operation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>Represents a collection that deep-flattens the logical tree, and provides methods to individually accesse the layer in the logical tree by index (The logical tree is composed of layers inherited from nodes).</summary>
+    <typeparam name="T">The type of instance.</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>Gets a value that determines whether the layers that are selected in the layer collection supports release.</summary>
+    <param name="selection">The selection state for the layer collection.</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>Deselects specified layer and its descendants in the layer collection.</summary>
+    <param name="item">The specified layer.</param>
+    <returns>The selected status changes of the specified layer and its descendants.</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>Deselects specified layer and its descendants in the layer collection.</summary>
+    <param name="indexer">The index of specified layer.</param>
+    <returns>The selected status changes of the specified layer and its descendants.</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>Deselects all the layers in the layer collection.</summary>
+    <returns>The selected status changes of the multiple target layers.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>Returns the depth changes needed to group multiple layers that are selected in the layer collection.</summary>
+    <param name="grouper">Provides information for the grouping operation.</param>
+    <returns>The depth changes needed to group multiple layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>Returns the depth changes needed to package all layers in the layer collection.</summary>
+    <returns>The depth changes needed to package all the layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>Returns the depth changes needed to ungroup multiple layers that are selected in the layer collection.</summary>
+    <returns>The depth changes needed to ungroup multiple layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>Returns the depth changes needed to reorder multiple layers that are selected in the layer collection.</summary>
+    <param name="reorder">Provides information for the reordering operation.</param>
+    <returns>The depth changes needed to reorder multiple layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>Returns the depth changes needed to reorder multiple layers that are selected in the layer collection.</summary>
+    <param name="reorder">Provides information for the reordering operation.</param>
+    <param name="selectedRanges">The collection of ranges of layers that are selected in the layer collection.</param>
+    <returns>The depth changes needed to reorder multiple layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>Returns the depth changes needed to ungroup multiple layers that are selected in the layer collection.</summary>
+    <param name="ungrouper">Provides information for the ungrouping operation.</param>
+    <returns>The depth changes needed to ungroup multiple layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>Retrieves the unique identifiers of all nodes belonging to the collection that deep-flattens the logical tree.</summary>
+    <returns>The unique identifiers of all nodes belonging to the logical tree.</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>Projects each node of a logical tree into a XML tree.</summary>
+    <returns>The projected XML tree.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>Returns the collection of ranges of layers that are selected in the layer collection.</summary>
+    <returns>A collection of ranges of layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>Returns the selected status changes needed to group multiple layers that are selected in the layer collection.</summary>
+    <param name="grouper">Provides information for the grouping operation.</param>
+    <returns>The selected status changes needed to group multiple layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>Returns the selected status changes needed to package all layers in the layer collection.</summary>
+    <returns>The selected status changes needed to package all the layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>Returns the selected status changes needed to ungroup multiple layers that are selected in the layer collection.</summary>
+    <param name="ungrouper">Provides information for the ungrouping operation.</param>
+    <returns>The selected status changes needed to ungroup multiple layers that are selected in the layer collection.</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>Hides all the layers in the layer collection.</summary>
+    <returns>The visibility changes of the multiple target layers.</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>Searches for the specified layer and returns the index of the first occurrence of layer.</summary>
+    <param name="item">The layer to locate.</param>
+    <returns>The index of the first occurrence of layer.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>Returns the range between the index of specified layer and the index of specified layer descendants.</summary>
+    <param name="item">The layer to locate.</param>
+    <returns>The range between the index of specified layer and the index of specified layer descendants.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>Returns the range between the indexes of two layers.</summary>
+    <param name="newItem">The new layer to locate.</param>
+    <param name="oldIndexer">The index of old layer to locate.</param>
+    <returns>The range between the indexes of two layers.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>Returns the range between the indexes of two layers.</summary>
+    <param name="newIndexer">The index of new layer to locate.</param>
+    <param name="oldIndexer">The index of old layer to locate.</param>
+    <returns>The range between the indexes of two layers.</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary>Constructs a <see cref="T:FanKit.Layers.LayerList`1"/> object.</summary>
+    <param name="logicalTree">The logical tree.</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+Clears and initialize the logical tree.
+<br />
+<br /> The collection whose elements are copied to the logical tree like as:
+<br /> │
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Group: Depth=0
+<br /> ├─Group: Depth=1
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Group: Depth=0
+<br /> ├─Bitmap: Depth=1
+<br /> ├─Group: Depth=0
+<br /> └─Bitmap: Depth=1
+</summary>
+    <param name="list">The collection whose elements are copied to the logical tree.</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+Clears and initialize the logical tree.
+<br />
+<br /> The tree whose elements are copied to the logical tree like as:
+<br /> │
+<br /> ├─Bitmap: Depth
+<br /> ├─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  ├─Group: Depth
+<br /> │  │  ├─Bitmap: Depth
+<br /> │  │  ├─Bitmap: Depth
+<br /> │  │  └─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  └─Bitmap: Depth
+<br /> ├─Group: Depth
+<br /> │  └─Bitmap: Depth
+</summary>
+    <param name="tree">The tree whose elements are copied to the logical tree.</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>Selects specified layer and its descendants in the layer collection.</summary>
+    <param name="item">The specified layer.</param>
+    <returns>The selected status changes of the specified layer and its descendants.</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>Selects specified layer and its descendants in the layer collection.</summary>
+    <param name="indexer">The index of specified layer.</param>
+    <returns>The selected status changes of the specified layer and its descendants.</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>Selects all the layers in the layer collection.</summary>
+    <returns>The selected status changes of the multiple target layers.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>Only select specified layer and its descendants in the layer collection and then deselect the others.</summary>
+    <param name="item">The specified layer.</param>
+    <returns>The selected status changes of the multiple target layers.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>Only select specified layer and its descendants in the layer collection and then deselect the others.</summary>
+    <param name="indexer">The index of specified layer.</param>
+    <returns>The selected status changes of the multiple target layers.</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>Only select specified range of layers and their descendants in the layer collection and then deselect the others.</summary>
+    <param name="range">The specified range.</param>
+    <returns>The selected status changes of the multiple target layers.</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>Displays all the layers in the layer collection.</summary>
+    <returns>The visibility changes of the multiple target layers.</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>Encapsulate some tools, such as the logical tree.</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary>Constructs a <see cref="T:FanKit.Layers.LayerManager1`1"/> object.</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>Encapsulate some tools, such as the logical tree.</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>Encapsulate some tools, the such as the logical tree, the visual tree, the instance pool, the drag and drop UI and the UI Layers.</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>Encapsulate some tools, such as the visual tree and the instance pool.</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>The drag and drop UI.</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary>Constructs a <see cref="T:FanKit.Layers.LayerManager2`1"/> object.</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>Encapsulate some tools, such as the logical tree.</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>The UI layers as data source in list view.</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>Encapsulate some tools, the such as the logical tree, the visual tree, the instance pool, the drag and drop UI and the UI Layers.</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>The clipboard.</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>Encapsulate some tools, such as the visual tree and the instance pool.</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>The drag and drop UI.</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary>Constructs a <see cref="T:FanKit.Layers.LayerManager3`1"/> object.</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>Encapsulate some tools, such as the logical tree.</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>The UI layers as data source in list view.</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>Encapsulate some tools, the such as the logical tree, the visual tree, the instance pool, the drag and drop UI, the clipboard, the undo stack, the UI History and the UI Layers.</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>The clipboard.</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>Encapsulate some tools, such as the visual tree and the instance pool.</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>The drag and drop UI.</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>The undo stack.</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary>Constructs a <see cref="T:FanKit.Layers.LayerManager4`2"/> object.</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>Encapsulate some tools, such as the logical tree.</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>The UI history as data source in list view.</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>The UI layers as data source in list view.</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>Defines constants that indicates which method to call to navigate</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>No method.</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>Call <see cref="M:FanKit.Layers.UndoStack`2.Redo"/> or <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/> to redo.</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>Call <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> or <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> to redo.</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>Call <see cref="M:FanKit.Layers.UndoStack`2.Undo"/> or <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/> to undo.</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>Call <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> or <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> to undo.</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>Represents a list that contains a index of the element to navigate to. Provide methods to forward and backward navigation.</summary>
+    <typeparam name="T">The type of elements in the list.</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>Gets a collection representing the backward navigation history.</summary>
+    <returns>The backward navigation stack.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>Gets a value that indicates whether there is at least one item in back navigation history.</summary>
+    <returns>**true** if there is at least one item in back navigation history; **false** if there are no items in back navigation history.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>Gets a value that indicates whether there is at least one item in forward navigation history.</summary>
+    <returns>**true** if there is at least one item in forward navigation history; **false** if there are no items in forward navigation history.</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>Empties the element to navigate to then removes all elements from the <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>The zero-based index of the element to navigate to. The default is -1.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>Gets the element to navigate to.</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>Gets a collection representing the forward navigation history.</summary>
+    <returns>The forward navigation stack.</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>Creates a shallow copy of a range of elements in the source <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></summary>
+    <param name="range">The specified range.</param>
+    <returns>A shallow copy of a range of elements in the source <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>Navigates to the most recent item in back navigation history.</summary>
+    <returns>The most recent item in back navigation history.</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>Navigates to the most recent item in forward navigation history.</summary>
+    <returns>The most recent item in forward navigation history.</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>Navigates to the element that should be navigated to.</summary>
+    <param name="index">The index of the element that should be navigated to.</param>
+    <returns>The range between of the index of element previously navigated and the index of the element to navigate to.</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>Provides calculated values for behaviors such as garbage collection, dropping, reordering, and synchronizing.</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary>Represents a list that uses <see cref="T:FanKit.Layers.IndexRange"/>. Provides methods to remove and move.</summary>
+    <typeparam name="T">The type of elements in the list.</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>Gets the elements at the specified range.</summary>
+    <param name="range">The range of the elements to get.</param>
+    <returns>The elements at the specified range.</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>Moves a range of elements to a new location in the list.</summary>
+    <param name="range">The range of elements to move.</param>
+    <param name="index">The zero-based index specifying the new location of the range of elements.</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>Moves some of ranges of elements from the list in front of the target element.</summary>
+    <param name="ranges">The ranges of elements to move.</param>
+    <param name="target">The target element.</param>
+    <param name="offset">The offset of new location in the list.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>Moves some of ranges of elements from the list to first.</summary>
+    <param name="ranges">The ranges of elements to move.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>Moves some of ranges of elements from the list to last.</summary>
+    <param name="ranges">The ranges of elements to move.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>Moves a range of elements from the list to first.</summary>
+    <param name="range">The range of elements to move.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>Moves a range of elements from the list to last.</summary>
+    <param name="range">The range of elements to move.</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>Removes a range of elements from the list.</summary>
+    <param name="range">The range of elements to remove.</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>Removes some of ranges of elements from the list.</summary>
+    <param name="ranges">The ranges of elements to remove.</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>Provides information for the releasing operation.</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>Gets the number of layers to release.</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>The change of depth of layer to release if the number be equal to 1; otherwise, default value.</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Options.Releaser"/> object.</summary>
+    <param name="items">The layer collection.</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>Defines constants that indicates the number of items to remove.</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>The number of items to remove be equal to 0.</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>The number of items to remove be less than the number of all items.</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>The number of items to remove be equal to the number of all items.</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>Provides information for the removal operation.</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>Gets the number of layers to remove.</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Options.Remover"/> object.</summary>
+    <param name="items">The layer collection.</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>Provides information for the reordering operation.</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>Gets the number of layers to reordering.</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>The change of depth of layer to reorder if the number be equal to 1; otherwise, default value.</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>Get a value that indicates whether the drop target is sibling node of drag source.</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Reorder"/> object.</summary>
+    <param name="items">The layer collection.</param>
+    <param name="type">Indicates how to change the layer order (also known as the z-order) of objects so that objects can appear on top of other objects.</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Reorder"/> object.</summary>
+    <param name="items">The layer collection.</param>
+    <param name="type">Indicates how to change the layer order (also known as the z-order) of objects so that objects can appear on top of other objects.</param>
+    <param name="selection">The selection state for the layer collection.</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Reorder"/> object.</summary>
+    <param name="items">The layer collection.</param>
+    <param name="indexer">The index of the drop target in the logical tree.</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Reorder"/> object.</summary>
+    <param name="items">The layer collection.</param>
+    <param name="indexer">The index of the drop target in the logical tree.</param>
+    <param name="selection">The selection state for the layer collection.</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>Defines constants that indicates the number of items to reorder.</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>The number of ranges be greater than 1 (the ranges describes the items to reorder).</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>The number of items to reorder be equal to 0. </summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>The number of items to reorder be equal to 1.</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>The number of ranges be equal to 1 (this range includes a node and its descendants).</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary>Represents a change that contains the value of the <see cref="T:FanKit.Layers.SelectMode"/> Format Type.</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>Represents a layer-related change that includes an array of selected status changes.</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>Get or set an array of selected status change.</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>The index of the specified layer in the logical tree.</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>Defines constants that indicates the number of selected items.</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>The number of selected items be greater than 1.</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>The number of selected items be equal to 0. </summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>The number of selected items be equal to 1.</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary>Specifies the selected status of an <see cref="T:FanKit.Layers.ILayerBase"/> instance.</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary>The <see cref="T:FanKit.Layers.ILayerBase"/> instance is unselected.</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>The parent of the <see cref="T:FanKit.Layers.ILayerBase"/> instance in logical tree is selected.</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary>The <see cref="T:FanKit.Layers.ILayerBase"/> instance is selected.</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>Contains the selected status extension methods.</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>Converts the specified selected status to the Boolean value。</summary>
+    <param name="mode">The mode to convert.</param>
+    <returns>True if the value is <see cref="F:FanKit.Layers.SelectMode.Selected"/>; otherwise, false.</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>Converts the specified Boolean value to the selected status。</summary>
+    <param name="value">The Boolean value to convert.</param>
+    <returns>
+<see cref="F:FanKit.Layers.SelectMode.Selected"/> if the value is **True**;
+<br/>
+otherwise, <see cref="F:FanKit.Layers.SelectMode.Deselected"/>.
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>Converts the specified selected status to the opacity value of accent color theme brush.</summary>
+    <param name="mode">The mode to convert.</param>
+    <returns>
+0.0d if the mode is <see cref="F:FanKit.Layers.SelectMode.Deselected"/>; 
+<br/>
+0.5d if the mode is <see cref="F:FanKit.Layers.SelectMode.Parent"/>; 
+<br/>
+otherwise, 1.0d.
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary>Represents a change that contains the value of the <see cref="float"/> Format Type.</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>Represents a layer-related change that includes an array of all layers‘s identifiers (when the layer collection change order).</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>Get or set an array of all layers‘s identifiers (after the layer collection change order).</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>Get or set an array of all layers‘s identifiers (before the layer collection change order).</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>Checks whether a specific <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists in the source collection or destination collection.</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists both in the source collection and destination collection.</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists in the destination collection.</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists in the source collection.</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>Defines constants that specify the time period for a undo operation.</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>The current undo operation (The index of the specified undo operation within the history is equal than the currently selected item).</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>A future undo operation (The index of the specified undo operation within the history is greater than the currently selected item).</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>A past undo operation (The index of the specified undo operation within the history is less than the currently selected item).</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+Represents a queue that provides support for undo and redo actions, and supports the concept of the garbage collection.
+<br/>
+<br/>
+The garbage collection:
+<br/>
+(1)
+When the number of operations on a stack exceedes the stack's limit, operations are deleted from the bottom of the stack. 
+<br/>
+(2)
+Flags a layer as 'useless layer' if it is not in the logical tree and there are no changes references its GUID.
+<br/>
+(3)
+Removes all useless layer form instance pool for garbage collection.
+</summary>
+    <typeparam name="T">The type of instance.</typeparam>
+    <typeparam name="U">The type of operation (an operation contains a undo action and a redo action).</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>Apply the redo action to change the depth of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>Apply the redo action to change the depth of multiple target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>Apply the redo action to change the selected status of two target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>Apply the redo action to change the locked state of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>Apply the redo action to change the selected status of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>Apply the redo action to change the selected status of multiple target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>Apply the redo action to change the order of layer collections.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> or <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>Apply the redo action to change the visibility of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>Apply the redo action to change the visibility of multiple target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>Apply the undo action to change the depth of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>Apply the undo action to change the depth of multiple target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>Apply the undo action to change the selected status of two target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>Apply the undo action to change the locked state of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>Apply the undo action to change the selected status of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>Apply the undo action to change the selected status of multiple target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>Apply the undo action to change the order of layer collection.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> or <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>Apply the undo action to change the visibility of a target layer.</summary>
+    <param name="change">The change to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>Apply the undo action to change the visibility of multiple target layers.</summary>
+    <param name="changes">The changes to be applied.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>Gets a value that indicates whether the queue contains an operation to navigate to.</summary>
+    <param name="index">The index of the operation to navigate to.</param>
+    <returns>
+<see cref="NavigateAction.Undo"/> or <see cref="NavigateAction.UndoRange"/> if the specified index be less than the index of the current operation;
+<br/>
+<see cref="NavigateAction.Redo"/> or <see cref="NavigateAction.RedoRange"/> if the specified index be greater than the index of the current operation;
+<br/>
+otherwise, <see cref="NavigateAction.None"/>.
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>Gets a value that indicates whether the redo buffer contains an action that can be redone.</summary>
+    <returns>Gets a value that indicates whether the redo buffer contains an action that can be redone.</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>Gets a value that indicates whether the undo buffer contains an action that can be undone.</summary>
+    <returns>True if the undo buffer contains an action that can be undone; otherwise, false.</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>Empties the queue and then destroy all layer-related changes of operations.</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+Removes all useless layer form instance pool for garbage collection.
+</summary>
+    <returns>The number of the useless layer.</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>Creates a shallow copy of a range of elements in the source <see cref="T:FanKit.Layers.UndoStack`2"/></summary>
+    <param name="range">The specified range.</param>
+    <returns>A shallow copy of a range of elements in the source <see cref="T:FanKit.Layers.UndoStack`2"/></returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>Navigates to the specified operation.</summary>
+    <param name="index">The index of the operation to navigate to.</param>
+    <returns>The range between of the index of operation previously navigated and the index of the operation to navigate to.</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+Push new operation are on the undo stack.
+When the number of operations on a stack exceedes the stack's limit, operations are deleted from the bottom of the stack. 
+</summary>
+    <param name="item">The new operation.</param>
+    <param name="isGC">Ture if remove useless layer when operations are deleted; otherwise, false.</param>
+    <returns>The number of the useless layer.</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>Gets the next operation and make the next operation the current operation.</summary>
+    <returns>The next operation (an operation contains a redo action).</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>Gets all undo actions from the undo buffer.</summary>
+    <returns>The operations from the current to the first (an operation contains a undo action).</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>Gets the index of the selected operation. The default is -1, which indicates that no operation is selected.</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>Gets the selected operation.</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+Synchronize the period to all operations to update UI states and behaviors.
+<br/>
+<br/>
+E.g.
+<br/>
+The index of the past operation be less than current index;
+<br/>
+The index of the current operation be equal to current index;
+<br/>
+The index of the future operation be greater than current index.
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+Synchronize the period to all operations to update UI states and behaviors.
+<br/>
+<br/>
+E.g.
+<br/>
+The index of the past operation be less than specified index;
+<br/>
+The index of the current operation be equal to specified index;
+<br/>
+The index of the future operation be greater than specified index.
+</summary>
+    <param name="index">The zero-based index of the specified operation.</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>Synchronize the order to UI history, similar to HTML DOM differential algorithms.</summary>
+    <param name="items">The UI history as data source (such as <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) in list view.</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>Gets the current operation and make the previous operation the current operation.</summary>
+    <returns>The current operation (an operation contains a undo action).</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>Gets all undo actions from the undo buffer.</summary>
+    <returns>The operations from the current to the first (an operation contains a undo action).</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>Gets or sets the maximum number of operations that can be stored in the queue.</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary>Constructs a <see cref="T:FanKit.Layers.UndoStack`2"/> object.</summary>
+    <param name="pool">The instance pool that includes all instances.</param>
+    <param name="collection">The layer collection.</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>Provides information for the ungrouping operation.</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>Gets the number of ungrouped layers.</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary>Constructs a <see cref="T:FanKit.Layers.Options.Ungrouper"/> object.</summary>
+    <param name="items">The layer collection.</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>Represents a layer-related change that includes an array of visibility changes.</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>Get or set an array of visibility changes.</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>Extensions for creating XML object.</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>Save the depth, identifier or children of the node as a XML object.</summary>
+    <param name="node">The specified node.</param>
+    <param name="type">The type of structure of XML object.</param>
+    <param name="children">The children nodes.</param>
+    <returns>
+XML Attribute for <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/> if the type is <see cref="F:FanKit.Layers.XmlStructure.List"/>;
+<br/>
+XML Attribute for <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/> if the type is <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/>;
+<br/>
+otherwise, children nodes.
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary>Specifies the type of structure of XML object for saving a <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+Save to a list with depth.
+<br />
+<br /> E.g.
+<br /> │
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Bitmap: Depth=0
+<br /> ├─Group: Depth=0
+<br /> ├─Group: Depth=1
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Bitmap: Depth=2
+<br /> ├─Group: Depth=0
+<br /> ├─Bitmap: Depth=1
+<br /> ├─Group: Depth=0
+<br /> └─Bitmap: Depth=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+Save to a tree.
+<br />
+<br /> E.g.
+<br /> │
+<br /> ├─Bitmap
+<br /> ├─Bitmap
+<br /> ├─Group
+<br /> │  ├─Group
+<br /> │  │  ├─Bitmap
+<br /> │  │  ├─Bitmap
+<br /> │  │  └─Bitmap
+<br /> ├─Group
+<br /> │  └─Bitmap
+<br /> ├─Group
+<br /> │  └─Bitmap
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+Save to a tree composed of nodes and an collection of instance with identifier.
+<br />
+<br /> E.g.
+<br /> │
+<br /> ├─All Nodes
+<br /> │  ├─Node: Id=0
+<br /> │  ├─Node: Id=1
+<br /> │  ├─Node: Id=2
+<br /> │  │  ├─Node: Id=3
+<br /> │  │  │  ├─Node: Id=4
+<br /> │  │  │  ├─Node: Id=5
+<br /> │  │  │  └─Node: Id=6
+<br /> │  ├─Node: Id=7
+<br /> │  │  └─Node: Id=8
+<br /> │  ├─Node: Id=9
+<br /> │  │  └─Node: Id=10
+<br /> │  │
+<br /> ├─All Layers
+<br /> │  ├─Bitmap: Id=0
+<br /> │  ├─Bitmap: Id=1
+<br /> │  ├─Group: Id=2
+<br /> │  ├─Group: Id=3
+<br /> │  ├─Bitmap: Id=4
+<br /> │  ├─Bitmap: Id=5
+<br /> │  ├─Bitmap: Id=6
+<br /> │  ├─Group: Id=7
+<br /> │  ├─Bitmap: Id=8
+<br /> │  ├─Group: Id=9
+<br /> │  └─Bitmap: Id=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>Defines an XML tree node that projects any node from the logical tree into an XML element.</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>Appends the string to the current <see cref="T:System.Text.StringBuilder"/> object.</summary>
+    <param name="stringBuilder">The current <see cref="T:System.Text.StringBuilder"/> object.</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>Save the identifier and children of the node as a XML element.</summary>
+    <param name="elementChildName">The name of the child of the XML element.</param>
+    <returns>
+XML element with identifier and children if the node has children;
+<br/>
+otherwise, XML element with only identifier.
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary>Constructs a <see cref="T:FanKit.Layers.XmlTreeNode"/> object.</summary>
+    <param name="id">The identifier for the node.</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary>Constructs a <see cref="T:FanKit.Layers.XmlTreeNode"/> object.</summary>
+    <param name="element">The XML element with identifier and children.</param>
+  </doc>
+</docs>
