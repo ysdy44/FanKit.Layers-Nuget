@@ -224,30 +224,56 @@ namespace FanKit.Layers
                             switch (relate.Relate(item))
                             {
                                 case Relp.None:
-                                    relate = Relation.Empty;
-
                                     if (ran.IsNegative)
                                     {
+                                        relate = Relation.Empty;
+                                        ran = IndexRange.NegativeUnit;
                                         i++;
                                         break;
                                     }
-
-                                    for (int j = 0; j < ran.Length; j++)
+                                    else
                                     {
-                                        T jtem = this.LogicalTree[j + ran.StartIndex];
-                                        T clone = jtem.Clone();
+                                        for (int j = 0; j < ran.Length; j++)
+                                        {
+                                            T jtem = this.LogicalTree[j + ran.StartIndex];
+                                            T clone = jtem.Clone();
 
-                                        this.Pool.Add(clone.Id, clone);
-                                        this.LogicalTree.Insert(j + ran.EndIndex + 1, clone);
+                                            this.Pool.Add(clone.Id, clone);
+                                            this.LogicalTree.Insert(j + ran.EndIndex + 1, clone);
+                                        }
+                                        i += ran.Length;
+
+                                        relate = Relation.Empty;
+                                        ran = IndexRange.NegativeUnit;
+                                        i++;
+                                        break;
                                     }
-                                    ran = IndexRange.NegativeUnit;
-                                    i += ran.Length;
-                                    break;
                                 case Relp.Parent:
-                                    relate = new Relation(item);
-                                    ran = new IndexRange(i);
-                                    i++;
-                                    break;
+                                    if (ran.IsNegative)
+                                    {
+                                        relate = new Relation(item);
+                                        ran = new IndexRange(i);
+                                        i++;
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        for (int j = 0; j < ran.Length; j++)
+                                        {
+                                            T jtem = this.LogicalTree[j + ran.StartIndex];
+                                            T clone = jtem.Clone();
+
+                                            this.Pool.Add(clone.Id, clone);
+                                            this.LogicalTree.Insert(j + ran.EndIndex + 1, clone);
+                                        }
+                                        i += ran.Length;
+                                        item = this.LogicalTree[i];
+
+                                        relate = new Relation(item);
+                                        ran = new IndexRange(i);
+                                        i++;
+                                        break;
+                                    }
                                 case Relp.Child:
                                     if (ran.IsNegative)
                                         ran = new IndexRange(i);
@@ -259,6 +285,22 @@ namespace FanKit.Layers
                                     i++;
                                     break;
                             }
+                        }
+
+                        if (ran.IsNegative)
+                        {
+                            this.Collection.AssignChild();
+                            this.Collection.SyncToVisualTree();
+                            return InvalidateModes.Sort;
+                        }
+
+                        for (int j = 0; j < ran.Length; j++)
+                        {
+                            T jtem = this.LogicalTree[j + ran.StartIndex];
+                            T clone = jtem.Clone();
+
+                            this.Pool.Add(clone.Id, clone);
+                            this.LogicalTree.Insert(j + ran.EndIndex + 1, clone);
                         }
 
                         this.Collection.AssignChild();
