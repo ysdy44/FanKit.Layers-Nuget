@@ -104,9 +104,9 @@ otherwise <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
     <summary>Get a value that indicates whether the specified layer can be selected or unselected.</summary>
     <param name="layer">The specified layer.</param>
     <returns>
-<see cref="F:FanKit.Layers.ClickOptions.Select"/> if <see cref="P:FanKit.Layers.LayerBase.SelectMode"/> is <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<see cref="F:FanKit.Layers.ClickOptions.Select"/> if <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> is <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
 <br/>
-<see cref="F:FanKit.Layers.ClickOptions.Deselect"/> if <see cref="P:FanKit.Layers.LayerBase.SelectMode"/> is<see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<see cref="F:FanKit.Layers.ClickOptions.Deselect"/> if <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> is<see cref="F:FanKit.Layers.SelectMode.Selected"/>;
 <br/>
 otherwise <see cref="F:FanKit.Layers.ClickOptions.None"/>;
 </returns>
