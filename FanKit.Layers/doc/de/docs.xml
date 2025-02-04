@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>Definiert Konstanten, die angeben, wie die Ebenenreihenfolge (auch als Z-Reihenfolge bezeichnet) von Objekten geändert werden soll, sodass Objekte über anderen Objekten angezeigt werden können.</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>Bringen Sie einen Gegenstand einen Schritt näher an die Vorderseite.</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>Bringen Sie ein Objekt an den Anfang der Order.</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>Schicken Sie ein Objekt einen Schritt nach hinten.</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>Senden Sie ein Objekt an die Rückseite der Bestellung.</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary>Stellt eine Änderung dar, die den Wert des Formattyps <see cref="bool"/> enthält.</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>Die Kennung des Layers, der als Ziel des Vorgangs verwendet werden soll.</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>Ruft einen Wert ab, der angibt, ob dieser neue Wert dem alten Wert entspricht.</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>Der neue Wert.</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>Der vorherige Wert.</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>Erweiterungen zum Erstellen von Änderungen.</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary>Erstellt eine Änderung von <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">Ein <see cref="T:FanKit.Layers.Core.ITreeNode"/>, um eine Änderung zu erstellen.</param>
+    <returns>Eine Änderung, die den Wert false als neuen Wert enthält.</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary>Erstellt eine Änderung von <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">Ein <see cref="T:FanKit.Layers.Core.ITreeNode"/>, um eine Änderung zu erstellen.</param>
+    <returns>Eine Änderung, die den Wert "true" als neu enthält.</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>Gibt die Layer-bezogenen Operationsoptionen an, wenn ein Element in der Listenansicht eine Interaktion erhält.</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>Kennzeichnet alle untergeordneten Knoten des angegebenen Knotens in der logischen Struktur und entfernt sie aus der visuellen Struktur.</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>Hebt die Auswahl des angegebenen Layers und seiner untergeordneten Elemente in der Layer-Sammlung auf.</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>Kennzeichnet alle untergeordneten Knoten des angegebenen Knotens in der logischen Struktur und fügt sie der visuellen Struktur hinzu.</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>Blendet den angegebenen Layer in der Layer-Sammlung aus.</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>Sperrt den angegebenen Layer in der Layer-Sammlung.</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>Nichts.</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>Wählt den angegebenen Layer und seine untergeordneten Elemente in der Layer-Sammlung aus.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>Wählen Sie nur den angegebenen Layer und seine untergeordneten Layer in der Layer-Sammlung aus, und heben Sie dann die Auswahl der anderen Layer auf.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>Wählen Sie nur den angegebenen Bereich von Layern und deren untergeordneten Elementen in der Layer-Sammlung aus, und deaktivieren Sie dann die anderen Layer.</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>Zeigt den angegebenen Layer in der Layer-Sammlung an.</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>Entsperrt den angegebenen Layer in der Layer-Sammlung.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>Erweiterungen zum Erstellen von layerbezogenen Optionen.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>Ruft einen Wert ab, der angibt, ob der angegebene Knoten reduziert oder erweitert werden kann.</summary>
+    <param name="node">Der angegebene Knoten.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Collapse"/>, wenn <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> **True** ist;
+<br/>
+sonst <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>Ruft einen Wert ab, der angibt, ob der angegebene Layer gesperrt oder entsperrt werden kann.</summary>
+    <param name="layer">Der angegebene Layer.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Unlock"/>, wenn <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> **Wahr** ist;
+<br/>
+sonst <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>Ruft einen Wert ab, der angibt, ob der angegebene Layer ausgewählt oder deaktiviert werden kann.</summary>
+    <param name="layer">Der angegebene Layer.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Select"/>, wenn <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> <see cref="F:FanKit.Layers.SelectMode.Selected"/> ist;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.Deselect"/>, wenn <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> <see cref="F:FanKit.Layers.SelectMode.Selected"/> ist;
+<br/>
+sonst <see cref="F:FanKit.Layers.ClickOptions.None"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>Ruft einen Wert ab, der angibt, ob nur eine Ebene oder nur ein Bereich von Ebenen ausgewählt werden soll.</summary>
+    <param name="layer">Der angegebene Layer.</param>
+    <param name="isShiftKeyDown">True, wenn die Umschalttaste gedrückt wird; andernfalls false.</param>
+    <param name="isControlKeyDown">True, wenn die Strg-Taste gedrückt wird; andernfalls false.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/>, wenn die Umschalttaste gedrückt wird;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/>, wenn die Strg-Taste nicht gedrückt wird;
+<br/>
+sonst <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>Ruft einen Wert ab, der angibt, ob der angegebene Layer ein- oder ausgeblendet werden kann.</summary>
+    <param name="layer">Der angegebene Layer.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Hide"/>, wenn <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> **True** ist;
+<br/>
+sonst <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>Stellen Sie Methoden zum Kopieren und Einfügen des Knotens in die logische Struktur bereit.</summary>
+    <typeparam name="T">Der Typ der Instanz.</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>Legt fest, ob ausgewählte Elemente in die Zwischenablage kopiert werden können.</summary>
+    <returns>True, wenn das Kopieren in die Zwischenablage erlaubt ist; Andernfalls false.</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>Legt fest, ob in der Zwischenablage Elemente ausgewählt wurden, die in die logische Struktur eingefügt werden können.</summary>
+    <returns>True, wenn die Zwischenablage ausgewählte Elemente enthält, die in den logischen Baum eingefügt werden können; andernfalls false.</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Clipboard`1"/>-Objekt.</summary>
+    <param name="logicalTree">Der logische Baum.</param>
+    <param name="pool">Der Instanzpool, der alle Instanzen enthält.</param>
+    <param name="collection">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>Erstellt einen neuen Knoten, bei dem es sich um eine Kopie der aktuellen Instanz handelt.</summary>
+    <returns>Ein neuer Knoten, der eine Kopie dieser Instanz ist.</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>Erstellt einen neuen Knoten, bei dem es sich um eine Kopie der aktuellen Instanz handelt.</summary>
+    <param name="depth">Die Tiefe des neuen Knotens vom Stammknoten der Struktur aus.</param>
+    <returns>Ein neuer Knoten, der eine Kopie dieser Instanz ist.</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>Kopiert die markierten Elemente aus der logischen Struktur in die Zwischenablage.</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>Ruft die Anzahl der ausgewählten Elemente ab.</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>Kopiert die markierten Elemente aus der logischen Struktur in die logische Struktur.</summary>
+    <param name="duplicator">Enthält Informationen für den Dupliziervorgang.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>Kopiert die markierten Elemente aus der logischen Struktur in die logische Struktur.</summary>
+    <param name="selection">Der Auswahlstatus für die Layer-Sammlung.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>Kopiert ausgewählte Elemente aus der Zwischenablage in den logischen Baum.</summary>
+    <param name="inserter">Enthält Informationen für den Einfügevorgang.</param>
+    <param name="selects">Enthält Informationen für den Dupliziervorgang.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>Stellt die Methode dar, mit der die Höhe des Containers für das Element am angegebenen Index in der Listenansicht abgerufen wird.</summary>
+    <param name="index">Der Index des abzurufenden Elements.</param>
+    <returns>Gibt die Höhe des Containers für das Element am angegebenen Index in der Listenansicht zurück.</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>Stellt die Methode dar, mit der ein neuer Layer aus den angegebenen Daten erstellt und initialisiert wird.</summary>
+    <typeparam name="T">Der Typ der Ebene.</typeparam>
+    <typeparam name="D">Der Datentyp.</typeparam>
+    <param name="data">Die angegebenen Daten.</param>
+    <returns>Die erstellte Ebene.</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>Stellt die Methode dar, mit der ein neuer Layer aus den angegebenen Daten erstellt und initialisiert wird.</summary>
+    <typeparam name="T">Der Typ der Ebene.</typeparam>
+    <typeparam name="D">Der Datentyp.</typeparam>
+    <param name="data">Die angegebenen Daten.</param>
+    <param name="depth">Die Tiefe des neuen Knotens vom Stammknoten der Struktur aus.</param>
+    <returns>Die erstellte Ebene.</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>Stellt die Methode dar, die eine neue leere Ebene erstellt (bevor der Inhalt der Schicht aus einem XML-Element geladen wird)。</summary>
+    <typeparam name="T">Der Typ der Ebene.</typeparam>
+    <param name="element">Das XML-Element.</param>
+    <returns>Die erstellte Ebene.</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>Stellt die Methode dar, die eine neue leere Ebene erstellt (bevor der Inhalt der Schicht aus einem XML-Element geladen wird)。</summary>
+    <typeparam name="T">Der Typ der Ebene.</typeparam>
+    <param name="element">Das XML-Element.</param>
+    <param name="depth">Die Tiefe des neuen Knotens vom Stammknoten der Struktur aus.</param>
+    <returns>Die erstellte Ebene.</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>Stellt eine layerbezogene Änderung dar, die ein Array von Tiefenänderungen umfasst.</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>Ruft ein Array von Tiefenänderungen ab oder legt es fest.</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary>Stellt eine Änderung dar, die den Wert des Formattyps <see cref="double"/> enthält.</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>Stellt eine layerbezogene Änderung dar, die zwei ausgewählte Statusänderungen umfasst.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>Ruft die erste ausgewählte Statusänderung ab oder legt sie fest.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>Ruft die zweite ausgewählte Statusänderung ab oder legt sie fest.</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>Enthält einen Satz von Koordinaten und Versätzen, die zum Berechnen des Bereichs der Ziehbenutzeroberfläche relativ zur Position der Listenansicht verwendet werden.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>Die Höhe des Inhalts der Listenüberschrift.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>Die Entfernung, um die der Inhalt der Listenansicht horizontal gescrollt wurde.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>Die Y-Koordinate des Mauszeigers relativ zur Position der Listenansicht.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>Die Entfernung, um die der Inhalt der Listenansicht vertikal gescrollt wurde.</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>Der Bereich der Ziehbenutzeroberfläche relativ zur Position der Listenansicht.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>Die Höhe des Rechtecks, das den Bereich der Benutzeroberfläche für das Ziehen definiert.</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>**true**, wenn alle Werte 0 sind; andernfalls **falsch**.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>Die Breite des Rechtecks, das den Bereich der Ziehbenutzeroberfläche definiert.</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>Die X-Koordinate in der oberen linken Ecke des Rechtecks, die den Bereich der Ziehbenutzeroberfläche definiert.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>Die Y-Koordinate in der oberen linken Ecke des Rechtecks, die den Bereich der Ziehbenutzeroberfläche definiert.</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>Definiert Konstanten, die den Typ der Ziehquelle in einem Drag &amp; Drop-Vorgang angeben.</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>Gibt keine Ziehquelle an.</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>Die Ziehquelle ist in der logischen Struktur nicht vorhanden.</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>Die Ziehquelle ist ein Element, das in der logischen Struktur ausgewählt wurde.</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>Die Ziehquelle ist ein Element, das in der logischen Struktur nicht ausgewählt wurde.</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>Stellt Methoden zum Erstellen der Drag &amp; Drop-Benutzeroberfläche bereit. Die Drag &amp; Drop-Benutzeroberfläche sucht und rastet die UI-Anleitung ein, die dem Mauszeiger im Platzierungsziel am nächsten ist.</summary>
+    <typeparam name="T">Der Typ der Instanz.</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>Zwischenspeichern Sie die Position der UI-Anleitung in jeder Ebene, bevor Sie sie per Drag &amp; Drop verschieben.</summary>
+    <param name="width">Diese Breite der Listenansicht, auch die maximale Breite des UI-Guides.</param>
+    <param name="zoomFactorForDepth">
+Der Zoomfaktor wird für die Tiefenskalierung aktiviert.
+<br/>
+Wenn der Zoomfaktor z. B. 16 beträgt, beträgt der linke Rand des UI-Guides 16 * Tiefe.
+</param>
+    <param name="containerSizeFromIndex">Abrufen der Höhe des Containers für das Element am angegebenen Index in der Listenansicht.</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.DragUI`1"/>-Objekt.</summary>
+    <param name="logicalTree">Der logische Baum.</param>
+    <param name="visualTree">Die visuelle Struktur.</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>Ruft den Index des Ablageziels in der logischen Struktur ab, indem die UI-Anleitung identifiziert wird, die dem Mauszeiger am nächsten liegt.</summary>
+    <param name="point">Ein Satz von Koordinaten und Versätzen, die zum Berechnen des Bereichs der Ziehbenutzeroberfläche relativ zur Position der Listenansicht verwendet werden.</param>
+    <param name="sourceType">Geben Sie den Typ der Ziehquelle in einem Drag &amp; Drop-Vorgang an.</param>
+    <returns>Der Index des Ablageziels in der logischen Struktur.</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>Ruft den Index des Ablageziels in der logischen Struktur ab, indem die UI-Anleitung identifiziert wird, die dem Mauszeiger am nächsten liegt.</summary>
+    <param name="positionY">Die Y-Koordinate des Mauszeigers relativ zur Position der Listenansicht.</param>
+    <param name="sourceType">Geben Sie den Typ der Ziehquelle in einem Drag &amp; Drop-Vorgang an.</param>
+    <returns>Der Index des Ablageziels in der logischen Struktur.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>Ruft den Bereich der Ziehbenutzeroberfläche relativ zur Position der Listenansicht ab.</summary>
+    <param name="Indexer">Der Index des Ablageziels in der logischen Struktur.</param>
+    <returns>Der Bereich der Ziehbenutzeroberfläche relativ zur Position der Listenansicht.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>Ruft den Bereich der Ziehbenutzeroberfläche relativ zur Position der Listenansicht ab.</summary>
+    <param name="point">Ein Satz von Koordinaten und Versätzen, die zum Berechnen des Bereichs der Ziehbenutzeroberfläche relativ zur Position der Listenansicht verwendet werden.</param>
+    <param name="Indexer">Der Index des Ablageziels in der logischen Struktur.</param>
+    <returns>Der Bereich der Ziehbenutzeroberfläche relativ zur Position der Listenansicht.</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>Die Höhe des UI-Guides.</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>Der Index des Ablageziels in der logischen Struktur.</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+"-1, wenn <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>, <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> oder <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/> ist;"
+<br/>
+Andernfalls wird der nullbasierte Index eines Ablageziels in der logischen Struktur verwendet.
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>Gibt an, wo die Ziehquelle relativ zum Ablageziel eingefügt werden soll.</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>Stellt Informationen für den Drop-Vorgang bereit.</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>Die Tiefe des neuen Knotens vom Stammknoten der Struktur aus.</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.DragDrop.Dropper"/>-Objekt.</summary>
+    <param name="items">Die Auflistung des all-Knotens in der logischen Struktur.</param>
+    <param name="indexer">Der Index des Ablageziels in der logischen Struktur.</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>Definiert Konstanten, die angeben, wo die Ziehquelle relativ zum Ablageziel eingefügt werden soll.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>Fügt einen Knoten oberhalb des angegebenen gleichgeordneten Knotens in der logischen Struktur ein.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>Fügt einen neuen Knoten am unteren Rand der logischen Struktur ein.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>Fügt einen neuen Knoten am Anfang der logischen Struktur ein.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>Fügen Sie einen neuen Knoten unterhalb des angegebenen Knotens in der logischen Struktur ein.</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>Die Ziehquelle sollte nicht eingefügt werden.</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>Enthält Informationen für den Dupliziervorgang.</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>Ruft die Anzahl der duplizierten Ebenen ab.</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Options.Duplicator"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>Stellt Informationen für den Gruppierungsvorgang bereit.</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>Ruft die Anzahl der gruppierten Layer ab.</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>Die Tiefe des neuen Knotens vom Stammknoten der Struktur aus.</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>Die Änderung der Tiefe der gruppierten Ebene, wenn die Zahl gleich 1 ist; Andernfalls Standardwert.</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Options.Grouper"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>Die Änderung des ausgewählten Status des gruppierten Layers, wenn die Nummer gleich 1 ist; Andernfalls Standardwert.</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>Stellt die Basisklasse für layerbezogene Änderungen dar.</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>Ruft eine Auflistung von GUIDs von Ebenen ab, auf die verwiesen wird.</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+Definiert einen Knoten mit untergeordneten Elementen.
+<br/>
+Zum Beispiel.
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>Ruft eine Auflistung von untergeordneten Elementen im aktuellen Knoten ab.</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>Ruft die Anzahl der untergeordneten Elemente ab, die in der untergeordneten Auflistung des aktuellen Knotens vorhanden sind.</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>Unterstützt das Klonen, bei dem eine neue Instanz einer Klasse mit dem gleichen Wert wie eine vorhandene Instanz erstellt wird.</summary>
+    <typeparam name="T">Der Typ der Instanz.</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>Erstellt einen neuen Knoten, bei dem es sich um eine Kopie der aktuellen Instanz handelt.</summary>
+    <returns>Ein neuer Knoten, der eine Kopie dieser Instanz ist.</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>Erstellt einen neuen Knoten, bei dem es sich um eine Kopie der aktuellen Instanz handelt.</summary>
+    <param name="depth">Die Tiefe des neuen Knotens vom Stammknoten der Struktur aus.</param>
+    <returns>Ein neuer Knoten, der eine Kopie dieser Instanz ist.</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+Definiert die Struktur für zusammengesetzte Knoten. Das Implementieren von Klassen sollte in der Lage sein, die Benutzeroberfläche zu benachrichtigen.
+<br/>
+Zum Beispiel.
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // Benachrichtigen der Benutzeroberfläche
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">Der Typ der Instanz.</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>Ruft die Auflistung der Knoten ab, die dem aktuellen Knoten untergeordnet sind.</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>Tritt auf, wenn sich die Anzahl der untergeordneten Elemente ändert, die in der untergeordneten Sammlung des aktuellen Knotens vorhanden sind.</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+Stellt die Basisklasse für alle Ebenen dar, z. B. für die Ebenengruppe, die Bitmap-Ebene und die Füllebene.
+<br/>
+Erbt von den Schnittstellen <see cref="T:FanKit.Layers.Core.ITreeNode"/> und <see cref="T:FanKit.Layers.Core.IChildNode"/>.
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>Ruft einen Wert ab, der angibt, ob es sich bei diesem Layer um eine Layer-Gruppe handelt, oder legt diesen fest.</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>Ruft einen Wert ab, der angibt, ob dieser Layer gesperrt ist, oder legt diesen fest.</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>Ruft einen Wert ab, der angibt, ob dieser Layer unsichtbar ist, oder legt diesen fest.</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>Lädt den Inhalt des Layers aus einem XML-Element.</summary>
+    <param name="content">Das XML-Element, das den Inhalt des Layers enthält.</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>Tritt ein, wenn Änderungen vorgenommen werden, die sich auf die Miniaturansicht auswirken.</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>Speichert den Inhalt des Layers in einem XML-Element.</summary>
+    <param name="structure">Der Strukturtyp des XML-Objekts.</param>
+    <param name="children">Die untergeordneten Ebenen.</param>
+    <returns>Das XML-Element zum Speichern des Inhalts des Layers.</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>Ruft den ausgewählten Status dieser Ebene ab oder legt diesen fest.</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>Stellt einen Bereich dar, der über Start- und Endindizes verfügt.</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>Ruft den inklusiven Endindex des Bereichs ab.</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>Ruft einen Wert ab, der angibt, ob der Endindex kleiner als der srart-Index ist.</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>Ruft einen Wert ab, der angibt, ob der Endindex größer als der srart-Index ist.</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>Ruft einen Wert ab, der angibt, ob dieser Endindex gleich dem srart-Index ist.</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>Ruft einen negativen Bereich ab (Startindex 0, Endindex -1).</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>Ruft einen negativen Bereich ab (Startindex 0, Endindex 1).</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>Ruft den inklusiven Startindex des Bereichs ab.</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>Ruft einen Nullbereich ab (Startindex 0, Endindex 0).</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>Stellt den Auswahlstatus für die Layer-Sammlung dar.</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>Ruft einen leeren Auswahlstatus ab.</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Ranges.IndexSelection"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>Ruft einen Wert ab, der angibt, ob der aktuelle Auswahlstatus leer ist.</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>Ruft die Anzahl der zu entfernenden Elemente ab.</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>Ruft die Anzahl der ausgewählten Elemente ab.</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>Enthält Informationen für den Einfügevorgang.</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>Die Tiefe des neuen Knotens vom Stammknoten der Struktur aus.</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>Ruft einen Wert ab, der angibt, ob ausgewählte Elemente in der Layer-Sammlung vorhanden sind.</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>Der Index des ersten ausgewählten Elements in der logischen Struktur.</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Options.Inserter"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>Gibt an, wo der neue Knoten relativ zu den ausgewählten Elementen eingefügt werden soll.</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>Definiert Konstanten, die angeben, wo der neue Knoten relativ zu den ausgewählten Elementen eingefügt werden soll.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>Fügt einen Knoten oberhalb des angegebenen gleichgeordneten Knotens in der logischen Struktur ein.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>Fügt einen neuen Knoten am Anfang der logischen Struktur ein.</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary>Stellt eine Änderung dar, die den Wert des Formattyps <see cref="int"/> enthält.</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+Definiert Konstanten, die angeben, welcher Inhalt neu gezeichnet werden muss.
+<br/>
+Diese Enumeration unterstützt eine bitweise Kombination ihrer Memberwerte.
+Zum Beispiel.
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // Löschen der UI-Ebenen
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // Synchronisieren mit den UI-Ebenen
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>Alle Miniaturansichten der Ebenen wurden neu gezeichnet.</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>Der Inhalt des Canvas-Steuerelements wurde neu gezeichnet.</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt nach dem Löschen neu gezeichnet werden muss.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt nach dem Gruppieren oder Verpacken neu gezeichnet werden muss.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary>Der Rückgängig-Vorgang von <see cref="F:FanKit.Layers.InvalidateModes.Clear"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt nach dem Erweitern oder Aufheben der Erweiterung eines Knotens neu gezeichnet werden muss.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>Der Inhalt, der sich darauf auswirkt, ob der Befehl "Rückgängig" oder "Wiederholen" ausgeführt werden soll oder nicht, hat sich geändert.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>Ein oder mehrere Rückgängig-Vorgänge werden dem Verlauf hinzugefügt oder daraus entfernt.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>Die Geschichte ist geklärt.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>Der aktuell ausgewählte Verlauf des Elements ändert sich.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>Der Inhalt, der sich darauf auswirkt, ob der Layer-Befehl ausgeführt werden soll oder nicht, hat sich geändert.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>Die Layer-Sammlung hat sich geändert.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>Die Layer-Sammlung wurde gelöscht.</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt nach dem Sperren oder Entsperren einer Ebene neu gezeichnet werden muss.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary>Der Rückgängig-Vorgang von <see cref="F:FanKit.Layers.InvalidateModes.Lock"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>Nichts.</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>Irgendetwas hat sich geändert (wird verwendet, um das Ergebnis der Änderung während des Debuggens auszugeben).</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt nach dem Zurücksetzen neu gezeichnet werden muss.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt nach dem Auswählen oder Aufheben der Auswahl einer Ebene neu gezeichnet werden muss.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>Die ausgewählten Elemente haben sich geändert.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>Die markierten Elemente wurden gelöscht.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary>Der Rückgängig-Vorgang von <see cref="F:FanKit.Layers.InvalidateModes.Select"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt nach dem Sortieren neu gezeichnet werden muss.
+<br/>
+<br/>
+Zum Beispiel.
+Entfernen, Einfügen, Einfügen, Ablegen, Neuanordnen, Freigeben, Gruppieren, Aufheben der Gruppierung oder Duplizieren.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary>Der Rückgängig-Vorgang von <see cref="F:FanKit.Layers.InvalidateModes.Sort"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+Tritt ein, wenn eine Änderung am Inhalt abgeschlossen ist.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+Tritt ein, wenn sich der Wert des Inhalts geändert hat.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+Tritt auf, wenn das Eingabegerät während einer Änderung den Wert ändert.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary>Der Rückgängig-Vorgang von <see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+Tritt auf, wenn ein Eingabegerät mit einer Änderung des Inhalts beginnt.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+Eine bitweise Kombination, die angibt, welcher Inhalt neu gezeichnet werden muss, nachdem eine Ebene sichtbar oder unsichtbar ist.
+<br/>
+<br/>
+Enthält die folgenden Memberwerte:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary>Der Rückgängig-Vorgang von <see cref="F:FanKit.Layers.InvalidateModes.Visible"/>.</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+Definiert einen Knoten mit Tiefe.
+<br/>
+Zum Beispiel.
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>Ruft einen Wert ab, der angibt, wie weit der aktuelle Knoten vom Stammknoten der Struktur entfernt ist, oder legt diesen fest.</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>Ruft den Bezeichner für den aktuellen Knoten ab.</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>Ruft einen Wert ab, der angibt, ob der aktuelle Baumansichtsknoten erweitert ist, oder legt diesen fest.</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>Ruft ein Objekt ab, das berechnete Werte für Verhaltensweisen wie Garbage Collection, Löschen, Neuanordnen und Synchronisieren bereitstellt.</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>Unterstützt Rückgängig- und Wiederholen-Aktionen durch Erstellen von layerbezogenen Änderungen.</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>Ruft die Layer-bezogenen Änderungen ab.</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>Ruft den Bezeichner für this <see cref="T:FanKit.Layers.IUndoable"/> ab.</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>Ruft den Zeitraum für this <see cref="T:FanKit.Layers.IUndoable"/> ab oder legt diesen fest.</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>Kapselt die visuelle Struktur und den Instanzpool und stellt Methoden zum Entfernen, Einfügen, Einfügen, Löschen, Neuanordnen, Freigeben, Gruppieren, Aufheben der Gruppierung und Duplizieren bereit.</summary>
+    <typeparam name="T">Der Typ der Instanz.</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>Löscht und weist die untergeordneten Knoten jedes Knotens in der logischen Struktur zu, und ruft dann die <see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/>-Methode auf.</summary>
+    <param name="updateSelectMode">Gibt an, ob der ausgewählte Status des untergeordneten Knotens auf <see cref="F:FanKit.Layers.SelectMode.Parent"/> festgelegt wird.</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>Ruft einen Wert ab, der bestimmt, ob die Layer-Sammlung die Anordnung unterstützt.</summary>
+    <param name="type">Gibt an, wie die Ebenenreihenfolge (auch als Z-Reihenfolge bezeichnet) von Objekten geändert wird, sodass Objekte über anderen Objekten angezeigt werden können.</param>
+    <returns>Gibt an, ob die Layer-Sammlung die Anordnung unterstützt.</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>Ruft einen Wert ab, der bestimmt, ob die Layer-Sammlung die Anordnung unterstützt.</summary>
+    <param name="type">Gibt an, wie die Ebenenreihenfolge (auch als Z-Reihenfolge bezeichnet) von Objekten geändert wird, sodass Objekte über anderen Objekten angezeigt werden können.</param>
+    <param name="selection">Der Auswahlstatus für die Layer-Sammlung.</param>
+    <returns>Gibt an, ob die Layer-Sammlung die Anordnung unterstützt.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>Die neue Ebene, die eingefügt werden soll.</summary>
+    <param name="indexer">Der Index des Ablageziels in der logischen Struktur.</param>
+    <returns>Die neue Ebene, die gruppiert werden soll.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>Ruft einen Wert ab, der bestimmt, ob die Layer-Sammlung die Neuanordnung unterstützt.</summary>
+    <param name="indexer">Der Index des Ablageziels in der logischen Struktur.</param>
+    <param name="selection">Der Auswahlstatus für die Layer-Sammlung.</param>
+    <returns>Gibt an, ob die Layer-Sammlung die Neuanordnung unterstützt.</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>Löscht alle Layer in der Layer-Sammlung.</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>Kennzeichnet die untergeordneten Knoten aller Knoten in der logischen Struktur und entfernt sie aus der visuellen Struktur.</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>Kennzeichnet die untergeordneten Knoten aller Knoten in der logischen Struktur und fügt sie der visuellen Struktur hinzu.</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>Gruppiert mehrere Layer, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="grouper">Stellt Informationen für den Gruppierungsvorgang bereit.</param>
+    <param name="newItem">Die neue Ebene, die gruppiert werden soll.</param>
+    <param name="depths">Die Tiefenänderungen der verschiedenen Zielebenen.</param>
+    <param name="selects">Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>Gruppiert den Layer, der in der Layer-Sammlung ausgewählt ist.</summary>
+    <param name="grouper">Stellt Informationen für den Gruppierungsvorgang bereit.</param>
+    <param name="newItem">Die neue Ebene, die gruppiert werden soll.</param>
+    <param name="depth">Die Tiefe ändert sich bei den Zielebenen.</param>
+    <param name="select">Der ausgewählte Status ändert sich der Ziel-Layer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>Fügt eine neue Ebene in die Ebenensammlung ein.</summary>
+    <param name="dropper">Enthält Informationen für den Einfügevorgang.</param>
+    <param name="newItem">Die neue Ebene, die eingefügt werden soll.</param>
+    <param name="selects">Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>Fügt eine neue Ebene in die Ebenensammlung ein.</summary>
+    <param name="inserter">Enthält Informationen für den Einfügevorgang.</param>
+    <param name="newItem">Die neue Ebene, die eingefügt werden soll.</param>
+    <param name="selects">Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>Fügt eine neue Ebene am Anfang der Ebenensammlung ein.</summary>
+    <param name="newItem">Die neue Ebene, die eingefügt werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>Fügt eine neue Ebene am Anfang der Ebenensammlung ein.</summary>
+    <param name="newItem">Die neue Ebene, die eingefügt werden soll.</param>
+    <param name="selects">Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.LayerCollection`1"/>-Objekt.</summary>
+    <param name="logicalTree">Der logische Baum.</param>
+    <param name="visualTree">Die visuelle Struktur.</param>
+    <param name="pool">Der Instanzpool, der alle Instanzen enthält.</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>Verschiebt mehrere Ebenen, die in der Ebenensammlung ausgewählt sind, über das gleichgeordnete Layer.</summary>
+    <param name="reorder">Stellt Informationen für den Neuanordnungsvorgang bereit.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>Packt alle Layer in der Layer-Sammlung.</summary>
+    <param name="newItem">Die neue Ebene, die gepackt werden soll.</param>
+    <param name="depths">Die Tiefenänderungen der verschiedenen Zielebenen.</param>
+    <param name="selects">Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>Gibt mehrere Layer frei, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="releaser">Stellt Informationen für den Freigabevorgang bereit.</param>
+    <param name="depths">Die Tiefenänderungen der verschiedenen Zielebenen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>Gibt den Layer frei, der in der Layer-Sammlung ausgewählt ist.</summary>
+    <param name="releaser">Stellt Informationen für den Freigabevorgang bereit.</param>
+    <param name="depths">Die Tiefenänderungen der verschiedenen Zielebenen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>Entfernt Ziel-Layer in der Layer-Sammlung.</summary>
+    <param name="remover">Enthält Informationen für den Entfernungsvorgang.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>Entfernt Ziel-Layer in der Layer-Sammlung.</summary>
+    <param name="selection">Der Auswahlstatus für die Layer-Sammlung.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>Ordnet mehrere Layer neu an, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="reorder">Stellt Informationen für den Neuanordnungsvorgang bereit.</param>
+    <param name="depths">Die Tiefenänderungen der verschiedenen Zielebenen.</param>
+    <param name="selectedRanges">Die Sammlung von Layer-Bereichen, die in der Layer-Sammlung ausgewählt sind.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>Ordnet den Layer, der in der Layer-Sammlung ausgewählt ist, neu an.</summary>
+    <param name="reorder">Stellt Informationen für den Neuanordnungsvorgang bereit.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>Ordnet den Bereich der Ebenen neu an, der in der Ebenensammlung ausgewählt ist.</summary>
+    <param name="reorder">Stellt Informationen für den Neuanordnungsvorgang bereit.</param>
+    <param name="depths">Die Tiefenänderungen der verschiedenen Zielebenen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>Löscht die visuelle Struktur, die logische Struktur und den Instanzpool und löst dann das Ereignis <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> aus.</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary>Der <see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/> mit benutzerdefinierten Daten.</summary>
+    <typeparam name="D">Der Datentyp.</typeparam>
+    <param name="listOfData">Die Auflistung, deren Elemente in die logische Struktur kopiert werden.</param>
+    <param name="creator">Stellt die Methode dar, mit der ein neuer Layer aus den angegebenen Daten erstellt und initialisiert wird.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>Der <see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/> mit benutzerdefinierten Daten.</summary>
+    <typeparam name="D">Stellt die Methode dar, mit der ein neuer Layer aus den angegebenen Daten erstellt und initialisiert wird.</typeparam>
+    <param name="treeOfData">Der Baum, dessen Elemente in den logischen Baum kopiert werden.</param>
+    <param name="creator">Stellt die Methode dar, mit der ein neuer Layer aus den angegebenen Daten erstellt und initialisiert wird.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+Löscht und initialisiert die logische Struktur, die visuelle Struktur und den Instanzpool und löst dann das Ereignis <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> aus.
+<br />
+<br /> Die Auflistung, deren Elemente wie folgt in die logische Struktur kopiert werden:
+<br /> │
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Gruppe: Tiefe=1
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Bitmap: Tiefe=1
+<br /> ├─Gruppe: Tiefe=0
+<br /> └─Bitmap: Tiefe=1
+</summary>
+    <param name="list">Die Auflistung, deren Elemente in die logische Struktur kopiert werden.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+Löscht und initialisiert die logische Struktur, die visuelle Struktur und den Instanzpool und löst dann das Ereignis <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> aus.
+<br />
+<br /> Der Baum, dessen Elemente wie folgt in den logischen Baum kopiert werden:
+<br /> │
+<br /> ├─Bitmap: Tiefe
+<br /> ├─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  ├─Gruppe: Tiefe
+<br /> │  │  ├─Bitmap: Tiefe
+<br /> │  │  ├─Bitmap: Tiefe
+<br /> │  │  └─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  └─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  └─Bitmap: Tiefe
+</summary>
+    <param name="tree">Der Baum, dessen Elemente in den logischen Baum kopiert werden.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+Löscht und initialisiert die logische Struktur, die visuelle Struktur und den Instanzpool und löst dann das Ereignis <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> aus.
+<br />
+<br /> Die Auflistung, deren Elemente wie folgt in die logische Struktur kopiert werden:
+<br /> │
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Gruppe: Tiefe=1
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Bitmap: Tiefe=1
+<br /> ├─Gruppe: Tiefe=0
+<br /> └─Bitmap: Tiefe=1
+</summary>
+    <param name="listOfXml">Die Auflistung, deren Elemente in die logische Struktur kopiert werden.</param>
+    <param name="creator">Stellt die Methode dar, die eine neue leere Ebene erstellt (bevor der Inhalt der Schicht aus einem XML-Element geladen wird)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+Löscht und initialisiert die logische Struktur, die visuelle Struktur und den Instanzpool und löst dann das Ereignis <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> aus.
+<br />
+<br /> Der Baum, dessen Elemente wie folgt in den logischen Baum kopiert werden:
+<br /> │
+<br /> ├─Bitmap: Tiefe
+<br /> ├─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  ├─Gruppe: Tiefe
+<br /> │  │  ├─Bitmap: Tiefe
+<br /> │  │  ├─Bitmap: Tiefe
+<br /> │  │  └─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  └─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  └─Bitmap: Tiefe
+</summary>
+    <param name="treeOfXml">Der Baum, dessen Elemente in den logischen Baum kopiert werden.</param>
+    <param name="creator">Stellt die Methode dar, die eine neue leere Ebene erstellt (bevor der Inhalt der Schicht aus einem XML-Element geladen wird)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+Löscht und initialisiert die logische Struktur, die visuelle Struktur und den Instanzpool und löst dann das Ereignis <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> aus.
+<br />
+<br /> Der Baum, dessen Elemente wie folgt in den logischen Baum kopiert werden:
+<br /> │
+<br /> ├─Alle Knoten
+<br /> │  ├─Knoten: ID=0
+<br /> │  ├─Knoten: ID=1
+<br /> │  ├─Knoten: ID=2
+<br /> │  │  ├─Knoten: ID=3
+<br /> │  │  │  ├─Knoten: ID=4
+<br /> │  │  │  ├─Knoten: ID=5
+<br /> │  │  │  └─Knoten: ID=6
+<br /> │  ├─Knoten: ID=7
+<br /> │  │  └─Knoten: ID=8
+<br /> │  ├─Knoten: ID=9
+<br /> │  │  └─Knoten: ID=10
+<br /> │  │
+<br /> ├─Alle Schichten
+<br /> │  ├─Bitmap: Id=0
+<br /> │  ├─Bitmap: Id=1
+<br /> │  ├─Gruppe: ID=2
+<br /> │  ├─Gruppe: ID=3
+<br /> │  ├─Bitmap: Id=4
+<br /> │  ├─Bitmap: Id=5
+<br /> │  ├─Bitmap: Id=6
+<br /> │  ├─Gruppe: ID=7
+<br /> │  ├─Bitmap: Id=8
+<br /> │  ├─Gruppe: ID=9
+<br /> │  └─Bitmap: Id=10
+</summary>
+    <param name="items">Die Auflistung der Instanz mit Bezeichner.</param>
+    <param name="nodes">Der Baum, der aus Knoten besteht.</param>
+    <param name="creator">Stellt die Methode dar, die eine neue leere Ebene erstellt (bevor der Inhalt der Schicht aus einem XML-Element geladen wird)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>Tritt beim Zurücksetzen der Layer-Sammlung auf.</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>Speichert den Inhalt des angegebenen Layers und seiner untergeordneten Elemente in einem XML-Element.</summary>
+    <param name="treeNode">Der XML-Strukturknoten, der die angegebene Schicht in ein XML-Element projiziert.</param>
+    <returns>Das XML-Element zum Speichern des Inhalts des angegebenen Layers und seiner Nachfolger.</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>Speichert den Inhalt mehrerer Layer und deren untergeordnete Elemente in einer Auflistung von XML-Elementen.</summary>
+    <param name="treeNode">Die Auflistung des XML-Strukturknotens, der mehrere Schichten in eine Auflistung von XML-Elementen projiziert.</param>
+    <returns>Die Sammlung von XML-Elementen zum Speichern des Inhalts mehrerer Layer und ihrer Nachfolger.</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>Sortiert alle Knoten in der logischen Struktur mithilfe der Bezeichnersammlung, die die logische Struktur stark reduziert.</summary>
+    <param name="ids">Die Bezeichnerauflistung, die die logische Struktur stark vereinfacht.</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>Synchronisieren Sie alle nicht reduzierten Knoten aus der logischen Struktur in die visuelle Struktur.</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>Synchronisieren Sie die Reihenfolge, die die visuelle Struktur mit den UI-Ebenen stark reduziert, ähnlich wie bei differenziellen HTML-DOM-Algorithmen.</summary>
+    <param name="items">Die UI-Layer als Datenquelle (z. B. <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) in der Listenansicht.</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>Hebt die Gruppierung mehrerer Layer auf, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="ungrouper">Enthält Informationen für den Vorgang zum Aufheben der Gruppierung.</param>
+    <param name="depths">Die Tiefenänderungen der verschiedenen Zielebenen.</param>
+    <param name="selects">Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>Hebt die Gruppierung des Layers auf, der in der Layer-Sammlung ausgewählt ist.</summary>
+    <param name="ungrouper">Enthält Informationen für den Vorgang zum Aufheben der Gruppierung.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>Stellt eine Auflistung dar, die die logische Struktur stark vereinfacht und Methoden für den individuellen Zugriff auf die Schicht in der logischen Struktur nach Index bereitstellt (die logische Struktur besteht aus Layern, die von Knoten geerbt wurden).</summary>
+    <typeparam name="T">Der Typ der Instanz.</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>Ruft einen Wert ab, der bestimmt, ob die Layer, die in der Layer-Sammlung ausgewählt sind, die Freigabe unterstützen.</summary>
+    <param name="selection">Der Auswahlstatus für die Layer-Sammlung.</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>Hebt die Auswahl des angegebenen Layers und seiner untergeordneten Elemente in der Layer-Sammlung auf.</summary>
+    <param name="item">Der angegebene Layer.</param>
+    <returns>Der ausgewählte Status des angegebenen Layers und seiner untergeordneten Layer ändert sich.</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>Hebt die Auswahl des angegebenen Layers und seiner untergeordneten Elemente in der Layer-Sammlung auf.</summary>
+    <param name="indexer">Der Index des angegebenen Layers.</param>
+    <returns>Der ausgewählte Status des angegebenen Layers und seiner untergeordneten Layer ändert sich.</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>Hebt die Auswahl aller Layer in der Layer-Sammlung auf.</summary>
+    <returns>Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>Gibt die Tiefenänderungen zurück, die erforderlich sind, um mehrere Layer zu gruppieren, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="grouper">Stellt Informationen für den Gruppierungsvorgang bereit.</param>
+    <returns>Die Tiefenänderungen, die erforderlich sind, um mehrere Layer zu gruppieren, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>Gibt die Tiefenänderungen zurück, die zum Verpacken aller Layer in der Layer-Sammlung erforderlich sind.</summary>
+    <returns>Die Tiefenänderungen, die erforderlich sind, um alle Layer zu packen, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>Gibt die Tiefenänderungen zurück, die erforderlich sind, um die Gruppierung mehrerer Layer aufzuheben, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <returns>Die Tiefenänderungen, die erforderlich sind, um die Gruppierung mehrerer Layer aufzuheben, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>Gibt die Tiefenänderungen zurück, die erforderlich sind, um mehrere Layer neu anzuordnen, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="reorder">Stellt Informationen für den Neuanordnungsvorgang bereit.</param>
+    <returns>Die Tiefenänderungen, die erforderlich sind, um mehrere Layer neu anzuordnen, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>Gibt die Tiefenänderungen zurück, die erforderlich sind, um mehrere Layer neu anzuordnen, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="reorder">Stellt Informationen für den Neuanordnungsvorgang bereit.</param>
+    <param name="selectedRanges">Die Sammlung von Layer-Bereichen, die in der Layer-Sammlung ausgewählt sind.</param>
+    <returns>Die Tiefenänderungen, die erforderlich sind, um mehrere Layer neu anzuordnen, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>Gibt die Tiefenänderungen zurück, die erforderlich sind, um die Gruppierung mehrerer Layer aufzuheben, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="ungrouper">Enthält Informationen für den Vorgang zum Aufheben der Gruppierung.</param>
+    <returns>Die Tiefenänderungen, die erforderlich sind, um die Gruppierung mehrerer Layer aufzuheben, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>Ruft die eindeutigen Bezeichner aller Knoten ab, die zu der Auflistung gehören, die die logische Struktur stark vereinfacht.</summary>
+    <returns>Die eindeutigen Bezeichner aller Knoten, die zum logischen Baum gehören.</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>Projiziert jeden Knoten einer logischen Struktur in eine XML-Struktur.</summary>
+    <returns>Die projizierte XML-Struktur.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>Gibt die Auflistung der Layer-Bereiche zurück, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <returns>Eine Sammlung von Layer-Bereichen, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>Gibt die ausgewählten Statusänderungen zurück, die erforderlich sind, um mehrere Layer zu gruppieren, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="grouper">Stellt Informationen für den Gruppierungsvorgang bereit.</param>
+    <returns>Der Status der Auswahl ist erforderlich, um mehrere Layer zu gruppieren, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>Gibt die ausgewählten Statusänderungen zurück, die zum Packen aller Layer in der Layer-Sammlung erforderlich sind.</summary>
+    <returns>Die ausgewählten Statusänderungen sind erforderlich, um alle Layer zu packen, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>Gibt die ausgewählten Statusänderungen zurück, die erforderlich sind, um die Gruppierung mehrerer Layer aufzuheben, die in der Layer-Sammlung ausgewählt sind.</summary>
+    <param name="ungrouper">Enthält Informationen für den Vorgang zum Aufheben der Gruppierung.</param>
+    <returns>Die ausgewählten Statusänderungen sind erforderlich, um die Gruppierung mehrerer Layer aufzuheben, die in der Layer-Sammlung ausgewählt sind.</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>Blendet alle Ebenen in der Ebenensammlung aus.</summary>
+    <returns>Die Sichtbarkeit der einzelnen Zielebenen ändert sich.</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>Sucht nach dem angegebenen Layer und gibt den Index des ersten Vorkommens des Layers zurück.</summary>
+    <param name="item">Die Schicht, die lokalisiert werden soll.</param>
+    <returns>Der Index des ersten Vorkommens eines Layers.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>Gibt den Bereich zwischen dem Index des angegebenen Layers und dem Index der angegebenen Layer-Nachkommen zurück.</summary>
+    <param name="item">Die Schicht, die lokalisiert werden soll.</param>
+    <returns>Der Bereich zwischen dem Index des angegebenen Layers und dem Index der angegebenen Layer-Nachkommen.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>Gibt den Bereich zwischen den Indizes zweier Layer zurück.</summary>
+    <param name="newItem">Die neue Ebene, die lokalisiert werden soll.</param>
+    <param name="oldIndexer">Der Index der alten Ebene, die lokalisiert werden soll.</param>
+    <returns>Der Bereich zwischen den Indizes zweier Layer.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>Gibt den Bereich zwischen den Indizes zweier Layer zurück.</summary>
+    <param name="newIndexer">Der Index des neuen Layers, der lokalisiert werden soll.</param>
+    <param name="oldIndexer">Der Index der alten Ebene, die lokalisiert werden soll.</param>
+    <returns>Der Bereich zwischen den Indizes zweier Layer.</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.LayerList`1"/>-Objekt.</summary>
+    <param name="logicalTree">Der logische Baum.</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+Löscht und initialisiert die logische Struktur.
+<br />
+<br /> Die Auflistung, deren Elemente wie folgt in die logische Struktur kopiert werden:
+<br /> │
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Gruppe: Tiefe=1
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Bitmap: Tiefe=1
+<br /> ├─Gruppe: Tiefe=0
+<br /> └─Bitmap: Tiefe=1
+</summary>
+    <param name="list">Die Auflistung, deren Elemente in die logische Struktur kopiert werden.</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+Löscht und initialisiert die logische Struktur.
+<br />
+<br /> Der Baum, dessen Elemente wie folgt in den logischen Baum kopiert werden:
+<br /> │
+<br /> ├─Bitmap: Tiefe
+<br /> ├─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  ├─Gruppe: Tiefe
+<br /> │  │  ├─Bitmap: Tiefe
+<br /> │  │  ├─Bitmap: Tiefe
+<br /> │  │  └─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  └─Bitmap: Tiefe
+<br /> ├─Gruppe: Tiefe
+<br /> │  └─Bitmap: Tiefe
+</summary>
+    <param name="tree">Der Baum, dessen Elemente in den logischen Baum kopiert werden.</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>Wählt den angegebenen Layer und seine untergeordneten Elemente in der Layer-Sammlung aus.</summary>
+    <param name="item">Der angegebene Layer.</param>
+    <returns>Der ausgewählte Status des angegebenen Layers und seiner untergeordneten Layer ändert sich.</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>Wählt den angegebenen Layer und seine untergeordneten Elemente in der Layer-Sammlung aus.</summary>
+    <param name="indexer">Der Index des angegebenen Layers.</param>
+    <returns>Der ausgewählte Status des angegebenen Layers und seiner untergeordneten Layer ändert sich.</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>Wählt alle Layer in der Layer-Sammlung aus.</summary>
+    <returns>Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>Wählen Sie nur den angegebenen Layer und seine untergeordneten Layer in der Layer-Sammlung aus, und heben Sie dann die Auswahl der anderen Layer auf.</summary>
+    <param name="item">Der angegebene Layer.</param>
+    <returns>Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>Wählen Sie nur den angegebenen Layer und seine untergeordneten Layer in der Layer-Sammlung aus, und heben Sie dann die Auswahl der anderen Layer auf.</summary>
+    <param name="indexer">Der Index des angegebenen Layers.</param>
+    <returns>Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>Wählen Sie nur den angegebenen Bereich von Layern und deren untergeordneten Elementen in der Layer-Sammlung aus, und deaktivieren Sie dann die anderen Layer.</summary>
+    <param name="range">Der angegebene Bereich.</param>
+    <returns>Der ausgewählte Status ändert sich für die verschiedenen Ziellagen.</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>Zeigt alle Layer in der Layer-Sammlung an.</summary>
+    <returns>Die Sichtbarkeit der einzelnen Zielebenen ändert sich.</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>Kapseln Sie einige Tools, z. B. die logische Struktur.</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.LayerManager1`1"/>-Objekt.</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>Kapseln Sie einige Tools, z. B. die logische Struktur.</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>Kapseln Sie einige Tools, z. B. die logische Struktur, die visuelle Struktur, den Instanzpool, die Drag &amp; Drop-Benutzeroberfläche und die UI-Ebenen.</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>Kapseln Sie einige Tools, z. B. die visuelle Struktur und den Instanzpool.</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>Die Drag &amp; Drop-Benutzeroberfläche.</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.LayerManager2`1"/>-Objekt.</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>Kapseln Sie einige Tools, z. B. die logische Struktur.</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>Die UI-Layer als Datenquelle in der Listenansicht.</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>Kapseln Sie einige Tools, z. B. die logische Struktur, die visuelle Struktur, den Instanzpool, die Drag &amp; Drop-Benutzeroberfläche und die UI-Ebenen.</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>Die Zwischenablage.</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>Kapseln Sie einige Tools, z. B. die visuelle Struktur und den Instanzpool.</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>Die Drag &amp; Drop-Benutzeroberfläche.</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.LayerManager3`1"/>-Objekt.</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>Kapseln Sie einige Tools, z. B. die logische Struktur.</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>Die UI-Layer als Datenquelle in der Listenansicht.</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>Kapern Sie einige Tools, z. B. die logische Struktur, die visuelle Struktur, den Instanzpool, die Drag &amp; Drop-Benutzeroberfläche, die Zwischenablage, den Rückgängig-Stapel, den UI-Verlauf und die UI-Ebenen.</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>Die Zwischenablage.</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>Kapseln Sie einige Tools, z. B. die visuelle Struktur und den Instanzpool.</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>Die Drag &amp; Drop-Benutzeroberfläche.</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>Der Undo-Stapel.</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.LayerManager4`2"/>-Objekt.</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>Kapseln Sie einige Tools, z. B. die logische Struktur.</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>Der UI-Verlauf als Datenquelle in der Listenansicht.</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>Die UI-Layer als Datenquelle in der Listenansicht.</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>Definiert Konstanten, die angeben, welche Methode zum Navigieren aufgerufen werden soll</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>Keine Methode.</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>Rufen Sie <see cref="M:FanKit.Layers.UndoStack`2.Redo"/> oder <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/> an, um den Vorgang zu wiederholen.</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>Rufen Sie <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> oder <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> an, um den Vorgang zu wiederholen.</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>Rufen Sie <see cref="M:FanKit.Layers.UndoStack`2.Undo"/> oder <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/> an, um den Vorgang rückgängig zu machen.</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>Rufen Sie <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> oder <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> an, um den Vorgang rückgängig zu machen.</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>Stellt eine Liste dar, die einen Index des Elements enthält, zu dem navigiert werden soll. Bereitstellen von Methoden für die Vorwärts- und Rückwärtsnavigation.</summary>
+    <typeparam name="T">Der Typ der Elemente in der Liste.</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>Ruft eine Auflistung ab, die den Verlauf der Rückwärtsnavigation darstellt.</summary>
+    <returns>Der Stapel für die Rückwärtsnavigation.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>Ruft einen Wert ab, der angibt, ob mindestens ein Element im Rückwärtsnavigationsverlauf vorhanden ist.</summary>
+    <returns>**true**, wenn mindestens ein Element im Verlauf der Rückwärtsnavigation vorhanden ist; **false**, wenn keine Elemente im Rückwärtsnavigationsverlauf vorhanden sind.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>Ruft einen Wert ab, der angibt, ob mindestens ein Element im Vorwärtsnavigationsverlauf vorhanden ist.</summary>
+    <returns>**true**, wenn mindestens ein Element im Vorwärtsnavigationsverlauf vorhanden ist; **false**, wenn keine Elemente im Vorwärtsnavigationsverlauf vorhanden sind.</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>Entleert das Element, zu dem navigiert werden soll, und entfernt dann alle Elemente aus dem <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>Der nullbasierte Index des Elements, zu dem navigiert werden soll. Der Standardwert ist -1.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>Ruft das Element ab, zu dem navigiert werden soll.</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>Ruft eine Auflistung ab, die den Vorwärtsnavigationsverlauf darstellt.</summary>
+    <returns>Der Stapel für die Vorwärtsnavigation.</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>Erstellt eine flache Kopie eines Bereichs von Elementen in der Quelle <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></summary>
+    <param name="range">Der angegebene Bereich.</param>
+    <returns>Eine oberflächliche Kopie eines Bereichs von Elementen in der Quelle <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>Navigiert zum neuesten Element im Verlauf der Rückwärtsnavigation.</summary>
+    <returns>Das neueste Element im Verlauf der Rückwärtsnavigation.</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>Navigiert zum neuesten Element im Verlauf der Vorwärtsnavigation.</summary>
+    <returns>Das neueste Element im Verlauf der Vorwärtsnavigation.</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>Navigiert zu dem Element, zu dem navigiert werden soll.</summary>
+    <param name="index">Der Index des Elements, zu dem navigiert werden soll.</param>
+    <returns>Der Bereich zwischen dem Index des zuvor navigierten Elements und dem Index des Elements, zu dem navigiert werden soll.</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>Stellt berechnete Werte für Verhaltensweisen wie Garbage Collection, Löschen, Neuanordnen und Synchronisieren bereit.</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary>Stellt eine Liste dar, die <see cref="T:FanKit.Layers.IndexRange"/> verwendet. Stellt Methoden zum Entfernen und Verschieben bereit.</summary>
+    <typeparam name="T">Der Typ der Elemente in der Liste.</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>Ruft die Elemente im angegebenen Bereich ab.</summary>
+    <param name="range">Der Bereich der Elemente, die abgerufen werden sollen.</param>
+    <returns>Die Elemente im angegebenen Bereich.</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>Verschiebt einen Bereich von Elementen an eine neue Position in der Liste.</summary>
+    <param name="range">Der Bereich der Elemente, die verschoben werden sollen.</param>
+    <param name="index">Der nullbasierte Index, der die neue Position des Elementbereichs angibt.</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>Verschiebt einige Bereiche von Elementen aus der Liste vor das Zielelement.</summary>
+    <param name="ranges">Die Bereiche der Elemente, die verschoben werden sollen.</param>
+    <param name="target">Das Zielelement.</param>
+    <param name="offset">Der Versatz der neuen Position in der Liste.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>Verschiebt einige Bereiche von Elementen aus der Liste an den Anfang.</summary>
+    <param name="ranges">Die Bereiche der Elemente, die verschoben werden sollen.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>Verschiebt einige Bereiche von Elementen aus der Liste an den letzten.</summary>
+    <param name="ranges">Die Bereiche der Elemente, die verschoben werden sollen.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>Verschiebt einen Bereich von Elementen aus der Liste an den Anfang.</summary>
+    <param name="range">Der Bereich der Elemente, die verschoben werden sollen.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>Verschiebt einen Bereich von Elementen aus der Liste an den letzten.</summary>
+    <param name="range">Der Bereich der Elemente, die verschoben werden sollen.</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>Entfernt einen Bereich von Elementen aus der Liste.</summary>
+    <param name="range">Der Bereich der Elemente, die entfernt werden sollen.</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>Entfernt einige Bereiche von Elementen aus der Liste.</summary>
+    <param name="ranges">Die Bereiche der Elemente, die entfernt werden sollen.</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>Stellt Informationen für den Freigabevorgang bereit.</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>Ruft die Anzahl der freizugebenden Layer ab.</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>Die Änderung der Tiefe der Schicht, die freigegeben werden soll, wenn die Zahl gleich 1 ist; Andernfalls Standardwert.</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Options.Releaser"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>Definiert Konstanten, die die Anzahl der zu entfernenden Elemente angeben.</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>Die Anzahl der zu entfernenden Elemente ist gleich 0.</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>Die Anzahl der zu entfernenden Elemente ist kleiner als die Anzahl aller Elemente.</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>Die Anzahl der zu entfernenden Elemente entspricht der Anzahl aller Elemente.</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>Enthält Informationen für den Entfernungsvorgang.</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>Ruft die Anzahl der zu entfernenden Layer ab.</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Options.Remover"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>Stellt Informationen für den Neuanordnungsvorgang bereit.</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>Ruft die Anzahl der Layer ab, die neu angeordnet werden sollen.</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>Die Änderung der Tiefe der Ebene, um sie neu anzuordnen, wenn die Zahl gleich 1 ist; Andernfalls Standardwert.</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>Ruft einen Wert ab, der angibt, ob es sich bei dem Ablageziel um den gleichgeordneten Knoten der Ziehquelle handelt.</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Reorder"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+    <param name="type">Gibt an, wie die Ebenenreihenfolge (auch als Z-Reihenfolge bezeichnet) von Objekten geändert wird, sodass Objekte über anderen Objekten angezeigt werden können.</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Reorder"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+    <param name="type">Gibt an, wie die Ebenenreihenfolge (auch als Z-Reihenfolge bezeichnet) von Objekten geändert wird, sodass Objekte über anderen Objekten angezeigt werden können.</param>
+    <param name="selection">Der Auswahlstatus für die Layer-Sammlung.</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Reorder"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+    <param name="indexer">Der Index des Ablageziels in der logischen Struktur.</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Reorder"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+    <param name="indexer">Der Index des Ablageziels in der logischen Struktur.</param>
+    <param name="selection">Der Auswahlstatus für die Layer-Sammlung.</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>Definiert Konstanten, die die Anzahl der Elemente angeben, die neu angeordnet werden sollen.</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>Die Anzahl der Bereiche muss größer als 1 sein (der Bereich beschreibt die Elemente, die neu angeordnet werden sollen).</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>Die Anzahl der Elemente, die neu angeordnet werden sollen, ist gleich 0. </summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>Die Anzahl der Artikel, die neu angeordnet werden sollen, ist gleich 1.</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>Die Anzahl der Bereiche ist gleich 1 (dieser Bereich umfasst einen Knoten und seine Nachkommen).</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary>Stellt eine Änderung dar, die den Wert des Formattyps <see cref="T:FanKit.Layers.SelectMode"/> enthält.</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>Stellt eine layerbezogene Änderung dar, die ein Array ausgewählter Statusänderungen enthält.</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>Ruft ein Array ausgewählter Statusänderungen ab oder legt es fest.</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>Der Index der angegebenen Schicht in der logischen Struktur.</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>Definiert Konstanten, die die Anzahl der ausgewählten Elemente angeben.</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>Die Anzahl der ausgewählten Elemente muss größer als 1 sein.</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>Die Anzahl der ausgewählten Elemente muss gleich 0 sein. </summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>Die Anzahl der ausgewählten Elemente muss gleich 1 sein.</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary>Gibt den ausgewählten Status einer <see cref="T:FanKit.Layers.ILayerBase"/>-Instanz an.</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary>Die <see cref="T:FanKit.Layers.ILayerBase"/>-Instanz ist nicht ausgewählt.</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>Das übergeordnete Element der <see cref="T:FanKit.Layers.ILayerBase"/>-Instanz in der logischen Struktur wird ausgewählt.</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary>Die Instanz <see cref="T:FanKit.Layers.ILayerBase"/> wird ausgewählt.</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>Enthält die ausgewählten Statuserweiterungsmethoden.</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>Konvertiert den angegebenen ausgewählten Status in den booleschen Wert。</summary>
+    <param name="mode">Der zu konvertierende Modus.</param>
+    <returns>True, wenn der Wert <see cref="F:FanKit.Layers.SelectMode.Selected"/> ist; Andernfalls false.</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>Konvertiert den angegebenen booleschen Wert in den ausgewählten Status。</summary>
+    <param name="value">Der boolesche Wert, der konvertiert werden soll.</param>
+    <returns>
+<see cref="F:FanKit.Layers.SelectMode.Selected"/>, wenn der Wert **True** ist;
+<br/>
+andernfalls <see cref="F:FanKit.Layers.SelectMode.Deselected"/>.
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>Konvertiert den angegebenen ausgewählten Status in den Deckkraftwert des Pinsels für das Akzentfarben-Design.</summary>
+    <param name="mode">Der zu konvertierende Modus.</param>
+    <returns>
+0,0d, wenn der Modus <see cref="F:FanKit.Layers.SelectMode.Deselected"/> ist; 
+<br/>
+0,5d, wenn der Modus <see cref="F:FanKit.Layers.SelectMode.Parent"/> ist; 
+<br/>
+andernfalls 1,0d.
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary>Stellt eine Änderung dar, die den Wert des Formattyps <see cref="float"/> enthält.</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>Stellt eine layerbezogene Änderung dar, die ein Array aller Layer-IDs enthält (wenn die Reihenfolge der Layer-Sammlung geändert wird).</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>Ruft ein Array aller Layer-IDs ab oder legt es fest (nach der Änderungsreihenfolge der Layer-Sammlung).</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>Ruft ein Array aller Layer-IDs ab oder legt es fest (bevor die Reihenfolge der Layer-Sammlung geändert wird).</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>Überprüft, ob ein bestimmter <see cref="T:FanKit.Layers.Core.ITreeNode"/> in der Quellsammlung oder in der Zielsammlung vorhanden ist.</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary>Der <see cref="T:FanKit.Layers.Core.ITreeNode"/> ist sowohl in der Quellauflistung als auch in der Zielauflistung vorhanden.</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary>Der <see cref="T:FanKit.Layers.Core.ITreeNode"/> ist in der Zielauflistung vorhanden.</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary>Der <see cref="T:FanKit.Layers.Core.ITreeNode"/> ist in der Quellauflistung vorhanden.</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>Definiert Konstanten, die den Zeitraum für einen Rückgängig-Vorgang angeben.</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>Der aktuelle Rückgängig-Vorgang (Der Index des angegebenen Rückgängig-Vorgangs in der Historie ist gleich dem des aktuell ausgewählten Elements).</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>Ein zukünftiger Rückgängig-Vorgang (Der Index des angegebenen Rückgängig-Vorgangs in der Historie ist größer als das aktuell ausgewählte Element).</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>Ein vergangener Rückgängig-Vorgang (Der Index des angegebenen Rückgängig-Vorgangs in der Historie ist kleiner als der des aktuell ausgewählten Elements).</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+Stellt eine Warteschlange dar, die Unterstützung für Rückgängig- und Wiederholenaktionen sowie das Konzept der Garbage Collection unterstützt.
+<br/>
+<br/>
+Die Garbage Collection:
+<br/>
+(1)
+Wenn die Anzahl der Vorgänge auf einem Stack das Limit des Stacks überschreitet, werden die Operationen am unteren Rand des Stacks gelöscht. 
+<br/>
+(2)
+Kennzeichnet eine Schicht als 'nutzlose Schicht', wenn sie sich nicht in der logischen Struktur befindet und keine Änderungen an der GUID der GUID vorhanden sind.
+<br/>
+(3)
+Entfernt alle nutzlosen Layer aus dem Instanzpool für die Garbage Collection.
+</summary>
+    <typeparam name="T">Der Typ der Instanz.</typeparam>
+    <typeparam name="U">Der Typ des Vorgangs (ein Vorgang enthält eine Rückgängig-Aktion und eine Wiederholen-Aktion).</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>Wenden Sie die Aktion "Wiederholen" an, um die Tiefe einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>Wenden Sie die Wiederholen-Aktion an, um die Tiefe mehrerer Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>Wenden Sie die Wiederholen-Aktion an, um den ausgewählten Status von zwei Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>Wenden Sie die Aktion "Wiederholen" an, um den gesperrten Status einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>Wenden Sie die Wiederholen-Aktion an, um den ausgewählten Status einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>Wenden Sie die Wiederholen-Aktion an, um den ausgewählten Status mehrerer Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>Wenden Sie die Aktion "Wiederholen" an, um die Reihenfolge der Ebenensammlungen zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> oder <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>Wenden Sie die Aktion "Wiederholen" an, um die Sichtbarkeit einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>Wenden Sie die Aktion "Wiederholen" an, um die Sichtbarkeit mehrerer Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um die Tiefe einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um die Tiefe mehrerer Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um den ausgewählten Status von zwei Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um den gesperrten Status einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um den ausgewählten Status einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um den ausgewählten Status mehrerer Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um die Reihenfolge der Ebenenerfassung zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> oder <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um die Sichtbarkeit einer Zielebene zu ändern.</summary>
+    <param name="change">Die Änderung, die angewendet werden soll.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>Wenden Sie die Aktion "Rückgängig" an, um die Sichtbarkeit mehrerer Zielebenen zu ändern.</summary>
+    <param name="changes">Die Änderungen, die übernommen werden sollen.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>Ruft einen Wert ab, der angibt, ob die Warteschlange einen Vorgang enthält, zu dem navigiert werden soll.</summary>
+    <param name="index">Der Index des Vorgangs, zu dem navigiert werden soll.</param>
+    <returns>
+<see cref="NavigateAction.Undo"/> oder <see cref="NavigateAction.UndoRange"/>, wenn der angegebene Index kleiner als der Index des aktuellen Vorgangs ist;
+<br/>
+<see cref="NavigateAction.Redo"/> oder <see cref="NavigateAction.RedoRange"/>, wenn der angegebene Index größer als der Index des aktuellen Vorgangs ist;
+<br/>
+andernfalls <see cref="NavigateAction.None"/>.
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>Ruft einen Wert ab, der angibt, ob der Wiederholungspuffer eine Aktion enthält, die wiederhergestellt werden kann.</summary>
+    <returns>Ruft einen Wert ab, der angibt, ob der Wiederholungspuffer eine Aktion enthält, die wiederhergestellt werden kann.</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>Ruft einen Wert ab, der angibt, ob der Rückgängig-Puffer eine Aktion enthält, die rückgängig gemacht werden kann.</summary>
+    <returns>True, wenn der Rückgängig-Puffer eine Aktion enthält, die rückgängig gemacht werden kann. Andernfalls false.</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>Leert die Warteschlange und zerstört dann alle layerbezogenen Änderungen von Vorgängen.</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+Entfernt alle nutzlosen Layer aus dem Instanzpool für die Garbage Collection.
+</summary>
+    <returns>Die Nummer der nutzlosen Schicht.</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>Erstellt eine flache Kopie eines Bereichs von Elementen in der Quelldatei <see cref="T:FanKit.Layers.UndoStack`2"/></summary>
+    <param name="range">Der angegebene Bereich.</param>
+    <returns>Eine oberflächliche Kopie eines Bereichs von Elementen in der Quelle <see cref="T:FanKit.Layers.UndoStack`2"/></returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>Navigiert zum angegebenen Vorgang.</summary>
+    <param name="index">Der Index des Vorgangs, zu dem navigiert werden soll.</param>
+    <returns>Der Bereich zwischen dem Index des zuvor navigierten Vorgangs und dem Index des Vorgangs, zu dem navigiert werden soll.</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+Neue Vorgänge pushen befinden sich auf dem Rückgängig-Stapel.
+Wenn die Anzahl der Vorgänge auf einem Stack das Limit des Stacks überschreitet, werden die Operationen am unteren Rand des Stacks gelöscht. 
+</summary>
+    <param name="item">Die neue Operation.</param>
+    <param name="isGC">Ture wenn nutzlose Schicht entfernt wird, wenn Operationen gelöscht werden; Andernfalls false.</param>
+    <returns>Die Nummer der nutzlosen Schicht.</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>Ruft den nächsten Vorgang ab, und macht den nächsten Vorgang zum aktuellen Vorgang.</summary>
+    <returns>Der nächste Vorgang (ein Vorgang enthält eine Wiederholen-Aktion).</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>Ruft alle Rückgängig-Aktionen aus dem Rückgängig-Puffer ab.</summary>
+    <returns>Die Operationen von der aktuellen zur ersten (eine Operation enthält eine Rückgängig-Aktion).</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>Ruft den Index des ausgewählten Vorgangs ab. Der Standardwert ist -1, was bedeutet, dass kein Vorgang ausgewählt ist.</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>Ruft den ausgewählten Vorgang ab.</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+Synchronisieren Sie den Zeitraum mit allen Vorgängen, um den Status und das Verhalten der Benutzeroberfläche zu aktualisieren.
+<br/>
+<br/>
+Zum Beispiel.
+<br/>
+Der Index der Vergangenheitsoperation ist kleiner als der aktuelle Index.
+<br/>
+Der Index der aktuellen Operation ist gleich dem aktuellen Index.
+<br/>
+Der Index des zukünftigen Vorgangs ist größer als der aktuelle Index.
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+Synchronisieren Sie den Zeitraum mit allen Vorgängen, um den Status und das Verhalten der Benutzeroberfläche zu aktualisieren.
+<br/>
+<br/>
+Zum Beispiel.
+<br/>
+Der Index der Vergangenheitsoperation ist kleiner als der angegebene Index.
+<br/>
+Der Index des aktuellen Vorgangs ist gleich dem angegebenen Index.
+<br/>
+Der Index des zukünftigen Vorgangs ist größer als der angegebene Index.
+</summary>
+    <param name="index">Der nullbasierte Index des angegebenen Vorgangs.</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>Synchronisieren Sie die Reihenfolge mit dem UI-Verlauf, ähnlich wie bei differenziellen HTML-DOM-Algorithmen.</summary>
+    <param name="items">Der UI-Verlauf als Datenquelle (z. B. <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) in der Listenansicht.</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>Ruft den aktuellen Vorgang ab, und macht den vorherigen Vorgang zum aktuellen Vorgang.</summary>
+    <returns>Der aktuelle Vorgang (ein Vorgang enthält eine Rückgängig-Aktion).</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>Ruft alle Rückgängig-Aktionen aus dem Rückgängig-Puffer ab.</summary>
+    <returns>Die Operationen von der aktuellen zur ersten (eine Operation enthält eine Rückgängig-Aktion).</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>Ruft die maximale Anzahl von Vorgängen ab, die in der Warteschlange gespeichert werden können, oder legt diese fest.</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.UndoStack`2"/>-Objekt.</summary>
+    <param name="pool">Der Instanzpool, der alle Instanzen enthält.</param>
+    <param name="collection">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>Enthält Informationen für den Vorgang zum Aufheben der Gruppierung.</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>Ruft die Anzahl der nicht gruppierten Layer ab.</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.Options.Ungrouper"/>-Objekt.</summary>
+    <param name="items">Die Layer-Sammlung.</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>Stellt eine Layer-bezogene Änderung dar, die ein Array von Sichtbarkeitsänderungen enthält.</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>Ruft ein Array von Sichtbarkeitsänderungen ab oder legt es fest.</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>Erweiterungen zum Erstellen von XML-Objekten.</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>Speichern Sie die Tiefe, den Bezeichner oder die untergeordneten Elemente des Knotens als XML-Objekt.</summary>
+    <param name="node">Der angegebene Knoten.</param>
+    <param name="type">Der Strukturtyp des XML-Objekts.</param>
+    <param name="children">Die untergeordneten Knoten.</param>
+    <returns>
+XML-Attribut für <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/>, wenn der Typ <see cref="F:FanKit.Layers.XmlStructure.List"/> ist;
+<br/>
+XML-Attribut für <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/>, wenn der Typ <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/> ist;
+<br/>
+Andernfalls untergeordnete Knoten.
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary>Gibt den Strukturtyp des XML-Objekts zum Speichern eines <see cref="T:FanKit.Layers.Core.ITreeNode"/>-Objekts an.</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+Speichern Sie in einer Liste mit Tiefe.
+<br />
+<br /> Zum Beispiel.
+<br /> │
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Bitmap: Tiefe=0
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Gruppe: Tiefe=1
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Bitmap: Tiefe=2
+<br /> ├─Gruppe: Tiefe=0
+<br /> ├─Bitmap: Tiefe=1
+<br /> ├─Gruppe: Tiefe=0
+<br /> └─Bitmap: Tiefe=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+Speichern Sie in einem Baum.
+<br />
+<br /> Zum Beispiel.
+<br /> │
+<br /> ├─Bitmap
+<br /> ├─Bitmap
+<br /> ├─Gruppe
+<br /> │  ├─Gruppe
+<br /> │  │  ├─Bitmap
+<br /> │  │  ├─Bitmap
+<br /> │  │  └─Bitmap
+<br /> ├─Gruppe
+<br /> │  └─Bitmap
+<br /> ├─Gruppe
+<br /> │  └─Bitmap
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+Speichern Sie in einer Struktur, die aus Knoten und einer Sammlung von Instanzen mit Bezeichner besteht.
+<br />
+<br /> Zum Beispiel.
+<br /> │
+<br /> ├─Alle Knoten
+<br /> │  ├─Knoten: ID=0
+<br /> │  ├─Knoten: ID=1
+<br /> │  ├─Knoten: ID=2
+<br /> │  │  ├─Knoten: ID=3
+<br /> │  │  │  ├─Knoten: ID=4
+<br /> │  │  │  ├─Knoten: ID=5
+<br /> │  │  │  └─Knoten: ID=6
+<br /> │  ├─Knoten: ID=7
+<br /> │  │  └─Knoten: ID=8
+<br /> │  ├─Knoten: ID=9
+<br /> │  │  └─Knoten: ID=10
+<br /> │  │
+<br /> ├─Alle Schichten
+<br /> │  ├─Bitmap: Id=0
+<br /> │  ├─Bitmap: Id=1
+<br /> │  ├─Gruppe: ID=2
+<br /> │  ├─Gruppe: ID=3
+<br /> │  ├─Bitmap: Id=4
+<br /> │  ├─Bitmap: Id=5
+<br /> │  ├─Bitmap: Id=6
+<br /> │  ├─Gruppe: ID=7
+<br /> │  ├─Bitmap: Id=8
+<br /> │  ├─Gruppe: ID=9
+<br /> │  └─Bitmap: Id=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>Definiert einen XML-Strukturknoten, der einen beliebigen Knoten aus der logischen Struktur in ein XML-Element projiziert.</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>Fügt die Zeichenfolge an das aktuelle <see cref="T:System.Text.StringBuilder"/>-Objekt an.</summary>
+    <param name="stringBuilder">Das aktuelle <see cref="T:System.Text.StringBuilder"/>-Objekt.</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>Speichern Sie den Bezeichner und die untergeordneten Elemente des Knotens als XML-Element.</summary>
+    <param name="elementChildName">Der Name des untergeordneten Elements des XML-Elements.</param>
+    <returns>
+XML-Element mit Bezeichner und untergeordneten Elementen, wenn der Knoten untergeordnete Elemente hat;
+<br/>
+Andernfalls XML-Element mit nur Bezeichner.
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.XmlTreeNode"/>-Objekt.</summary>
+    <param name="id">Die Kennung für den Knoten.</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary>Erstellt ein <see cref="T:FanKit.Layers.XmlTreeNode"/>-Objekt.</summary>
+    <param name="element">Das XML-Element mit Bezeichner und untergeordneten Elementen.</param>
+  </doc>
+</docs>
