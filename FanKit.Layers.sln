@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{D346A4EC-9
 		README-DE.md = README-DE.md
 		README-EN.md = README-EN.md
 		README-ES.md = README-ES.md
+		README-FR.md = README-FR.md
 		README-ZH.md = README-ZH.md
 	EndProjectSection
 EndProject
