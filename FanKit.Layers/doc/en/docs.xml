@@ -83,7 +83,7 @@
     <summary>Extensions for creating layer-related options.</summary>
   </doc>
   <doc for="ClickOptionsExtensions.CanExpand">
-    <summary>Get a value that indicates whether the specified node can be collapsed or expanded.</summary>
+    <summary>Gets a value that indicates whether the specified node can be collapsed or expanded.</summary>
     <param name="node">The specified node.</param>
     <returns>
 <see cref="F:FanKit.Layers.ClickOptions.Collapse"/> if <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> is **True**;
@@ -92,7 +92,7 @@ otherwise <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
 </returns>
   </doc>
   <doc for="ClickOptionsExtensions.CanLock">
-    <summary>Get a value that indicates whether the specified layer can be locked or unlocked.</summary>
+    <summary>Gets a value that indicates whether the specified layer can be locked or unlocked.</summary>
     <param name="layer">The specified layer.</param>
     <returns>
 <see cref="F:FanKit.Layers.ClickOptions.Unlock"/> if <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> is **True**;
@@ -101,18 +101,18 @@ otherwise <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
 </returns>
   </doc>
   <doc for="ClickOptionsExtensions.CanSelect">
-    <summary>Get a value that indicates whether the specified layer can be selected or unselected.</summary>
+    <summary>Gets a value that indicates whether the specified layer can be selected or unselected.</summary>
     <param name="layer">The specified layer.</param>
     <returns>
 <see cref="F:FanKit.Layers.ClickOptions.Select"/> if <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> is <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
 <br/>
-<see cref="F:FanKit.Layers.ClickOptions.Deselect"/> if <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> is<see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<see cref="F:FanKit.Layers.ClickOptions.Deselect"/> if <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> is <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
 <br/>
 otherwise <see cref="F:FanKit.Layers.ClickOptions.None"/>;
 </returns>
   </doc>
   <doc for="ClickOptionsExtensions.CanSelectWithKey">
-    <summary>Get a value that indicates whether only select a layer or only select a range of layers.</summary>
+    <summary>Gets a value that indicates whether only select a layer or only select a range of layers.</summary>
     <param name="layer">The specified layer.</param>
     <param name="isShiftKeyDown">True if the Shift key is pressed; otherwise false.</param>
     <param name="isControlKeyDown">True if the Ctrl key is pressed; otherwise false.</param>
@@ -125,7 +125,7 @@ otherwise <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Lay
 </returns>
   </doc>
   <doc for="ClickOptionsExtensions.CanVisible">
-    <summary>Get a value that indicates whether the specified layer can be displayed or hidden.</summary>
+    <summary>Gets a value that indicates whether the specified layer can be displayed or hidden.</summary>
     <param name="layer">The specified layer.</param>
     <returns>
 <see cref="F:FanKit.Layers.ClickOptions.Hide"/> if <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> is **True**;
@@ -219,7 +219,7 @@ otherwise <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
     <summary>Represents a layer-related change that includes an array of depth changes.</summary>
   </doc>
   <doc for="DepthChanges.Depths">
-    <summary>Get or set an array of depth changes.</summary>
+    <summary>Gets or sets an array of depth changes.</summary>
   </doc>
   <doc for="DoubleChange">
     <summary>Represents a change that contains the value of the <see cref="double"/> Format Type.</summary>
@@ -228,13 +228,13 @@ otherwise <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
     <summary>Represents a layer-related change that includes two selected status changes.</summary>
   </doc>
   <doc for="DoubleSelectChange.Select0">
-    <summary>Get or set the first selected status change.</summary>
+    <summary>Gets or sets the first selected status change.</summary>
   </doc>
   <doc for="DoubleSelectChange.Select1">
-    <summary>Get or set the second selected status change.</summary>
+    <summary>Gets or sets the second selected status change.</summary>
   </doc>
   <doc for="DragOverUIPoint">
-    <summary>Contains a set of coordinates and offsets used to calculate the area of the drag UI relative to the location of the list view.</summary>
+    <summary>Contains a set of coordinates and offsets used to calculate the region of the drag UI relative to the location of the list view.</summary>
   </doc>
   <doc for="DragOverUIPoint.HeaderHeight">
     <summary>The height of the content of the list header.</summary>
@@ -249,22 +249,22 @@ otherwise <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
     <summary>The distance the content of the list view has been scrolled vertically.</summary>
   </doc>
   <doc for="DragOverUIRect">
-    <summary>The area of the drag UI relative to the location of the list view.</summary>
+    <summary>The region of the drag UI relative to the location of the list view.</summary>
   </doc>
   <doc for="DragOverUIRect.Height">
-    <summary>The height of the rectangle that defines the area of the drag UI.</summary>
+    <summary>The height of the rectangle that defines the region of the drag UI.</summary>
   </doc>
   <doc for="DragOverUIRect.IsEmpty">
     <summary>**true** if all values is 0; otherwise, **false**.</summary>
   </doc>
   <doc for="DragOverUIRect.Width">
-    <summary>The width of the rectangle that defines the area of the drag UI.</summary>
+    <summary>The width of the rectangle that defines the region of the drag UI.</summary>
   </doc>
   <doc for="DragOverUIRect.X">
-    <summary>The X coordinate at the top-left corner of the rectangle that defines the area of the drag UI.</summary>
+    <summary>The X coordinate at the top-left corner of the rectangle that defines the region of the drag UI.</summary>
   </doc>
   <doc for="DragOverUIRect.Y">
-    <summary>The Y coordinate at the top-left corner of the rectangle that defines the area of the drag UI.</summary>
+    <summary>The Y coordinate at the top-left corner of the rectangle that defines the region of the drag UI.</summary>
   </doc>
   <doc for="DragSourceType">
     <summary>Defines constants the specify the type of drag source in a drag-and-drop operation.</summary>
@@ -302,7 +302,7 @@ For example, when the zoom factor is 16, the left margin of the UI guide is 16 *
   </doc>
   <doc for="DragUI.GetIndexerPoint">
     <summary>Retrieves the index of the drop target in the logical tree by identifying the UI guide nearest to the mouse pointer.</summary>
-    <param name="point">A set of coordinates and offsets used to calculate the area of the drag UI relative to the location of the list view.</param>
+    <param name="point">A set of coordinates and offsets used to calculate the region of the drag UI relative to the location of the list view.</param>
     <param name="sourceType">Specify the type of drag source in a drag-and-drop operation.</param>
     <returns>The index of the drop target in the logical tree.</returns>
   </doc>
@@ -313,15 +313,15 @@ For example, when the zoom factor is 16, the left margin of the UI guide is 16 *
     <returns>The index of the drop target in the logical tree.</returns>
   </doc>
   <doc for="DragUI.GetUIRect">
-    <summary>Retrieves the area of the drag UI relative to the location of the list view.</summary>
+    <summary>Retrieves the region of the drag UI relative to the location of the list view.</summary>
     <param name="Indexer">The index of the drop target in the logical tree.</param>
-    <returns>The area of the drag UI relative to the location of the list view.</returns>
+    <returns>The region of the drag UI relative to the location of the list view.</returns>
   </doc>
   <doc for="DragUI.GetUIRectPoint">
-    <summary>Retrieves the area of the drag UI relative to the location of the list view.</summary>
-    <param name="point">A set of coordinates and offsets used to calculate the area of the drag UI relative to the location of the list view.</param>
+    <summary>Retrieves the region of the drag UI relative to the location of the list view.</summary>
+    <param name="point">A set of coordinates and offsets used to calculate the region of the drag UI relative to the location of the list view.</param>
     <param name="Indexer">The index of the drop target in the logical tree.</param>
-    <returns>The area of the drag UI relative to the location of the list view.</returns>
+    <returns>The region of the drag UI relative to the location of the list view.</returns>
   </doc>
   <doc for="DragUI.GuideHeight">
     <summary>The height of UI guide.</summary>
@@ -340,7 +340,7 @@ otherwise, the zero-based index of a drop target in the logical tree.
     <summary>Specifies where the drag source should be inserted relative to the drop target.</summary>
   </doc>
   <doc for="Dropper">
-    <summary>Provides information for the drop operation.</summary>
+    <summary>Provides information for the dropping operation.</summary>
   </doc>
   <doc for="Dropper.Depth">
     <summary>The depth of the new node from the root node of the tree.</summary>
@@ -554,7 +554,7 @@ Inherits from the <see cref="T:FanKit.Layers.Core.ITreeNode"/> and <see cref="T:
     <summary>The depth of the new node from the root node of the tree.</summary>
   </doc>
   <doc for="Inserter.HasSelected">
-    <summary>Get a value that indicates whether there are any selected items in the layer collection.</summary>
+    <summary>Gets a value that indicates whether there are any selected items in the layer collection.</summary>
   </doc>
   <doc for="Inserter.Index">
     <summary>The index of the first selected item in the logical tree.</summary>
@@ -907,15 +907,15 @@ public class A : ITreeNode
     <param name="updateSelectMode">Whether sets the selected status of child node to <see cref="F:FanKit.Layers.SelectMode.Parent"/>.</param>
   </doc>
   <doc for="LayerCollection.CanArrange">
-    <summary>Gets a value that determines whether the layer collection supports arrange.</summary>
+    <summary>Gets a value that determines whether the layer collection supports arrangement.</summary>
     <param name="type">Indicates how to change the layer order (also known as the z-order) of objects so that objects can appear on top of other objects.</param>
-    <returns>Whether the layer collection supports arrange.</returns>
+    <returns>Whether the layer collection supports arrangement.</returns>
   </doc>
   <doc for="LayerCollection.CanArrange2">
-    <summary>Gets a value that determines whether the layer collection supports arrange.</summary>
+    <summary>Gets a value that determines whether the layer collection supports arrangement.</summary>
     <param name="type">Indicates how to change the layer order (also known as the z-order) of objects so that objects can appear on top of other objects.</param>
     <param name="selection">The selection state for the layer collection.</param>
-    <returns>Whether the layer collection supports arrange.</returns>
+    <returns>Whether the layer collection supports arrangement.</returns>
   </doc>
   <doc for="LayerCollection.CanReorderItems">
     <summary>The new layer to insert.</summary>
@@ -1625,7 +1625,7 @@ Clears and initialize the logical tree.
     <summary>The change of depth of layer to reorder if the number be equal to 1; otherwise, default value.</summary>
   </doc>
   <doc for="Reorder.IsSibling">
-    <summary>Get a value that indicates whether the drop target is sibling node of drag source.</summary>
+    <summary>Gets a value that indicates whether the drop target is sibling node of drag source.</summary>
   </doc>
   <doc for="Reorder.ReorderArrange">
     <summary>Constructs a <see cref="T:FanKit.Layers.Reorder"/> object.</summary>
@@ -1671,7 +1671,7 @@ Clears and initialize the logical tree.
     <summary>Represents a layer-related change that includes an array of selected status changes.</summary>
   </doc>
   <doc for="SelectChanges.Selects">
-    <summary>Get or set an array of selected status change.</summary>
+    <summary>Gets or sets an array of selected status change.</summary>
   </doc>
   <doc for="SelectIndexer">
     <summary>The index of the specified layer in the logical tree.</summary>
@@ -1735,10 +1735,10 @@ otherwise, 1.0d.
     <summary>Represents a layer-related change that includes an array of all layers‘s identifiers (when the layer collection change order).</summary>
   </doc>
   <doc for="SortChange.NewIds">
-    <summary>Get or set an array of all layers‘s identifiers (after the layer collection change order).</summary>
+    <summary>Gets or sets an array of all layers‘s identifiers (after the layer collection change order).</summary>
   </doc>
   <doc for="SortChange.OldIds">
-    <summary>Get or set an array of all layers‘s identifiers (before the layer collection change order).</summary>
+    <summary>Gets or sets an array of all layers‘s identifiers (before the layer collection change order).</summary>
   </doc>
   <doc for="SyncExists">
     <summary>Checks whether a specific <see cref="T:FanKit.Layers.Core.ITreeNode"/> exists in the source collection or destination collection.</summary>
@@ -1997,7 +1997,7 @@ The index of the future operation be greater than specified index.
     <summary>Represents a layer-related change that includes an array of visibility changes.</summary>
   </doc>
   <doc for="VisibleChanges.Visibles">
-    <summary>Get or set an array of visibility changes.</summary>
+    <summary>Gets or sets an array of visibility changes.</summary>
   </doc>
   <doc for="XmlExtensions">
     <summary>Extensions for creating XML object.</summary>
