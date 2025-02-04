@@ -331,10 +331,7 @@ For example, when the zoom factor is 16, the left margin of the UI guide is 16 *
   </doc>
   <doc for="DropIndexer.Index">
     <summary>
--1 if <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> is 
-<see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>,
-<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> or 
-<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>;
+"-1 if <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> is <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>, <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> or <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>;"
 <br/>
 otherwise, the zero-based index of a drop target in the logical tree.
 </summary>

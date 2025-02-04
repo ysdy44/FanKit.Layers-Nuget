@@ -331,10 +331,7 @@
   </doc>
   <doc for="DropIndexer.Index">
     <summary>
-如果 <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> 是 
-<see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>、
-<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> 或 
-<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>，则为 -1；
+如果 <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> 是 <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>、<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> 或 <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>，则为 -1；
 <br/>
 否则为逻辑树中放置目标的从零开始的索引。
 </summary>
@@ -1698,7 +1695,7 @@ public class A : ITreeNode
     <summary>已取消选择此 <see cref="T:FanKit.Layers.ILayerBase"/> 实例。</summary>
   </doc>
   <doc for="SelectMode.Parent">
-    <summary>已选择此 <see cref="T:FanKit.Layers.ILayerBase" /> 实例在逻辑树中的父对象。</summary>
+    <summary>已选择此 <see cref="T:FanKit.Layers.ILayerBase"/> 实例在逻辑树中的父对象。</summary>
   </doc>
   <doc for="SelectMode.Selected">
     <summary>已选择此 <see cref="T:FanKit.Layers.ILayerBase"/> 实例。</summary>
