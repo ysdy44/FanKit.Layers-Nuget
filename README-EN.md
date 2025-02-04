@@ -12,7 +12,7 @@ Includes nodes/layer/history that are used for building Tree View/Layers Panel/H
 |System requirements| Windows 10 1803 or upper|
 |Development tool|Visual Studio 2022|
 |Programing language|C#|
-|Display language|English/中文(简体)|
+|Display language|Deutsch/English/español/français/italiano/日本語/한국어/русский/中文(简体)|
 
 ![](ScreenShot/logo.png)
 
