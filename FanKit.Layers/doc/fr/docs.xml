@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>Définit des constantes qui indiquent comment modifier l’ordre des couches (également appelé ordre z) des objets afin que ceux-ci puissent apparaître au-dessus d’autres objets.</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>Rapprochez un objet d’un pas vers l’avant.</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>Placez un objet au premier plan de la commande.</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>Envoyez un objet d’un pas vers l’arrière.</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>Envoyez un objet à l’arrière de la commande.</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary>Représente une modification qui contient la valeur du type de format <see cref="bool"/>.</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>L’identifiant de la couche à utiliser comme cible de l’opération.</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>Obtient une valeur qui indique si cette nouvelle valeur est égale à l’ancienne.</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>La nouvelle valeur.</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>Valeur précédente.</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>Extensions pour la création de modifications.</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary>Crée une modification à partir d’un <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">Un <see cref="T:FanKit.Layers.Core.ITreeNode"/> pour créer un changement.</param>
+    <returns>Une modification qui contient la valeur false en tant que nouvelle.</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary>Crée une modification à partir d’un <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">Un <see cref="T:FanKit.Layers.Core.ITreeNode"/> pour créer un changement.</param>
+    <returns>Une modification qui contient la valeur true as new.</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>Spécifie les options d’opération liées à la couche lorsqu’un élément de la vue de liste reçoit une interaction.</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>Signale tous les nœuds enfants du nœud spécifié dans l’arborescence logique et les supprime de l’arborescence visuelle.</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>Désélectionne le calque spécifié et ses descendants dans la collection de calques.</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>Marque tous les nœuds enfants du nœud spécifié dans l’arborescence logique et les ajoute à l’arborescence visuelle.</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>Masque le calque spécifié dans la collection de calques.</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>Verrouille le calque spécifié dans la collection de calques.</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>Aucun.</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>Sélectionne le calque spécifié et ses descendants dans la collection de calques.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>Sélectionnez uniquement la couche spécifiée et ses descendants dans la collection de couches, puis désélectionnez les autres.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>Sélectionnez uniquement la plage spécifiée de calques et leurs descendants dans la collection de calques, puis désélectionnez les autres.</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>Affiche le calque spécifié dans la collection de calques.</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>Déverrouille le calque spécifié dans la collection de calques.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>Extensions pour la création d’options liées aux calques.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>Obtient une valeur qui indique si le nœud spécifié peut être réduit ou développé.</summary>
+    <param name="node">Nœud spécifié.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Collapse"/> si <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> est **Vrai** ;
+<br/>
+sinon <see cref="F:FanKit.Layers.ClickOptions.Expand"/> ;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>Obtient une valeur qui indique si le calque spécifié peut être verrouillé ou déverrouillé.</summary>
+    <param name="layer">Calque spécifié.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Unlock"/> si <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> est **Vrai** ;
+<br/>
+sinon <see cref="F:FanKit.Layers.ClickOptions.Lock"/> ;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>Obtient une valeur qui indique si la couche spécifiée peut être sélectionnée ou désélectionnée.</summary>
+    <param name="layer">Calque spécifié.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Select"/> si <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> est <see cref="F:FanKit.Layers.SelectMode.Selected"/> ;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.Deselect"/> si <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> est <see cref="F:FanKit.Layers.SelectMode.Selected"/> ;
+<br/>
+sinon <see cref="F:FanKit.Layers.ClickOptions.None"/> ;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>Obtient une valeur qui indique si elle sélectionne uniquement une couche ou si elle sélectionne uniquement une plage de couches.</summary>
+    <param name="layer">Calque spécifié.</param>
+    <param name="isShiftKeyDown">True si la touche Maj est enfoncée ; par ailleurs faux.</param>
+    <param name="isControlKeyDown">True si la touche Ctrl est enfoncée ; par ailleurs faux.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/> si la touche Maj est enfoncée ;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/> si la touche Ctrl n’est pas enfoncée ;
+<br/>
+sinon <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/> ;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>Obtient une valeur qui indique si la couche spécifiée peut être affichée ou masquée.</summary>
+    <param name="layer">Calque spécifié.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Hide"/> si <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> est **Vrai** ;
+<br/>
+sinon <see cref="F:FanKit.Layers.ClickOptions.Show"/> ;
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>Fournissez des méthodes pour copier et coller le nœud dans l’arborescence logique.</summary>
+    <typeparam name="T">Type d’instance.</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>Détermine si les éléments sélectionnés peuvent être copiés dans le presse-papiers.</summary>
+    <returns>Vrai si la copie dans le presse-papiers est autorisée ; sinon, false.</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>Détermine si le presse-papiers a sélectionné des éléments qui peuvent être collés dans l’arborescence logique.</summary>
+    <returns>True si le presse-papiers contient des éléments sélectionnés qui peuvent être collés dans l’arborescence logique ; par ailleurs faux.</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Clipboard`1"/>.</summary>
+    <param name="logicalTree">L’arbre logique.</param>
+    <param name="pool">Pool d’instances qui inclut toutes les instances.</param>
+    <param name="collection">La collection de couches.</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>Crée un nœud qui est une copie de l’instance actuelle.</summary>
+    <returns>Un nouveau nœud qui est une copie de cette instance.</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>Crée un nœud qui est une copie de l’instance actuelle.</summary>
+    <param name="depth">Profondeur du nouveau nœud à partir du nœud racine de l’arbre.</param>
+    <returns>Un nouveau nœud qui est une copie de cette instance.</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>Copie les éléments sélectionnés de l’arborescence logique dans le Presse-papiers.</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>Obtient le nombre d’éléments sélectionnés.</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>Copie les éléments sélectionnés de l’arborescence logique vers l’arborescence logique.</summary>
+    <param name="duplicator">Fournit des informations pour l’opération de duplication.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>Copie les éléments sélectionnés de l’arborescence logique vers l’arborescence logique.</summary>
+    <param name="selection">État de sélection de la collection de couches.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>Copie les éléments sélectionnés du presse-papiers dans l’arborescence logique.</summary>
+    <param name="inserter">Fournit des informations pour l’opération d’insertion.</param>
+    <param name="selects">Fournit des informations pour l’opération de duplication.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>Représente la méthode qui permet d’obtenir la hauteur du conteneur pour l’élément à l’index spécifié dans la vue de liste.</summary>
+    <param name="index">L’index de l’élément à récupérer.</param>
+    <returns>Renvoie la hauteur du conteneur de l’élément à l’index spécifié dans la vue de liste.</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>Représente la méthode qui créera et initialisera une nouvelle couche à partir d’une donnée spécifiée.</summary>
+    <typeparam name="T">Le type de couche.</typeparam>
+    <typeparam name="D">Le type de données.</typeparam>
+    <param name="data">Les données spécifiées.</param>
+    <returns>Calque créé.</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>Représente la méthode qui créera et initialisera une nouvelle couche à partir d’une donnée spécifiée.</summary>
+    <typeparam name="T">Le type de couche.</typeparam>
+    <typeparam name="D">Le type de données.</typeparam>
+    <param name="data">Les données spécifiées.</param>
+    <param name="depth">Profondeur du nouveau nœud à partir du nœud racine de l’arbre.</param>
+    <returns>Calque créé.</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>Représente la méthode qui créera une nouvelle couche vide (avant de charger le contenu de la couche à partir d’un élément XML)。</summary>
+    <typeparam name="T">Le type de couche.</typeparam>
+    <param name="element">L’élément XML.</param>
+    <returns>Calque créé.</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>Représente la méthode qui créera une nouvelle couche vide (avant de charger le contenu de la couche à partir d’un élément XML)。</summary>
+    <typeparam name="T">Le type de couche.</typeparam>
+    <param name="element">L’élément XML.</param>
+    <param name="depth">Profondeur du nouveau nœud à partir du nœud racine de l’arbre.</param>
+    <returns>Calque créé.</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>Représente une modification liée à un calque qui inclut un ensemble de modifications de profondeur.</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>Obtient ou définit un ensemble de modifications de profondeur.</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary>Représente une modification qui contient la valeur du type de format <see cref="double"/>.</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>Représente une modification liée à une couche qui inclut deux modifications d’état sélectionnées.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>Obtient ou définit le premier changement de statut sélectionné.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>Obtient ou définit le deuxième changement de statut sélectionné.</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>Contient un ensemble de coordonnées et de décalages utilisés pour calculer la région de l’interface utilisateur de glissement par rapport à l’emplacement de la vue de liste.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>Hauteur du contenu de l’en-tête de liste.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>Distance à laquelle le contenu de la vue de liste a été défilé horizontalement.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>Coordonnée y du pointeur de la souris par rapport à l’emplacement de la vue de liste.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>Distance à laquelle le contenu de la vue de liste a été défilé verticalement.</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>Région de l’interface utilisateur de glissement par rapport à l’emplacement de la vue de liste.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>Hauteur du rectangle qui définit la région de l’interface utilisateur de glissement.</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>**true** si toutes les valeurs sont égales à 0 ; sinon, **false**.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>Largeur du rectangle qui définit la région de l’interface utilisateur de glissement.</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>Coordonnée X dans le coin supérieur gauche du rectangle qui définit la région de l’interface utilisateur de glissement.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>Coordonnée Y dans le coin supérieur gauche du rectangle qui définit la région de l’interface utilisateur de glissement.</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>Définit les constantes qui spécifient le type de source de glissement dans une opération de glisser-déposer.</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>Ne spécifie aucune source de glissement.</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>La source de glissement n’existe pas dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>La source de glissement est un élément qui a été sélectionné dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>La source de glissement est un élément qui n’a pas été sélectionné dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>Fournit des méthodes pour la pose de l’interface utilisateur de glisser-déposer. L’interface utilisateur de glisser-déposer trouvera et alignera le guide d’interface utilisateur le plus proche du pointeur de la souris dans la cible de placement.</summary>
+    <typeparam name="T">Type d’instance.</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>Mettez en cache la position du guide d’interface utilisateur dans chaque couche avant de glisser-déposer.</summary>
+    <param name="width">Cette largeur de la vue en liste est également la largeur maximale du guide de l’interface utilisateur.</param>
+    <param name="zoomFactorForDepth">
+Le facteur de zoom engagé pour la mise à l’échelle de la profondeur.
+<br/>
+Par exemple, lorsque le facteur de zoom est de 16, la marge gauche du guide de l’interface utilisateur est de 16 * de profondeur.
+</param>
+    <param name="containerSizeFromIndex">Obtention de la hauteur du conteneur de l’élément à l’index spécifié dans la vue de liste.</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.DragUI`1"/>.</summary>
+    <param name="logicalTree">L’arbre logique.</param>
+    <param name="visualTree">L’arbre visuel.</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>Récupère l’index de la cible de dépôt dans l’arborescence logique en identifiant le guide d’interface utilisateur le plus proche du pointeur de la souris.</summary>
+    <param name="point">Ensemble de coordonnées et de décalages utilisés pour calculer la région de l’interface utilisateur de glissement par rapport à l’emplacement de la vue de liste.</param>
+    <param name="sourceType">Spécifiez le type de source de glissement dans une opération de glisser-déposer.</param>
+    <returns>Index de la cible de dépôt dans l’arborescence logique.</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>Récupère l’index de la cible de dépôt dans l’arborescence logique en identifiant le guide d’interface utilisateur le plus proche du pointeur de la souris.</summary>
+    <param name="positionY">Coordonnée y du pointeur de la souris par rapport à l’emplacement de la vue de liste.</param>
+    <param name="sourceType">Spécifiez le type de source de glissement dans une opération de glisser-déposer.</param>
+    <returns>Index de la cible de dépôt dans l’arborescence logique.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>Récupère la région de l’interface utilisateur de glissement par rapport à l’emplacement de l’affichage de liste.</summary>
+    <param name="Indexer">Index de la cible de dépôt dans l’arborescence logique.</param>
+    <returns>Région de l’interface utilisateur de glissement par rapport à l’emplacement de la vue de liste.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>Récupère la région de l’interface utilisateur de glissement par rapport à l’emplacement de l’affichage de liste.</summary>
+    <param name="point">Ensemble de coordonnées et de décalages utilisés pour calculer la région de l’interface utilisateur de glissement par rapport à l’emplacement de la vue de liste.</param>
+    <param name="Indexer">Index de la cible de dépôt dans l’arborescence logique.</param>
+    <returns>Région de l’interface utilisateur de glissement par rapport à l’emplacement de la vue de liste.</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>Guide de hauteur de l’interface utilisateur.</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>Index de la cible de dépôt dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+« -1 si <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> est <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>, <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> ou <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/> ; »
+<br/>
+sinon, l’index en base zéro d’une cible de dépôt dans l’arborescence logique.
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>Spécifie l’emplacement où la source de glissement doit être insérée par rapport à la cible de dépôt.</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>Fournit des informations pour l’opération de dépôt.</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>Profondeur du nouveau nœud à partir du nœud racine de l’arbre.</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.DragDrop.Dropper"/>.</summary>
+    <param name="items">Collection du nœud all dans l’arborescence logique.</param>
+    <param name="indexer">Index de la cible de dépôt dans l’arborescence logique.</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>Définit des constantes qui spécifient l’emplacement où la source de glissement doit être insérée par rapport à la cible de dépôt.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>Insère un nœud au-dessus du nœud frère spécifié dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>Insère un nouveau nœud au bas de l’arborescence logique.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>Insère un nouveau nœud en haut de l’arborescence logique.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>Insérez un nouveau nœud sous le nœud spécifié dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>La source de glissement ne doit pas être insérée.</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>Fournit des informations pour l’opération de duplication.</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>Obtient le nombre de couches dupliquées.</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Options.Duplicator"/>.</summary>
+    <param name="items">La collection de couches.</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>Fournit des informations pour l’opération de regroupement.</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>Obtient le nombre de couches groupées.</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>Profondeur du nouveau nœud à partir du nœud racine de l’arbre.</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>Le changement de profondeur du calque groupé si le nombre est égal à 1 ; sinon, valeur par défaut.</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Options.Grouper"/>.</summary>
+    <param name="items">La collection de couches.</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>Le changement de statut sélectionné de la couche groupée si le nombre est égal à 1 ; sinon, valeur par défaut.</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>Représente la classe de base pour les modifications liées aux couches.</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>Obtient une collection de GUID des couches référencées.</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+Définit un nœud avec des enfants.
+<br/>
+Par exemple
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>Obtient une collection d’enfants dans le nœud actuel.</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>Obtient le nombre d’enfants qui existent dans la collection d’enfants du nœud actuel.</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>Prend en charge le clonage, qui crée une nouvelle instance d’une classe avec la même valeur qu’une instance existante.</summary>
+    <typeparam name="T">Type d’instance.</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>Crée un nœud qui est une copie de l’instance actuelle.</summary>
+    <returns>Un nouveau nœud qui est une copie de cette instance.</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>Crée un nœud qui est une copie de l’instance actuelle.</summary>
+    <param name="depth">Profondeur du nouveau nœud à partir du nœud racine de l’arbre.</param>
+    <returns>Un nouveau nœud qui est une copie de cette instance.</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+Définit la structure des nœuds composites. Les classes d’implémentation doivent être capables de notifier l’interface utilisateur.
+<br/>
+Par exemple
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // Interface utilisateur de notification
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">Type d’instance.</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>Obtient l’ensemble des nœuds qui sont des enfants du nœud actuel.</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>Se produit lorsque le nombre d’enfants qui existent dans la collection d’enfants du nœud actuel change.</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+Représente la classe de base de toutes les couches, telles que le groupe de couches, la couche bitmap et la couche de remplissage.
+<br/>
+Hérite des interfaces <see cref="T:FanKit.Layers.Core.ITreeNode"/> et <see cref="T:FanKit.Layers.Core.IChildNode"/>.
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>Obtient ou définit une valeur qui indique si ce calque est un groupe de calques.</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>Obtient ou définit une valeur qui indique si ce calque est verrouillé.</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>Obtient ou définit une valeur qui indique si ce calque est invisible.</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>Charge le contenu de la couche à partir d’un élément XML.</summary>
+    <param name="content">Élément XML qui contient le contenu de la couche.</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>Se produit lorsque des modifications affectent la vignette.</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>Enregistre le contenu de la couche dans un élément XML.</summary>
+    <param name="structure">Type de structure de l’objet XML.</param>
+    <param name="children">Les couches pour enfants.</param>
+    <returns>L’élément XML permettant d’enregistrer le contenu de la couche.</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>Obtient ou définit l’état sélectionné de ce calque.</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>Représente une plage qui a des index de début et de fin.</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>Obtient l’index final inclusif de la plage.</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>Obtient une valeur qui indique si l’index de fin est inférieur à l’index srart.</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>Obtient une valeur qui indique si l’index final est supérieur à l’index srart.</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>Obtient une valeur indiquant si cet index de fin est égal à l’index srart.</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>Obtient une plage négative (indice de début 0, indice de fin -1).</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>Obtient une plage négative (indice de début 0, indice de fin 1).</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>Obtient l’indice de début inclusif de la plage.</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>Obtient une plage de zéro (indice de début 0, indice de fin 0).</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>Représente l’état de sélection de la collection de couches.</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>Obtient un état de sélection vide.</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Ranges.IndexSelection"/>.</summary>
+    <param name="items">La collection de couches.</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>Obtient une valeur indiquant si l’état de sélection actuel est vide ou non.</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>Obtient le nombre d’éléments à supprimer.</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>Obtient le nombre d’éléments sélectionnés.</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>Fournit des informations pour l’opération d’insertion.</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>Profondeur du nouveau nœud à partir du nœud racine de l’arbre.</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>Obtient une valeur qui indique s’il existe des éléments sélectionnés dans la collection de couches.</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>Index du premier élément sélectionné dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Options.Inserter"/>.</summary>
+    <param name="items">La collection de couches.</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>Spécifie l’emplacement où le nouveau nœud doit être inséré par rapport aux éléments sélectionnés.</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>Définit des constantes qui spécifient l’emplacement où le nouveau nœud doit être inséré par rapport aux éléments sélectionnés.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>Insère un nœud au-dessus du nœud frère spécifié dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>Insère un nouveau nœud en haut de l’arborescence logique.</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary>Représente une modification qui contient la valeur du type de format <see cref="int"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+Définit des constantes qui indiquent le contenu à redessiner.
+<br/>
+Cette énumération prend en charge une combinaison au niveau du bit de ses valeurs membres.
+Par exemple
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // Effacer les couches de l’interface utilisateur
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // Synchroniser avec les couches de l’interface utilisateur
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>Redessiné toutes les vignettes des calques.</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>Redessiné le contenu du contrôle de canevas.</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu qui doit être redessiné après l’effacement.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu qui doit être redessiné après le regroupement ou l’empaquetage.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary>L’opération d’annulation de <see cref="F:FanKit.Layers.InvalidateModes.Clear"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu qui doit être redessiné après l’expansion ou la désexpansion d’un nœud.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>Le contenu qui détermine si la commande d’annulation ou de rétablissement doit s’exécuter a changé.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>Une ou plusieurs opérations d’annulation sont ajoutées ou supprimées de l’historique.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>L’histoire a été effacée.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>L’historique de l’élément actuellement sélectionné change.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>Le contenu qui détermine si la commande de calque doit s’exécuter ou non a changé.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>La collection de couches a changé.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>La collection de couches a été effacée.</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu qui doit être redessiné après le verrouillage ou le déverrouillage d’un calque.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary>L’opération d’annulation de <see cref="F:FanKit.Layers.InvalidateModes.Lock"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>Aucun.</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>Tout a changé (utilisé pour afficher le résultat de la modification pendant le débogage).</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu qui doit être redessiné après la réinitialisation.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu à redessiner après la sélection ou la désélection d’un calque.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>Les éléments sélectionnés ont changé.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>Les éléments sélectionnés ont été effacés.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary>L’opération d’annulation de <see cref="F:FanKit.Layers.InvalidateModes.Select"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu qui doit être redessiné après le tri.
+<br/>
+<br/>
+Par exemple
+suppression, insertion, collage, suppression, réorganisation, libération, regroupement, dégroupage ou duplication.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary>L’opération d’annulation de <see cref="F:FanKit.Layers.InvalidateModes.Sort"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+Se produit lorsqu’une modification du contenu est terminée.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+Se produit lorsque la valeur du contenu a changé.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+Se produit lorsque le périphérique d’entrée change de valeur lors d’une modification.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary>L’opération d’annulation de la version <see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+Se produit lorsqu’un périphérique d’entrée commence une modification du contenu.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+Combinaison au niveau du bit qui indique le contenu qui doit être redessiné une fois qu’un calque est visible ou invisible.
+<br/>
+<br/>
+Contient les valeurs de membre suivantes :
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary>L’opération d’annulation de la version <see cref="F:FanKit.Layers.InvalidateModes.Visible"/>.</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+Définit un nœud avec de la profondeur.
+<br/>
+Par exemple
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>Obtient ou définit une valeur qui indique la distance entre le nœud actuel et le nœud racine de l’arborescence.</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>Obtient l’identificateur du nœud actuel.</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>Obtient ou définit une valeur qui indique si le nœud de l’arborescence actuel est développé.</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>Obtient un objet qui fournit des valeurs calculées pour des comportements tels que le nettoyage de la mémoire, le dépôt, la réorganisation et la synchronisation.</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>Prend en charge les actions d’annulation et de rétablissement, en créant des modifications liées aux calques.</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>Obtient les modifications liées aux couches.</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>Obtient l’identificateur de ce <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>Obtient ou définit la période de ce <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>Encapsule l’arborescence visuelle et le pool d’instances, et fournit des méthodes de suppression, d’insertion, de collage, de suppression, de réorganisation, de libération, de regroupement, de dégroupage et de duplication.</summary>
+    <typeparam name="T">Type d’instance.</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>Efface et affecte les nœuds enfants de chaque nœud de l’arborescence logique, puis appelle la méthode <see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/>.</summary>
+    <param name="updateSelectMode">Définit l’état sélectionné du nœud enfant sur <see cref="F:FanKit.Layers.SelectMode.Parent"/>.</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>Obtient une valeur qui détermine si l’ensemble de couches prend en charge l’arrangement.</summary>
+    <param name="type">Indique comment modifier l’ordre des calques (également appelé ordre z) des objets afin que ceux-ci puissent apparaître au-dessus d’autres objets.</param>
+    <returns>Indique si l’ensemble de couches prend en charge l’arrangement.</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>Obtient une valeur qui détermine si l’ensemble de couches prend en charge l’arrangement.</summary>
+    <param name="type">Indique comment modifier l’ordre des calques (également appelé ordre z) des objets afin que ceux-ci puissent apparaître au-dessus d’autres objets.</param>
+    <param name="selection">État de sélection de la collection de couches.</param>
+    <returns>Indique si l’ensemble de couches prend en charge l’arrangement.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>Le nouveau calque à insérer.</summary>
+    <param name="indexer">Index de la cible de dépôt dans l’arborescence logique.</param>
+    <returns>Le nouveau calque à grouper.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>Obtient une valeur qui détermine si la collection de couches prend en charge la réorganisation.</summary>
+    <param name="indexer">Index de la cible de dépôt dans l’arborescence logique.</param>
+    <param name="selection">État de sélection de la collection de couches.</param>
+    <returns>Indique si la collection de couches prend en charge la réorganisation.</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>Efface tous les calques de la collection de calques.</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>Signale les nœuds enfants de tous les nœuds de l’arborescence logique et les supprime de l’arborescence visuelle.</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>Marque les nœuds enfants de tous les nœuds de l’arborescence logique et les ajoute à l’arborescence visuelle.</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>Regroupe plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="grouper">Fournit des informations pour l’opération de regroupement.</param>
+    <param name="newItem">Le nouveau calque à grouper.</param>
+    <param name="depths">Les changements de profondeur des multiples couches cibles.</param>
+    <param name="selects">L’état sélectionné change des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>Regroupe le calque sélectionné dans la collection de calques.</summary>
+    <param name="grouper">Fournit des informations pour l’opération de regroupement.</param>
+    <param name="newItem">Le nouveau calque à grouper.</param>
+    <param name="depth">Changements de profondeur des couches cibles.</param>
+    <param name="select">L’état sélectionné change des couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>Insère un nouveau calque dans la collection de calques.</summary>
+    <param name="dropper">Fournit des informations pour l’opération d’insertion.</param>
+    <param name="newItem">Le nouveau calque à insérer.</param>
+    <param name="selects">L’état sélectionné change des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>Insère un nouveau calque dans la collection de calques.</summary>
+    <param name="inserter">Fournit des informations pour l’opération d’insertion.</param>
+    <param name="newItem">Le nouveau calque à insérer.</param>
+    <param name="selects">L’état sélectionné change des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>Insère un nouveau calque en haut de la collection de calques.</summary>
+    <param name="newItem">Le nouveau calque à insérer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>Insère un nouveau calque en haut de la collection de calques.</summary>
+    <param name="newItem">Le nouveau calque à insérer.</param>
+    <param name="selects">L’état sélectionné change des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.LayerCollection`1"/>.</summary>
+    <param name="logicalTree">L’arbre logique.</param>
+    <param name="visualTree">L’arbre visuel.</param>
+    <param name="pool">Pool d’instances qui inclut toutes les instances.</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>Déplace plusieurs calques sélectionnés dans la collection de calques au-dessus de leur sœur.</summary>
+    <param name="reorder">Fournit des informations pour l’opération de réorganisation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>Empaquetage toutes les couches de la collection de couches.</summary>
+    <param name="newItem">La nouvelle couche à empaqueter.</param>
+    <param name="depths">Les changements de profondeur des multiples couches cibles.</param>
+    <param name="selects">L’état sélectionné change des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>Libère plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="releaser">Fournit des informations pour l’opération de largage.</param>
+    <param name="depths">Les changements de profondeur des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>Libère le calque sélectionné dans la collection de calques.</summary>
+    <param name="releaser">Fournit des informations pour l’opération de largage.</param>
+    <param name="depths">Les changements de profondeur des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>Supprime les calques cibles de la collection de calques.</summary>
+    <param name="remover">Fournit des informations pour l’opération de retrait.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>Supprime les calques cibles de la collection de calques.</summary>
+    <param name="selection">État de sélection de la collection de couches.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>Réorganise plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="reorder">Fournit des informations pour l’opération de réorganisation.</param>
+    <param name="depths">Les changements de profondeur des multiples couches cibles.</param>
+    <param name="selectedRanges">Collection de plages de couches sélectionnées dans la collection de couches.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>Réorganise le calque sélectionné dans la collection de calques.</summary>
+    <param name="reorder">Fournit des informations pour l’opération de réorganisation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>Réorganise la plage de calques sélectionnée dans la collection de calques.</summary>
+    <param name="reorder">Fournit des informations pour l’opération de réorganisation.</param>
+    <param name="depths">Les changements de profondeur des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>Efface l’arborescence visuelle, l’arborescence logique, le pool d’instances, puis déclenche l’événement <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary>Le <see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/> à l’aide de données personnalisées.</summary>
+    <typeparam name="D">Le type de données.</typeparam>
+    <param name="listOfData">Collection dont les éléments sont copiés dans l’arborescence logique.</param>
+    <param name="creator">Représente la méthode qui créera et initialisera une nouvelle couche à partir d’une donnée spécifiée.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>Le <see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/> utilisant des données personnalisées.</summary>
+    <typeparam name="D">Représente la méthode qui créera et initialisera une nouvelle couche à partir d’une donnée spécifiée.</typeparam>
+    <param name="treeOfData">Arborescence dont les éléments sont copiés dans l’arborescence logique.</param>
+    <param name="creator">Représente la méthode qui créera et initialisera une nouvelle couche à partir d’une donnée spécifiée.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+Efface et initialise l’arborescence logique, l’arborescence visuelle et le pool d’instances, puis déclenche l’événement <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> La collection dont les éléments sont copiés dans l’arborescence logique comme suit :
+<br /> │
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Groupe : Profondeur=1
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Bitmap : Profondeur=1
+<br /> ├─Groupe : Profondeur=0
+<br /> └─Bitmap : Profondeur=1
+</summary>
+    <param name="list">Collection dont les éléments sont copiés dans l’arborescence logique.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+Efface et initialise l’arborescence logique, l’arborescence visuelle et le pool d’instances, puis déclenche l’événement <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> L’arbre dont les éléments sont copiés dans l’arbre logique comme suit :
+<br /> │
+<br /> ├─Bitmap : Profondeur
+<br /> ├─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  ├─Groupe : Profondeur
+<br /> │  │  ├─Bitmap : Profondeur
+<br /> │  │  ├─Bitmap : Profondeur
+<br /> │  │  └─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  └─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  └─Bitmap : Profondeur
+</summary>
+    <param name="tree">Arborescence dont les éléments sont copiés dans l’arborescence logique.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+Efface et initialise l’arborescence logique, l’arborescence visuelle et le pool d’instances, puis déclenche l’événement <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> La collection dont les éléments sont copiés dans l’arborescence logique comme suit :
+<br /> │
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Groupe : Profondeur=1
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Bitmap : Profondeur=1
+<br /> ├─Groupe : Profondeur=0
+<br /> └─Bitmap : Profondeur=1
+</summary>
+    <param name="listOfXml">Collection dont les éléments sont copiés dans l’arborescence logique.</param>
+    <param name="creator">Représente la méthode qui créera une nouvelle couche vide (avant de charger le contenu de la couche à partir d’un élément XML)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+Efface et initialise l’arborescence logique, l’arborescence visuelle et le pool d’instances, puis déclenche l’événement <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> L’arbre dont les éléments sont copiés dans l’arbre logique comme suit :
+<br /> │
+<br /> ├─Bitmap : Profondeur
+<br /> ├─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  ├─Groupe : Profondeur
+<br /> │  │  ├─Bitmap : Profondeur
+<br /> │  │  ├─Bitmap : Profondeur
+<br /> │  │  └─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  └─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  └─Bitmap : Profondeur
+</summary>
+    <param name="treeOfXml">Arborescence dont les éléments sont copiés dans l’arborescence logique.</param>
+    <param name="creator">Représente la méthode qui créera une nouvelle couche vide (avant de charger le contenu de la couche à partir d’un élément XML)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+Efface et initialise l’arborescence logique, l’arborescence visuelle et le pool d’instances, puis déclenche l’événement <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> L’arbre dont les éléments sont copiés dans l’arbre logique comme suit :
+<br /> │
+<br /> ├─Tous les nœuds
+<br /> │  ├─Nœud : Id=0
+<br /> │  ├─Nœud : Id=1
+<br /> │  ├─Nœud : Id=2
+<br /> │  │  ├─Nœud : Id=3
+<br /> │  │  │  ├─Nœud : Id=4
+<br /> │  │  │  ├─Nœud : Id=5
+<br /> │  │  │  └─Nœud : Id=6
+<br /> │  ├─Nœud : Id=7
+<br /> │  │  └─Nœud : Id=8
+<br /> │  ├─Nœud : Id=9
+<br /> │  │  └─Nœud : Id=10
+<br /> │  │
+<br /> ├─Tous les calques
+<br /> │  ├─Bitmap : Id=0
+<br /> │  ├─Bitmap : Id=1
+<br /> │  ├─Groupe : Id=2
+<br /> │  ├─Groupe : Id=3
+<br /> │  ├─Bitmap : Id=4
+<br /> │  ├─Bitmap : Id=5
+<br /> │  ├─Bitmap : Id=6
+<br /> │  ├─Groupe : Id=7
+<br /> │  ├─Bitmap : Id=8
+<br /> │  ├─Groupe : Id=9
+<br /> │  └─Bitmap : Id=10
+</summary>
+    <param name="items">La collection d’instance avec identifiant.</param>
+    <param name="nodes">L’arbre composé de nœuds.</param>
+    <param name="creator">Représente la méthode qui créera une nouvelle couche vide (avant de charger le contenu de la couche à partir d’un élément XML)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>Se produit lors de la réinitialisation de la collection de couches.</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>Enregistre le contenu de la couche spécifiée et de ses descendants dans un élément XML.</summary>
+    <param name="treeNode">Nœud de l’arborescence XML qui projette la couche spécifiée dans un élément XML.</param>
+    <returns>L’élément XML permettant d’enregistrer le contenu de la couche spécifiée et de ses descendants.</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>Enregistre le contenu de plusieurs couches et de leurs descendants dans une collection d’éléments XML.</summary>
+    <param name="treeNode">Collection de nœuds d’arborescence XML qui projette plusieurs couches dans une collection d’éléments XML.</param>
+    <returns>La collection d’éléments XML pour l’enregistrement du contenu de plusieurs couches et de leurs descendants.</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>Trie tous les nœuds de l’arborescence logique à l’aide de la collection d’identificateurs qui aplatit en profondeur l’arborescence logique.</summary>
+    <param name="ids">Collection d’identificateurs qui aplatit en profondeur l’arborescence logique.</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>Synchronisez tous les nœuds non réduits de l’arborescence logique dans l’arborescence visuelle.</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>Synchronisez l’ordre dans lequel l’arborescence visuelle est aplatie en profondeur avec les couches d’interface utilisateur, à l’instar des algorithmes différentiels HTML DOM.</summary>
+    <param name="items">L’interface utilisateur se couche en tant que source de données (par exemple, <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) en mode liste.</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>Dissocie plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="ungrouper">Fournit des informations pour l’opération de dissociation.</param>
+    <param name="depths">Les changements de profondeur des multiples couches cibles.</param>
+    <param name="selects">L’état sélectionné change des multiples couches cibles.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>Dissocie le calque sélectionné dans la collection de calques.</summary>
+    <param name="ungrouper">Fournit des informations pour l’opération de dissociation.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>Représente une collection qui aplatit en profondeur l’arborescence logique et fournit des méthodes permettant d’accéder individuellement à la couche dans l’arborescence logique par index (l’arborescence logique est composée de couches héritées des nœuds).</summary>
+    <typeparam name="T">Type d’instance.</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>Obtient une valeur qui détermine si les couches sélectionnées dans la collection de couches prennent en charge la libération.</summary>
+    <param name="selection">État de sélection de la collection de couches.</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>Désélectionne le calque spécifié et ses descendants dans la collection de calques.</summary>
+    <param name="item">Calque spécifié.</param>
+    <returns>L’état sélectionné change de la couche spécifiée et de ses descendants.</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>Désélectionne le calque spécifié et ses descendants dans la collection de calques.</summary>
+    <param name="indexer">Index de la couche spécifiée.</param>
+    <returns>L’état sélectionné change de la couche spécifiée et de ses descendants.</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>Désélectionne tous les calques de la collection de calques.</summary>
+    <returns>L’état sélectionné change des multiples couches cibles.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>Renvoie les modifications de profondeur nécessaires pour regrouper plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="grouper">Fournit des informations pour l’opération de regroupement.</param>
+    <returns>Modifications de profondeur nécessaires pour regrouper plusieurs calques sélectionnés dans la collection de calques.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>Renvoie les modifications de profondeur nécessaires pour empaqueter tous les calques de la collection de calques.</summary>
+    <returns>Modifications de profondeur nécessaires pour empaqueter toutes les couches sélectionnées dans la collection de couches.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>Renvoie les modifications de profondeur nécessaires pour dissocier plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <returns>Modifications de profondeur nécessaires pour dissocier plusieurs calques sélectionnés dans la collection de calques.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>Renvoie les modifications de profondeur nécessaires pour réorganiser plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="reorder">Fournit des informations pour l’opération de réorganisation.</param>
+    <returns>Modifications de profondeur nécessaires pour réorganiser plusieurs calques sélectionnés dans la collection de calques.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>Renvoie les modifications de profondeur nécessaires pour réorganiser plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="reorder">Fournit des informations pour l’opération de réorganisation.</param>
+    <param name="selectedRanges">Collection de plages de couches sélectionnées dans la collection de couches.</param>
+    <returns>Modifications de profondeur nécessaires pour réorganiser plusieurs calques sélectionnés dans la collection de calques.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>Renvoie les modifications de profondeur nécessaires pour dissocier plusieurs calques sélectionnés dans la collection de calques.</summary>
+    <param name="ungrouper">Fournit des informations pour l’opération de dissociation.</param>
+    <returns>Modifications de profondeur nécessaires pour dissocier plusieurs calques sélectionnés dans la collection de calques.</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>Récupère les identificateurs uniques de tous les nœuds appartenant à la collection qui aplatit en profondeur l’arborescence logique.</summary>
+    <returns>Identificateurs uniques de tous les nœuds appartenant à l’arborescence logique.</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>Projette chaque nœud d’une arborescence logique dans une arborescence XML.</summary>
+    <returns>L’arborescence XML projetée.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>Renvoie l’ensemble des plages de calques sélectionnées dans l’ensemble de calques.</summary>
+    <returns>Collection de plages de couches sélectionnées dans la collection de couches.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>Renvoie les modifications d’état sélectionnées nécessaires pour regrouper plusieurs couches sélectionnées dans la collection de couches.</summary>
+    <param name="grouper">Fournit des informations pour l’opération de regroupement.</param>
+    <returns>Les modifications d’état sélectionnées sont nécessaires pour regrouper plusieurs couches sélectionnées dans la collection de couches.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>Renvoie les modifications d’état sélectionnées nécessaires pour empaqueter toutes les couches de la collection de couches.</summary>
+    <returns>Les modifications d’état sélectionnées sont nécessaires pour empaqueter toutes les couches sélectionnées dans la collection de couches.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>Renvoie les modifications d’état sélectionnées nécessaires pour dissocier plusieurs couches sélectionnées dans la collection de couches.</summary>
+    <param name="ungrouper">Fournit des informations pour l’opération de dissociation.</param>
+    <returns>Les modifications d’état sélectionnées sont nécessaires pour dissocier plusieurs couches sélectionnées dans la collection de couches.</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>Masque tous les calques de la collection de calques.</summary>
+    <returns>La visibilité change des multiples couches cibles.</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>Recherche la couche spécifiée et renvoie l’index de la première occurrence de la couche.</summary>
+    <param name="item">Calque à localiser.</param>
+    <returns>L’index de la première occurrence de la couche.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>Renvoie la plage entre l’index de la couche spécifiée et l’index des descendants de la couche spécifiée.</summary>
+    <param name="item">Calque à localiser.</param>
+    <returns>Plage entre l’index de la couche spécifiée et l’index des descendants de la couche spécifiée.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>Renvoie la plage entre les index de deux couches.</summary>
+    <param name="newItem">Nouveau calque à localiser.</param>
+    <param name="oldIndexer">L’index de l’ancienne couche à localiser.</param>
+    <returns>Plage entre les index de deux couches.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>Renvoie la plage entre les index de deux couches.</summary>
+    <param name="newIndexer">L’index de la nouvelle couche à localiser.</param>
+    <param name="oldIndexer">L’index de l’ancienne couche à localiser.</param>
+    <returns>Plage entre les index de deux couches.</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.LayerList`1"/>.</summary>
+    <param name="logicalTree">L’arbre logique.</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+Efface et initialise l’arborescence logique.
+<br />
+<br /> La collection dont les éléments sont copiés dans l’arborescence logique comme suit :
+<br /> │
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Groupe : Profondeur=1
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Bitmap : Profondeur=1
+<br /> ├─Groupe : Profondeur=0
+<br /> └─Bitmap : Profondeur=1
+</summary>
+    <param name="list">Collection dont les éléments sont copiés dans l’arborescence logique.</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+Efface et initialise l’arborescence logique.
+<br />
+<br /> L’arbre dont les éléments sont copiés dans l’arbre logique comme suit :
+<br /> │
+<br /> ├─Bitmap : Profondeur
+<br /> ├─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  ├─Groupe : Profondeur
+<br /> │  │  ├─Bitmap : Profondeur
+<br /> │  │  ├─Bitmap : Profondeur
+<br /> │  │  └─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  └─Bitmap : Profondeur
+<br /> ├─Groupe : Profondeur
+<br /> │  └─Bitmap : Profondeur
+</summary>
+    <param name="tree">Arborescence dont les éléments sont copiés dans l’arborescence logique.</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>Sélectionne le calque spécifié et ses descendants dans la collection de calques.</summary>
+    <param name="item">Calque spécifié.</param>
+    <returns>L’état sélectionné change de la couche spécifiée et de ses descendants.</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>Sélectionne le calque spécifié et ses descendants dans la collection de calques.</summary>
+    <param name="indexer">Index de la couche spécifiée.</param>
+    <returns>L’état sélectionné change de la couche spécifiée et de ses descendants.</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>Sélectionne tous les calques de la collection de calques.</summary>
+    <returns>L’état sélectionné change des multiples couches cibles.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>Sélectionnez uniquement la couche spécifiée et ses descendants dans la collection de couches, puis désélectionnez les autres.</summary>
+    <param name="item">Calque spécifié.</param>
+    <returns>L’état sélectionné change des multiples couches cibles.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>Sélectionnez uniquement la couche spécifiée et ses descendants dans la collection de couches, puis désélectionnez les autres.</summary>
+    <param name="indexer">Index de la couche spécifiée.</param>
+    <returns>L’état sélectionné change des multiples couches cibles.</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>Sélectionnez uniquement la plage spécifiée de calques et leurs descendants dans la collection de calques, puis désélectionnez les autres.</summary>
+    <param name="range">Plage spécifiée.</param>
+    <returns>L’état sélectionné change des multiples couches cibles.</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>Affiche tous les calques de la collection de calques.</summary>
+    <returns>La visibilité change des multiples couches cibles.</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique.</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.LayerManager1`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique.</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique, l’arborescence visuelle, le pool d’instances, l’interface utilisateur par glisser-déposer et les couches d’interface utilisateur.</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>Encapsulez certains outils, tels que l’arborescence visuelle et le pool d’instances.</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>L’interface utilisateur de glisser-déposer.</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.LayerManager2`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique.</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>L’interface utilisateur sert de source de données en mode liste.</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique, l’arborescence visuelle, le pool d’instances, l’interface utilisateur par glisser-déposer et les couches d’interface utilisateur.</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>Le presse-papiers.</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>Encapsulez certains outils, tels que l’arborescence visuelle et le pool d’instances.</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>L’interface utilisateur de glisser-déposer.</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.LayerManager3`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique.</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>L’interface utilisateur sert de source de données en mode liste.</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique, l’arborescence visuelle, le pool d’instances, l’interface utilisateur de glisser-déposer, le presse-papiers, la pile d’annulation, l’historique de l’interface utilisateur et les couches de l’interface utilisateur.</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>Le presse-papiers.</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>Encapsulez certains outils, tels que l’arborescence visuelle et le pool d’instances.</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>L’interface utilisateur de glisser-déposer.</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>Pile d’annulation.</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.LayerManager4`2"/>.</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>Encapsulez certains outils, tels que l’arborescence logique.</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>L’historique de l’interface utilisateur en tant que source de données en mode liste.</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>L’interface utilisateur sert de source de données en mode liste.</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>Définit des constantes qui indiquent la méthode à appeler pour naviguer</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>Aucune méthode.</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>Appelez le <see cref="M:FanKit.Layers.UndoStack`2.Redo"/> ou le <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/> pour refaire.</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>Appelez le <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> ou le <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> pour refaire.</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>Appelez le <see cref="M:FanKit.Layers.UndoStack`2.Undo"/> ou le <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/> pour annuler.</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>Appelez le <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> ou le <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> pour annuler.</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>Représente une liste qui contient un index de l’élément auquel naviguer. Fournir des méthodes de navigation vers l’avant et vers l’arrière.</summary>
+    <typeparam name="T">Type d’éléments de la liste.</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>Obtient une collection représentant l’historique de navigation descendante.</summary>
+    <returns>La pile de navigation arrière.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>Obtient une valeur qui indique s’il existe au moins un élément dans l’historique de navigation arrière.</summary>
+    <returns>**true** s’il y a au moins un élément dans l’historique de navigation arrière ; **false** s’il n’y a aucun élément dans l’historique de navigation arrière.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>Obtient une valeur qui indique s’il existe au moins un élément dans l’historique de navigation avant.</summary>
+    <returns>**true** s’il y a au moins un élément dans l’historique de navigation avant ; **false** s’il n’y a aucun élément dans l’historique de navigation avant.</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>Vide l’élément auquel vous souhaitez accéder, puis supprime tous les éléments du <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>L’index en base zéro de l’élément auquel naviguer. La valeur par défaut est -1.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>Obtient l’élément auquel accéder.</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>Obtient une collection représentant l’historique de la navigation avant.</summary>
+    <returns>La pile de navigation avant.</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>Crée une copie superficielle d’une plage d’éléments dans la source <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></summary>
+    <param name="range">Plage spécifiée.</param>
+    <returns>Copie superficielle d’une plage d’éléments dans la source <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>Accède à l’élément le plus récent de l’historique de navigation arrière.</summary>
+    <returns>L’élément le plus récent de l’historique de navigation arrière.</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>Accède à l’élément le plus récent de l’historique de navigation avant.</summary>
+    <returns>L’élément le plus récent de l’historique de la navigation avant.</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>Accède à l’élément vers lequel il faut naviguer.</summary>
+    <param name="index">L’index de l’élément auquel il faut accéder.</param>
+    <returns>Plage entre l’index de l’élément précédemment navigué et l’index de l’élément à naviguer.</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>Fournit des valeurs calculées pour des comportements tels que le nettoyage de la mémoire, le dépôt, la réorganisation et la synchronisation.</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary>Représente une liste qui utilise <see cref="T:FanKit.Layers.IndexRange"/>. Fournit des méthodes pour enlever et déplacer.</summary>
+    <typeparam name="T">Type d’éléments de la liste.</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>Obtient les éléments à la plage spécifiée.</summary>
+    <param name="range">La gamme des éléments à obtenir.</param>
+    <returns>Les éléments à la plage spécifiée.</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>Déplace une plage d’éléments vers un nouvel emplacement dans la liste.</summary>
+    <param name="range">La gamme d’éléments à déplacer.</param>
+    <param name="index">L’index en base zéro spécifiant le nouvel emplacement de la plage d’éléments.</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>Déplace certaines plages d’éléments de la liste devant l’élément cible.</summary>
+    <param name="ranges">Les plages d’éléments à déplacer.</param>
+    <param name="target">L’élément cible.</param>
+    <param name="offset">Décalage du nouvel emplacement dans la liste.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>Déplace certaines plages d’éléments de la liste vers le premier.</summary>
+    <param name="ranges">Les plages d’éléments à déplacer.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>Déplace certaines plages d’éléments de la liste vers les derniers.</summary>
+    <param name="ranges">Les plages d’éléments à déplacer.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>Déplace une plage d’éléments de la liste vers le premier.</summary>
+    <param name="range">La gamme d’éléments à déplacer.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>Déplace une plage d’éléments de la liste vers le dernier.</summary>
+    <param name="range">La gamme d’éléments à déplacer.</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>Supprime une plage d’éléments de la liste.</summary>
+    <param name="range">La gamme d’éléments à supprimer.</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>Supprime certaines plages d’éléments de la liste.</summary>
+    <param name="ranges">Les plages d’éléments à supprimer.</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>Fournit des informations pour l’opération de largage.</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>Obtient le nombre de couches à libérer.</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>Le changement de profondeur de couche à libérer si le nombre est égal à 1 ; sinon, valeur par défaut.</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Options.Releaser"/>.</summary>
+    <param name="items">La collection de couches.</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>Définit des constantes qui indiquent le nombre d’éléments à supprimer.</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>Le nombre d’éléments à supprimer doit être égal à 0.</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>Le nombre d’éléments à supprimer doit être inférieur au nombre de tous les éléments.</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>Le nombre d’éléments à supprimer doit être égal au nombre de tous les éléments.</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>Fournit des informations pour l’opération de retrait.</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>Obtient le nombre de couches à supprimer.</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Options.Remover"/>.</summary>
+    <param name="items">La collection de couches.</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>Fournit des informations pour l’opération de réorganisation.</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>Obtient le nombre de couches à réorganiser.</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>Le changement de profondeur de couche à réorganiser si le nombre est égal à 1 ; sinon, valeur par défaut.</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>Obtient une valeur qui indique si la cible de déplacement est un nœud frère de la source de glissement.</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La collection de couches.</param>
+    <param name="type">Indique comment modifier l’ordre des calques (également appelé ordre z) des objets afin que ceux-ci puissent apparaître au-dessus d’autres objets.</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La collection de couches.</param>
+    <param name="type">Indique comment modifier l’ordre des calques (également appelé ordre z) des objets afin que ceux-ci puissent apparaître au-dessus d’autres objets.</param>
+    <param name="selection">État de sélection de la collection de couches.</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La collection de couches.</param>
+    <param name="indexer">Index de la cible de dépôt dans l’arborescence logique.</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La collection de couches.</param>
+    <param name="indexer">Index de la cible de dépôt dans l’arborescence logique.</param>
+    <param name="selection">État de sélection de la collection de couches.</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>Définit des constantes qui indiquent le nombre d’articles à réorganiser.</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>Le nombre de plages doit être supérieur à 1 (les plages décrivent les articles à réorganiser).</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>Le nombre d’articles à commander à nouveau doit être égal à 0. </summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>Le nombre d’articles à commander à nouveau doit être égal à 1.</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>Le nombre de plages doit être égal à 1 (cette plage inclut un nœud et ses descendants).</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary>Représente une modification qui contient la valeur du type de format <see cref="T:FanKit.Layers.SelectMode"/>.</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>Représente une modification liée à une couche qui inclut un tableau de modifications d’état sélectionnées.</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>Obtient ou définit un tableau de changements de statut sélectionnés.</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>Index de la couche spécifiée dans l’arborescence logique.</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>Définit des constantes qui indiquent le nombre d’éléments sélectionnés.</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>Le nombre d’éléments sélectionnés doit être supérieur à 1.</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>Le nombre d’éléments sélectionnés doit être égal à 0. </summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>Le nombre d’éléments sélectionnés doit être égal à 1.</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary>Spécifie l’état sélectionné d’une instance <see cref="T:FanKit.Layers.ILayerBase"/>.</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary>L’instance <see cref="T:FanKit.Layers.ILayerBase"/> n’est pas sélectionnée.</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>Le parent de l’instance <see cref="T:FanKit.Layers.ILayerBase"/> dans l’arborescence logique est sélectionné.</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary>L’instance <see cref="T:FanKit.Layers.ILayerBase"/> est sélectionnée.</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>Contient les méthodes d’extension de statut sélectionnées.</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>Convertit l’état sélectionné spécifié en valeur booléenne。</summary>
+    <param name="mode">Mode de conversion.</param>
+    <returns>True si la valeur est <see cref="F:FanKit.Layers.SelectMode.Selected"/> ; sinon, false.</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>Convertit la valeur booléenne spécifiée en l’état sélectionné。</summary>
+    <param name="value">Valeur booléenne à convertir.</param>
+    <returns>
+<see cref="F:FanKit.Layers.SelectMode.Selected"/> si la valeur est **True** ;
+<br/>
+sinon, <see cref="F:FanKit.Layers.SelectMode.Deselected"/>.
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>Convertit l’état sélectionné spécifié en valeur d’opacité du pinceau du thème de couleur d’accentuation.</summary>
+    <param name="mode">Mode de conversion.</param>
+    <returns>
+0,0d si le mode est <see cref="F:FanKit.Layers.SelectMode.Deselected"/> ; 
+<br/>
+0,5d si le mode est <see cref="F:FanKit.Layers.SelectMode.Parent"/> ; 
+<br/>
+sinon, 1,0d.
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary>Représente une modification qui contient la valeur du type de format <see cref="float"/>.</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>Représente une modification liée à une couche qui inclut un tableau des identificateurs de toutes les couches (lorsque l’ordre de modification de la collection de couches).</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>Obtient ou définit un tableau des identificateurs de toutes les couches (après l’ordre de modification de la collection de couches).</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>Obtient ou définit un tableau des identificateurs de toutes les couches (avant l’ordre de modification de la collection de couches).</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>Vérifie si un <see cref="T:FanKit.Layers.Core.ITreeNode"/> spécifique existe dans le regroupement source ou le regroupement de destination.</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary>Le <see cref="T:FanKit.Layers.Core.ITreeNode"/> existe à la fois dans le regroupement source et dans le regroupement de destination.</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary>Le <see cref="T:FanKit.Layers.Core.ITreeNode"/> existe dans la collection de destination.</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary>Le <see cref="T:FanKit.Layers.Core.ITreeNode"/> existe dans la collection source.</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>Définit des constantes qui spécifient la période d’une opération d’annulation.</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>L’opération d’annulation en cours (l’index de l’opération d’annulation spécifiée dans l’historique est égal à l’élément actuellement sélectionné).</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>Une opération d’annulation future (l’index de l’opération d’annulation spécifiée dans l’historique est supérieur à l’élément actuellement sélectionné).</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>Une opération d’annulation passée (l’index de l’opération d’annulation spécifiée dans l’historique est inférieur à l’élément actuellement sélectionné).</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+Représente une file d’attente qui prend en charge les actions d’annulation et de rétablissement, et prend en charge le concept de nettoyage de la mémoire.
+<br/>
+<br/>
+La collecte des ordures :
+<br/>
+(1)
+Lorsque le nombre d’opérations sur une pile dépasse la limite de la pile, les opérations sont supprimées du bas de la pile. 
+<br/>
+(2)
+Signale une couche comme « couche inutile » si elle n’est pas dans l’arborescence logique et qu’aucune modification ne fait référence à son GUID.
+<br/>
+(3)
+Supprime tous les pools d’instances de formulaire de couche inutiles pour le nettoyage de la mémoire.
+</summary>
+    <typeparam name="T">Type d’instance.</typeparam>
+    <typeparam name="U">Type d’opération (une opération contient une action d’annulation et une action de rétablissement).</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>Appliquez l’action Rétablir pour modifier la profondeur d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>Appliquez l’action Rétablir pour modifier la profondeur de plusieurs calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>Appliquez l’action de rétablissement pour modifier l’état sélectionné de deux calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>Appliquez l’action Rétablir pour modifier l’état verrouillé d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>Appliquez l’action de rétablissement pour modifier l’état sélectionné d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>Appliquez l’action Rétablir pour modifier l’état sélectionné de plusieurs calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>Appliquez l’action de rétablissement pour modifier l’ordre des collections de couches.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> ou <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>Appliquez l’action Rétablir pour modifier la visibilité d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>Appliquez l’action Rétablir pour modifier la visibilité de plusieurs calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>Appliquez l’action d’annulation pour modifier la profondeur d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>Appliquez l’action d’annulation pour modifier la profondeur de plusieurs calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>Appliquez l’action d’annulation pour modifier l’état sélectionné de deux calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>Appliquez l’action d’annulation pour modifier l’état verrouillé d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>Appliquez l’action d’annulation pour modifier l’état sélectionné d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>Appliquez l’action d’annulation pour modifier l’état sélectionné de plusieurs calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>Appliquez l’action d’annulation pour modifier l’ordre de collecte des couches.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> ou <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>Appliquez l’action d’annulation pour modifier la visibilité d’un calque cible.</summary>
+    <param name="change">La modification à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>Appliquez l’action d’annulation pour modifier la visibilité de plusieurs calques cibles.</summary>
+    <param name="changes">Les modifications à appliquer.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>Obtient une valeur qui indique si la file d’attente contient une opération à laquelle naviguer.</summary>
+    <param name="index">Index de l’opération à laquelle accéder.</param>
+    <returns>
+<see cref="NavigateAction.Undo"/> ou <see cref="NavigateAction.UndoRange"/> si l’indice spécifié est inférieur à l’indice de l’opération en cours ;
+<br/>
+<see cref="NavigateAction.Redo"/> ou <see cref="NavigateAction.RedoRange"/> si l’indice spécifié est supérieur à l’indice de l’opération en cours ;
+<br/>
+sinon, <see cref="NavigateAction.None"/>.
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>Obtient une valeur qui indique si la mémoire tampon de rétablissement contient une action qui peut être rétablie.</summary>
+    <returns>Obtient une valeur qui indique si la mémoire tampon de rétablissement contient une action qui peut être rétablie.</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>Obtient une valeur qui indique si la mémoire tampon d’annulation contient une action qui peut être annulée.</summary>
+    <returns>True si la mémoire tampon d’annulation contient une action qui peut être annulée ; sinon, false.</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>Vide la file d’attente, puis détruit toutes les modifications d’opérations liées à la couche.</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+Supprime tous les pools d’instances de formulaire de couche inutiles pour le nettoyage de la mémoire.
+</summary>
+    <returns>Le numéro de la couche inutile.</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>Crée une copie superficielle d’une plage d’éléments dans la source <see cref="T:FanKit.Layers.UndoStack`2"/></summary>
+    <param name="range">Plage spécifiée.</param>
+    <returns>Copie superficielle d’une plage d’éléments dans la source <see cref="T:FanKit.Layers.UndoStack`2"/></returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>Accède à l’opération spécifiée.</summary>
+    <param name="index">Index de l’opération à laquelle accéder.</param>
+    <returns>Plage entre l’index de l’opération précédemment parcourue et l’index de l’opération à consulter.</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+Les opérations Push new se trouvent sur la pile d’annulation.
+Lorsque le nombre d’opérations sur une pile dépasse la limite de la pile, les opérations sont supprimées du bas de la pile. 
+</summary>
+    <param name="item">La nouvelle opération.</param>
+    <param name="isGC">Ture si supprimer la couche inutile lorsque les opérations sont supprimées ; sinon, false.</param>
+    <returns>Le numéro de la couche inutile.</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>Obtient l’opération suivante et fait de l’opération suivante l’opération en cours.</summary>
+    <returns>L’opération suivante (une opération contient une action de rétablissement).</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>Extrait toutes les actions d’annulation à partir de la mémoire tampon d’annulation.</summary>
+    <returns>Les opérations de la courante à la première (une opération contient une action d’annulation).</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>Obtient l’index de l’opération sélectionnée. La valeur par défaut est -1, ce qui indique qu’aucune opération n’est sélectionnée.</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>Obtient l’opération sélectionnée.</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+Synchronisez la période avec toutes les opérations pour mettre à jour les états et les comportements de l’interface utilisateur.
+<br/>
+<br/>
+Par exemple
+<br/>
+L’indice de l’opération passée doit être inférieur à l’indice actuel ;
+<br/>
+L’indice de l’opération en cours doit être égal à l’indice actuel ;
+<br/>
+L’indice de l’opération future doit être supérieur à l’indice actuel.
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+Synchronisez la période avec toutes les opérations pour mettre à jour les états et les comportements de l’interface utilisateur.
+<br/>
+<br/>
+Par exemple
+<br/>
+L’indice de l’opération passée doit être inférieur à l’indice spécifié ;
+<br/>
+L’indice de l’opération en cours doit être égal à l’indice spécifié ;
+<br/>
+L’index de l’opération future doit être supérieur à l’index spécifié.
+</summary>
+    <param name="index">Index de base zéro de l’opération spécifiée.</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>Synchronisez l’ordre avec l’historique de l’interface utilisateur, comme pour les algorithmes différentiels HTML DOM.</summary>
+    <param name="items">L’historique de l’interface utilisateur en tant que source de données (par exemple, <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) en mode liste.</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>Obtient l’opération en cours et fait de l’opération précédente l’opération en cours.</summary>
+    <returns>L’opération en cours (une opération contient une action d’annulation).</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>Extrait toutes les actions d’annulation à partir de la mémoire tampon d’annulation.</summary>
+    <returns>Les opérations de la courante à la première (une opération contient une action d’annulation).</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>Obtient ou définit le nombre maximal d’opérations pouvant être stockées dans la file d’attente.</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.UndoStack`2"/>.</summary>
+    <param name="pool">Pool d’instances qui inclut toutes les instances.</param>
+    <param name="collection">La collection de couches.</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>Fournit des informations pour l’opération de dissociation.</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>Obtient le nombre de couches non groupées.</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.Options.Ungrouper"/>.</summary>
+    <param name="items">La collection de couches.</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>Représente une modification liée à la couche qui inclut un ensemble de modifications de visibilité.</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>Obtient ou définit un ensemble de modifications de visibilité.</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>Extensions pour la création d’objets XML.</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>Enregistrez la profondeur, l’identificateur ou les enfants du nœud en tant qu’objet XML.</summary>
+    <param name="node">Nœud spécifié.</param>
+    <param name="type">Type de structure de l’objet XML.</param>
+    <param name="children">Les nœuds enfants.</param>
+    <returns>
+Attribut XML pour <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/> si le type est <see cref="F:FanKit.Layers.XmlStructure.List"/> ;
+<br/>
+Attribut XML pour <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/> si le type est <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/> ;
+<br/>
+sinon, les nœuds enfants.
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary>Spécifie le type de structure de l’objet XML pour l’enregistrement d’un <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+Enregistrez dans une liste avec de la profondeur.
+<br />
+<br /> Par exemple
+<br /> │
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Bitmap : Profondeur=0
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Groupe : Profondeur=1
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Bitmap : Profondeur=2
+<br /> ├─Groupe : Profondeur=0
+<br /> ├─Bitmap : Profondeur=1
+<br /> ├─Groupe : Profondeur=0
+<br /> └─Bitmap : Profondeur=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+Enregistrer dans un arbre.
+<br />
+<br /> Par exemple
+<br /> │
+<br /> ├─Image matricielle
+<br /> ├─Image matricielle
+<br /> ├─Groupe
+<br /> │  ├─Groupe
+<br /> │  │  ├─Image matricielle
+<br /> │  │  ├─Image matricielle
+<br /> │  │  └─Image matricielle
+<br /> ├─Groupe
+<br /> │  └─Image matricielle
+<br /> ├─Groupe
+<br /> │  └─Image matricielle
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+Enregistrez dans une arborescence composée de nœuds et d’une collection d’instances avec identifiant.
+<br />
+<br /> Par exemple
+<br /> │
+<br /> ├─Tous les nœuds
+<br /> │  ├─Nœud : Id=0
+<br /> │  ├─Nœud : Id=1
+<br /> │  ├─Nœud : Id=2
+<br /> │  │  ├─Nœud : Id=3
+<br /> │  │  │  ├─Nœud : Id=4
+<br /> │  │  │  ├─Nœud : Id=5
+<br /> │  │  │  └─Nœud : Id=6
+<br /> │  ├─Nœud : Id=7
+<br /> │  │  └─Nœud : Id=8
+<br /> │  ├─Nœud : Id=9
+<br /> │  │  └─Nœud : Id=10
+<br /> │  │
+<br /> ├─Tous les calques
+<br /> │  ├─Bitmap : Id=0
+<br /> │  ├─Bitmap : Id=1
+<br /> │  ├─Groupe : Id=2
+<br /> │  ├─Groupe : Id=3
+<br /> │  ├─Bitmap : Id=4
+<br /> │  ├─Bitmap : Id=5
+<br /> │  ├─Bitmap : Id=6
+<br /> │  ├─Groupe : Id=7
+<br /> │  ├─Bitmap : Id=8
+<br /> │  ├─Groupe : Id=9
+<br /> │  └─Bitmap : Id=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>Définit un nœud d’arborescence XML qui projette n’importe quel nœud de l’arborescence logique dans un élément XML.</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>Ajoute la chaîne à l’objet <see cref="T:System.Text.StringBuilder"/> actuel.</summary>
+    <param name="stringBuilder">L’objet <see cref="T:System.Text.StringBuilder"/> actuel.</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>Enregistrez l’identificateur et les enfants du nœud en tant qu’élément XML.</summary>
+    <param name="elementChildName">Nom de l’enfant de l’élément XML.</param>
+    <returns>
+Élément XML avec identificateur et enfants si le nœud a des enfants ;
+<br/>
+sinon, élément XML avec uniquement l’identifiant.
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.XmlTreeNode"/>.</summary>
+    <param name="id">Identificateur du nœud.</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary>Construit un objet <see cref="T:FanKit.Layers.XmlTreeNode"/>.</summary>
+    <param name="element">L’élément XML avec l’identifiant et les enfants.</param>
+  </doc>
+</docs>
