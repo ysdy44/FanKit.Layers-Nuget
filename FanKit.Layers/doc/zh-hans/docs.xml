@@ -1744,16 +1744,16 @@ public class A : ITreeNode
     <summary>获取或设置一个所有图层的身份标识符的数组（在图层集合改变顺序之前）。</summary>
   </doc>
   <doc for="SyncExists">
-    <summary>检查一个特定 <see cref="T:FanKit.Layers.Core.ITreeNode" /> 是否存在于源集合或目标集合内。</summary>
+    <summary>检查一个特定 <see cref="T:FanKit.Layers.Core.ITreeNode"/> 是否存在于源集合或目标集合内。</summary>
   </doc>
   <doc for="SyncExists.Both">
-    <summary><see cref="T:FanKit.Layers.Core.ITreeNode" /> 同时存在于源集合和目标集合内。</summary>
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> 同时存在于源集合和目标集合内。</summary>
   </doc>
   <doc for="SyncExists.Destination">
-    <summary><see cref="T:FanKit.Layers.Core.ITreeNode" /> 存在于目标集合内。</summary>
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> 存在于目标集合内。</summary>
   </doc>
   <doc for="SyncExists.Source">
-    <summary><see cref="T:FanKit.Layers.Core.ITreeNode" /> 存在于源集合内。</summary>
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> 存在于源集合内。</summary>
   </doc>
   <doc for="TimePeriod">
     <summary>定义为一个撤销操作指定时期的常量。</summary>

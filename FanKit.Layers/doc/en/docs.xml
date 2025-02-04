@@ -1744,16 +1744,16 @@ otherwise, 1.0d.
     <summary>Get or set an array of all layers‘s identifiers (before the layer collection change order).</summary>
   </doc>
   <doc for="SyncExists">
-    <summary>Checks whether a specific <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists in the source collection or destination collection.</summary>
+    <summary>Checks whether a specific <see cref="T:FanKit.Layers.Core.ITreeNode"/> exists in the source collection or destination collection.</summary>
   </doc>
   <doc for="SyncExists.Both">
-    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists both in the source collection and destination collection.</summary>
+    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode"/> exists both in the source collection and destination collection.</summary>
   </doc>
   <doc for="SyncExists.Destination">
-    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists in the destination collection.</summary>
+    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode"/> exists in the destination collection.</summary>
   </doc>
   <doc for="SyncExists.Source">
-    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode" /> exists in the source collection.</summary>
+    <summary>The <see cref="T:FanKit.Layers.Core.ITreeNode"/> exists in the source collection.</summary>
   </doc>
   <doc for="TimePeriod">
     <summary>Defines constants that specify the time period for a undo operation.</summary>
