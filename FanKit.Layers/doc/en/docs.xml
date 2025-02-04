@@ -95,7 +95,7 @@ otherwise <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
     <summary>Get a value that indicates whether the specified layer can be locked or unlocked.</summary>
     <param name="layer">The specified layer.</param>
     <returns>
-<see cref="F:FanKit.Layers.ClickOptions.Unlock"/> if <see cref="P:FanKit.Layers.IlerBase.IsLocked"/> is **True**;
+<see cref="F:FanKit.Layers.ClickOptions.Unlock"/> if <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> is **True**;
 <br/>
 otherwise <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
 </returns>
@@ -128,7 +128,7 @@ otherwise <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Lay
     <summary>Get a value that indicates whether the specified layer can be displayed or hidden.</summary>
     <param name="layer">The specified layer.</param>
     <returns>
-<see cref="F:FanKit.Layers.ClickOptions.Hide"/> if <see cref="P:FanKit.Layers.IlerBase.IsVisible"/> is **True**;
+<see cref="F:FanKit.Layers.ClickOptions.Hide"/> if <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> is **True**;
 <br/>
 otherwise <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
 </returns>
