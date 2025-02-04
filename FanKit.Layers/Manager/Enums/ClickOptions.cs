@@ -40,8 +40,7 @@
 
         //-------------Expand-------------//
 
-        /// <include fi
-        /// le="doc/docs.xml" path="docs/doc[@for='ClickOptions.Collapse']/*" />
+        /// <include file="doc/docs.xml" path="docs/doc[@for='ClickOptions.Collapse']/*" />
         Collapse,
         /// <include file="doc/docs.xml" path="docs/doc[@for='ClickOptions.Expand']/*" />
         Expand,
