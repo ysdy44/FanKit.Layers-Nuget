@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanKit.Layers.TestApp", "Fa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{D346A4EC-9177-4521-B079-EDC83F8F4884}"
 	ProjectSection(SolutionItems) = preProject
+		README-DE.md = README-DE.md
 		README-EN.md = README-EN.md
 		README-ZH.md = README-ZH.md
 	EndProjectSection
