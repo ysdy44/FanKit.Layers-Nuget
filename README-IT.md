@@ -36,4 +36,4 @@ In costruzione...
 
 1. Trova la cartella **...\FanKit.Layers\doc**
 2. Sovrascrivere il file **docs.xml** con il file **it\docs.xml**
-3. Passa il mouse sopra il codice e verr�� visualizzata una descrizione comandi
+3. Passa il mouse sopra il codice e verrà visualizzata una descrizione comandi
