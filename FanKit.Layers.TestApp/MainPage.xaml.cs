@@ -18,11 +18,6 @@ namespace FanKit.Layers.TestApp
 
     public sealed partial class MainPage : Page
     {
-
-        //@Converter
-        private bool BooleanNullableConverter(bool? value) => value is true;
-        private Visibility BooleanNullableToVisibilityConverter(bool? value) => value is true ? Visibility.Visible : Visibility.Collapsed;
-
         //@Instance
         private readonly Lazy<ApplicationView> ViewLazy = new Lazy<ApplicationView>(() => ApplicationView.GetForCurrentView());
         private ApplicationView View => this.ViewLazy.Value;
@@ -49,6 +44,17 @@ namespace FanKit.Layers.TestApp
 
             this.Hyperlink4.Inlines.Add(new Run { Text = nameof(SelectedRangesPage) });
             this.Hyperlink4.Click += (s, e) => this.Navigate(nameof(SelectedRangesPage));
+
+            this.SplitButton.Unchecked += (s, e) =>
+            {
+                this.SplitView.IsPaneOpen = false;
+                this.AutoSuggestBox.Visibility = Visibility.Collapsed;
+            };
+            this.SplitButton.Checked += (s, e) =>
+            {
+                this.SplitView.IsPaneOpen = true;
+                this.AutoSuggestBox.Visibility = Visibility.Visible;
+            };
 
             this.ListView.ItemClick += (s, e) =>
             {

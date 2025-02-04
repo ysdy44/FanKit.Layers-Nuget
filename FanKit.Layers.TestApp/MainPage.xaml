@@ -14,8 +14,7 @@
         </CollectionViewSource>
     </FrameworkElement.Resources>
 
-    <SplitView x:Name="SplitView" DisplayMode="CompactInline" 
-               IsPaneOpen="{x:Bind BooleanNullableConverter(SplitButton.IsChecked), Mode=OneWay}" >
+    <SplitView x:Name="SplitView" DisplayMode="CompactInline" >
 
 
         <!--VisualState-->
@@ -75,8 +74,7 @@
                         Pages
                     </TextBlock>
                 </StackPanel>
-                <AutoSuggestBox x:Name="AutoSuggestBox" Grid.Row="1" Margin="12,0" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
-                                   Visibility="{x:Bind BooleanNullableToVisibilityConverter(SplitButton.IsChecked), Mode=OneWay}" >
+                <AutoSuggestBox x:Name="AutoSuggestBox" Grid.Row="1" Margin="12,0" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
                     <!--ItemsSource-->
                 </AutoSuggestBox>
                 <SemanticZoom x:Name="SemanticZoom" Grid.Row="2" >
