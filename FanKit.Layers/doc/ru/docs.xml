@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>Определяет константы, указывающие, как изменить порядок слоев (также известный как z-порядок) объектов, чтобы объекты могли отображаться поверх других объектов.</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>Приблизьте объект на один шаг к переднему плану.</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>Поднесите предмет на переднюю часть заказа.</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>Отправьте объект на один шаг к заднему плану.</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>Отправьте объект в конец заказа.</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary>Представляет изменение, содержащее значение типа формата <see cref="bool"/>.</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>Идентификатор слоя, который будет использоваться в качестве целевого объекта операции.</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>Получает значение, указывающее, равно ли это новое значение старому.</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>Новое значение.</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>Предыдущее значение.</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>Расширения для создания изменений.</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary>Создает изменение по сравнению с <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item"><see cref="T:FanKit.Layers.Core.ITreeNode"/> для внесения изменений.</param>
+    <returns>Изменение, содержащее false в качестве нового значения.</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary>Создает изменение по сравнению с <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item"><see cref="T:FanKit.Layers.Core.ITreeNode"/> для внесения изменений.</param>
+    <returns>Изменение, содержащее истину в качестве нового значения.</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>Указывает параметры операций, связанных со слоями, когда элемент в представлении списка получает взаимодействие.</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>Помечает все дочерние узлы указанного узла в логическом дереве и удаляет их из визуального дерева.</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>Отмена выбора указанного слоя и его потомков в коллекции слоев.</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>Помечает все дочерние узлы указанного узла в логическом дереве и добавляет их в визуальное дерево.</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>Скрывает указанный слой в коллекции слоев.</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>Блокирует указанный слой в коллекции слоев.</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>Никакой.</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>Выбирает указанный слой и его потомков в коллекции слоев.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>Выберите только указанный слой и его потомки в коллекции слоев, а затем отмените выбор остальных.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>Выберите только указанный диапазон слоев и их потомков в коллекции слоев, а затем отмените выбор остальных.</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>Отображает указанный слой в коллекции слоев.</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>Разблокирует указанный слой в коллекции слоев.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>Расширения для создания опций, связанных со слоями.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>Получает значение, указывающее, можно ли свернуть указанный узел или развернуть.</summary>
+    <param name="node">Указанный узел.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Collapse"/>, если <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> имеет значение **True**;
+<br/>
+в противном случае <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>Получает значение, указывающее, может ли указанный слой быть заблокирован или разблокирован.</summary>
+    <param name="layer">Указанный слой.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Unlock"/>, если <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> имеет значение **True**;
+<br/>
+в противном случае <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>Получает значение, указывающее, можно ли выбрать указанный слой или отменить выделение.</summary>
+    <param name="layer">Указанный слой.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Select"/>, если <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> есть <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.Deselect"/>, если <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> есть <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<br/>
+в противном случае <see cref="F:FanKit.Layers.ClickOptions.None"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>Возвращает значение, указывающее, следует ли выбрать только слой или только выбрать диапазон слоев.</summary>
+    <param name="layer">Указанный слой.</param>
+    <param name="isShiftKeyDown">True, если нажата клавиша Shift; в противном случае false.</param>
+    <param name="isControlKeyDown">True, если нажата клавиша Ctrl; в противном случае false.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/>, если нажата клавиша Shift;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/>, если клавиша Ctrl не нажата;
+<br/>
+в противном случае <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>Получает значение, указывающее, может ли указанный слой быть отображен или скрыт.</summary>
+    <param name="layer">Указанный слой.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Hide"/>, если <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> имеет значение **True**;
+<br/>
+в противном случае <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>Предоставьте методы для копирования и вставки узла в логическое дерево.</summary>
+    <typeparam name="T">Тип экземпляра.</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>Определяет, можно ли скопировать выбранные элементы в буфер обмена.</summary>
+    <returns>True, если копирование в буфер обмена разрешено; в противном случае — ложь.</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>Определяет, есть ли в буфере обмена выбранные элементы, которые можно вставить в логическое дерево.</summary>
+    <returns>True, если в буфере обмена есть выбранные элементы, которые можно вставить в логическое дерево; в противном случае false.</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Clipboard`1"/>.</summary>
+    <param name="logicalTree">Логическое дерево.</param>
+    <param name="pool">Пул экземпляров, включающий все экземпляры.</param>
+    <param name="collection">Коллекция слоев.</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>Создает новый узел, который является копией текущего экземпляра.</summary>
+    <returns>Новый узел, который является копией этого экземпляра.</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>Создает новый узел, который является копией текущего экземпляра.</summary>
+    <param name="depth">Глубина нового узла от корневого узла дерева.</param>
+    <returns>Новый узел, который является копией этого экземпляра.</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>Копирует выбранные элементы из логического дерева в буфер обмена.</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>Получает количество выбранных элементов.</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>Копирует выбранные элементы из логического дерева в логическое дерево.</summary>
+    <param name="duplicator">Предоставляет информацию для операции дублирования.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>Копирует выбранные элементы из логического дерева в логическое дерево.</summary>
+    <param name="selection">Состояние выделения для коллекции слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>Копирует выбранные элементы из буфера обмена в логическое дерево.</summary>
+    <param name="inserter">Предоставляет информацию для операции вставки.</param>
+    <param name="selects">Предоставляет информацию для операции дублирования.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>Представляет метод, который будет получать высоту контейнера для элемента по указанному индексу в представлении списка.</summary>
+    <param name="index">Индекс извлекаемого элемента.</param>
+    <returns>Возвращает высоту контейнера для элемента по указанному индексу в представлении списка.</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>Представляет метод, который будет создавать и инициализировать новый слой на основе указанных данных.</summary>
+    <typeparam name="T">Тип слоя.</typeparam>
+    <typeparam name="D">Тип данных.</typeparam>
+    <param name="data">Указанные данные.</param>
+    <returns>Созданный слой.</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>Представляет метод, который будет создавать и инициализировать новый слой на основе указанных данных.</summary>
+    <typeparam name="T">Тип слоя.</typeparam>
+    <typeparam name="D">Тип данных.</typeparam>
+    <param name="data">Указанные данные.</param>
+    <param name="depth">Глубина нового узла от корневого узла дерева.</param>
+    <returns>Созданный слой.</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>Представляет метод, который будет создавать новый пустой слой (перед загрузкой содержимого слоя из элемента XML).</summary>
+    <typeparam name="T">Тип слоя.</typeparam>
+    <param name="element">Элемент XML.</param>
+    <returns>Созданный слой.</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>Представляет метод, который будет создавать новый пустой слой (перед загрузкой содержимого слоя из элемента XML).</summary>
+    <typeparam name="T">Тип слоя.</typeparam>
+    <param name="element">Элемент XML.</param>
+    <param name="depth">Глубина нового узла от корневого узла дерева.</param>
+    <returns>Созданный слой.</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>Представляет собой изменение, связанное со слоем, которое включает в себя массив изменений глубины.</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>Получает или задает массив изменений глубины.</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary>Представляет изменение, содержащее значение типа формата <see cref="double"/>.</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>Представляет изменение, связанное со слоем, которое включает в себя два выбранных изменения статуса.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>Получает или устанавливает первое выбранное изменение статуса.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>Получает или устанавливает второе выбранное изменение статуса.</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>Содержит набор координат и смещений, используемых для вычисления области пользовательского интерфейса перетаскивания относительно расположения представления списка.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>Высота содержимого заголовка списка.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>Расстояние, на которое содержимое представления списка было прокручено по горизонтали.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>Y-координата указателя мыши относительно расположения представления списка.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>Расстояние, на которое содержимое списка было прокручено по вертикали.</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>Область пользовательского интерфейса перетаскивания относительно расположения представления списка.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>Высота прямоугольника, определяющего область пользовательского интерфейса перетаскивания.</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>**true**, если все значения равны 0; в противном случае, **ложь**.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>Ширина прямоугольника, определяющего область пользовательского интерфейса перетаскивания.</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>Координата X в верхнем левом углу прямоугольника, определяющего область пользовательского интерфейса перетаскивания.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>Координата Y в верхнем левом углу прямоугольника, определяющего область пользовательского интерфейса перетаскивания.</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>Определяет константы, указывающие тип источника перетаскивания в операции перетаскивания.</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>Не указывает источник перетаскивания.</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>Источник перетаскивания не существует в логическом дереве.</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>Источник перетаскивания — это элементы, которые были выбраны в логическом дереве.</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>Источник перетаскивания — это элемент, который не был выбран в логическом дереве.</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>Предоставляет методы для создания пользовательского интерфейса перетаскивания. Пользовательский интерфейс перетаскивания найдет и прикрепит направляющую пользовательского интерфейса, ближайшую к указателю мыши в цели размещения.</summary>
+    <typeparam name="T">Тип экземпляра.</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>Кэшируйте положение направляющей пользовательского интерфейса в каждом слое перед перетаскиванием.</summary>
+    <param name="width">Эта ширина представления списка, а также максимальная ширина направляющей пользовательского интерфейса.</param>
+    <param name="zoomFactorForDepth">
+Коэффициент масштабирования включен для масштабирования глубины.
+<br/>
+Например, если коэффициент масштабирования равен 16, левое поле направляющей пользовательского интерфейса равно 16 * глубина.
+</param>
+    <param name="containerSizeFromIndex">Получение высоты контейнера для элемента по указанному индексу в виде списка.</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.DragUI`1"/>.</summary>
+    <param name="logicalTree">Логическое дерево.</param>
+    <param name="visualTree">Визуальное дерево.</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>Извлекает индекс цели перетаскивания в логическом дереве, определяя ближайшую к указателю мыши направляющую пользовательского интерфейса.</summary>
+    <param name="point">Набор координат и смещений, используемый для вычисления области пользовательского интерфейса перетаскивания относительно расположения представления списка.</param>
+    <param name="sourceType">Укажите тип источника перетаскивания в операции перетаскивания.</param>
+    <returns>Индекс цели перетаскивания в логическом дереве.</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>Извлекает индекс цели перетаскивания в логическом дереве, определяя ближайшую к указателю мыши направляющую пользовательского интерфейса.</summary>
+    <param name="positionY">Y-координата указателя мыши относительно расположения представления списка.</param>
+    <param name="sourceType">Укажите тип источника перетаскивания в операции перетаскивания.</param>
+    <returns>Индекс цели перетаскивания в логическом дереве.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>Извлекает область пользовательского интерфейса перетаскивания относительно расположения представления списка.</summary>
+    <param name="Indexer">Индекс цели перетаскивания в логическом дереве.</param>
+    <returns>Область пользовательского интерфейса перетаскивания относительно расположения представления списка.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>Извлекает область пользовательского интерфейса перетаскивания относительно расположения представления списка.</summary>
+    <param name="point">Набор координат и смещений, используемый для вычисления области пользовательского интерфейса перетаскивания относительно расположения представления списка.</param>
+    <param name="Indexer">Индекс цели перетаскивания в логическом дереве.</param>
+    <returns>Область пользовательского интерфейса перетаскивания относительно расположения представления списка.</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>Высота руководства по пользовательскому интерфейсу.</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>Индекс цели перетаскивания в логическом дереве.</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+"-1, если <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> - это <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>, <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> или <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>;"
+<br/>
+В противном случае отсчитываемый от нуля индекс цели перетаскивания в логическом дереве.
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>Указывает, куда должен быть вставлен источник перетаскивания относительно цели перетаскивания.</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>Предоставляет информацию для операции сброса.</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>Глубина нового узла от корневого узла дерева.</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.DragDrop.Dropper"/>.</summary>
+    <param name="items">Коллекция узла all в логическом дереве.</param>
+    <param name="indexer">Индекс цели перетаскивания в логическом дереве.</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>Определяет константы, указывающие, куда должен быть вставлен источник перетаскивания относительно цели перетаскивания.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>Вставляет узел над указанным одноуровневым узлом в логическом дереве.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>Вставляет новый узел в нижнюю часть логического дерева.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>Вставляет новый узел в верхнюю часть логического дерева.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>Вставьте новый узел ниже указанного узла в логическом дереве.</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>Источник перетаскивания не следует вставлять.</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>Предоставляет информацию для операции дублирования.</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>Получает количество дубликатов слоев.</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Options.Duplicator"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>Предоставляет информацию для операции группировки.</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>Получает количество сгруппированных слоев.</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>Глубина нового узла от корневого узла дерева.</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>Изменение глубины сгруппированного слоя, если число равно 1; в противном случае — значение по умолчанию.</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Options.Grouper"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>Изменение выбранного статуса сгруппированного слоя, если число равно 1; в противном случае — значение по умолчанию.</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>Представляет базовый класс для изменений, связанных со слоями.</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>Получает коллекцию GUID слоев, на которые имеются ссылки.</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+Определяет узел с дочерними элементами.
+<br/>
+Например.
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>Получает коллекцию дочерних элементов в текущем узле.</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>Возвращает количество дочерних элементов, существующих в дочерней коллекции текущего узла.</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>Поддерживает клонирование, при котором создается новый экземпляр класса с тем же значением, что и у существующего экземпляра.</summary>
+    <typeparam name="T">Тип экземпляра.</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>Создает новый узел, который является копией текущего экземпляра.</summary>
+    <returns>Новый узел, который является копией этого экземпляра.</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>Создает новый узел, который является копией текущего экземпляра.</summary>
+    <param name="depth">Глубина нового узла от корневого узла дерева.</param>
+    <returns>Новый узел, который является копией этого экземпляра.</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+Определяет структуру составных узлов. Реализация классов должна быть способна уведомлять пользовательский интерфейс.
+<br/>
+Например.
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // Интерфейс уведомлений
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">Тип экземпляра.</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>Получает коллекцию узлов, которые являются дочерними по отношению к текущему узлу.</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>Происходит, когда изменяется количество дочерних элементов, существующих в дочерней коллекции текущего узла.</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+Представляет базовый класс для всех слоев, таких как группа слоев, слой растрового изображения и слой заливки.
+<br/>
+Наследуется от интерфейсов <see cref="T:FanKit.Layers.Core.ITreeNode"/> и <see cref="T:FanKit.Layers.Core.IChildNode"/>.
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>Получает или задает значение, указывающее, является ли данный слой группой слоев.</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>Получает или задает значение, указывающее, заблокирован ли этот слой.</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>Получает или задает значение, указывающее, является ли этот слой невидимым.</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>Загружает содержимое слоя из элемента XML.</summary>
+    <param name="content">Элемент XML, содержащий содержимое слоя.</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>Возникает, когда происходят изменения, которые влияют на миниатюру.</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>Сохраняет содержимое слоя в элементе XML.</summary>
+    <param name="structure">Тип структуры объекта XML.</param>
+    <param name="children">Дети несушки.</param>
+    <returns>Элемент XML для сохранения содержимого слоя.</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>Получает или задает выбранное состояние этого слоя.</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>Представляет диапазон, содержащий начальный и конечный индексы.</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>Получает инклюзивный конечный индекс диапазона.</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>Получает значение, указывающее, меньше ли индекс конца индекса srart.</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>Получает значение, указывающее, больше ли конечный индекс индекса srart.</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>Получает значение, указывающее, равен ли этот конечный индекс индексу srart.</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>Получает отрицательный диапазон (начальный индекс 0, конечный индекс -1).</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>Получает отрицательный диапазон (начальный индекс 0, конечный индекс 1).</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>Получает инклюзивный начальный индекс диапазона.</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>Получает нулевой диапазон (начальный индекс 0, конечный индекс 0).</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>Представляет состояние выборки для коллекции слоев.</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>Получает пустое состояние выделения.</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Ranges.IndexSelection"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>Получает значение, указывающее, является ли текущее состояние выделения пустым.</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>Возвращает количество удаляемых элементов.</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>Получает количество выбранных элементов.</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>Предоставляет информацию для операции вставки.</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>Глубина нового узла от корневого узла дерева.</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>Получает значение, указывающее, есть ли в коллекции слоев какие-либо выбранные элементы.</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>Индекс первого выбранного элемента в логическом дереве.</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Options.Inserter"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>Указывает, куда должен быть вставлен новый узел относительно выбранных элементов.</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>Определяет константы, указывающие, куда должен быть вставлен новый узел относительно выбранных элементов.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>Вставляет узел над указанным одноуровневым узлом в логическом дереве.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>Вставляет новый узел в верхнюю часть логического дерева.</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary>Представляет изменение, содержащее значение типа формата <see cref="int"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+Определяет константы, указывающие на то, какое содержимое необходимо перерисовать.
+<br/>
+Это перечисление поддерживает побитовую комбинацию значений своих членов.
+Например.
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // Очистка слоев пользовательского интерфейса
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // Синхронизация со слоями пользовательского интерфейса
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>Перерисованы все миниатюры слоев.</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>Перерисовано содержимое элемента управления canvas.</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после очистки.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после группировки или упаковки.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary>Операция отмены <see cref="F:FanKit.Layers.InvalidateModes.Clear"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после развертывания или разворачивания узла.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>Содержимое, влияющее на выполнение команды отмены или повтора, изменилось.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>Одна или несколько операций отмены добавляются в журнал или удаляются из него.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>История прояснена.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>В истории изменяется выбранный в данный момент элемент.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>Содержимое, влияющее на выполнение команды слоя, изменилось.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>Изменилась коллекция слоев.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>Коллекция слоев была очищена.</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после блокировки или разблокировки слоя.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary>Операция отмены <see cref="F:FanKit.Layers.InvalidateModes.Lock"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>Никакой.</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>Что-то изменилось (используется для вывода результата изменения во время отладки).</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после сброса.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после выбора или отмены выбора слоя.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>Выбранные элементы изменились.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>Выбранные элементы были удалены.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary>Операция отмены <see cref="F:FanKit.Layers.InvalidateModes.Select"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после сортировки.
+<br/>
+<br/>
+Например.
+удаление, вставка, вставка, удаление, изменение порядка, освобождение, группировка, разгруппировка или дублирование.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary>Операция отмены <see cref="F:FanKit.Layers.InvalidateModes.Sort"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+Происходит, когда изменение содержимого завершено.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+Возникает, когда значение содержимого изменилось.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+Происходит, когда устройство ввода изменяет значение во время модификации.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary>Операция отмены <see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+Возникает, когда устройство ввода начинает вносить изменения в содержимое.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+Побитовая комбинация, указывающая, какое содержимое необходимо перерисовать после того, как слой станет видимым или невидимым.
+<br/>
+<br/>
+Содержит следующие значения элементов:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary>Операция отмены <see cref="F:FanKit.Layers.InvalidateModes.Visible"/>.</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+Определяет узел с глубиной.
+<br/>
+Например.
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>Получает или задает значение, указывающее, насколько текущий узел находится от корневого узла дерева.</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>Получает идентификатор текущего узла.</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>Получает или задает значение, указывающее, развернут ли узел представления дерева cuurent.</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>Получает объект, который предоставляет вычисленные значения для таких поведений, как сборка мусора, удаление, переупорядочивание и синхронизация.</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>Поддерживает действия отмены и повтора путем создания изменений, связанных со слоями.</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>Получает изменения, связанные со слоями.</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>Получает идентификатор для этого <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>Получает или задает период времени для этого <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>Инкапсулирует визуальное дерево и пул экземпляров, а также предоставляет методы для удаления, вставки, вставки, удаления, переупорядочения, освобождения, группировки, разгруппировки и дублирования.</summary>
+    <typeparam name="T">Тип экземпляра.</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>Очищает и назначает дочерние узлы каждого узла в логическом дереве, а затем вызывает метод <see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/>.</summary>
+    <param name="updateSelectMode">Установите ли выбранный статус дочернего узла на <see cref="F:FanKit.Layers.SelectMode.Parent"/>.</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>Получает значение, определяющее, поддерживает ли коллекция слоев упорядочивание.</summary>
+    <param name="type">Указывает, как изменить порядок слоев (также известный как z-порядок) объектов, чтобы объекты могли отображаться поверх других объектов.</param>
+    <returns>Поддерживает ли коллекция слоев упорядочивание.</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>Получает значение, определяющее, поддерживает ли коллекция слоев упорядочивание.</summary>
+    <param name="type">Указывает, как изменить порядок слоев (также известный как z-порядок) объектов, чтобы объекты могли отображаться поверх других объектов.</param>
+    <param name="selection">Состояние выделения для коллекции слоев.</param>
+    <returns>Поддерживает ли коллекция слоев упорядочивание.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>Новый слой для вставки.</summary>
+    <param name="indexer">Индекс цели перетаскивания в логическом дереве.</param>
+    <returns>Новый слой для группировки.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>Получает значение, определяющее, поддерживает ли коллекция слоев изменение порядка.</summary>
+    <param name="indexer">Индекс цели перетаскивания в логическом дереве.</param>
+    <param name="selection">Состояние выделения для коллекции слоев.</param>
+    <returns>Поддерживает ли коллекция слоев изменение порядка.</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>Очищает все слои в коллекции слоев.</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>Помечает дочерние узлы всех узлов логического дерева и удаляет их из визуального дерева.</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>Помечает дочерние узлы всех узлов логического дерева и добавляет их в визуальное дерево.</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>Группировка нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="grouper">Предоставляет информацию для операции группировки.</param>
+    <param name="newItem">Новый слой для группировки.</param>
+    <param name="depths">Изменение глубины нескольких целевых слоев.</param>
+    <param name="selects">Выбранный статус изменяется для нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>Группировка слоя, выбранного в коллекции слоев.</summary>
+    <param name="grouper">Предоставляет информацию для операции группировки.</param>
+    <param name="newItem">Новый слой для группировки.</param>
+    <param name="depth">Изменение глубины целевых слоев.</param>
+    <param name="select">Выбранный статус изменяется для целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>Вставляет новый слой в коллекцию слоев.</summary>
+    <param name="dropper">Предоставляет информацию для операции вставки.</param>
+    <param name="newItem">Новый слой для вставки.</param>
+    <param name="selects">Выбранный статус изменяется для нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>Вставляет новый слой в коллекцию слоев.</summary>
+    <param name="inserter">Предоставляет информацию для операции вставки.</param>
+    <param name="newItem">Новый слой для вставки.</param>
+    <param name="selects">Выбранный статус изменяется для нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>Вставляет новый слой в верхнюю часть коллекции слоев.</summary>
+    <param name="newItem">Новый слой для вставки.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>Вставляет новый слой в верхнюю часть коллекции слоев.</summary>
+    <param name="newItem">Новый слой для вставки.</param>
+    <param name="selects">Выбранный статус изменяется для нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.LayerCollection`1"/>.</summary>
+    <param name="logicalTree">Логическое дерево.</param>
+    <param name="visualTree">Визуальное дерево.</param>
+    <param name="pool">Пул экземпляров, включающий все экземпляры.</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>Перемещает несколько слоев, выбранных в коллекции слоев над их одноуровневым слоем.</summary>
+    <param name="reorder">Предоставляет информацию для операции переупорядочения.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>Упаковывает все слои в коллекции слоев.</summary>
+    <param name="newItem">Новый слой для упаковки.</param>
+    <param name="depths">Изменение глубины нескольких целевых слоев.</param>
+    <param name="selects">Выбранный статус изменяется для нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>Освобождает несколько слоев, выбранных в коллекции слоев.</summary>
+    <param name="releaser">Предоставляет информацию для операции освобождения.</param>
+    <param name="depths">Изменение глубины нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>Освобождает слой, выбранный в коллекции слоев.</summary>
+    <param name="releaser">Предоставляет информацию для операции освобождения.</param>
+    <param name="depths">Изменение глубины нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>Удаляет целевые слои в коллекции слоев.</summary>
+    <param name="remover">Предоставляет информацию для операции удаления.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>Удаляет целевые слои в коллекции слоев.</summary>
+    <param name="selection">Состояние выделения для коллекции слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>Изменяет порядок нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="reorder">Предоставляет информацию для операции переупорядочения.</param>
+    <param name="depths">Изменение глубины нескольких целевых слоев.</param>
+    <param name="selectedRanges">Коллекция диапазонов слоев, выбранных в коллекции слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>Изменяет порядок слоев, выбранных в коллекции слоев.</summary>
+    <param name="reorder">Предоставляет информацию для операции переупорядочения.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>Изменяет порядок слоев в диапазоне слоев, выбранном в коллекции слоев.</summary>
+    <param name="reorder">Предоставляет информацию для операции переупорядочения.</param>
+    <param name="depths">Изменение глубины нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>Очищает визуальное дерево, логическое дерево, пул экземпляров, а затем вызывает событие <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary><see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/> с использованием пользовательских данных.</summary>
+    <typeparam name="D">Тип данных.</typeparam>
+    <param name="listOfData">Коллекция, элементы которой копируются в логическое дерево.</param>
+    <param name="creator">Представляет метод, который будет создавать и инициализировать новый слой на основе указанных данных.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>Модель <see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/> использует пользовательские данные.</summary>
+    <typeparam name="D">Представляет метод, который будет создавать и инициализировать новый слой на основе указанных данных.</typeparam>
+    <param name="treeOfData">Дерево, элементы которого копируются в логическое дерево.</param>
+    <param name="creator">Представляет метод, который будет создавать и инициализировать новый слой на основе указанных данных.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+Очищает и инициализирует логическое дерево, визуальное дерево и пул экземпляров, а затем вызывает событие <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> Коллекция, элементы которой копируются в логическое дерево следующим образом:
+<br /> │
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Группа: Глубина=0
+<br /> ├─Группа: Глубина=1
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Группа: Глубина=0
+<br /> ├─Растровое изображение: Глубина=1
+<br /> ├─Группа: Глубина=0
+<br /> └─Растровое изображение: Глубина=1
+</summary>
+    <param name="list">Коллекция, элементы которой копируются в логическое дерево.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+Очищает и инициализирует логическое дерево, визуальное дерево и пул экземпляров, а затем вызывает событие <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> Дерево, элементы которого копируются в логическое дерево следующим образом:
+<br /> │
+<br /> ├─Растровое изображение: Глубина
+<br /> ├─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  ├─Группа: Глубина
+<br /> │  │  ├─Растровое изображение: Глубина
+<br /> │  │  ├─Растровое изображение: Глубина
+<br /> │  │  └─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  └─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  └─Растровое изображение: Глубина
+</summary>
+    <param name="tree">Дерево, элементы которого копируются в логическое дерево.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+Очищает и инициализирует логическое дерево, визуальное дерево и пул экземпляров, а затем вызывает событие <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> Коллекция, элементы которой копируются в логическое дерево следующим образом:
+<br /> │
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Группа: Глубина=0
+<br /> ├─Группа: Глубина=1
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Группа: Глубина=0
+<br /> ├─Растровое изображение: Глубина=1
+<br /> ├─Группа: Глубина=0
+<br /> └─Растровое изображение: Глубина=1
+</summary>
+    <param name="listOfXml">Коллекция, элементы которой копируются в логическое дерево.</param>
+    <param name="creator">Представляет метод, который будет создавать новый пустой слой (перед загрузкой содержимого слоя из элемента XML).</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+Очищает и инициализирует логическое дерево, визуальное дерево и пул экземпляров, а затем вызывает событие <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> Дерево, элементы которого копируются в логическое дерево следующим образом:
+<br /> │
+<br /> ├─Растровое изображение: Глубина
+<br /> ├─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  ├─Группа: Глубина
+<br /> │  │  ├─Растровое изображение: Глубина
+<br /> │  │  ├─Растровое изображение: Глубина
+<br /> │  │  └─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  └─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  └─Растровое изображение: Глубина
+</summary>
+    <param name="treeOfXml">Дерево, элементы которого копируются в логическое дерево.</param>
+    <param name="creator">Представляет метод, который будет создавать новый пустой слой (перед загрузкой содержимого слоя из элемента XML).</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+Очищает и инициализирует логическое дерево, визуальное дерево и пул экземпляров, а затем вызывает событие <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> Дерево, элементы которого копируются в логическое дерево следующим образом:
+<br /> │
+<br /> ├─Все узлы
+<br /> │  ├─Узел: id=0
+<br /> │  ├─Узел: id=1
+<br /> │  ├─Узел: id=2
+<br /> │  │  ├─Узел: id=3
+<br /> │  │  │  ├─Узел: id=4
+<br /> │  │  │  ├─Узел: id=5
+<br /> │  │  │  └─Узел: id=6
+<br /> │  ├─Узел: id=7
+<br /> │  │  └─Узел: id=8
+<br /> │  ├─Узел: id=9
+<br /> │  │  └─Узел: id=10
+<br /> │  │
+<br /> ├─Все слои
+<br /> │  ├─Растровое изображение: id=0
+<br /> │  ├─Растровое изображение: id=1
+<br /> │  ├─Группа: Id=2
+<br /> │  ├─Группа: Id=3
+<br /> │  ├─Растровое изображение: id=4
+<br /> │  ├─Растровое изображение: id=5
+<br /> │  ├─Растровое изображение: id=6
+<br /> │  ├─Группа: Id=7
+<br /> │  ├─Растровое изображение: id=8
+<br /> │  ├─Группа: Id=9
+<br /> │  └─Растровое изображение: id=10
+</summary>
+    <param name="items">Коллекция экземпляра с идентификатором.</param>
+    <param name="nodes">Дерево, состоящее из узлов.</param>
+    <param name="creator">Представляет метод, который будет создавать новый пустой слой (перед загрузкой содержимого слоя из элемента XML).</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>Возникает при сбросе коллекции слоев.</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>Сохраняет содержимое указанного слоя и его потомков в элементе XML.</summary>
+    <param name="treeNode">Узел дерева XML, который проецирует указанный слой в элемент XML.</param>
+    <returns>Элемент XML для сохранения содержимого указанного слоя и его потомков.</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>Сохраняет содержимое нескольких слоев и их потомков в коллекцию элементов XML.</summary>
+    <param name="treeNode">Набор узлов дерева XML, которые проецируют несколько слоев в коллекцию элементов XML.</param>
+    <returns>Набор элементов XML для сохранения содержимого нескольких слоев и их потомков.</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>Сортирует все узлы в логическом дереве с помощью коллекции идентификаторов, которая глубоко преобразует логическое дерево в плоскость.</summary>
+    <param name="ids">Коллекция идентификаторов, которая глубоко выравнивает логическое дерево.</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>Синхронизируйте все несвернутые узлы из логического дерева с визуальным деревом.</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>Синхронизируйте порядок, в котором визуальное дерево глубоко сглаживается, со слоями пользовательского интерфейса, аналогично дифференциальным алгоритмам HTML DOM.</summary>
+    <param name="items">Уровни пользовательского интерфейса в качестве источника данных (например, <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) в представлении списка.</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>Разгруппировка нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="ungrouper">Предоставляет информацию для операции разгруппировки.</param>
+    <param name="depths">Изменение глубины нескольких целевых слоев.</param>
+    <param name="selects">Выбранный статус изменяется для нескольких целевых слоев.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>Разгруппировка слоя, выбранного в коллекции слоев.</summary>
+    <param name="ungrouper">Предоставляет информацию для операции разгруппировки.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>Представляет коллекцию, которая глубоко выравнивает логическое дерево и предоставляет методы для индивидуального доступа к слою в логическом дереве по индексу (логическое дерево состоит из слоев, унаследованных от узлов).</summary>
+    <typeparam name="T">Тип экземпляра.</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>Получает значение, определяющее, поддерживают ли слои, выбранные в коллекции слоев, выпуск.</summary>
+    <param name="selection">Состояние выделения для коллекции слоев.</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>Отмена выбора указанного слоя и его потомков в коллекции слоев.</summary>
+    <param name="item">Указанный слой.</param>
+    <returns>Выбранный статус изменяет указанный слой и его потомков.</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>Отмена выбора указанного слоя и его потомков в коллекции слоев.</summary>
+    <param name="indexer">Индекс указанного слоя.</param>
+    <returns>Выбранный статус изменяет указанный слой и его потомков.</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>Отмена выбора всех слоев в коллекции слоев.</summary>
+    <returns>Выбранный статус изменяется для нескольких целевых слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>Возвращает изменения глубины, необходимые для группировки нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="grouper">Предоставляет информацию для операции группировки.</param>
+    <returns>Изменения глубины, необходимые для группировки нескольких слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>Возвращает изменения глубины, необходимые для упаковки всех слоев в коллекции слоев.</summary>
+    <returns>Изменения глубины, необходимые для упаковки всех слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>Возвращает изменения глубины, необходимые для разгруппировки нескольких слоев, выбранных в коллекции слоев.</summary>
+    <returns>Изменения глубины, необходимые для разгруппировки нескольких слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>Возвращает изменения глубины, необходимые для изменения порядка нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="reorder">Предоставляет информацию для операции переупорядочения.</param>
+    <returns>Изменения глубины, необходимые для изменения порядка нескольких слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>Возвращает изменения глубины, необходимые для изменения порядка нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="reorder">Предоставляет информацию для операции переупорядочения.</param>
+    <param name="selectedRanges">Коллекция диапазонов слоев, выбранных в коллекции слоев.</param>
+    <returns>Изменения глубины, необходимые для изменения порядка нескольких слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>Возвращает изменения глубины, необходимые для разгруппировки нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="ungrouper">Предоставляет информацию для операции разгруппировки.</param>
+    <returns>Изменения глубины, необходимые для разгруппировки нескольких слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>Извлекает уникальные идентификаторы всех узлов, принадлежащих к коллекции, которая глубоко уплощает логическое дерево.</summary>
+    <returns>Уникальные идентификаторы всех узлов, принадлежащих логическому дереву.</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>Проецирует каждый узел логического дерева в дерево XML.</summary>
+    <returns>Проецируемое XML-дерево.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>Возвращает коллекцию диапазонов слоев, выбранных в коллекции слоев.</summary>
+    <returns>Коллекция диапазонов слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>Возвращает выбранные изменения статуса, необходимые для группировки нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="grouper">Предоставляет информацию для операции группировки.</param>
+    <returns>Изменение выбранного статуса необходимо для группировки нескольких слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>Возвращает выбранные изменения статуса, необходимые для упаковки всех слоев в коллекции слоев.</summary>
+    <returns>Изменение выбранного статуса необходимо для упаковки всех слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>Возвращает выбранные изменения статуса, необходимые для разгруппировки нескольких слоев, выбранных в коллекции слоев.</summary>
+    <param name="ungrouper">Предоставляет информацию для операции разгруппировки.</param>
+    <returns>Изменение выбранного статуса необходимо для разгруппировки нескольких слоев, выбранных в коллекции слоев.</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>Скрывает все слои в коллекции слоев.</summary>
+    <returns>Изменяется видимость нескольких целевых слоев.</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>Выполняет поиск указанного слоя и возвращает индекс первого вхождения слоя.</summary>
+    <param name="item">Слой, который нужно найти.</param>
+    <returns>Индекс первого вхождения слоя.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>Возвращает диапазон между индексом указанного слоя и индексом потомков указанного слоя.</summary>
+    <param name="item">Слой, который нужно найти.</param>
+    <returns>Диапазон между индексом указанного слоя и индексом потомков указанного слоя.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>Возвращает диапазон между индексами двух слоев.</summary>
+    <param name="newItem">Новый слой для локализации.</param>
+    <param name="oldIndexer">Индекс старого слоя для поиска.</param>
+    <returns>Диапазон между индексами двух слоев.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>Возвращает диапазон между индексами двух слоев.</summary>
+    <param name="newIndexer">Индекс нового слоя для поиска.</param>
+    <param name="oldIndexer">Индекс старого слоя для поиска.</param>
+    <returns>Диапазон между индексами двух слоев.</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.LayerList`1"/>.</summary>
+    <param name="logicalTree">Логическое дерево.</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+Очищает и инициализирует логическое дерево.
+<br />
+<br /> Коллекция, элементы которой копируются в логическое дерево следующим образом:
+<br /> │
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Группа: Глубина=0
+<br /> ├─Группа: Глубина=1
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Группа: Глубина=0
+<br /> ├─Растровое изображение: Глубина=1
+<br /> ├─Группа: Глубина=0
+<br /> └─Растровое изображение: Глубина=1
+</summary>
+    <param name="list">Коллекция, элементы которой копируются в логическое дерево.</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+Очищает и инициализирует логическое дерево.
+<br />
+<br /> Дерево, элементы которого копируются в логическое дерево следующим образом:
+<br /> │
+<br /> ├─Растровое изображение: Глубина
+<br /> ├─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  ├─Группа: Глубина
+<br /> │  │  ├─Растровое изображение: Глубина
+<br /> │  │  ├─Растровое изображение: Глубина
+<br /> │  │  └─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  └─Растровое изображение: Глубина
+<br /> ├─Группа: Глубина
+<br /> │  └─Растровое изображение: Глубина
+</summary>
+    <param name="tree">Дерево, элементы которого копируются в логическое дерево.</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>Выбирает указанный слой и его потомков в коллекции слоев.</summary>
+    <param name="item">Указанный слой.</param>
+    <returns>Выбранный статус изменяет указанный слой и его потомков.</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>Выбирает указанный слой и его потомков в коллекции слоев.</summary>
+    <param name="indexer">Индекс указанного слоя.</param>
+    <returns>Выбранный статус изменяет указанный слой и его потомков.</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>Выбор всех слоев в коллекции слоев.</summary>
+    <returns>Выбранный статус изменяется для нескольких целевых слоев.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>Выберите только указанный слой и его потомки в коллекции слоев, а затем отмените выбор остальных.</summary>
+    <param name="item">Указанный слой.</param>
+    <returns>Выбранный статус изменяется для нескольких целевых слоев.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>Выберите только указанный слой и его потомки в коллекции слоев, а затем отмените выбор остальных.</summary>
+    <param name="indexer">Индекс указанного слоя.</param>
+    <returns>Выбранный статус изменяется для нескольких целевых слоев.</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>Выберите только указанный диапазон слоев и их потомков в коллекции слоев, а затем отмените выбор остальных.</summary>
+    <param name="range">Указанный диапазон.</param>
+    <returns>Выбранный статус изменяется для нескольких целевых слоев.</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>Отображает все слои в коллекции слоев.</summary>
+    <returns>Изменяется видимость нескольких целевых слоев.</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево.</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.LayerManager1`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево.</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево, визуальное дерево, пул экземпляров, пользовательский интерфейс перетаскивания и слои пользовательского интерфейса.</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>Инкапсулируйте некоторые инструменты, такие как визуальное дерево и пул экземпляров.</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>Пользовательский интерфейс перетаскивания.</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.LayerManager2`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево.</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>Слои пользовательского интерфейса в качестве источника данных в представлении списка.</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево, визуальное дерево, пул экземпляров, пользовательский интерфейс перетаскивания и слои пользовательского интерфейса.</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>Буфер обмена.</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>Инкапсулируйте некоторые инструменты, такие как визуальное дерево и пул экземпляров.</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>Пользовательский интерфейс перетаскивания.</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.LayerManager3`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево.</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>Слои пользовательского интерфейса в качестве источника данных в представлении списка.</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево, визуальное дерево, пул экземпляров, пользовательский интерфейс перетаскивания, буфер обмена, стек отмены, журнал пользовательского интерфейса и слои пользовательского интерфейса.</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>Буфер обмена.</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>Инкапсулируйте некоторые инструменты, такие как визуальное дерево и пул экземпляров.</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>Пользовательский интерфейс перетаскивания.</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>Стек отмены.</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.LayerManager4`2"/>.</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>Инкапсулируйте некоторые инструменты, такие как логическое дерево.</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>История пользовательского интерфейса в качестве источника данных в представлении списка.</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>Слои пользовательского интерфейса в качестве источника данных в представлении списка.</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>Определяет константы, указывающие, какой метод следует вызвать для перехода</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>Никакого метода.</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>Позвоните по номеру <see cref="M:FanKit.Layers.UndoStack`2.Redo"/> или <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/>, чтобы повторить процедуру.</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>Позвоните по номеру <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> или <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>, чтобы повторить процедуру.</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>Позвоните по номеру <see cref="M:FanKit.Layers.UndoStack`2.Undo"/> или <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/>, чтобы отменить действие.</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>Позвоните по номеру <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> или <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>, чтобы отменить действие.</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>Представляет список, содержащий индекс элемента для перехода. Предоставление методов для прямой и обратной навигации.</summary>
+    <typeparam name="T">Тип элементов в списке.</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>Получает коллекцию, представляющую журнал обратной навигации.</summary>
+    <returns>Стек обратной навигации.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>Получает значение, указывающее, есть ли хотя бы один элемент в истории обратной навигации.</summary>
+    <returns>**true**, если в истории обратной навигации есть хотя бы один элемент; **false**, если в истории обратной навигации нет элементов.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>Получает значение, указывающее, есть ли хотя бы один элемент в журнале навигации вперед.</summary>
+    <returns>**true**, если в истории навигации вперед есть хотя бы один элемент; **false**, если в истории навигации вперед нет элементов.</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>Очищает элемент, к которому нужно перейти, а затем удаляет все элементы из формы <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>Отсчитываемый от нуля индекс элемента, к которому осуществляется переход. Значение по умолчанию — -1.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>Получает элемент, к которому нужно перейти.</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>Получает коллекцию, представляющую журнал навигации вперед.</summary>
+    <returns>Стек прямой навигации.</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>Создает неглубокую копию диапазона элементов в исходном коде <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></summary>
+    <param name="range">Указанный диапазон.</param>
+    <returns>Поверхностная копия ряда элементов в исходном коде <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>Переход к самому последнему элементу в истории обратной навигации.</summary>
+    <returns>Самый последний элемент в истории обратной навигации.</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>Переход к самому последнему элементу в истории навигации вперед.</summary>
+    <returns>Самый последний элемент в истории навигации вперед.</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>Переход к элементу, к которому следует перейти.</summary>
+    <param name="index">Индекс элемента, к которому необходимо перейти по ссылке.</param>
+    <returns>Диапазон между индексом элемента, по которому ранее осуществлялся переход, и индексом элемента, к которому необходимо перейти.</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>Предоставляет вычисляемые значения для таких поведений, как сборка мусора, удаление, переупорядочивание и синхронизация.</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary>Представляет список, в котором используется стандарт <see cref="T:FanKit.Layers.IndexRange"/>. Предоставляет методы удаления и перемещения.</summary>
+    <typeparam name="T">Тип элементов в списке.</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>Получает элементы в указанном диапазоне.</summary>
+    <param name="range">Диапазон элементов, которые нужно получить.</param>
+    <returns>Элементы в указанном диапазоне.</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>Перемещает диапазон элементов в новое место в списке.</summary>
+    <param name="range">Диапазон перемещаемых элементов.</param>
+    <param name="index">Отсчитываемый от нуля индекс, указывающий новое расположение диапазона элементов.</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>Перемещает некоторые диапазоны элементов из списка перед целевым элементом.</summary>
+    <param name="ranges">Диапазоны перемещаемых элементов.</param>
+    <param name="target">Целевой элемент.</param>
+    <param name="offset">Смещение нового местоположения в списке.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>Перемещает некоторые диапазоны элементов из списка в первый.</summary>
+    <param name="ranges">Диапазоны перемещаемых элементов.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>Перемещает некоторые диапазоны элементов из списка в последний.</summary>
+    <param name="ranges">Диапазоны перемещаемых элементов.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>Перемещает диапазон элементов из списка в первый.</summary>
+    <param name="range">Диапазон перемещаемых элементов.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>Перемещает диапазон элементов из списка в последний.</summary>
+    <param name="range">Диапазон перемещаемых элементов.</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>Удаляет ряд элементов из списка.</summary>
+    <param name="range">Диапазон удаляемых элементов.</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>Удаляет некоторые диапазоны элементов из списка.</summary>
+    <param name="ranges">Диапазоны удаляемых элементов.</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>Предоставляет информацию для операции освобождения.</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>Возвращает количество слоев для освобождения.</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>Изменение глубины снятия слоя, если число равно 1; в противном случае — значение по умолчанию.</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Options.Releaser"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>Определяет константы, указывающие количество удаляемых элементов.</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>Количество удаляемых элементов должно быть равно 0.</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>Количество удаляемых элементов должно быть меньше количества всех элементов.</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>Количество удаляемых элементов должно быть равно количеству всех элементов.</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>Предоставляет информацию для операции удаления.</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>Возвращает количество слоев для удаления.</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Options.Remover"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>Предоставляет информацию для операции переупорядочения.</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>Возвращает количество слоев для изменения порядка.</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>Изменение глубины слоя для переупорядочивания, если число равно 1; в противном случае — значение по умолчанию.</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>Получает значение, указывающее, является ли цель перетаскивания одноуровневым узлом источника перетаскивания.</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+    <param name="type">Указывает, как изменить порядок слоев (также известный как z-порядок) объектов, чтобы объекты могли отображаться поверх других объектов.</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+    <param name="type">Указывает, как изменить порядок слоев (также известный как z-порядок) объектов, чтобы объекты могли отображаться поверх других объектов.</param>
+    <param name="selection">Состояние выделения для коллекции слоев.</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+    <param name="indexer">Индекс цели перетаскивания в логическом дереве.</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+    <param name="indexer">Индекс цели перетаскивания в логическом дереве.</param>
+    <param name="selection">Состояние выделения для коллекции слоев.</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>Определяет константы, указывающие количество элементов для изменения порядка.</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>Количество диапазонов должно быть больше 1 (диапазоны описывают позиции для повторного заказа).</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>Количество товаров для повторного заказа должно быть равно 0. </summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>Количество товаров для повторного заказа должно быть равно 1.</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>Количество диапазонов должно быть равно 1 (этот диапазон включает в себя узел и его потомков).</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary>Представляет изменение, содержащее значение типа формата <see cref="T:FanKit.Layers.SelectMode"/>.</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>Представляет изменение, связанное со слоем, которое включает в себя массив выбранных изменений статуса.</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>Получает или задает массив выбранных изменений статуса.</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>Индекс указанного слоя в логическом дереве.</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>Определяет константы, указывающие количество выбранных элементов.</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>Количество выбранных элементов должно быть больше 1.</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>Количество выбранных элементов должно быть равно 0. </summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>Количество выбранных элементов должно быть равно 1.</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary>Указывает выбранное состояние экземпляра <see cref="T:FanKit.Layers.ILayerBase"/>.</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary>Экземпляр <see cref="T:FanKit.Layers.ILayerBase"/> не выбран.</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>Выбирается родитель экземпляра <see cref="T:FanKit.Layers.ILayerBase"/> в логическом дереве.</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary>Выбран экземпляр <see cref="T:FanKit.Layers.ILayerBase"/>.</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>Содержит выбранные методы продления статуса.</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>Преобразует указанный выбранный статус в логическое значение。</summary>
+    <param name="mode">Режим преобразования.</param>
+    <returns>True, если значение равно <see cref="F:FanKit.Layers.SelectMode.Selected"/>; в противном случае — ложь.</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>Преобразует указанное логическое значение в выбранный статус.</summary>
+    <param name="value">Логическое значение для преобразования.</param>
+    <returns>
+<see cref="F:FanKit.Layers.SelectMode.Selected"/>, если значение равно **True**;
+<br/>
+в противном случае — <see cref="F:FanKit.Layers.SelectMode.Deselected"/>.
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>Преобразует указанное выбранное состояние в значение непрозрачности кисти темы акцентного цвета.</summary>
+    <param name="mode">Режим преобразования.</param>
+    <returns>
+0.0d, если режим <see cref="F:FanKit.Layers.SelectMode.Deselected"/>; 
+<br/>
+0.5d, если режим <see cref="F:FanKit.Layers.SelectMode.Parent"/>; 
+<br/>
+в противном случае 1.0d.
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary>Представляет изменение, содержащее значение типа формата <see cref="float"/>.</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>Представляет изменение, связанное со слоем, которое включает массив идентификаторов всех слоев (при изменении порядка изменения коллекции слоев).</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>Получает или задает массив идентификаторов всех слоев (после изменения коллекции слоев).</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>Получает или задает массив идентификаторов всех слоев (до изменения порядка изменения коллекции слоев).</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>Проверяет, существует ли определенный стандарт <see cref="T:FanKit.Layers.Core.ITreeNode"/> в исходной или целевой коллекции.</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> существует как в исходной, так и в конечной коллекции.</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary>Модель <see cref="T:FanKit.Layers.Core.ITreeNode"/> существует в целевой коллекции.</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary>Модель <see cref="T:FanKit.Layers.Core.ITreeNode"/> существует в исходной коллекции.</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>Определяет константы, указывающие период времени для операции отмены.</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>Текущая операция отмены (Индекс указанной операции отмены в истории равен текущему выбранному элементу).</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>Будущая операция отмены (индекс указанной операции отмены в истории больше, чем текущий выбранный элемент).</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>Прошлая операция отмены (индекс указанной операции отмены в истории меньше текущего выбранного элемента).</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+Представляет очередь, которая обеспечивает поддержку действий отмены и повтора, а также поддерживает концепцию сборки мусора.
+<br/>
+<br/>
+Сборка мусора:
+<br/>
+(1)
+Когда количество операций в стеке превышает лимит стека, операции удаляются из нижней части стека. 
+<br/>
+(2)
+Помечает слой как «бесполезный слой», если его нет в логическом дереве и нет изменений, ссылается на его GUID.
+<br/>
+(3)
+Удаляет все бесполезные слои из пула экземпляров для сборки мусора.
+</summary>
+    <typeparam name="T">Тип экземпляра.</typeparam>
+    <typeparam name="U">Тип операции (операция содержит действие отмены и действие повтора).</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>Примените действие повтора, чтобы изменить глубину целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>Примените действие повтора, чтобы изменить глубину нескольких целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>Примените действие повтора, чтобы изменить выбранное состояние двух целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>Примените действие повтора, чтобы изменить заблокированное состояние целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>Примените действие повтора, чтобы изменить выбранное состояние целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>Примените действие повтора, чтобы изменить выбранное состояние нескольких целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>Примените действие повтора, чтобы изменить порядок коллекций слоев.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> или <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>Примените действие повтора, чтобы изменить видимость целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>Примените действие повтора, чтобы изменить видимость нескольких целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>Примените действие отмены, чтобы изменить глубину целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>Примените действие отмены, чтобы изменить глубину нескольких целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>Примените действие отмены, чтобы изменить выбранное состояние двух целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>Примените действие отмены, чтобы изменить заблокированное состояние целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>Примените действие отмены, чтобы изменить выбранное состояние целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>Примените действие отмены, чтобы изменить выбранное состояние нескольких целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>Примените действие отмены, чтобы изменить порядок сбора слоев.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> или <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>Примените действие отмены, чтобы изменить видимость целевого слоя.</summary>
+    <param name="change">Изменение, которое будет применено.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>Примените действие отмены, чтобы изменить видимость нескольких целевых слоев.</summary>
+    <param name="changes">Изменения, которые должны быть применены.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>Получает значение, указывающее, содержит ли очередь операцию для перехода.</summary>
+    <param name="index">Индекс операции, к которой осуществляется переход.</param>
+    <returns>
+<see cref="NavigateAction.Undo"/> или <see cref="NavigateAction.UndoRange"/>, если указанный индекс меньше индекса текущей операции;
+<br/>
+<see cref="NavigateAction.Redo"/> или <see cref="NavigateAction.RedoRange"/>, если указанный индекс больше индекса текущей операции;
+<br/>
+в противном случае — <see cref="NavigateAction.None"/>.
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>Получает значение, указывающее, содержит ли буфер повтора действие, которое можно повторить.</summary>
+    <returns>Получает значение, указывающее, содержит ли буфер повтора действие, которое можно повторить.</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>Получает значение, указывающее, содержит ли буфер отмены действие, которое можно отменить.</summary>
+    <returns>True, если буфер отмены содержит действие, которое можно отменить; в противном случае — ложь.</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>Очищает очередь, а затем уничтожает все изменения операций, связанные со слоями.</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+Удаляет все бесполезные слои из пула экземпляров для сборки мусора.
+</summary>
+    <returns>Номер бесполезного слоя.</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>Создает неглубокую копию ряда элементов в исходном коде <see cref="T:FanKit.Layers.UndoStack`2"/></summary>
+    <param name="range">Указанный диапазон.</param>
+    <returns>Поверхностная копия ряда элементов в исходном коде <see cref="T:FanKit.Layers.UndoStack`2"/></returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>Переход к указанной операции.</summary>
+    <param name="index">Индекс операции, к которой осуществляется переход.</param>
+    <returns>Диапазон между индексом операции, по которой ранее осуществлялся переход, и индексом операции, к которой осуществляется переход.</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+Push new находятся в стеке отмены.
+Когда количество операций в стеке превышает лимит стека, операции удаляются из нижней части стека. 
+</summary>
+    <param name="item">Новая операция.</param>
+    <param name="isGC">Удаление ненужного слоя при удалении операций; в противном случае — ложь.</param>
+    <returns>Номер бесполезного слоя.</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>Получает следующую операцию и делает следующую операцию текущей.</summary>
+    <returns>Следующая операция (операция, содержащая действие повтора).</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>Получает все действия отмены из буфера отмены.</summary>
+    <returns>Операции от текущей к первой (операция содержит действие отмены).</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>Получает индекс выбранной операции. Значение по умолчанию равно -1, что указывает на то, что операция не выбрана.</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>Получает выбранную операцию.</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+Синхронизируйте период со всеми операциями, чтобы обновить состояния и поведение пользовательского интерфейса.
+<br/>
+<br/>
+Например.
+<br/>
+Индекс прошлой операции должен быть меньше текущего индекса;
+<br/>
+Индекс текущей операции должен быть равен текущему индексу;
+<br/>
+Индекс будущей операции должен быть больше текущего индекса.
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+Синхронизируйте период со всеми операциями, чтобы обновить состояния и поведение пользовательского интерфейса.
+<br/>
+<br/>
+Например.
+<br/>
+Индекс прошедшей операции должен быть меньше указанного индекса;
+<br/>
+Индекс текущей операции должен быть равен указанному индексу;
+<br/>
+Индекс будущей операции должен быть больше указанного индекса.
+</summary>
+    <param name="index">Отсчитываемый от нуля индекс указанной операции.</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>Синхронизируйте порядок с историей пользовательского интерфейса, аналогично дифференциальным алгоритмам HTML DOM.</summary>
+    <param name="items">Журнал пользовательского интерфейса в качестве источника данных (например, <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) в представлении списка.</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>Получает текущую операцию и делает предыдущую операцию текущей.</summary>
+    <returns>Текущая операция (операция, содержащая действие отмены).</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>Получает все действия отмены из буфера отмены.</summary>
+    <returns>Операции от текущей к первой (операция содержит действие отмены).</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>Получает или задает максимальное количество операций, которые могут быть сохранены в очереди.</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.UndoStack`2"/>.</summary>
+    <param name="pool">Пул экземпляров, включающий все экземпляры.</param>
+    <param name="collection">Коллекция слоев.</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>Предоставляет информацию для операции разгруппировки.</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>Получает количество несгруппированных слоев.</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.Options.Ungrouper"/>.</summary>
+    <param name="items">Коллекция слоев.</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>Представляет изменение, связанное со слоем, которое включает в себя массив изменений видимости.</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>Получает или задает массив изменений видимости.</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>Расширения для создания XML-объекта.</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>Сохраните глубину, идентификатор или дочерние элементы узла в виде XML-объекта.</summary>
+    <param name="node">Указанный узел.</param>
+    <param name="type">Тип структуры объекта XML.</param>
+    <param name="children">Дочерние узлы.</param>
+    <returns>
+XML Attribute для <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/>, если тип <see cref="F:FanKit.Layers.XmlStructure.List"/>;
+<br/>
+XML Attribute для <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/>, если тип <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/>;
+<br/>
+в противном случае дочерние узлы.
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary>Указывает тип структуры XML-объекта для сохранения файла <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+Сохраните в список с глубиной.
+<br />
+<br /> Например.
+<br /> │
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Растровое изображение: Глубина=0
+<br /> ├─Группа: Глубина=0
+<br /> ├─Группа: Глубина=1
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Растровое изображение: Глубина=2
+<br /> ├─Группа: Глубина=0
+<br /> ├─Растровое изображение: Глубина=1
+<br /> ├─Группа: Глубина=0
+<br /> └─Растровое изображение: Глубина=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+Сохранить в дерево.
+<br />
+<br /> Например.
+<br /> │
+<br /> ├─Точечный рисунок
+<br /> ├─Точечный рисунок
+<br /> ├─Группа
+<br /> │  ├─Группа
+<br /> │  │  ├─Точечный рисунок
+<br /> │  │  ├─Точечный рисунок
+<br /> │  │  └─Точечный рисунок
+<br /> ├─Группа
+<br /> │  └─Точечный рисунок
+<br /> ├─Группа
+<br /> │  └─Точечный рисунок
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+Сохранение в дерево, состоящее из узлов и коллекции экземпляров с идентификатором.
+<br />
+<br /> Например.
+<br /> │
+<br /> ├─Все узлы
+<br /> │  ├─Узел: id=0
+<br /> │  ├─Узел: id=1
+<br /> │  ├─Узел: id=2
+<br /> │  │  ├─Узел: id=3
+<br /> │  │  │  ├─Узел: id=4
+<br /> │  │  │  ├─Узел: id=5
+<br /> │  │  │  └─Узел: id=6
+<br /> │  ├─Узел: id=7
+<br /> │  │  └─Узел: id=8
+<br /> │  ├─Узел: id=9
+<br /> │  │  └─Узел: id=10
+<br /> │  │
+<br /> ├─Все слои
+<br /> │  ├─Растровое изображение: id=0
+<br /> │  ├─Растровое изображение: id=1
+<br /> │  ├─Группа: Id=2
+<br /> │  ├─Группа: Id=3
+<br /> │  ├─Растровое изображение: id=4
+<br /> │  ├─Растровое изображение: id=5
+<br /> │  ├─Растровое изображение: id=6
+<br /> │  ├─Группа: Id=7
+<br /> │  ├─Растровое изображение: id=8
+<br /> │  ├─Группа: Id=9
+<br /> │  └─Растровое изображение: id=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>Определяет узел дерева XML, который проецирует любой узел из логического дерева в элемент XML.</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>Добавляет строку к текущему объекту <see cref="T:System.Text.StringBuilder"/>.</summary>
+    <param name="stringBuilder">Текущий объект <see cref="T:System.Text.StringBuilder"/>.</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>Сохраните идентификатор и дочерние элементы узла в виде XML-элемента.</summary>
+    <param name="elementChildName">Имя дочернего элемента XML-элемента.</param>
+    <returns>
+элемент XML с идентификатором и дочерними элементами, если у узла есть дочерние элементы;
+<br/>
+в противном случае, элемент XML только с идентификатором.
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.XmlTreeNode"/>.</summary>
+    <param name="id">Идентификатор узла.</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary>Конструирует объект <see cref="T:FanKit.Layers.XmlTreeNode"/>.</summary>
+    <param name="element">Элемент XML с идентификатором и дочерними элементами.</param>
+  </doc>
+</docs>
