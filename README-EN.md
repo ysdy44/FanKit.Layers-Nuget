@@ -21,17 +21,17 @@ Includes nodes/layer/history that are used for building Tree View/Layers Panel/H
 
 |Framework|Progress|
 |:-|:-|
-|UWP|Developing...|
-|WPF|Developing...|
-|WinUI3|Developing...|
-|Maui|Developing...|
-  
+|UWP|Under construction...|
+|WPF|Under construction...|
+|WinUI3|Under construction...|
+|Maui|Under construction...|
+
 
 ## Nuget
 
-Developing...
+Under construction...
 
-  
+
 ## How to view the source code comments?
 
 1. Find **...\FanKit.Layers\doc** folder
