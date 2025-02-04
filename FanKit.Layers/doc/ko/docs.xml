@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>개체가 다른 개체 위에 나타날 수 있도록 개체의 레이어 순서(z 순서라고도 함)를 변경하는 방법을 나타내는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>물체를 앞으로 한 걸음 더 가까이 가져옵니다.</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>주문 앞으로 물건을 가져 오십시오.</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>물체를 한 걸음 뒤로 보냅니다.</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>주문 뒷면에 개체를 보냅니다.</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary><see cref="bool"/> 형식 형식의 값을 포함하는 변경 내용을 나타냅니다.</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>작업 대상으로 사용할 계층의 식별자입니다.</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>이 새 값이 이전 값과 같은지 여부를 나타내는 값을 가져옵니다.</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>새 값입니다.</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>이전 값입니다.</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>변경 사항을 만들기 위한 확장입니다.</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/>에서 변경 사항을 만듭니다.</summary>
+    <param name="item"><see cref="T:FanKit.Layers.Core.ITreeNode"/>을 사용하여 변경 사항을 만듭니다.</param>
+    <returns>false를 새 값으로 포함하는 변경 내용입니다.</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/>에서 변경 사항을 만듭니다.</summary>
+    <param name="item"><see cref="T:FanKit.Layers.Core.ITreeNode"/>을 사용하여 변경 사항을 만듭니다.</param>
+    <returns>true를 새 값으로 포함하는 변경 내용입니다.</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>목록 보기의 항목이 상호 작용을 수신할 때 레이어 관련 작업 옵션을 지정합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>논리적 트리에서 지정된 노드의 모든 자식 노드에 플래그를 지정하고 시각적 트리에서 제거합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>도면층 집합에서 지정된 도면층과 해당 하위 도면층의 선택을 취소합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>논리적 트리에서 지정된 노드의 모든 자식 노드에 플래그를 지정하고 시각적 트리에 추가합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>도면층 집합에서 지정된 도면층을 숨깁니다.</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>도면층 집합에서 지정된 도면층을 잠급니다.</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>없음.</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>도면층 집합에서 지정된 도면층과 그 하위 도면층을 선택합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>레이어 컬렉션에서 지정된 레이어와 그 하위 항목만 선택하고 나머지는 선택 취소합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>레이어 컬렉션에서 지정된 범위의 레이어와 그 하위 항목만 선택하고 나머지는 선택 취소합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>도면층 집합에 지정된 도면층을 표시합니다.</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>도면층 집합에서 지정된 도면층의 잠금을 해제합니다.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>레이어 관련 옵션을 생성하기 위한 확장입니다.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>지정된 노드를 축소하거나 확장할 수 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <param name="node">지정된 노드입니다.</param>
+    <returns>
+<see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/>이 **True**이면 <see cref="F:FanKit.Layers.ClickOptions.Collapse"/>;
+<br/>
+그렇지 않으면 <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>지정된 계층을 잠그거나 잠금 해제할 수 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <param name="layer">지정된 레이어입니다.</param>
+    <returns>
+<see cref="P:FanKit.Layers.ILayerBase.IsLocked"/>가 **True**이면 <see cref="F:FanKit.Layers.ClickOptions.Unlock"/>;
+<br/>
+그렇지 않으면 <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>지정된 계층을 선택할 수 있는지 또는 선택 취소할 수 있는지를 나타내는 값을 가져옵니다.</summary>
+    <param name="layer">지정된 레이어입니다.</param>
+    <returns>
+<see cref="P:FanKit.Layers.ILayerBase.SelectMode"/>이 <see cref="F:FanKit.Layers.SelectMode.Selected"/>인 경우 <see cref="F:FanKit.Layers.ClickOptions.Select"/>;
+<br/>
+<see cref="P:FanKit.Layers.ILayerBase.SelectMode"/>이 <see cref="F:FanKit.Layers.SelectMode.Selected"/>인 경우 <see cref="F:FanKit.Layers.ClickOptions.Deselect"/>;
+<br/>
+그렇지 않으면 <see cref="F:FanKit.Layers.ClickOptions.None"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>계층만 선택할지 아니면 계층 범위만 선택할지를 나타내는 값을 가져옵니다.</summary>
+    <param name="layer">지정된 레이어입니다.</param>
+    <param name="isShiftKeyDown">Shift 키를 누르면 True입니다. 그렇지 않으면 false입니다.</param>
+    <param name="isControlKeyDown">Ctrl 키를 누르면 True입니다. 그렇지 않으면 false입니다.</param>
+    <returns>
+Shift 키를 누른 경우 <see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/>;
+<br/>
+Ctrl 키를 누르지 않으면 <see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/>입니다.
+<br/>
+그렇지 않으면 <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>지정된 계층을 표시하거나 숨길 수 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <param name="layer">지정된 레이어입니다.</param>
+    <returns>
+<see cref="P:FanKit.Layers.ILayerBase.IsVisible"/>이 **True**이면 <see cref="F:FanKit.Layers.ClickOptions.Hide"/>;
+<br/>
+그렇지 않으면 <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>논리적 트리에서 노드를 복사하여 붙여넣는 방법을 제공합니다.</summary>
+    <typeparam name="T">인스턴스의 유형입니다.</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>선택한 항목을 클립보드에 복사할 수 있는지 여부를 결정합니다.</summary>
+    <returns>클립보드에 복사가 허용되는 경우 True입니다. 그렇지 않으면 false입니다.</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>클립보드가 논리적 트리에 붙여 넣을 수 있는 항목을 선택했는지 여부를 확인합니다.</summary>
+    <returns>클립보드에 논리적 트리에 붙여넣을 수 있는 선택된 항목이 있으면 True입니다. 그렇지 않으면 false입니다.</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary><see cref="T:FanKit.Layers.Clipboard`1"/> 개체를 생성합니다.</summary>
+    <param name="logicalTree">논리적 트리입니다.</param>
+    <param name="pool">모든 인스턴스를 포함하는 인스턴스 풀입니다.</param>
+    <param name="collection">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>현재 인스턴스의 복사본인 새 노드를 만듭니다.</summary>
+    <returns>이 인스턴스의 복사본인 새 노드입니다.</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>현재 인스턴스의 복사본인 새 노드를 만듭니다.</summary>
+    <param name="depth">트리의 루트 노드에서 새 노드의 깊이입니다.</param>
+    <returns>이 인스턴스의 복사본인 새 노드입니다.</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>논리적 트리에서 선택한 항목을 클립보드에 복사합니다.</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>선택한 항목의 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>논리적 트리에서 선택한 항목을 논리적 트리로 복사합니다.</summary>
+    <param name="duplicator">복제 작업에 대한 정보를 제공합니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>논리적 트리에서 선택한 항목을 논리적 트리로 복사합니다.</summary>
+    <param name="selection">레이어 컬렉션의 선택 상태입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>클립보드에서 선택한 항목을 논리적 트리로 복사합니다.</summary>
+    <param name="inserter">삽입 작업에 대한 정보를 제공합니다.</param>
+    <param name="selects">복제 작업에 대한 정보를 제공합니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>목록 보기 내의 지정된 인덱스에 있는 항목에 대한 컨테이너의 높이를 가져오는 메서드를 나타냅니다.</summary>
+    <param name="index">검색할 항목의 인덱스입니다.</param>
+    <returns>목록 보기 내의 지정된 인덱스에 있는 항목에 대한 컨테이너의 높이를 반환합니다.</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>지정된 데이터에서 새 계층을 만들고 초기화하는 메서드를 나타냅니다.</summary>
+    <typeparam name="T">레이어의 유형입니다.</typeparam>
+    <typeparam name="D">데이터의 형식입니다.</typeparam>
+    <param name="data">지정된 데이터입니다.</param>
+    <returns>생성된 레이어입니다.</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>지정된 데이터에서 새 계층을 만들고 초기화하는 메서드를 나타냅니다.</summary>
+    <typeparam name="T">레이어의 유형입니다.</typeparam>
+    <typeparam name="D">데이터의 형식입니다.</typeparam>
+    <param name="data">지정된 데이터입니다.</param>
+    <param name="depth">트리의 루트 노드에서 새 노드의 깊이입니다.</param>
+    <returns>생성된 레이어입니다.</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>새로운 빈 레이어를 만드는 방법을 나타냅니다(XML 요소에서 레이어의 내용을 로드하기 전에)。</summary>
+    <typeparam name="T">레이어의 유형입니다.</typeparam>
+    <param name="element">XML 요소입니다.</param>
+    <returns>생성된 레이어입니다.</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>새로운 빈 레이어를 만드는 방법을 나타냅니다(XML 요소에서 레이어의 내용을 로드하기 전에)。</summary>
+    <typeparam name="T">레이어의 유형입니다.</typeparam>
+    <param name="element">XML 요소입니다.</param>
+    <param name="depth">트리의 루트 노드에서 새 노드의 깊이입니다.</param>
+    <returns>생성된 레이어입니다.</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>깊이 변경 사항의 배열을 포함하는 계층 관련 변경 사항을 나타냅니다.</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>깊이 변경 내용의 배열을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary><see cref="double"/> 형식 형식의 값을 포함하는 변경 내용을 나타냅니다.</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>두 개의 선택된 상태 변경을 포함하는 레이어 관련 변경을 나타냅니다.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>처음 선택한 상태 변경을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>두 번째로 선택한 상태 변경을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>목록 보기의 위치를 기준으로 끌기 UI의 영역을 계산하는 데 사용되는 좌표 및 오프셋 집합을 포함합니다.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>목록 헤더의 콘텐츠 높이입니다.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>목록 보기의 콘텐츠가 가로로 스크롤된 거리입니다.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>목록 보기의 위치를 기준으로 하는 마우스 포인터의 y 좌표입니다.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>목록 보기의 콘텐츠가 세로로 스크롤된 거리입니다.</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>목록 보기의 위치를 기준으로 하는 끌기 UI의 영역입니다.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>끌기 UI의 영역을 정의하는 사각형의 높이입니다.</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>**true** 모든 값이 0이면 가능합니다. 그렇지 않으면 **false**이다.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>끌기 UI의 영역을 정의하는 사각형의 너비입니다.</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>드래그 UI의 영역을 정의하는 사각형의 왼쪽 위 모서리에 있는 X 좌표입니다.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>드래그 UI의 영역을 정의하는 사각형의 왼쪽 위 모서리에 있는 Y 좌표입니다.</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>드래그 앤 드롭 작업에서 드래그 소스의 유형을 지정하는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>드래그 소스를 지정하지 않습니다.</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>드래그 소스가 논리적 트리에 없습니다.</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>드래그 소스는 논리적 트리에서 선택된 항목입니다.</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>드래그 소스는 논리적 트리에서 선택되지 않은 항목입니다.</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>드래그 앤 드롭 UI를 배치하는 메서드를 제공합니다. 드래그 앤 드롭 UI는 배치 대상에서 마우스 포인터에 가장 가까운 UI 가이드를 찾아 맞춥니다.</summary>
+    <typeparam name="T">인스턴스의 유형입니다.</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>드래그 앤 드롭하기 전에 각 레이어에서 UI 가이드의 위치를 캐시합니다.</summary>
+    <param name="width">목록 보기의 이 너비이자 UI 가이드의 최대 너비이기도 합니다.</param>
+    <param name="zoomFactorForDepth">
+확대/축소 비율은 깊이 크기 조정을 위해 사용됩니다.
+<br/>
+예를 들어 확대/축소 비율이 16인 경우 UI 가이드의 왼쪽 여백은 16 * 깊이입니다.
+</param>
+    <param name="containerSizeFromIndex">목록 보기 내의 지정된 인덱스에 있는 항목의 컨테이너 높이를 가져옵니다.</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary><see cref="T:FanKit.Layers.DragUI`1"/> 개체를 생성합니다.</summary>
+    <param name="logicalTree">논리적 트리입니다.</param>
+    <param name="visualTree">시각적 트리입니다.</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>마우스 포인터에 가장 가까운 UI 가이드를 식별하여 논리적 트리에서 놓기 대상의 인덱스를 검색합니다.</summary>
+    <param name="point">목록 보기의 위치를 기준으로 드래그 UI의 영역을 계산하는 데 사용되는 좌표 및 오프셋 집합입니다.</param>
+    <param name="sourceType">드래그 앤 드롭 작업에서 드래그 소스의 유형을 지정합니다.</param>
+    <returns>논리적 트리에 있는 놓기 대상의 인덱스입니다.</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>마우스 포인터에 가장 가까운 UI 가이드를 식별하여 논리적 트리에서 놓기 대상의 인덱스를 검색합니다.</summary>
+    <param name="positionY">목록 보기의 위치를 기준으로 하는 마우스 포인터의 y 좌표입니다.</param>
+    <param name="sourceType">드래그 앤 드롭 작업에서 드래그 소스의 유형을 지정합니다.</param>
+    <returns>논리적 트리에 있는 놓기 대상의 인덱스입니다.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>목록 보기의 위치를 기준으로 끌기 UI의 영역을 검색합니다.</summary>
+    <param name="Indexer">논리적 트리에 있는 놓기 대상의 인덱스입니다.</param>
+    <returns>목록 보기의 위치를 기준으로 하는 끌기 UI의 영역입니다.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>목록 보기의 위치를 기준으로 끌기 UI의 영역을 검색합니다.</summary>
+    <param name="point">목록 보기의 위치를 기준으로 드래그 UI의 영역을 계산하는 데 사용되는 좌표 및 오프셋 집합입니다.</param>
+    <param name="Indexer">논리적 트리에 있는 놓기 대상의 인덱스입니다.</param>
+    <returns>목록 보기의 위치를 기준으로 하는 끌기 UI의 영역입니다.</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>UI 가이드의 높이입니다.</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>논리적 트리에 있는 놓기 대상의 인덱스입니다.</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+"<see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/>가 <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>, <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> 또는 <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>인 경우 -1;"
+<br/>
+그렇지 않으면 논리적 트리에 있는 드롭 대상의 인덱스(0부터 시작)입니다.
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>놓기 대상을 기준으로 끌기 소스를 삽입해야 하는 위치를 지정합니다.</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>놓기 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>트리의 루트 노드에서 새 노드의 깊이입니다.</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary><see cref="T:FanKit.Layers.DragDrop.Dropper"/> 개체를 생성합니다.</summary>
+    <param name="items">논리적 트리에 있는 all 노드의 컬렉션입니다.</param>
+    <param name="indexer">논리적 트리에 있는 놓기 대상의 인덱스입니다.</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>놓기 대상을 기준으로 끌기 원본을 삽입해야 하는 위치를 지정하는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>논리적 트리에서 지정된 형제 노드 위에 노드를 삽입합니다.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>논리적 트리의 맨 아래에 새 노드를 삽입합니다.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>논리적 트리의 맨 위에 새 노드를 삽입합니다.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>논리적 트리에서 지정된 노드 아래에 새 노드를 삽입합니다.</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>드래그 소스를 삽입해서는 안 됩니다.</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>복제 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>복제된 레이어의 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary><see cref="T:FanKit.Layers.Options.Duplicator"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>그룹화 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>그룹화된 계층의 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>트리의 루트 노드에서 새 노드의 깊이입니다.</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>숫자가 1과 같은 경우 그룹화 된 레이어의 깊이 변경; 그렇지 않으면 기본값입니다.</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary><see cref="T:FanKit.Layers.Options.Grouper"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>숫자가 1과 같은 경우 그룹화 된 레이어의 선택 상태 변경; 그렇지 않으면 기본값입니다.</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>레이어 관련 변경 사항에 대한 기본 클래스를 나타냅니다.</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>참조된 계층의 GUID 컬렉션을 가져옵니다.</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+자식이 있는 노드를 정의합니다.
+<br/>
+예)
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>현재 노드에 있는 자식의 컬렉션을 가져옵니다.</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>현재 노드의 자식 컬렉션에 있는 자식 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>기존 인스턴스와 동일한 값을 가진 클래스의 새 인스턴스를 만드는 복제를 지원합니다.</summary>
+    <typeparam name="T">인스턴스의 유형입니다.</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>현재 인스턴스의 복사본인 새 노드를 만듭니다.</summary>
+    <returns>이 인스턴스의 복사본인 새 노드입니다.</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>현재 인스턴스의 복사본인 새 노드를 만듭니다.</summary>
+    <param name="depth">트리의 루트 노드에서 새 노드의 깊이입니다.</param>
+    <returns>이 인스턴스의 복사본인 새 노드입니다.</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+복합 노드의 구조를 정의합니다. 구현 클래스는 UI에 알릴 수 있어야 합니다.
+<br/>
+예)
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // UI 알림
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">인스턴스의 유형입니다.</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>현재 노드의 자식인 노드 컬렉션을 가져옵니다.</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>현재 노드의 자식 컬렉션에 있는 자식의 수가 변경될 때 발생합니다.</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+모든 계층(예: 레이어 그룹, 비트맵 레이어 및 채우기 레이어)의 기본 클래스를 나타냅니다.
+<br/>
+<see cref="T:FanKit.Layers.Core.ITreeNode"/> 및 <see cref="T:FanKit.Layers.Core.IChildNode"/> 인터페이스에서 상속됩니다.
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>이 계층이 계층 그룹인지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>이 계층이 잠겨 있는지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>이 계층이 보이지 않는지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>XML 요소에서 계층의 콘텐츠를 로드합니다.</summary>
+    <param name="content">레이어의 콘텐츠를 포함하는 XML 요소입니다.</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>썸네일에 영향을 주는 변경 사항이 발생할 때 발생합니다.</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>레이어의 내용을 XML 요소에 저장합니다.</summary>
+    <param name="structure">XML 개체의 구조 유형입니다.</param>
+    <param name="children">자식 레이어.</param>
+    <returns>레이어의 콘텐츠를 저장하기 위한 XML 요소입니다.</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>이 계층의 선택된 상태를 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>시작 인덱스와 끝 인덱스가 있는 범위를 나타냅니다.</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>범위의 포괄 끝 인덱스를 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>끝 인덱스가 srart 인덱스보다 작은지 여부를 나타내는 값을 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>끝 인덱스가 srart 인덱스보다 큰지 여부를 나타내는 값을 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>이 끝 인덱스가 srart 인덱스와 같은지 여부를 나타내는 값을 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>음수 범위(시작 인덱스 0, 끝 인덱스 -1)를 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>음수 범위(시작 인덱스 0, 끝 인덱스 1)를 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>범위의 포괄 시작 인덱스를 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>0 범위(시작 인덱스 0, 끝 인덱스 0)를 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>도면층 집합의 선택 상태를 나타냅니다.</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>빈 선택 상태를 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary><see cref="T:FanKit.Layers.Ranges.IndexSelection"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>현재 선택 상태가 비어 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>제거할 항목 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>선택한 항목의 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>삽입 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>트리의 루트 노드에서 새 노드의 깊이입니다.</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>레이어 컬렉션에 선택한 항목이 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>논리적 트리에서 처음 선택한 항목의 인덱스입니다.</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary><see cref="T:FanKit.Layers.Options.Inserter"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>선택한 항목을 기준으로 새 노드를 삽입해야 하는 위치를 지정합니다.</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>선택한 항목을 기준으로 새 노드를 삽입해야 하는 위치를 지정하는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>논리적 트리에서 지정된 형제 노드 위에 노드를 삽입합니다.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>논리적 트리의 맨 위에 새 노드를 삽입합니다.</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary><see cref="int"/> 형식 형식의 값을 포함하는 변경 내용을 나타냅니다.</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+내용을 다시 그려야 하는 내용을 나타내는 상수를 정의합니다.
+<br/>
+이 열거형은 멤버 값의 비트 조합을 지원합니다.
+예)
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // UI 레이어 지우기
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // UI 레이어에 동기화
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>레이어의 모든 썸네일을 다시 그렸습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>캔버스 컨트롤의 내용을 다시 그렸습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+지우기 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+그룹화 또는 패키징 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Clear"/>의 실행 취소 작업입니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+노드를 확장하거나 확장 해제한 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>실행 취소 또는 다시 실행 명령을 실행해야 하는지 여부에 영향을 주는 내용이 변경되었습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>하나 이상의 실행 취소 작업이 기록에 추가되거나 기록에서 제거됩니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>기록이 지워졌습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>현재 선택한 내역 항목이 변경됩니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>계층 명령을 실행해야 하는지 여부에 영향을 주는 내용이 변경되었습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>레이어 컬렉션이 변경되었습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>레이어 컬렉션이 지워졌습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+레이어를 잠그거나 잠금 해제한 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Lock"/>의 실행 취소 작업입니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>없음.</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>변경된 것이 있습니다(디버깅 중 변경 결과를 출력하는 데 사용됨).</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+재설정 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+레이어를 선택하거나 선택 취소한 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>선택한 항목이 변경되었습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>선택한 항목이 지워졌습니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Select"/>의 실행 취소 작업입니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+정렬 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+예)
+제거, 삽입, 붙여넣기, 놓기, 순서 변경, 해제, 해제, 그룹화, 그룹 해제 또는 복제.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Sort"/>의 실행 취소 작업입니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+컨텐츠에 대한 수정이 완료되면 발생합니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+content의 값이 변경되었을 때 발생합니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+수정 중에 입력 장치의 값이 변경될 때 발생합니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/>의 실행 취소 작업입니다.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+입력 장치가 콘텐츠에 대한 수정을 시작할 때 발생합니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+레이어가 표시되거나 보이지 않게 된 후 다시 그려야 하는 콘텐츠를 나타내는 비트 조합입니다.
+<br/>
+<br/>
+다음과 같은 멤버 값을 포함합니다.
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Visible"/>의 실행 취소 작업입니다.</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+깊이가 있는 노드를 정의합니다.
+<br/>
+예)
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>현재 노드가 트리의 루트 노드에서 얼마나 멀리 떨어져 있는지를 나타내는 값을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>현재 노드의 식별자를 가져옵니다.</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>누적 트리 뷰 노드가 확장되었는지 여부를 나타내는 값을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>가비지 수집, 삭제, 순서 다시 지정 및 동기화와 같은 동작에 대해 계산된 값을 제공하는 개체를 가져옵니다.</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>레이어 관련 변경 사항을 생성하여 실행 취소 및 다시 실행 작업을 지원합니다.</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>레이어 관련 변경 사항을 가져옵니다.</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>이 <see cref="T:FanKit.Layers.IUndoable"/>의 식별자를 가져옵니다.</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>이 <see cref="T:FanKit.Layers.IUndoable"/>의 기간을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>시각적 트리와 인스턴스 풀을 캡슐화하고 제거, 삽입, 붙여넣기, 드롭, 재정렬, 해제, 그룹화, 그룹 해제 및 복제 방법을 제공합니다.</summary>
+    <typeparam name="T">인스턴스의 유형입니다.</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>논리적 트리에 있는 각 노드의 자식 노드를 지우고 할당한 다음 <see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/> 메서드를 호출합니다.</summary>
+    <param name="updateSelectMode">자식 노드의 선택된 상태를 <see cref="F:FanKit.Layers.SelectMode.Parent"/>으로 설정할지 여부입니다.</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>레이어 컬렉션이 정렬을 지원하는지 여부를 결정하는 값을 가져옵니다.</summary>
+    <param name="type">개체가 다른 개체 위에 나타날 수 있도록 개체의 레이어 순서(z 순서라고도 함)를 변경하는 방법을 나타냅니다.</param>
+    <returns>레이어 컬렉션이 정렬을 지원하는지 여부입니다.</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>레이어 컬렉션이 정렬을 지원하는지 여부를 결정하는 값을 가져옵니다.</summary>
+    <param name="type">개체가 다른 개체 위에 나타날 수 있도록 개체의 레이어 순서(z 순서라고도 함)를 변경하는 방법을 나타냅니다.</param>
+    <param name="selection">레이어 컬렉션의 선택 상태입니다.</param>
+    <returns>레이어 컬렉션이 정렬을 지원하는지 여부입니다.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>삽입할 새 레이어입니다.</summary>
+    <param name="indexer">논리적 트리에 있는 놓기 대상의 인덱스입니다.</param>
+    <returns>그룹화할 새 레이어입니다.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>레이어 컬렉션이 순서 변경을 지원하는지 여부를 결정하는 값을 가져옵니다.</summary>
+    <param name="indexer">논리적 트리에 있는 놓기 대상의 인덱스입니다.</param>
+    <param name="selection">레이어 컬렉션의 선택 상태입니다.</param>
+    <returns>레이어 컬렉션이 순서 재지정을 지원하는지 여부입니다.</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>레이어 컬렉션의 모든 레이어를 지웁니다.</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>논리적 트리에 있는 모든 노드의 자식 노드에 플래그를 지정하고 시각적 트리에서 제거합니다.</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>논리적 트리에 있는 모든 노드의 자식 노드에 플래그를 지정하고 시각적 트리에 추가합니다.</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>레이어 컬렉션에서 선택된 여러 레이어를 그룹화합니다.</summary>
+    <param name="grouper">그룹화 작업에 대한 정보를 제공합니다.</param>
+    <param name="newItem">그룹화할 새 레이어입니다.</param>
+    <param name="depths">여러 대상 레이어의 깊이 변경입니다.</param>
+    <param name="selects">여러 대상 레이어의 선택된 상태가 변경됩니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>레이어 컬렉션에서 선택한 레이어를 그룹화합니다.</summary>
+    <param name="grouper">그룹화 작업에 대한 정보를 제공합니다.</param>
+    <param name="newItem">그룹화할 새 레이어입니다.</param>
+    <param name="depth">대상 레이어의 깊이 변경입니다.</param>
+    <param name="select">대상 레이어의 선택된 상태가 변경됩니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>레이어 컬렉션에 새 레이어를 삽입합니다.</summary>
+    <param name="dropper">삽입 작업에 대한 정보를 제공합니다.</param>
+    <param name="newItem">삽입할 새 레이어입니다.</param>
+    <param name="selects">여러 대상 레이어의 선택된 상태가 변경됩니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>레이어 컬렉션에 새 레이어를 삽입합니다.</summary>
+    <param name="inserter">삽입 작업에 대한 정보를 제공합니다.</param>
+    <param name="newItem">삽입할 새 레이어입니다.</param>
+    <param name="selects">여러 대상 레이어의 선택된 상태가 변경됩니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>레이어 컬렉션의 맨 위에 새 레이어를 삽입합니다.</summary>
+    <param name="newItem">삽입할 새 레이어입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>레이어 컬렉션의 맨 위에 새 레이어를 삽입합니다.</summary>
+    <param name="newItem">삽입할 새 레이어입니다.</param>
+    <param name="selects">여러 대상 레이어의 선택된 상태가 변경됩니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary><see cref="T:FanKit.Layers.LayerCollection`1"/> 개체를 생성합니다.</summary>
+    <param name="logicalTree">논리적 트리입니다.</param>
+    <param name="visualTree">시각적 트리입니다.</param>
+    <param name="pool">모든 인스턴스를 포함하는 인스턴스 풀입니다.</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어를 형제 레이어 위로 이동합니다.</summary>
+    <param name="reorder">순서 변경 작업에 대한 정보를 제공합니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>레이어 컬렉션의 모든 레이어를 패키지화합니다.</summary>
+    <param name="newItem">패키징할 새 계층입니다.</param>
+    <param name="depths">여러 대상 레이어의 깊이 변경입니다.</param>
+    <param name="selects">여러 대상 레이어의 선택된 상태가 변경됩니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>레이어 집합에서 선택한 여러 레이어를 릴리즈합니다.</summary>
+    <param name="releaser">해제 작업에 대한 정보를 제공합니다.</param>
+    <param name="depths">여러 대상 레이어의 깊이 변경입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>도면층 집합에서 선택한 도면층을 해제합니다.</summary>
+    <param name="releaser">해제 작업에 대한 정보를 제공합니다.</param>
+    <param name="depths">여러 대상 레이어의 깊이 변경입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>도면층 집합에서 대상 도면층을 제거합니다.</summary>
+    <param name="remover">제거 작업에 대한 정보를 제공합니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>도면층 집합에서 대상 도면층을 제거합니다.</summary>
+    <param name="selection">레이어 컬렉션의 선택 상태입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어의 순서를 재정리합니다.</summary>
+    <param name="reorder">순서 변경 작업에 대한 정보를 제공합니다.</param>
+    <param name="depths">여러 대상 레이어의 깊이 변경입니다.</param>
+    <param name="selectedRanges">레이어 컬렉션에서 선택된 레이어 범위의 컬렉션입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>레이어 컬렉션에서 선택한 레이어의 순서를 재정리합니다.</summary>
+    <param name="reorder">순서 변경 작업에 대한 정보를 제공합니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>레이어 집합에서 선택한 레이어 범위를 재정렬합니다.</summary>
+    <param name="reorder">순서 변경 작업에 대한 정보를 제공합니다.</param>
+    <param name="depths">여러 대상 레이어의 깊이 변경입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>시각적 트리, 논리적 트리, 인스턴스 풀을 지운 다음 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 이벤트를 발생시킵니다.</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary>사용자 지정 데이터를 사용하는 <see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/>.</summary>
+    <typeparam name="D">데이터의 형식입니다.</typeparam>
+    <param name="listOfData">해당 요소가 논리적 트리에 복사되는 컬렉션입니다.</param>
+    <param name="creator">지정된 데이터에서 새 계층을 만들고 초기화하는 메서드를 나타냅니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>사용자 지정 데이터를 사용하는 <see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/>.</summary>
+    <typeparam name="D">지정된 데이터에서 새 계층을 만들고 초기화하는 메서드를 나타냅니다.</typeparam>
+    <param name="treeOfData">해당 요소가 논리적 트리에 복사되는 트리입니다.</param>
+    <param name="creator">지정된 데이터에서 새 계층을 만들고 초기화하는 메서드를 나타냅니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+논리적 트리, 시각적 트리 및 인스턴스 풀을 지우고 초기화한 다음 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 이벤트를 발생시킵니다.
+<br />
+<br /> 해당 요소가 논리적 트리에 복사되는 컬렉션은 다음과 같습니다.
+<br /> │
+<br /> ├─비트맵: 깊이=0
+<br /> ├─비트맵: 깊이=0
+<br /> ├─그룹: 깊이=0
+<br /> ├─그룹: 깊이=1
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─그룹: 깊이=0
+<br /> ├─비트맵: 깊이=1
+<br /> ├─그룹: 깊이=0
+<br /> └─비트맵: 깊이=1
+</summary>
+    <param name="list">해당 요소가 논리적 트리에 복사되는 컬렉션입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+논리적 트리, 시각적 트리 및 인스턴스 풀을 지우고 초기화한 다음 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 이벤트를 발생시킵니다.
+<br />
+<br /> 요소가 논리적 트리에 복사되는 트리는 다음과 같습니다.
+<br /> │
+<br /> ├─비트맵: 깊이
+<br /> ├─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  ├─그룹: 깊이
+<br /> │  │  ├─비트맵: 깊이
+<br /> │  │  ├─비트맵: 깊이
+<br /> │  │  └─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  └─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  └─비트맵: 깊이
+</summary>
+    <param name="tree">해당 요소가 논리적 트리에 복사되는 트리입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+논리적 트리, 시각적 트리 및 인스턴스 풀을 지우고 초기화한 다음 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 이벤트를 발생시킵니다.
+<br />
+<br /> 해당 요소가 논리적 트리에 복사되는 컬렉션은 다음과 같습니다.
+<br /> │
+<br /> ├─비트맵: 깊이=0
+<br /> ├─비트맵: 깊이=0
+<br /> ├─그룹: 깊이=0
+<br /> ├─그룹: 깊이=1
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─그룹: 깊이=0
+<br /> ├─비트맵: 깊이=1
+<br /> ├─그룹: 깊이=0
+<br /> └─비트맵: 깊이=1
+</summary>
+    <param name="listOfXml">해당 요소가 논리적 트리에 복사되는 컬렉션입니다.</param>
+    <param name="creator">새로운 빈 레이어를 만드는 방법을 나타냅니다(XML 요소에서 레이어의 내용을 로드하기 전에)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+논리적 트리, 시각적 트리 및 인스턴스 풀을 지우고 초기화한 다음 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 이벤트를 발생시킵니다.
+<br />
+<br /> 요소가 논리적 트리에 복사되는 트리는 다음과 같습니다.
+<br /> │
+<br /> ├─비트맵: 깊이
+<br /> ├─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  ├─그룹: 깊이
+<br /> │  │  ├─비트맵: 깊이
+<br /> │  │  ├─비트맵: 깊이
+<br /> │  │  └─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  └─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  └─비트맵: 깊이
+</summary>
+    <param name="treeOfXml">해당 요소가 논리적 트리에 복사되는 트리입니다.</param>
+    <param name="creator">새로운 빈 레이어를 만드는 방법을 나타냅니다(XML 요소에서 레이어의 내용을 로드하기 전에)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+논리적 트리, 시각적 트리 및 인스턴스 풀을 지우고 초기화한 다음 <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> 이벤트를 발생시킵니다.
+<br />
+<br /> 요소가 논리적 트리에 복사되는 트리는 다음과 같습니다.
+<br /> │
+<br /> ├─모든 노드
+<br /> │  ├─노드: id=0
+<br /> │  ├─노드: id=1
+<br /> │  ├─노드: id=2
+<br /> │  │  ├─노드: id=3
+<br /> │  │  │  ├─노드: id=4
+<br /> │  │  │  ├─노드: id=5
+<br /> │  │  │  └─노드: id=6
+<br /> │  ├─노드: id=7
+<br /> │  │  └─노드: id=8
+<br /> │  ├─노드: id=9
+<br /> │  │  └─노드: id=10
+<br /> │  │
+<br /> ├─모든 레이어
+<br /> │  ├─비트맵: id=0
+<br /> │  ├─비트맵: id=1
+<br /> │  ├─그룹: ID=2
+<br /> │  ├─그룹: ID=3
+<br /> │  ├─비트맵: id=4
+<br /> │  ├─비트맵: id=5
+<br /> │  ├─비트맵: id=6
+<br /> │  ├─그룹: ID=7
+<br /> │  ├─비트맵: id=8
+<br /> │  ├─그룹: ID=9
+<br /> │  └─비트맵: id=10
+</summary>
+    <param name="items">식별자가 있는 인스턴스의 컬렉션입니다.</param>
+    <param name="nodes">노드로 구성된 트리입니다.</param>
+    <param name="creator">새로운 빈 레이어를 만드는 방법을 나타냅니다(XML 요소에서 레이어의 내용을 로드하기 전에)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>도면층 집합을 재설정할 때 발생합니다.</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>지정된 계층과 해당 하위 항목의 내용을 XML 요소에 저장합니다.</summary>
+    <param name="treeNode">지정된 계층을 XML 요소로 프로젝션하는 XML 트리 노드입니다.</param>
+    <returns>지정된 계층과 그 하위 항목의 내용을 저장하기 위한 XML 요소입니다.</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>여러 계층과 해당 하위 항목의 내용을 XML 요소 컬렉션에 저장합니다.</summary>
+    <param name="treeNode">여러 계층을 XML 요소의 컬렉션으로 프로젝션하는 XML 트리 노드의 컬렉션입니다.</param>
+    <returns>여러 계층과 그 하위 항목의 내용을 저장하기 위한 XML 요소의 컬렉션입니다.</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>논리적 트리의 모든 노드를 정렬하여 논리적 트리를 딥 플랫화하는 식별자 컬렉션을 사용합니다.</summary>
+    <param name="ids">논리적 트리를 심층적으로 평면화하는 식별자 컬렉션입니다.</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>논리적 트리에서 축소되지 않은 모든 노드를 시각적 트리로 동기화합니다.</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>HTML DOM 차등 알고리즘과 유사하게 시각적 트리를 UI 계층으로 딥 플랫화하는 순서를 동기화합니다.</summary>
+    <param name="items">목록 보기에서 데이터 소스(예: <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>)로 사용되는 UI 레이어입니다.</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어의 그룹을 해제합니다.</summary>
+    <param name="ungrouper">그룹 해제 작업에 대한 정보를 제공합니다.</param>
+    <param name="depths">여러 대상 레이어의 깊이 변경입니다.</param>
+    <param name="selects">여러 대상 레이어의 선택된 상태가 변경됩니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>레이어 컬렉션에서 선택한 레이어의 그룹을 해제합니다.</summary>
+    <param name="ungrouper">그룹 해제 작업에 대한 정보를 제공합니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>논리적 트리를 딥 플랫화하는 컬렉션을 나타내고, 인덱스별로 논리적 트리의 계층에 개별적으로 액세스하는 메서드를 제공합니다(논리적 트리는 노드에서 상속된 계층으로 구성됨).</summary>
+    <typeparam name="T">인스턴스의 유형입니다.</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>레이어 컬렉션에서 선택한 레이어가 릴리즈를 지원하는지 여부를 결정하는 값을 가져옵니다.</summary>
+    <param name="selection">레이어 컬렉션의 선택 상태입니다.</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>도면층 집합에서 지정된 도면층과 해당 하위 도면층의 선택을 취소합니다.</summary>
+    <param name="item">지정된 레이어입니다.</param>
+    <returns>선택한 상태가 지정된 도면층과 해당 하위 도면층의 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>도면층 집합에서 지정된 도면층과 해당 하위 도면층의 선택을 취소합니다.</summary>
+    <param name="indexer">지정된 계층의 인덱스입니다.</param>
+    <returns>선택한 상태가 지정된 도면층과 해당 하위 도면층의 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>레이어 컬렉션의 모든 레이어를 선택 취소합니다.</summary>
+    <returns>여러 대상 레이어의 선택된 상태가 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어를 그룹화하는 데 필요한 깊이 변경 사항을 반환합니다.</summary>
+    <param name="grouper">그룹화 작업에 대한 정보를 제공합니다.</param>
+    <returns>레이어 컬렉션에서 선택한 여러 레이어를 그룹화하는 데 필요한 깊이 변경입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>레이어 컬렉션의 모든 레이어를 패키지화하는 데 필요한 깊이 변경 사항을 반환합니다.</summary>
+    <returns>레이어 컬렉션에서 선택한 모든 레이어를 패키징하는 데 필요한 깊이 변경입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어의 그룹을 해제하는 데 필요한 깊이 변경 사항을 반환합니다.</summary>
+    <returns>레이어 컬렉션에서 선택한 여러 레이어의 그룹을 해제하는 데 필요한 깊이 변경입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어의 순서를 재정렬하는 데 필요한 깊이 변경 사항을 반환합니다.</summary>
+    <param name="reorder">순서 변경 작업에 대한 정보를 제공합니다.</param>
+    <returns>레이어 컬렉션에서 선택한 여러 레이어의 순서를 재정렬하는 데 필요한 깊이 변경입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어의 순서를 재정렬하는 데 필요한 깊이 변경 사항을 반환합니다.</summary>
+    <param name="reorder">순서 변경 작업에 대한 정보를 제공합니다.</param>
+    <param name="selectedRanges">레이어 컬렉션에서 선택된 레이어 범위의 컬렉션입니다.</param>
+    <returns>레이어 컬렉션에서 선택한 여러 레이어의 순서를 재정렬하는 데 필요한 깊이 변경입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어의 그룹을 해제하는 데 필요한 깊이 변경 사항을 반환합니다.</summary>
+    <param name="ungrouper">그룹 해제 작업에 대한 정보를 제공합니다.</param>
+    <returns>레이어 컬렉션에서 선택한 여러 레이어의 그룹을 해제하는 데 필요한 깊이 변경입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>논리적 트리를 심층 평면화하는 컬렉션에 속하는 모든 노드의 고유 식별자를 검색합니다.</summary>
+    <returns>논리적 트리에 속하는 모든 노드의 고유 식별자입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>논리적 트리의 각 노드를 XML 트리로 프로젝션합니다.</summary>
+    <returns>프로젝션된 XML 트리입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>레이어 컬렉션에서 선택한 레이어 범위의 컬렉션을 반환합니다.</summary>
+    <returns>레이어 컬렉션에서 선택된 레이어 범위의 컬렉션입니다.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어를 그룹화하는 데 필요한 선택된 상태 변경 사항을 반환합니다.</summary>
+    <param name="grouper">그룹화 작업에 대한 정보를 제공합니다.</param>
+    <returns>레이어 컬렉션에서 선택한 여러 레이어를 그룹화하는 데 필요한 선택된 상태 변경.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>레이어 컬렉션의 모든 레이어를 패키지화하는 데 필요한 선택된 상태 변경 사항을 반환합니다.</summary>
+    <returns>레이어 컬렉션에서 선택한 모든 레이어를 패키지화하는 데 필요한 선택된 상태 변경.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>레이어 컬렉션에서 선택한 여러 레이어의 그룹을 해제하는 데 필요한 선택된 상태 변경 사항을 반환합니다.</summary>
+    <param name="ungrouper">그룹 해제 작업에 대한 정보를 제공합니다.</param>
+    <returns>레이어 컬렉션에서 선택한 여러 레이어의 그룹을 해제하는 데 필요한 선택된 상태 변경.</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>레이어 컬렉션의 모든 레이어를 숨깁니다.</summary>
+    <returns>여러 대상 레이어의 가시성 변경.</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>지정된 layer를 검색하고 layer의 첫 번째 발생에 대한 인덱스를 반환합니다.</summary>
+    <param name="item">배치할 레이어입니다.</param>
+    <returns>layer의 첫 번째 발생 인덱스입니다.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>지정된 layer의 인덱스와 지정된 layer descendants의 인덱스 사이의 범위를 반환합니다.</summary>
+    <param name="item">배치할 레이어입니다.</param>
+    <returns>지정된 계층의 인덱스와 지정된 계층 자손의 인덱스 사이의 범위입니다.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>두 레이어의 인덱스 사이의 범위를 반환합니다.</summary>
+    <param name="newItem">찾을 새 레이어입니다.</param>
+    <param name="oldIndexer">찾을 이전 레이어의 인덱스입니다.</param>
+    <returns>두 레이어의 인덱스 사이의 범위입니다.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>두 레이어의 인덱스 사이의 범위를 반환합니다.</summary>
+    <param name="newIndexer">찾을 새 레이어의 인덱스입니다.</param>
+    <param name="oldIndexer">찾을 이전 레이어의 인덱스입니다.</param>
+    <returns>두 레이어의 인덱스 사이의 범위입니다.</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary><see cref="T:FanKit.Layers.LayerList`1"/> 개체를 생성합니다.</summary>
+    <param name="logicalTree">논리적 트리입니다.</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+논리적 트리를 지우고 초기화합니다.
+<br />
+<br /> 해당 요소가 논리적 트리에 복사되는 컬렉션은 다음과 같습니다.
+<br /> │
+<br /> ├─비트맵: 깊이=0
+<br /> ├─비트맵: 깊이=0
+<br /> ├─그룹: 깊이=0
+<br /> ├─그룹: 깊이=1
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─그룹: 깊이=0
+<br /> ├─비트맵: 깊이=1
+<br /> ├─그룹: 깊이=0
+<br /> └─비트맵: 깊이=1
+</summary>
+    <param name="list">해당 요소가 논리적 트리에 복사되는 컬렉션입니다.</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+논리적 트리를 지우고 초기화합니다.
+<br />
+<br /> 요소가 논리적 트리에 복사되는 트리는 다음과 같습니다.
+<br /> │
+<br /> ├─비트맵: 깊이
+<br /> ├─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  ├─그룹: 깊이
+<br /> │  │  ├─비트맵: 깊이
+<br /> │  │  ├─비트맵: 깊이
+<br /> │  │  └─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  └─비트맵: 깊이
+<br /> ├─그룹: 깊이
+<br /> │  └─비트맵: 깊이
+</summary>
+    <param name="tree">해당 요소가 논리적 트리에 복사되는 트리입니다.</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>도면층 집합에서 지정된 도면층과 그 하위 도면층을 선택합니다.</summary>
+    <param name="item">지정된 레이어입니다.</param>
+    <returns>선택한 상태가 지정된 도면층과 해당 하위 도면층의 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>도면층 집합에서 지정된 도면층과 그 하위 도면층을 선택합니다.</summary>
+    <param name="indexer">지정된 계층의 인덱스입니다.</param>
+    <returns>선택한 상태가 지정된 도면층과 해당 하위 도면층의 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>레이어 컬렉션의 모든 레이어를 선택합니다.</summary>
+    <returns>여러 대상 레이어의 선택된 상태가 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>레이어 컬렉션에서 지정된 레이어와 그 하위 항목만 선택하고 나머지는 선택 취소합니다.</summary>
+    <param name="item">지정된 레이어입니다.</param>
+    <returns>여러 대상 레이어의 선택된 상태가 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>레이어 컬렉션에서 지정된 레이어와 그 하위 항목만 선택하고 나머지는 선택 취소합니다.</summary>
+    <param name="indexer">지정된 계층의 인덱스입니다.</param>
+    <returns>여러 대상 레이어의 선택된 상태가 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>레이어 컬렉션에서 지정된 범위의 레이어와 그 하위 항목만 선택하고 나머지는 선택 취소합니다.</summary>
+    <param name="range">지정된 범위입니다.</param>
+    <returns>여러 대상 레이어의 선택된 상태가 변경됩니다.</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>도면층 집합의 모든 도면층을 표시합니다.</summary>
+    <returns>여러 대상 레이어의 가시성 변경.</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>논리적 트리와 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary><see cref="T:FanKit.Layers.LayerManager1`1"/> 개체를 생성합니다.</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>논리적 트리와 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>논리적 트리, 시각적 트리, 인스턴스 풀, 드래그 앤 드롭 UI 및 UI 레이어와 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>시각적 트리와 인스턴스 풀과 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>드래그 앤 드롭 UI.</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary><see cref="T:FanKit.Layers.LayerManager2`1"/> 개체를 생성합니다.</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>논리적 트리와 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>목록 보기의 데이터 소스로서의 UI 계층입니다.</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>논리적 트리, 시각적 트리, 인스턴스 풀, 드래그 앤 드롭 UI 및 UI 레이어와 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>클립보드입니다.</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>시각적 트리와 인스턴스 풀과 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>드래그 앤 드롭 UI.</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary><see cref="T:FanKit.Layers.LayerManager3`1"/> 개체를 생성합니다.</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>논리적 트리와 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>목록 보기의 데이터 소스로서의 UI 계층입니다.</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>논리적 트리, 시각적 트리, 인스턴스 풀, 드래그 앤 드롭 UI, 클립보드, 실행 취소 스택, UI 기록 및 UI 계층과 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>클립보드입니다.</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>시각적 트리와 인스턴스 풀과 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>드래그 앤 드롭 UI.</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>실행 취소 스택입니다.</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary><see cref="T:FanKit.Layers.LayerManager4`2"/> 개체를 생성합니다.</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>논리적 트리와 같은 일부 도구를 캡슐화합니다.</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>목록 보기의 데이터 원본으로서의 UI 기록입니다.</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>목록 보기의 데이터 소스로서의 UI 계층입니다.</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>탐색하기 위해 호출할 메서드를 나타내는 상수를 정의합니다</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>메서드가 없습니다.</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>다시 실행하려면 <see cref="M:FanKit.Layers.UndoStack`2.Redo"/> 또는 <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/>로 전화하십시오.</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>다시 실행하려면 <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> 또는 <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>로 전화하십시오.</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>실행 취소하려면 <see cref="M:FanKit.Layers.UndoStack`2.Undo"/> 또는 <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/>으로 전화하십시오.</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>실행 취소하려면 <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> 또는 <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>로 전화하십시오.</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>탐색할 요소의 인덱스가 포함된 목록을 나타냅니다. 앞으로 및 뒤로 탐색하는 방법을 제공합니다.</summary>
+    <typeparam name="T">목록에 있는 요소의 유형입니다.</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>이전 방향 탐색 기록을 나타내는 컬렉션을 가져옵니다.</summary>
+    <returns>뒤로 탐색 스택입니다.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>뒤로 탐색 기록에 항목이 하나 이상 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <returns>**true** 뒤로 탐색 기록에 하나 이상의 항목이 있는 경우; **false** 이전 탐색 기록에 항목이 없는 경우.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>앞으로 탐색 기록에 항목이 하나 이상 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <returns>**true** 전방 항법 기록에 적어도 하나의 항목이 있는 경우; **false** 경우 전방 항법 기록에 항목이 없습니다.</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>탐색할 요소를 비운 다음 <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>에서 모든 요소를 제거합니다.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>탐색할 요소의 인덱스(0부터 시작)입니다. 기본값은 -1입니다.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>탐색할 요소를 가져옵니다.</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>앞으로 탐색 기록을 나타내는 컬렉션을 가져옵니다.</summary>
+    <returns>전방 탐색 스택입니다.</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>소스 <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>에 있는 요소 범위의 얕은 복사본을 만듭니다.</summary>
+    <param name="range">지정된 범위입니다.</param>
+    <returns>소스 <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>에 있는 요소 범위의 얕은 복사본</returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>뒤로 탐색 기록에서 가장 최근 항목으로 이동합니다.</summary>
+    <returns>뒤로 탐색 기록에서 가장 최근 항목입니다.</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>앞으로 탐색 기록에서 가장 최근 항목으로 이동합니다.</summary>
+    <returns>정방향 탐색 기록의 가장 최근 항목입니다.</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>탐색해야 하는 요소로 이동합니다.</summary>
+    <param name="index">탐색해야 하는 요소의 인덱스입니다.</param>
+    <returns>이전에 탐색한 요소의 인덱스와 탐색할 요소의 인덱스 사이의 범위입니다.</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>가비지 수집, 삭제, 순서 변경 및 동기화와 같은 동작에 대해 계산된 값을 제공합니다.</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary><see cref="T:FanKit.Layers.IndexRange"/>를 사용하는 목록을 나타냅니다. 제거 및 이동하는 메서드를 제공합니다.</summary>
+    <typeparam name="T">목록에 있는 요소의 유형입니다.</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>지정된 범위의 요소를 가져옵니다.</summary>
+    <param name="range">가져올 요소의 범위입니다.</param>
+    <returns>지정된 범위의 요소입니다.</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>요소 범위를 리스트의 새 위치로 이동합니다.</summary>
+    <param name="range">이동할 요소의 범위입니다.</param>
+    <param name="index">요소 범위의 새 위치를 지정하는 0부터 시작하는 인덱스입니다.</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>목록에서 일부 요소 범위를 대상 요소 앞으로 이동합니다.</summary>
+    <param name="ranges">이동할 요소의 범위입니다.</param>
+    <param name="target">대상 요소입니다.</param>
+    <param name="offset">리스트에서 새 위치의 간격띄우기입니다.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>목록의 요소 범위 중 일부를 첫 번째 범위로 이동합니다.</summary>
+    <param name="ranges">이동할 요소의 범위입니다.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>목록의 요소 범위 중 일부를 맨 끝으로 이동합니다.</summary>
+    <param name="ranges">이동할 요소의 범위입니다.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>목록의 요소 범위를 첫 번째로 이동합니다.</summary>
+    <param name="range">이동할 요소의 범위입니다.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>목록의 요소 범위를 마지막으로 이동합니다.</summary>
+    <param name="range">이동할 요소의 범위입니다.</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>리스트에서 요소 범위를 제거합니다.</summary>
+    <param name="range">제거할 요소의 범위입니다.</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>리스트에서 일부 요소 범위를 제거합니다.</summary>
+    <param name="ranges">제거할 요소의 범위입니다.</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>해제 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>해제할 레이어의 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>숫자가 1과 같을 경우 해제할 층의 깊이 변경; 그렇지 않으면 기본값입니다.</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary><see cref="T:FanKit.Layers.Options.Releaser"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>제거할 항목의 수를 나타내는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>제거할 항목 수는 0과 같습니다.</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>제거할 항목 수는 모든 항목의 수보다 작습니다.</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>제거할 항목의 수는 모든 항목의 수와 같습니다.</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>제거 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>제거할 레이어 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary><see cref="T:FanKit.Layers.Options.Remover"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>순서 변경 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>순서를 변경할 레이어 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>숫자가 1과 같을 경우 재정렬할 층의 깊이 변경; 그렇지 않으면 기본값입니다.</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>놓기 대상이 끌기 소스의 형제 노드인지 여부를 나타내는 값을 가져옵니다.</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+    <param name="type">개체가 다른 개체 위에 나타날 수 있도록 개체의 레이어 순서(z 순서라고도 함)를 변경하는 방법을 나타냅니다.</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+    <param name="type">개체가 다른 개체 위에 나타날 수 있도록 개체의 레이어 순서(z 순서라고도 함)를 변경하는 방법을 나타냅니다.</param>
+    <param name="selection">레이어 컬렉션의 선택 상태입니다.</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+    <param name="indexer">논리적 트리에 있는 놓기 대상의 인덱스입니다.</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+    <param name="indexer">논리적 트리에 있는 놓기 대상의 인덱스입니다.</param>
+    <param name="selection">레이어 컬렉션의 선택 상태입니다.</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>순서를 바꿀 항목의 수를 나타내는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>범위 수는 1보다 큽니다(범위는 재정렬할 항목을 설명함).</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>순서를 변경할 항목 수는 0과 같습니다. </summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>순서를 변경할 항목 수는 1과 같습니다.</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>범위 수는 1과 같아야 합니다(이 범위에는 노드와 해당 하위 항목이 포함됨).</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary><see cref="T:FanKit.Layers.SelectMode"/> 형식 유형의 값을 포함하는 변경 내용을 나타냅니다.</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>선택한 상태 변경의 배열을 포함하는 레이어 관련 변경 사항을 나타냅니다.</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>선택한 상태 변경의 배열을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>논리적 트리에서 지정된 계층의 인덱스입니다.</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>선택한 항목의 수를 나타내는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>선택한 항목 수가 1보다 커야 합니다.</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>선택한 항목의 수는 0과 같아야 합니다. </summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>선택한 항목의 수는 1과 같아야 합니다.</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary><see cref="T:FanKit.Layers.ILayerBase"/> 인스턴스의 선택된 상태를 지정합니다.</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary><see cref="T:FanKit.Layers.ILayerBase"/> 인스턴스가 선택되지 않았습니다.</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>논리적 트리에서 <see cref="T:FanKit.Layers.ILayerBase"/> 인스턴스의 부모가 선택됩니다.</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary><see cref="T:FanKit.Layers.ILayerBase"/> 인스턴스가 선택됩니다.</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>선택한 상태 확장 메서드를 포함합니다.</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>지정된 선택 상태를 부울 값으로 변환합니다.</summary>
+    <param name="mode">변환할 모드입니다.</param>
+    <returns>값이 <see cref="F:FanKit.Layers.SelectMode.Selected"/>이면 True입니다. 그렇지 않으면 false입니다.</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>지정된 부울 값을 선택한 상태로 변환합니다.。</summary>
+    <param name="value">변환할 부울 값입니다.</param>
+    <returns>
+값이 **True**인 경우 <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<br/>
+그렇지 않으면 <see cref="F:FanKit.Layers.SelectMode.Deselected"/>.
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>지정된 선택 상태를 테마 컬러 테마 브러시의 불투명도 값으로 변환합니다.</summary>
+    <param name="mode">변환할 모드입니다.</param>
+    <returns>
+모드가 <see cref="F:FanKit.Layers.SelectMode.Deselected"/>인 경우 0.0d; 
+<br/>
+모드가 <see cref="F:FanKit.Layers.SelectMode.Parent"/>인 경우 0.5d; 
+<br/>
+그렇지 않으면 1.0d입니다.
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary><see cref="float"/> 형식 형식의 값을 포함하는 변경 내용을 나타냅니다.</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>모든 계층의 식별자 배열을 포함하는 계층 관련 변경 사항을 나타냅니다(계층 컬렉션이 순서를 변경하는 경우).</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>모든 계층의 식별자 배열을 가져오거나 설정합니다(계층 컬렉션 변경 순서 뒤).</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>모든 계층의 식별자 배열을 가져오거나 설정합니다(계층 컬렉션 변경 순서 전).</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>원본 컬렉션 또는 대상 컬렉션에 특정 <see cref="T:FanKit.Layers.Core.ITreeNode"/>이 있는지 확인합니다.</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/>은 원본 컬렉션과 대상 컬렉션 모두에 존재합니다.</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/>은 대상 컬렉션에 있습니다.</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/>은 원본 컬렉션에 있습니다.</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>실행 취소 작업의 기간을 지정하는 상수를 정의합니다.</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>현재 실행 취소 작업(기록 내에서 지정된 실행 취소 작업의 인덱스가 현재 선택한 항목과 같음).</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>향후 실행 취소 작업(기록 내에서 지정된 실행 취소 작업의 인덱스가 현재 선택한 항목보다 큼).</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>과거 실행 취소 작업(기록 내에서 지정된 실행 취소 작업의 인덱스가 현재 선택한 항목보다 작음).</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+실행 취소 및 다시 실행 작업을 지원하고 가비지 수집의 개념을 지원하는 큐를 나타냅니다.
+<br/>
+<br/>
+가비지 수집:
+<br/>
+(1)
+스택의 작업 수가 스택의 제한을 초과하면 스택의 맨 아래에서 작업이 삭제됩니다. 
+<br/>
+(2)
+계층이 논리적 트리에 없고 변경 사항이 없는 경우 해당 GUID를 참조하는 계층을 '쓸모없는 계층'으로 플래그 지정합니다.
+<br/>
+(3)
+가비지 수집을 위해 쓸모없는 레이어 양식 인스턴스 풀을 모두 제거합니다.
+</summary>
+    <typeparam name="T">인스턴스의 유형입니다.</typeparam>
+    <typeparam name="U">작업 유형(작업에는 실행 취소 작업 및 다시 실행 작업이 포함됨)입니다.</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>다시 실행 작업을 적용하여 대상 레이어의 깊이를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>다시 실행 작업을 적용하여 여러 대상 레이어의 깊이를 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>다시 실행 작업을 적용하여 두 대상 레이어의 선택된 상태를 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>다시 실행 작업을 적용하여 대상 레이어의 잠금 상태를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>다시 실행 작업을 적용하여 대상 레이어의 선택된 상태를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>다시 실행 작업을 적용하여 여러 대상 레이어의 선택된 상태를 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>다시 실행 작업을 적용하여 레이어 컬렉션의 순서를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> 또는 <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>다시 실행 작업을 적용하여 대상 레이어의 가시성을 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>다시 실행 작업을 적용하여 여러 대상 레이어의 가시성을 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>실행 취소 작업을 적용하여 대상 레이어의 깊이를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>실행 취소 작업을 적용하여 여러 대상 레이어의 깊이를 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>실행 취소 작업을 적용하여 두 대상 레이어의 선택된 상태를 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>실행 취소 작업을 적용하여 대상 레이어의 잠금 상태를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>실행 취소 작업을 적용하여 대상 레이어의 선택된 상태를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>실행 취소 작업을 적용하여 여러 대상 레이어의 선택된 상태를 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>실행 취소 작업을 적용하여 레이어 컬렉션의 순서를 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> 또는 <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>실행 취소 작업을 적용하여 대상 레이어의 가시성을 변경합니다.</summary>
+    <param name="change">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>실행 취소 작업을 적용하여 여러 대상 레이어의 가시성을 변경합니다.</summary>
+    <param name="changes">적용할 변경 사항입니다.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>큐에 탐색할 작업이 포함되어 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <param name="index">탐색할 작업의 인덱스입니다.</param>
+    <returns>
+<see cref="NavigateAction.Undo"/> 또는 <see cref="NavigateAction.UndoRange"/>(지정된 인덱스가 현재 작업의 인덱스보다 작은 경우)
+<br/>
+지정된 인덱스가 현재 작업의 인덱스보다 큰 경우 <see cref="NavigateAction.Redo"/> 또는 <see cref="NavigateAction.RedoRange"/>;
+<br/>
+그렇지 않으면 <see cref="NavigateAction.None"/>입니다.
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>다시 실행 버퍼에 다시 실행할 수 있는 작업이 포함되어 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <returns>다시 실행 버퍼에 다시 실행할 수 있는 작업이 포함되어 있는지 여부를 나타내는 값을 가져옵니다.</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>실행 취소 버퍼에 실행 취소할 수 있는 작업이 포함되어 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+    <returns>실행 취소 버퍼에 실행 취소할 수 있는 작업이 포함되어 있으면 True입니다. 그렇지 않으면 false입니다.</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>큐를 비운 다음 모든 계층 관련 작업 변경 사항을 삭제합니다.</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+가비지 수집을 위해 쓸모없는 레이어 양식 인스턴스 풀을 모두 제거합니다.
+</summary>
+    <returns>쓸모없는 레이어의 번호입니다.</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>소스 <see cref="T:FanKit.Layers.UndoStack`2"/>에 있는 요소 범위의 얕은 복사본을 만듭니다.</summary>
+    <param name="range">지정된 범위입니다.</param>
+    <returns>소스 <see cref="T:FanKit.Layers.UndoStack`2"/>에 있는 요소 범위의 얕은 복사본</returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>지정된 작업으로 이동합니다.</summary>
+    <param name="index">탐색할 작업의 인덱스입니다.</param>
+    <returns>이전에 탐색한 작업의 인덱스와 탐색할 작업의 인덱스 사이의 범위입니다.</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+푸시 새 작업은 실행 취소 스택에 있습니다.
+스택의 작업 수가 스택의 제한을 초과하면 스택의 맨 아래에서 작업이 삭제됩니다. 
+</summary>
+    <param name="item">새 작업입니다.</param>
+    <param name="isGC">작업이 삭제될 때 쓸모없는 레이어를 제거하는 경우; 그렇지 않으면 false입니다.</param>
+    <returns>쓸모없는 레이어의 번호입니다.</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>다음 작업을 가져오고 다음 작업을 현재 작업으로 만듭니다.</summary>
+    <returns>다음 작업(작업에 다시 실행 작업이 포함됨)</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>실행 취소 버퍼에서 모든 실행 취소 작업을 가져옵니다.</summary>
+    <returns>현재 작업에서 첫 번째 작업까지의 작업(작업에는 실행 취소 작업이 포함됨).</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>선택한 작업의 인덱스를 가져옵니다. 기본값은 -1이며, 이는 작업이 선택되지 않았음을 나타냅니다.</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>선택한 작업을 가져옵니다.</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+기간을 모든 작업에 동기화하여 UI 상태 및 동작을 업데이트합니다.
+<br/>
+<br/>
+예)
+<br/>
+과거 작업의 인덱스는 현재 인덱스보다 작습니다.
+<br/>
+현재 작업의 인덱스는 현재 인덱스와 같아야 합니다.
+<br/>
+미래 작업의 인덱스는 현재 인덱스보다 커야 합니다.
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+기간을 모든 작업에 동기화하여 UI 상태 및 동작을 업데이트합니다.
+<br/>
+<br/>
+예)
+<br/>
+과거 작업의 인덱스는 지정된 인덱스보다 작습니다.
+<br/>
+현재 작업의 인덱스는 지정된 인덱스와 같아야 합니다.
+<br/>
+향후 작업의 인덱스는 지정된 인덱스보다 커야 합니다.
+</summary>
+    <param name="index">지정된 연산의 인덱스(0부터 시작)입니다.</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>HTML DOM 차등 알고리즘과 유사하게 UI 기록에 순서를 동기화합니다.</summary>
+    <param name="items">목록 보기의 데이터 원본(예: <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>)으로서의 UI 기록입니다.</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>현재 작업을 가져오고 이전 작업을 현재 작업으로 만듭니다.</summary>
+    <returns>현재 작업(작업에 실행 취소 작업이 포함되어 있음)입니다.</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>실행 취소 버퍼에서 모든 실행 취소 작업을 가져옵니다.</summary>
+    <returns>현재 작업에서 첫 번째 작업까지의 작업(작업에는 실행 취소 작업이 포함됨).</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>큐에 저장할 수 있는 최대 작업 수를 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary><see cref="T:FanKit.Layers.UndoStack`2"/> 개체를 생성합니다.</summary>
+    <param name="pool">모든 인스턴스를 포함하는 인스턴스 풀입니다.</param>
+    <param name="collection">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>그룹 해제 작업에 대한 정보를 제공합니다.</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>그룹화되지 않은 레이어의 수를 가져옵니다.</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary><see cref="T:FanKit.Layers.Options.Ungrouper"/> 개체를 생성합니다.</summary>
+    <param name="items">레이어 컬렉션입니다.</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>가시성 변경 사항의 배열을 포함하는 레이어 관련 변경 사항을 나타냅니다.</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>가시성 변경 내용의 배열을 가져오거나 설정합니다.</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>XML 개체를 만들기 위한 확장입니다.</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>노드의 깊이, 식별자 또는 자식을 XML 개체로 저장합니다.</summary>
+    <param name="node">지정된 노드입니다.</param>
+    <param name="type">XML 개체의 구조 유형입니다.</param>
+    <param name="children">자식 노드입니다.</param>
+    <returns>
+형식이 <see cref="F:FanKit.Layers.XmlStructure.List"/>인 경우 <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/>에 대한 XML 속성입니다.
+<br/>
+형식이 <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/>인 경우 <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/>에 대한 XML 속성입니다.
+<br/>
+그렇지 않으면 자식 노드입니다.
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/>을 저장하기 위한 XML 개체의 구조 유형을 지정합니다.</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+깊이가 있는 목록에 저장합니다.
+<br />
+<br /> 예)
+<br /> │
+<br /> ├─비트맵: 깊이=0
+<br /> ├─비트맵: 깊이=0
+<br /> ├─그룹: 깊이=0
+<br /> ├─그룹: 깊이=1
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─비트맵: 깊이=2
+<br /> ├─그룹: 깊이=0
+<br /> ├─비트맵: 깊이=1
+<br /> ├─그룹: 깊이=0
+<br /> └─비트맵: 깊이=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+나무에 저장합니다.
+<br />
+<br /> 예)
+<br /> │
+<br /> ├─비트맵
+<br /> ├─비트맵
+<br /> ├─그룹
+<br /> │  ├─그룹
+<br /> │  │  ├─비트맵
+<br /> │  │  ├─비트맵
+<br /> │  │  └─비트맵
+<br /> ├─그룹
+<br /> │  └─비트맵
+<br /> ├─그룹
+<br /> │  └─비트맵
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+노드로 구성된 트리와 식별자가 있는 인스턴스 컬렉션에 저장합니다.
+<br />
+<br /> 예)
+<br /> │
+<br /> ├─모든 노드
+<br /> │  ├─노드: id=0
+<br /> │  ├─노드: id=1
+<br /> │  ├─노드: id=2
+<br /> │  │  ├─노드: id=3
+<br /> │  │  │  ├─노드: id=4
+<br /> │  │  │  ├─노드: id=5
+<br /> │  │  │  └─노드: id=6
+<br /> │  ├─노드: id=7
+<br /> │  │  └─노드: id=8
+<br /> │  ├─노드: id=9
+<br /> │  │  └─노드: id=10
+<br /> │  │
+<br /> ├─모든 레이어
+<br /> │  ├─비트맵: id=0
+<br /> │  ├─비트맵: id=1
+<br /> │  ├─그룹: ID=2
+<br /> │  ├─그룹: ID=3
+<br /> │  ├─비트맵: id=4
+<br /> │  ├─비트맵: id=5
+<br /> │  ├─비트맵: id=6
+<br /> │  ├─그룹: ID=7
+<br /> │  ├─비트맵: id=8
+<br /> │  ├─그룹: ID=9
+<br /> │  └─비트맵: id=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>논리적 트리의 모든 노드를 XML 요소로 프로젝션하는 XML 트리 노드를 정의합니다.</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>현재 <see cref="T:System.Text.StringBuilder"/> 개체에 문자열을 추가합니다.</summary>
+    <param name="stringBuilder">현재 <see cref="T:System.Text.StringBuilder"/> 개체입니다.</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>노드의 식별자와 자식을 XML 요소로 저장합니다.</summary>
+    <param name="elementChildName">XML 요소의 자식 이름입니다.</param>
+    <returns>
+노드에 자식이 있는 경우 식별자와 자식이 있는 XML 요소;
+<br/>
+그렇지 않으면 식별자만 있는 XML 요소입니다.
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary><see cref="T:FanKit.Layers.XmlTreeNode"/> 개체를 생성합니다.</summary>
+    <param name="id">노드의 식별자입니다.</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary><see cref="T:FanKit.Layers.XmlTreeNode"/> 개체를 생성합니다.</summary>
+    <param name="element">식별자와 자식이 있는 XML 요소입니다.</param>
+  </doc>
+</docs>
