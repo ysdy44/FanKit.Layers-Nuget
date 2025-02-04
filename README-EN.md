@@ -1,6 +1,6 @@
-# Fankit.Layers
+# FanKit.Layers
 
-Fankit.Layers is a extensions of XAML List View for development with .NET UWP/WPF/WinUI/Maui.
+FanKit.Layers is a extensions of XAML List View for development with .NET UWP/WPF/WinUI/Maui.
 
 Includes nodes/layer/history that are used for building Tree View/Layers Panel/History Panel targeting the 2D graphics rendering.
 
