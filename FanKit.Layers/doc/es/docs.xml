@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>Define constantes que indican cómo cambiar el orden de las capas (también conocido como orden z) de los objetos para que los objetos puedan aparecer encima de otros objetos.</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>Acerque un objeto un paso más al frente.</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>Coloque un objeto al frente del pedido.</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>Envía un objeto un paso hacia atrás.</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>Envíe un objeto al reverso del pedido.</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary>Representa un cambio que contiene el valor del tipo de formato <see cref="bool"/>.</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>Identificador de la capa que se va a utilizar como destino de la operación.</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>Obtiene un valor que indica si este nuevo valor es igual al valor anterior.</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>El nuevo valor.</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>El valor anterior.</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>Extensiones para crear cambios.</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary>Crea un cambio a partir de un <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">Un <see cref="T:FanKit.Layers.Core.ITreeNode"/> para crear un cambio.</param>
+    <returns>Un cambio que contiene el false como nuevo valor.</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary>Crea un cambio a partir de un <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+    <param name="item">Un <see cref="T:FanKit.Layers.Core.ITreeNode"/> para crear un cambio.</param>
+    <returns>Un cambio que contiene el valor true as new.</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>Especifica las opciones de operación relacionadas con la capa cuando un elemento de la vista de lista recibe una interacción.</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>Marca todos los nodos secundarios del nodo especificado en el árbol lógico y los quita del árbol visual.</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>Anula la selección de la capa especificada y sus descendientes en la colección de capas.</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>Marca todos los nodos secundarios del nodo especificado en el árbol lógico y los agrega al árbol visual.</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>Oculta la capa especificada en la colección de capas.</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>Bloquea la capa especificada en la colección de capas.</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>Ninguno.</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>Selecciona la capa especificada y sus descendientes en la colección de capas.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>Seleccione solo la capa especificada y sus descendientes en la colección de capas y, a continuación, anule la selección de las demás.</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>Seleccione solo el rango especificado de capas y sus descendientes en la colección de capas y, a continuación, anule la selección de las demás.</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>Muestra la capa especificada en la colección de capas.</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>Desbloquea la capa especificada en la colección de capas.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>Extensiones para crear opciones relacionadas con capas.</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>Obtiene un valor que indica si el nodo especificado se puede contraer o expandir.</summary>
+    <param name="node">El nodo especificado.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Collapse"/> si <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> es **Verdadero**;
+<br/>
+de lo contrario, <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>Obtiene un valor que indica si la capa especificada se puede bloquear o desbloquear.</summary>
+    <param name="layer">La capa especificada.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Unlock"/> si <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> es **Verdadero**;
+<br/>
+de lo contrario, <see cref="F:FanKit.Layers.ClickOptions.Lock"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>Obtiene un valor que indica si la capa especificada se puede seleccionar o no seleccionar.</summary>
+    <param name="layer">La capa especificada.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Select"/> si <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> es <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.Deselect"/> si <see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> es <see cref="F:FanKit.Layers.SelectMode.Selected"/>;
+<br/>
+de lo contrario, <see cref="F:FanKit.Layers.ClickOptions.None"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>Obtiene un valor que indica si solo se selecciona una capa o solo se selecciona un rango de capas.</summary>
+    <param name="layer">La capa especificada.</param>
+    <param name="isShiftKeyDown">True si se pulsa la tecla Mayús; de lo contrario, falso.</param>
+    <param name="isControlKeyDown">True si se presiona la tecla Ctrl; de lo contrario, falso.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/> si se pulsa la tecla Mayús;
+<br/>
+<see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/> si no se pulsa la tecla Ctrl;
+<br/>
+de lo contrario, <see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/>;
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>Obtiene un valor que indica si la capa especificada se puede visualizar u ocultar.</summary>
+    <param name="layer">La capa especificada.</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Hide"/> si <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> es **Verdadero**;
+<br/>
+de lo contrario, <see cref="F:FanKit.Layers.ClickOptions.Show"/>;
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>Proporcione métodos para copiar y pegar el nodo en el árbol lógico.</summary>
+    <typeparam name="T">El tipo de instancia.</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>Determina si los elementos seleccionados se pueden copiar en el portapapeles.</summary>
+    <returns>True si se permite copiar en el portapapeles; de lo contrario, falso.</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>Determina si el portapapeles ha seleccionado elementos que se pueden pegar en el árbol lógico.</summary>
+    <returns>True si el portapapeles ha elegido elementos que se pueden pegar en el árbol lógico; de lo contrario, falso.</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Clipboard`1"/>.</summary>
+    <param name="logicalTree">El árbol lógico.</param>
+    <param name="pool">El grupo de instancias que incluye todas las instancias.</param>
+    <param name="collection">La colección de capas.</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>Crea un nuevo nodo que es una copia de la instancia actual.</summary>
+    <returns>Un nuevo nodo que es una copia de esta instancia.</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>Crea un nuevo nodo que es una copia de la instancia actual.</summary>
+    <param name="depth">La profundidad del nuevo nodo desde el nodo raíz del árbol.</param>
+    <returns>Un nuevo nodo que es una copia de esta instancia.</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>Copia los elementos seleccionados del árbol lógico en el portapapeles.</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>Obtiene el número de elementos seleccionados.</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>Copia los elementos seleccionados del árbol lógico en el árbol lógico.</summary>
+    <param name="duplicator">Proporciona información para la operación de duplicación.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>Copia los elementos seleccionados del árbol lógico en el árbol lógico.</summary>
+    <param name="selection">El estado de selección de la colección de capas.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>Copia los elementos seleccionados del portapapeles en el árbol lógico.</summary>
+    <param name="inserter">Proporciona información para la operación de inserción.</param>
+    <param name="selects">Proporciona información para la operación de duplicación.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>Representa el método que obtendrá la altura del contenedor para el elemento en el índice especificado dentro de la vista de lista.</summary>
+    <param name="index">Índice del elemento que se va a recuperar.</param>
+    <returns>Devuelve la altura del contenedor para el elemento en el índice especificado dentro de la vista de lista.</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>Representa el método que creará e inicializará una nueva capa a partir de unos datos especificados.</summary>
+    <typeparam name="T">El tipo de capa.</typeparam>
+    <typeparam name="D">El tipo de datos.</typeparam>
+    <param name="data">Los datos especificados.</param>
+    <returns>La capa creada.</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>Representa el método que creará e inicializará una nueva capa a partir de unos datos especificados.</summary>
+    <typeparam name="T">El tipo de capa.</typeparam>
+    <typeparam name="D">El tipo de datos.</typeparam>
+    <param name="data">Los datos especificados.</param>
+    <param name="depth">La profundidad del nuevo nodo desde el nodo raíz del árbol.</param>
+    <returns>La capa creada.</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>Representa el método que creará una nueva capa vacía (antes de cargar el contenido de la capa desde un elemento XML)。</summary>
+    <typeparam name="T">El tipo de capa.</typeparam>
+    <param name="element">El elemento XML.</param>
+    <returns>La capa creada.</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>Representa el método que creará una nueva capa vacía (antes de cargar el contenido de la capa desde un elemento XML)。</summary>
+    <typeparam name="T">El tipo de capa.</typeparam>
+    <param name="element">El elemento XML.</param>
+    <param name="depth">La profundidad del nuevo nodo desde el nodo raíz del árbol.</param>
+    <returns>La capa creada.</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>Representa un cambio relacionado con la capa que incluye una matriz de cambios de profundidad.</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>Obtiene o establece una matriz de cambios de profundidad.</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary>Representa un cambio que contiene el valor del tipo de formato <see cref="double"/>.</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>Representa un cambio relacionado con la capa que incluye dos cambios de estado seleccionados.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>Obtiene o establece el primer cambio de estado seleccionado.</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>Obtiene o establece el segundo cambio de estado seleccionado.</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>Contiene un conjunto de coordenadas y desplazamientos que se usan para calcular la región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>La altura del contenido del encabezado de la lista.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>La distancia a la que se ha desplazado horizontalmente el contenido de la vista de lista.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>Coordenada y del puntero del ratón en relación con la ubicación de la vista de lista.</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>La distancia a la que se ha desplazado verticalmente el contenido de la vista de lista.</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>La región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>Altura del rectángulo que define la región de la interfaz de usuario de arrastre.</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>**true** si todos los valores son 0; de lo contrario, **falso**.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>Ancho del rectángulo que define la región de la interfaz de usuario de arrastre.</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>La coordenada X en la esquina superior izquierda del rectángulo que define la región de la interfaz de usuario de arrastre.</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>La coordenada Y en la esquina superior izquierda del rectángulo que define la región de la interfaz de usuario de arrastre.</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>Define constantes que especifican el tipo de origen de arrastre en una operación de arrastrar y colocar.</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>No especifica ningún origen de arrastre.</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>El origen de arrastre no existe en el árbol lógico.</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>El origen de arrastre es un elemento que se seleccionó en el árbol lógico.</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>El origen de arrastre es un elemento que no estaba seleccionado en el árbol lógico.</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>Proporciona métodos para colocar la interfaz de usuario de arrastrar y colocar. La interfaz de usuario de arrastrar y soltar buscará y ajustará la guía de la interfaz de usuario más cercana al puntero del mouse en el destino de ubicación.</summary>
+    <typeparam name="T">El tipo de instancia.</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>Almacene en caché la posición de la guía de la interfaz de usuario en cada capa antes de arrastrar y soltar.</summary>
+    <param name="width">Este ancho de la vista de lista, también el ancho máximo de la guía de la interfaz de usuario.</param>
+    <param name="zoomFactorForDepth">
+El factor de zoom activado para el escalado de profundidad.
+<br/>
+Por ejemplo, cuando el factor de zoom es 16, el margen izquierdo de la guía de la interfaz de usuario es de 16 * de profundidad.
+</param>
+    <param name="containerSizeFromIndex">Obtener la altura del contenedor para el elemento en el índice especificado dentro de la vista de lista.</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.DragUI`1"/>.</summary>
+    <param name="logicalTree">El árbol lógico.</param>
+    <param name="visualTree">El árbol visual.</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>Recupera el índice del destino de colocación en el árbol lógico identificando la guía de la interfaz de usuario más cercana al puntero del mouse.</summary>
+    <param name="point">Conjunto de coordenadas y desplazamientos que se utilizan para calcular la región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</param>
+    <param name="sourceType">Especifique el tipo de origen de arrastre en una operación de arrastrar y soltar.</param>
+    <returns>Índice del destino de colocación en el árbol lógico.</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>Recupera el índice del destino de colocación en el árbol lógico identificando la guía de la interfaz de usuario más cercana al puntero del mouse.</summary>
+    <param name="positionY">Coordenada y del puntero del ratón en relación con la ubicación de la vista de lista.</param>
+    <param name="sourceType">Especifique el tipo de origen de arrastre en una operación de arrastrar y soltar.</param>
+    <returns>Índice del destino de colocación en el árbol lógico.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>Recupera la región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</summary>
+    <param name="Indexer">Índice del destino de colocación en el árbol lógico.</param>
+    <returns>La región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>Recupera la región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</summary>
+    <param name="point">Conjunto de coordenadas y desplazamientos que se utilizan para calcular la región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</param>
+    <param name="Indexer">Índice del destino de colocación en el árbol lógico.</param>
+    <returns>La región de la interfaz de usuario de arrastre en relación con la ubicación de la vista de lista.</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>La altura de la guía de la interfaz de usuario.</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>Índice del destino de colocación en el árbol lógico.</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+"-1 si <see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> es <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>, <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/> u <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/>;"
+<br/>
+de lo contrario, el índice de base cero de un destino de colocación en el árbol lógico.
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>Especifica dónde se debe insertar el origen de arrastre en relación con el destino de colocación.</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>Proporciona información para la operación de colocación.</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>La profundidad del nuevo nodo desde el nodo raíz del árbol.</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.DragDrop.Dropper"/>.</summary>
+    <param name="items">Colección del nodo all en el árbol lógico.</param>
+    <param name="indexer">Índice del destino de colocación en el árbol lógico.</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>Define constantes que especifican dónde se debe insertar el origen de arrastre en relación con el destino de colocación.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>Inserta un nodo por encima del nodo del mismo nivel especificado en el árbol lógico.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>Inserta un nuevo nodo en la parte inferior del árbol lógico.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>Inserta un nuevo nodo en la parte superior del árbol lógico.</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>Inserte un nuevo nodo debajo del nodo especificado en el árbol lógico.</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>No se debe insertar la fuente de arrastre.</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>Proporciona información para la operación de duplicación.</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>Obtiene el número de capas duplicadas.</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Options.Duplicator"/>.</summary>
+    <param name="items">La colección de capas.</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>Proporciona información para la operación de agrupación.</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>Obtiene el número de capas agrupadas.</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>La profundidad del nuevo nodo desde el nodo raíz del árbol.</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>El cambio de profundidad de la capa agrupada si el número es igual a 1; de lo contrario, valor predeterminado.</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Options.Grouper"/>.</summary>
+    <param name="items">La colección de capas.</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>El cambio del estado seleccionado de la capa agrupada si el número es igual a 1; de lo contrario, valor predeterminado.</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>Representa la clase base para los cambios relacionados con las capas.</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>Obtiene una colección de GUID de capas a las que se hace referencia.</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+Define un nodo con elementos secundarios.
+<br/>
+P ej.
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>Obtiene una colección de elementos secundarios en el nodo actual.</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>Obtiene el número de elementos secundarios que existen en la colección de elementos secundarios del nodo actual.</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>Admite la clonación, que crea una nueva instancia de una clase con el mismo valor que una instancia existente.</summary>
+    <typeparam name="T">El tipo de instancia.</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>Crea un nuevo nodo que es una copia de la instancia actual.</summary>
+    <returns>Un nuevo nodo que es una copia de esta instancia.</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>Crea un nuevo nodo que es una copia de la instancia actual.</summary>
+    <param name="depth">La profundidad del nuevo nodo desde el nodo raíz del árbol.</param>
+    <returns>Un nuevo nodo que es una copia de esta instancia.</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+Define la estructura de los nodos compuestos. Las clases de implementación deben ser capaces de notificar a la interfaz de usuario.
+<br/>
+P ej.
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // Notificar a la interfaz de usuario
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">El tipo de instancia.</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>Obtiene la colección de nodos que son elementos secundarios del nodo actual.</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>Se produce cuando cambia el número de elementos secundarios que existen en la colección de elementos secundarios del nodo actual.</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+Representa la clase base de todas las capas, como el grupo de capas, la capa de mapa de bits y la capa de relleno.
+<br/>
+Hereda de las interfaces <see cref="T:FanKit.Layers.Core.ITreeNode"/> y <see cref="T:FanKit.Layers.Core.IChildNode"/>.
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>Obtiene o establece un valor que indica si esta capa es un grupo de capas.</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>Obtiene o establece un valor que indica si esta capa está bloqueada.</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>Obtiene o establece un valor que indica si esta capa es invisible.</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>Carga el contenido de la capa desde un elemento XML.</summary>
+    <param name="content">Elemento XML que contiene el contenido de la capa.</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>Se produce cuando se producen cambios que afectan a la miniatura.</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>Guarda el contenido de la capa en un elemento XML.</summary>
+    <param name="structure">Tipo de estructura del objeto XML.</param>
+    <param name="children">Las capas de los niños.</param>
+    <returns>Elemento XML para guardar el contenido de la capa.</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>Obtiene o establece el estado seleccionado de esta capa.</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>Representa un intervalo que tiene índices inicial y final.</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>Obtiene el índice final inclusivo del intervalo.</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>Obtiene un valor que indica si el índice final es menor que el índice srart.</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>Obtiene un valor que indica si el índice final es mayor que el índice srart.</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>Obtiene un valor que indica si este índice final es igual al índice srart.</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>Obtiene un rango negativo (índice inicial 0, índice final -1).</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>Obtiene un rango negativo (índice inicial 0, índice final 1).</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>Obtiene el índice de inicio inclusivo del intervalo.</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>Obtiene un intervalo cero (índice inicial 0, índice final 0).</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>Representa el estado de selección de la colección de capas.</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>Obtiene un estado de selección vacío.</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Ranges.IndexSelection"/>.</summary>
+    <param name="items">La colección de capas.</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>Obtiene un valor que indica si el estado de selección actual está vacío o no.</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>Obtiene el número de elementos que se van a eliminar.</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>Obtiene el número de elementos seleccionados.</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>Proporciona información para la operación de inserción.</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>La profundidad del nuevo nodo desde el nodo raíz del árbol.</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>Obtiene un valor que indica si hay elementos seleccionados en la colección de capas.</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>Índice del primer elemento seleccionado en el árbol lógico.</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Options.Inserter"/>.</summary>
+    <param name="items">La colección de capas.</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>Especifica dónde se debe insertar el nuevo nodo en relación con los elementos seleccionados.</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>Define constantes que especifican dónde se debe insertar el nuevo nodo en relación con los elementos seleccionados.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>Inserta un nodo por encima del nodo del mismo nivel especificado en el árbol lógico.</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>Inserta un nuevo nodo en la parte superior del árbol lógico.</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary>Representa un cambio que contiene el valor del tipo de formato <see cref="int"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+Define constantes que indican cuáles contenidos deben volver a dibujarse.
+<br/>
+Esta enumeración admite una combinación bit a bit de sus valores miembro.
+P ej.
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // Borrar las capas de la interfaz de usuario
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // Sincronizar con las capas de la interfaz de usuario
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>Se han redibujado todas las miniaturas de las capas.</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>Se ha vuelto a dibujar el contenido del control Canvas.</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después de borrarlo.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después de agruparlo o empaquetarlo.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary>La operación de deshacer de <see cref="F:FanKit.Layers.InvalidateModes.Clear"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después de expandir o desexpandir un nodo.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>El contenido que afecta a si se debe ejecutar o no el comando deshacer o rehacer ha cambiado.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>Una o más operaciones de deshacer se agregan o se eliminan del historial.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>La historia ha sido borrada.</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>El historial de cambios en el elemento seleccionado actualmente.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>El contenido que afecta a si se debe ejecutar o no el comando de capa ha cambiado.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>La colección de capas ha cambiado.</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>Se ha borrado la colección de capas.</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después de bloquear o desbloquear una capa.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary>La operación de deshacer de <see cref="F:FanKit.Layers.InvalidateModes.Lock"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>Ninguno.</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>Todo ha cambiado (se usa para generar el resultado del cambio durante la depuración).</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después del restablecimiento.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después de seleccionar o anular la selección de una capa.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>Los elementos seleccionados han cambiado.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>Se han borrado los elementos seleccionados.</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary>La operación de deshacer de <see cref="F:FanKit.Layers.InvalidateModes.Select"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después de ordenarlo.
+<br/>
+<br/>
+P ej.
+Eliminación, inserción, pegado, eliminación, reordenación, liberación, agrupación, desagrupación o duplicación.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary>La operación de deshacer de <see cref="F:FanKit.Layers.InvalidateModes.Sort"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+Se produce cuando se completa una modificación en el contenido.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+Se produce cuando el valor del contenido ha cambiado.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+Se produce cuando el dispositivo de entrada cambia de valor durante una modificación.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary>La operación de deshacer de <see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/>.</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+Tiene lugar cuando un dispositivo de entrada comienza una modificación en el contenido.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+Combinación bit a bit que indica qué contenido se debe volver a dibujar después de que una capa sea visible o invisible.
+<br/>
+<br/>
+Contiene los siguientes valores de miembro:
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary>La operación de deshacer de <see cref="F:FanKit.Layers.InvalidateModes.Visible"/>.</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+Define un nodo con profundidad.
+<br/>
+P ej.
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>Obtiene o establece un valor que indica la distancia a la que se encuentra el nodo actual del nodo raíz del árbol.</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>Obtiene el identificador del nodo actual.</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>Obtiene o establece un valor que indica si el nodo de vista de árbol actual está expandido.</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>Obtiene un objeto que proporciona valores calculados para comportamientos como la recolección de elementos no utilizados, la eliminación, la reordenación y la sincronización.</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>Admite acciones de deshacer y rehacer, mediante la creación de cambios relacionados con capas.</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>Obtiene los cambios relacionados con las capas.</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>Obtiene el identificador para este <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>Obtiene o establece el período de tiempo para este <see cref="T:FanKit.Layers.IUndoable"/>.</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>Encapsula el árbol visual y el grupo de instancias, y proporciona métodos para eliminar, insertar, pegar, eliminar, reordenar, liberar, agrupar, desagrupar y duplicar.</summary>
+    <typeparam name="T">El tipo de instancia.</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>Borra y asigna los nodos secundarios de cada nodo del árbol lógico y, a continuación, llama al método <see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/>.</summary>
+    <param name="updateSelectMode">Si establece el estado seleccionado del nodo secundario en <see cref="F:FanKit.Layers.SelectMode.Parent"/>.</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>Obtiene un valor que determina si la colección de capas admite la disposición.</summary>
+    <param name="type">Indica cómo cambiar el orden de las capas (también conocido como orden z) de los objetos para que los objetos puedan aparecer encima de otros objetos.</param>
+    <returns>Si la colección de capas admite la disposición.</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>Obtiene un valor que determina si la colección de capas admite la disposición.</summary>
+    <param name="type">Indica cómo cambiar el orden de las capas (también conocido como orden z) de los objetos para que los objetos puedan aparecer encima de otros objetos.</param>
+    <param name="selection">El estado de selección de la colección de capas.</param>
+    <returns>Si la colección de capas admite la disposición.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>La nueva capa que se va a insertar.</summary>
+    <param name="indexer">Índice del destino de colocación en el árbol lógico.</param>
+    <returns>La nueva capa que se va a agrupar.</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>Obtiene un valor que determina si la colección de capas admite el reordenamiento.</summary>
+    <param name="indexer">Índice del destino de colocación en el árbol lógico.</param>
+    <param name="selection">El estado de selección de la colección de capas.</param>
+    <returns>Si la colección de capas admite el reordenamiento.</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>Borra todas las capas de la colección de capas.</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>Marca los nodos secundarios de todos los nodos del árbol lógico y los quita del árbol visual.</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>Marca los nodos secundarios de todos los nodos del árbol lógico y los agrega al árbol visual.</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>Agrupa varias capas seleccionadas en la colección de capas.</summary>
+    <param name="grouper">Proporciona información para la operación de agrupación.</param>
+    <param name="newItem">La nueva capa que se va a agrupar.</param>
+    <param name="depths">Los cambios de profundidad de las múltiples capas de destino.</param>
+    <param name="selects">El estado seleccionado cambia de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>Agrupa la capa seleccionada en la colección de capas.</summary>
+    <param name="grouper">Proporciona información para la operación de agrupación.</param>
+    <param name="newItem">La nueva capa que se va a agrupar.</param>
+    <param name="depth">Los cambios de profundidad de las capas de destino.</param>
+    <param name="select">El estado seleccionado cambia de las capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>Inserta una nueva capa en la colección de capas.</summary>
+    <param name="dropper">Proporciona información para la operación de inserción.</param>
+    <param name="newItem">La nueva capa que se va a insertar.</param>
+    <param name="selects">El estado seleccionado cambia de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>Inserta una nueva capa en la colección de capas.</summary>
+    <param name="inserter">Proporciona información para la operación de inserción.</param>
+    <param name="newItem">La nueva capa que se va a insertar.</param>
+    <param name="selects">El estado seleccionado cambia de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>Inserta una nueva capa en la parte superior de la colección de capas.</summary>
+    <param name="newItem">La nueva capa que se va a insertar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>Inserta una nueva capa en la parte superior de la colección de capas.</summary>
+    <param name="newItem">La nueva capa que se va a insertar.</param>
+    <param name="selects">El estado seleccionado cambia de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.LayerCollection`1"/>.</summary>
+    <param name="logicalTree">El árbol lógico.</param>
+    <param name="visualTree">El árbol visual.</param>
+    <param name="pool">El grupo de instancias que incluye todas las instancias.</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>Mueve varias capas seleccionadas en la colección de capas por encima de su elemento del mismo nivel.</summary>
+    <param name="reorder">Proporciona información para la operación de reordenación.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>Empaqueta todas las capas de la colección de capas.</summary>
+    <param name="newItem">La nueva capa que se va a empaquetar.</param>
+    <param name="depths">Los cambios de profundidad de las múltiples capas de destino.</param>
+    <param name="selects">El estado seleccionado cambia de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>Libera varias capas seleccionadas en la colección de capas.</summary>
+    <param name="releaser">Proporciona información para la operación de liberación.</param>
+    <param name="depths">Los cambios de profundidad de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>Libera la capa seleccionada en la colección de capas.</summary>
+    <param name="releaser">Proporciona información para la operación de liberación.</param>
+    <param name="depths">Los cambios de profundidad de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>Elimina las capas de destino de la colección de capas.</summary>
+    <param name="remover">Proporciona información para la operación de eliminación.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>Elimina las capas de destino de la colección de capas.</summary>
+    <param name="selection">El estado de selección de la colección de capas.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>Reordena varias capas seleccionadas en la colección de capas.</summary>
+    <param name="reorder">Proporciona información para la operación de reordenación.</param>
+    <param name="depths">Los cambios de profundidad de las múltiples capas de destino.</param>
+    <param name="selectedRanges">Colección de rangos de capas que se seleccionan en la colección de capas.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>Reordena la capa seleccionada en la colección de capas.</summary>
+    <param name="reorder">Proporciona información para la operación de reordenación.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>Reordena el rango de capas seleccionado en la colección de capas.</summary>
+    <param name="reorder">Proporciona información para la operación de reordenación.</param>
+    <param name="depths">Los cambios de profundidad de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>Borra el árbol visual, el árbol lógico, el grupo de instancias y, a continuación, genera el evento <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary>El <see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/> usando datos personalizados.</summary>
+    <typeparam name="D">El tipo de datos.</typeparam>
+    <param name="listOfData">Colección cuyos elementos se copian en el árbol lógico.</param>
+    <param name="creator">Representa el método que creará e inicializará una nueva capa a partir de unos datos especificados.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>El <see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/> usando datos personalizados.</summary>
+    <typeparam name="D">Representa el método que creará e inicializará una nueva capa a partir de unos datos especificados.</typeparam>
+    <param name="treeOfData">Árbol cuyos elementos se copian en el árbol lógico.</param>
+    <param name="creator">Representa el método que creará e inicializará una nueva capa a partir de unos datos especificados.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+Borra e inicializa el árbol lógico, el árbol visual y el grupo de instancias y, a continuación, genera el evento <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> La colección cuyos elementos se copian en el árbol lógico de la siguiente manera:
+<br /> │
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Grupo: Profundidad=1
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=1
+<br /> ├─Grupo: Profundidad=0
+<br /> └─Mapa de bits: Profundidad=1
+</summary>
+    <param name="list">Colección cuyos elementos se copian en el árbol lógico.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+Borra e inicializa el árbol lógico, el árbol visual y el grupo de instancias y, a continuación, genera el evento <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> El árbol cuyos elementos se copian en el árbol lógico de la siguiente manera:
+<br /> │
+<br /> ├─Mapa de bits: Profundidad
+<br /> ├─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  ├─Grupo: Profundidad
+<br /> │  │  ├─Mapa de bits: Profundidad
+<br /> │  │  ├─Mapa de bits: Profundidad
+<br /> │  │  └─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  └─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  └─Mapa de bits: Profundidad
+</summary>
+    <param name="tree">Árbol cuyos elementos se copian en el árbol lógico.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+Borra e inicializa el árbol lógico, el árbol visual y el grupo de instancias y, a continuación, genera el evento <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> La colección cuyos elementos se copian en el árbol lógico de la siguiente manera:
+<br /> │
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Grupo: Profundidad=1
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=1
+<br /> ├─Grupo: Profundidad=0
+<br /> └─Mapa de bits: Profundidad=1
+</summary>
+    <param name="listOfXml">Colección cuyos elementos se copian en el árbol lógico.</param>
+    <param name="creator">Representa el método que creará una nueva capa vacía (antes de cargar el contenido de la capa desde un elemento XML)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+Borra e inicializa el árbol lógico, el árbol visual y el grupo de instancias y, a continuación, genera el evento <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> El árbol cuyos elementos se copian en el árbol lógico de la siguiente manera:
+<br /> │
+<br /> ├─Mapa de bits: Profundidad
+<br /> ├─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  ├─Grupo: Profundidad
+<br /> │  │  ├─Mapa de bits: Profundidad
+<br /> │  │  ├─Mapa de bits: Profundidad
+<br /> │  │  └─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  └─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  └─Mapa de bits: Profundidad
+</summary>
+    <param name="treeOfXml">Árbol cuyos elementos se copian en el árbol lógico.</param>
+    <param name="creator">Representa el método que creará una nueva capa vacía (antes de cargar el contenido de la capa desde un elemento XML)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+Borra e inicializa el árbol lógico, el árbol visual y el grupo de instancias y, a continuación, genera el evento <see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/>.
+<br />
+<br /> El árbol cuyos elementos se copian en el árbol lógico de la siguiente manera:
+<br /> │
+<br /> ├─Todos los nodos
+<br /> │  ├─Nodo: id=0
+<br /> │  ├─Nodo: id=1
+<br /> │  ├─Nodo: id=2
+<br /> │  │  ├─Nodo: id=3
+<br /> │  │  │  ├─Nodo: id=4
+<br /> │  │  │  ├─Nodo: id=5
+<br /> │  │  │  └─Nodo: id=6
+<br /> │  ├─Nodo: id=7
+<br /> │  │  └─Nodo: id=8
+<br /> │  ├─Nodo: id=9
+<br /> │  │  └─Nodo: id=10
+<br /> │  │
+<br /> ├─Todas las capas
+<br /> │  ├─Mapa de bits: id=0
+<br /> │  ├─Mapa de bits: id=1
+<br /> │  ├─Grupo: Id=2
+<br /> │  ├─Grupo: Id=3
+<br /> │  ├─Mapa de bits: id=4
+<br /> │  ├─Mapa de bits: id=5
+<br /> │  ├─Mapa de bits: id=6
+<br /> │  ├─Grupo: Id=7
+<br /> │  ├─Mapa de bits: id=8
+<br /> │  ├─Grupo: Id=9
+<br /> │  └─Mapa de bits: id=10
+</summary>
+    <param name="items">La colección de instancia con identificador.</param>
+    <param name="nodes">El árbol compuesto por nodos.</param>
+    <param name="creator">Representa el método que creará una nueva capa vacía (antes de cargar el contenido de la capa desde un elemento XML)。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>Se produce al restablecer la colección de capas.</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>Guarda el contenido de la capa especificada y sus descendientes en un elemento XML.</summary>
+    <param name="treeNode">Nodo de árbol XML que proyecta la capa especificada en un elemento XML.</param>
+    <returns>Elemento XML para guardar el contenido de la capa especificada y sus descendientes.</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>Guarda el contenido de varias capas y sus descendientes en una colección de elementos XML.</summary>
+    <param name="treeNode">Colección de nodos de árbol XML que proyecta varias capas en una colección de elementos XML.</param>
+    <returns>Colección de elementos XML para guardar el contenido de varias capas y sus descendientes.</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>Ordena todos los nodos del árbol lógico mediante la colección de identificadores que aplana en profundidad el árbol lógico.</summary>
+    <param name="ids">Colección de identificadores que aplana en profundidad el árbol lógico.</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>Sincronice todos los nodos no contraídos del árbol lógico en el árbol visual.</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>Sincronice el orden que aplana en profundidad el árbol visual con las capas de la interfaz de usuario, de forma similar a los algoritmos diferenciales del DOM HTML.</summary>
+    <param name="items">Las capas de la interfaz de usuario como origen de datos (como <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) en la vista de lista.</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>Desagrupa varias capas seleccionadas en la colección de capas.</summary>
+    <param name="ungrouper">Proporciona información para la operación de desagrupación.</param>
+    <param name="depths">Los cambios de profundidad de las múltiples capas de destino.</param>
+    <param name="selects">El estado seleccionado cambia de las múltiples capas de destino.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>Desagrupa la capa seleccionada en la colección de capas.</summary>
+    <param name="ungrouper">Proporciona información para la operación de desagrupación.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>Representa una colección que aplana en profundidad el árbol lógico y proporciona métodos para acceder individualmente a la capa del árbol lógico por índice (el árbol lógico se compone de capas heredadas de los nodos).</summary>
+    <typeparam name="T">El tipo de instancia.</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>Obtiene un valor que determina si las capas seleccionadas en la colección de capas admiten la liberación.</summary>
+    <param name="selection">El estado de selección de la colección de capas.</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>Anula la selección de la capa especificada y sus descendientes en la colección de capas.</summary>
+    <param name="item">La capa especificada.</param>
+    <returns>El estado seleccionado cambia de la capa especificada y sus descendientes.</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>Anula la selección de la capa especificada y sus descendientes en la colección de capas.</summary>
+    <param name="indexer">El índice de la capa especificada.</param>
+    <returns>El estado seleccionado cambia de la capa especificada y sus descendientes.</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>Deselects all the layers in the layer collection.</summary>
+    <returns>El estado seleccionado cambia de las múltiples capas de destino.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>Devuelve los cambios de profundidad necesarios para agrupar varias capas seleccionadas en la colección de capas.</summary>
+    <param name="grouper">Proporciona información para la operación de agrupación.</param>
+    <returns>Los cambios de profundidad necesarios para agrupar varias capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>Devuelve los cambios de profundidad necesarios para empaquetar todas las capas de la colección de capas.</summary>
+    <returns>Los cambios de profundidad necesarios para empaquetar todas las capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>Devuelve los cambios de profundidad necesarios para desagrupar varias capas seleccionadas en la colección de capas.</summary>
+    <returns>Los cambios de profundidad necesarios para desagrupar varias capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>Devuelve los cambios de profundidad necesarios para reordenar varias capas seleccionadas en la colección de capas.</summary>
+    <param name="reorder">Proporciona información para la operación de reordenación.</param>
+    <returns>Los cambios de profundidad necesarios para reordenar varias capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>Devuelve los cambios de profundidad necesarios para reordenar varias capas seleccionadas en la colección de capas.</summary>
+    <param name="reorder">Proporciona información para la operación de reordenación.</param>
+    <param name="selectedRanges">Colección de rangos de capas que se seleccionan en la colección de capas.</param>
+    <returns>Los cambios de profundidad necesarios para reordenar varias capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>Devuelve los cambios de profundidad necesarios para desagrupar varias capas seleccionadas en la colección de capas.</summary>
+    <param name="ungrouper">Proporciona información para la operación de desagrupación.</param>
+    <returns>Los cambios de profundidad necesarios para desagrupar varias capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>Recupera los identificadores únicos de todos los nodos que pertenecen a la colección que aplana en profundidad el árbol lógico.</summary>
+    <returns>Los identificadores únicos de todos los nodos que pertenecen al árbol lógico.</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>Proyecta cada nodo de un árbol lógico en un árbol XML.</summary>
+    <returns>El árbol XML proyectado.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>Devuelve la colección de rangos de capas seleccionadas en la colección de capas.</summary>
+    <returns>Colección de rangos de capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>Devuelve los cambios de estado seleccionados necesarios para agrupar varias capas seleccionadas en la colección de capas.</summary>
+    <param name="grouper">Proporciona información para la operación de agrupación.</param>
+    <returns>Los cambios de estado seleccionados son necesarios para agrupar varias capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>Devuelve los cambios de estado seleccionados necesarios para empaquetar todas las capas de la colección de capas.</summary>
+    <returns>Los cambios de estado seleccionados son necesarios para empaquetar todas las capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>Devuelve los cambios de estado seleccionados necesarios para desagrupar varias capas seleccionadas en la colección de capas.</summary>
+    <param name="ungrouper">Proporciona información para la operación de desagrupación.</param>
+    <returns>Los cambios de estado seleccionados son necesarios para desagrupar varias capas seleccionadas en la colección de capas.</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>Oculta todas las capas de la colección de capas.</summary>
+    <returns>Los cambios de visibilidad de las múltiples capas de destino.</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>Busca la capa especificada y devuelve el índice de la primera aparición de la capa.</summary>
+    <param name="item">La capa que se va a localizar.</param>
+    <returns>Índice de la primera aparición de la capa.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>Devuelve el intervalo entre el índice de la capa especificada y el índice de los descendientes de capa especificados.</summary>
+    <param name="item">La capa que se va a localizar.</param>
+    <returns>Intervalo entre el índice de la capa especificada y el índice de los descendientes de capa especificados.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>Devuelve el intervalo entre los índices de dos capas.</summary>
+    <param name="newItem">La nueva capa que se va a localizar.</param>
+    <param name="oldIndexer">El índice de la capa antigua que se va a localizar.</param>
+    <returns>Intervalo entre los índices de dos capas.</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>Devuelve el intervalo entre los índices de dos capas.</summary>
+    <param name="newIndexer">El índice de la nueva capa que se va a localizar.</param>
+    <param name="oldIndexer">El índice de la capa antigua que se va a localizar.</param>
+    <returns>Intervalo entre los índices de dos capas.</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.LayerList`1"/>.</summary>
+    <param name="logicalTree">El árbol lógico.</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+Borra e inicializa el árbol lógico.
+<br />
+<br /> La colección cuyos elementos se copian en el árbol lógico de la siguiente manera:
+<br /> │
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Grupo: Profundidad=1
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=1
+<br /> ├─Grupo: Profundidad=0
+<br /> └─Mapa de bits: Profundidad=1
+</summary>
+    <param name="list">Colección cuyos elementos se copian en el árbol lógico.</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+Borra e inicializa el árbol lógico.
+<br />
+<br /> El árbol cuyos elementos se copian en el árbol lógico de la siguiente manera:
+<br /> │
+<br /> ├─Mapa de bits: Profundidad
+<br /> ├─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  ├─Grupo: Profundidad
+<br /> │  │  ├─Mapa de bits: Profundidad
+<br /> │  │  ├─Mapa de bits: Profundidad
+<br /> │  │  └─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  └─Mapa de bits: Profundidad
+<br /> ├─Grupo: Profundidad
+<br /> │  └─Mapa de bits: Profundidad
+</summary>
+    <param name="tree">Árbol cuyos elementos se copian en el árbol lógico.</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>Selecciona la capa especificada y sus descendientes en la colección de capas.</summary>
+    <param name="item">La capa especificada.</param>
+    <returns>El estado seleccionado cambia de la capa especificada y sus descendientes.</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>Selecciona la capa especificada y sus descendientes en la colección de capas.</summary>
+    <param name="indexer">El índice de la capa especificada.</param>
+    <returns>El estado seleccionado cambia de la capa especificada y sus descendientes.</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>Selecciona todas las capas de la colección de capas.</summary>
+    <returns>El estado seleccionado cambia de las múltiples capas de destino.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>Seleccione solo la capa especificada y sus descendientes en la colección de capas y, a continuación, anule la selección de las demás.</summary>
+    <param name="item">La capa especificada.</param>
+    <returns>El estado seleccionado cambia de las múltiples capas de destino.</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>Seleccione solo la capa especificada y sus descendientes en la colección de capas y, a continuación, anule la selección de las demás.</summary>
+    <param name="indexer">El índice de la capa especificada.</param>
+    <returns>El estado seleccionado cambia de las múltiples capas de destino.</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>Seleccione solo el rango especificado de capas y sus descendientes en la colección de capas y, a continuación, anule la selección de las demás.</summary>
+    <param name="range">El intervalo especificado.</param>
+    <returns>El estado seleccionado cambia de las múltiples capas de destino.</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>Muestra todas las capas de la colección de capas.</summary>
+    <returns>Los cambios de visibilidad de las múltiples capas de destino.</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>Encapsular algunas herramientas, como el árbol lógico.</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.LayerManager1`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>Encapsular algunas herramientas, como el árbol lógico.</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>Encapsule algunas herramientas, como el árbol lógico, el árbol visual, el grupo de instancias, la interfaz de usuario de arrastrar y soltar y las capas de la interfaz de usuario.</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>Encapsule algunas herramientas, como el árbol visual y el grupo de instancias.</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>La interfaz de usuario de arrastrar y soltar.</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.LayerManager2`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>Encapsular algunas herramientas, como el árbol lógico.</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>Las capas de la interfaz de usuario como fuente de datos en la vista de lista.</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>Encapsule algunas herramientas, como el árbol lógico, el árbol visual, el grupo de instancias, la interfaz de usuario de arrastrar y soltar y las capas de la interfaz de usuario.</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>El portapapeles.</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>Encapsule algunas herramientas, como el árbol visual y el grupo de instancias.</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>La interfaz de usuario de arrastrar y soltar.</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.LayerManager3`1"/>.</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>Encapsular algunas herramientas, como el árbol lógico.</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>Las capas de la interfaz de usuario como fuente de datos en la vista de lista.</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>Encapsule algunas herramientas, como el árbol lógico, el árbol visual, el grupo de instancias, la interfaz de usuario de arrastrar y soltar, el portapapeles, la pila de deshacer, el historial de la interfaz de usuario y las capas de la interfaz de usuario.</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>El portapapeles.</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>Encapsule algunas herramientas, como el árbol visual y el grupo de instancias.</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>La interfaz de usuario de arrastrar y soltar.</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>La pila de deshacer.</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.LayerManager4`2"/>.</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>Encapsular algunas herramientas, como el árbol lógico.</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>El historial de la interfaz de usuario como origen de datos en la vista de lista.</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>Las capas de la interfaz de usuario como fuente de datos en la vista de lista.</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>Define constantes que indican el método al que se va a llamar para navegar</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>No hay método.</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>Llame al <see cref="M:FanKit.Layers.UndoStack`2.Redo"/> o al <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/> para rehacer.</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>Llame al <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> o al <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> para rehacer.</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>Llame al <see cref="M:FanKit.Layers.UndoStack`2.Undo"/> o al <see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/> para deshacer.</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>Llame al <see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/> o al <see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/> para deshacer.</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>Representa una lista que contiene un índice del elemento al que se va a navegar. Proporcionar métodos para la navegación hacia adelante y hacia atrás.</summary>
+    <typeparam name="T">El tipo de elementos de la lista.</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>Obtiene una colección que representa el historial de navegación hacia atrás.</summary>
+    <returns>La pila de navegación hacia atrás.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>Obtiene un valor que indica si hay al menos un elemento en el historial de navegación hacia atrás.</summary>
+    <returns>**verdadero** si hay al menos un elemento en el historial de navegación hacia atrás; **falso** si no hay elementos en el historial de navegación hacia atrás.</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>Obtiene un valor que indica si hay al menos un elemento en el historial de navegación hacia adelante.</summary>
+    <returns>**verdadero** si hay al menos un elemento en el historial de navegación hacia adelante; **false** si no hay elementos en el historial de navegación hacia adelante.</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>Vacía el elemento al que se va a navegar y, a continuación, quita todos los elementos del <see cref="T:FanKit.Layers.Collections.NavigateList`1"/>.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>Índice de base cero del elemento al que se va a navegar. El valor predeterminado es -1.</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>Obtiene el elemento al que se va a navegar.</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>Obtiene una colección que representa el historial de navegación hacia adelante.</summary>
+    <returns>La pila de navegación hacia adelante.</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>Crea una copia superficial de un intervalo de elementos en el origen <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></summary>
+    <param name="range">El intervalo especificado.</param>
+    <returns>Una copia superficial de un intervalo de elementos en el origen <see cref="T:FanKit.Layers.Collections.NavigateList`1"/></returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>Navega hasta el elemento más reciente en el historial de navegación hacia atrás.</summary>
+    <returns>El elemento más reciente en el historial de navegación hacia atrás.</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>Navega hasta el elemento más reciente en el historial de navegación hacia adelante.</summary>
+    <returns>El elemento más reciente en el historial de navegación hacia adelante.</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>Navega hasta el elemento al que se debe navegar.</summary>
+    <param name="index">Índice del elemento al que se debe navegar.</param>
+    <returns>Intervalo entre el índice del elemento navegado anteriormente y el índice del elemento al que se va a navegar.</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>Proporciona valores calculados para comportamientos como la recolección de elementos no utilizados, la eliminación, la reordenación y la sincronización.</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary>Representa una lista que utiliza <see cref="T:FanKit.Layers.IndexRange"/>. Proporciona métodos para quitar y mover.</summary>
+    <typeparam name="T">El tipo de elementos de la lista.</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>Obtiene los elementos en el intervalo especificado.</summary>
+    <param name="range">El rango de los elementos a obtener.</param>
+    <returns>Los elementos en el rango especificado.</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>Mueve un rango de elementos a una nueva ubicación en la lista.</summary>
+    <param name="range">La gama de elementos a mover.</param>
+    <param name="index">Índice de base cero que especifica la nueva ubicación del intervalo de elementos.</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>Mueve algunos de los rangos de elementos de la lista delante del elemento de destino.</summary>
+    <param name="ranges">Los rangos de elementos que se van a mover.</param>
+    <param name="target">El elemento de destino.</param>
+    <param name="offset">El desplazamiento de la nueva ubicación en la lista.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>Mueve algunos de los rangos de elementos de la lista al primero.</summary>
+    <param name="ranges">Los rangos de elementos que se van a mover.</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>Mueve algunos de los rangos de elementos de la lista al último.</summary>
+    <param name="ranges">Los rangos de elementos que se van a mover.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>Mueve un rango de elementos de la lista al primero.</summary>
+    <param name="range">La gama de elementos a mover.</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>Mueve un rango de elementos de la lista al último.</summary>
+    <param name="range">La gama de elementos a mover.</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>Elimina un rango de elementos de la lista.</summary>
+    <param name="range">El rango de elementos que se van a eliminar.</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>Elimina algunos de los rangos de elementos de la lista.</summary>
+    <param name="ranges">Los rangos de elementos que se van a eliminar.</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>Proporciona información para la operación de liberación.</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>Obtiene el número de capas que se van a liberar.</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>El cambio de profundidad de la capa a liberar si el número es igual a 1; de lo contrario, valor predeterminado.</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Options.Releaser"/>.</summary>
+    <param name="items">La colección de capas.</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>Define constantes que indican el número de elementos que se van a quitar.</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>El número de elementos que se van a quitar debe ser igual a 0.</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>El número de elementos que se van a quitar debe ser menor que el número de todos los elementos.</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>El número de elementos que se van a eliminar debe ser igual al número de todos los elementos.</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>Proporciona información para la operación de eliminación.</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>Obtiene el número de capas que se van a eliminar.</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Options.Remover"/>.</summary>
+    <param name="items">La colección de capas.</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>Proporciona información para la operación de reordenación.</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>Obtiene el número de capas que se van a reordenar.</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>El cambio de profundidad de la capa para reordenar si el número es igual a 1; de lo contrario, valor predeterminado.</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>Obtiene un valor que indica si el destino de colocación es un nodo del mismo nivel del origen de arrastre.</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La colección de capas.</param>
+    <param name="type">Indica cómo cambiar el orden de las capas (también conocido como orden z) de los objetos para que los objetos puedan aparecer encima de otros objetos.</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La colección de capas.</param>
+    <param name="type">Indica cómo cambiar el orden de las capas (también conocido como orden z) de los objetos para que los objetos puedan aparecer encima de otros objetos.</param>
+    <param name="selection">El estado de selección de la colección de capas.</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La colección de capas.</param>
+    <param name="indexer">Índice del destino de colocación en el árbol lógico.</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Reorder"/>.</summary>
+    <param name="items">La colección de capas.</param>
+    <param name="indexer">Índice del destino de colocación en el árbol lógico.</param>
+    <param name="selection">El estado de selección de la colección de capas.</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>Define constantes que indican el número de elementos que se van a reordenar.</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>El número de intervalos debe ser mayor que 1 (los intervalos describen los elementos que se van a reordenar).</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>El número de elementos que se van a reordenar debe ser igual a 0. </summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>El número de artículos a reordenar debe ser igual a 1.</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>El número de intervalos debe ser igual a 1 (este intervalo incluye un nodo y sus descendientes).</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary>Representa un cambio que contiene el valor del tipo de formato <see cref="T:FanKit.Layers.SelectMode"/>.</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>Representa un cambio relacionado con la capa que incluye una matriz de cambios de estado seleccionados.</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>Obtiene o establece una matriz de cambios de estado seleccionados.</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>Índice de la capa especificada en el árbol lógico.</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>Define constantes que indican el número de elementos seleccionados.</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>El número de elementos seleccionados debe ser mayor que 1.</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>El número de elementos seleccionados debe ser igual a 0. </summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>El número de elementos seleccionados debe ser igual a 1.</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary>Especifica el estado seleccionado de una instancia <see cref="T:FanKit.Layers.ILayerBase"/>.</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary>La instancia <see cref="T:FanKit.Layers.ILayerBase"/> no está seleccionada.</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>Se selecciona el elemento primario de la instancia <see cref="T:FanKit.Layers.ILayerBase"/> en el árbol lógico.</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary>Se selecciona la instancia <see cref="T:FanKit.Layers.ILayerBase"/>.</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>Contiene los métodos de extensión de estado seleccionados.</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>Convierte el estado seleccionado especificado en el valor booleano。</summary>
+    <param name="mode">El modo de conversión.</param>
+    <returns>True si el valor es <see cref="F:FanKit.Layers.SelectMode.Selected"/>; de lo contrario, falso.</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>Convierte el valor booleano especificado en el estado seleccionado。</summary>
+    <param name="value">El valor booleano que se va a convertir.</param>
+    <returns>
+<see cref="F:FanKit.Layers.SelectMode.Selected"/> si el valor es **True**;
+<br/>
+de lo contrario, <see cref="F:FanKit.Layers.SelectMode.Deselected"/>.
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>Convierte el estado seleccionado especificado en el valor de opacidad del pincel de tema de color de énfasis.</summary>
+    <param name="mode">El modo de conversión.</param>
+    <returns>
+0.0d si el modo es <see cref="F:FanKit.Layers.SelectMode.Deselected"/>; 
+<br/>
+0.5d si el modo es <see cref="F:FanKit.Layers.SelectMode.Parent"/>; 
+<br/>
+de lo contrario, 1.0d.
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary>Representa un cambio que contiene el valor del tipo de formato <see cref="float"/>.</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>Representa un cambio relacionado con la capa que incluye una matriz de todos los identificadores de las capas (cuando la colección de capas cambia de orden).</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>Obtiene o establece una matriz de todos los identificadores de las capas (después de cambiar el orden de cambio de la colección de capas).</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>Obtiene o establece una matriz de todos los identificadores de las capas (antes de que cambie el orden de cambio de la colección de capas).</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>Comprueba si existe un <see cref="T:FanKit.Layers.Core.ITreeNode"/> específico en la colección de origen o de destino.</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary>El <see cref="T:FanKit.Layers.Core.ITreeNode"/> existe tanto en la colección de origen como en la de destino.</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary>El <see cref="T:FanKit.Layers.Core.ITreeNode"/> existe en la colección de destino.</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary>El <see cref="T:FanKit.Layers.Core.ITreeNode"/> existe en la colección de origen.</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>Define constantes que especifican el período de tiempo para una operación de deshacer.</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>La operación de deshacer actual (el índice de la operación de deshacer especificada dentro del historial es igual que el elemento seleccionado actualmente).</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>Una operación de deshacer futura (el índice de la operación de deshacer especificada en el historial es mayor que el elemento seleccionado actualmente).</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>Una operación de deshacer anterior (el índice de la operación de deshacer especificada en el historial es menor que el elemento seleccionado actualmente).</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+Representa una cola que proporciona compatibilidad con las acciones de deshacer y rehacer, y admite el concepto de recolección de elementos no utilizados.
+<br/>
+<br/>
+La recolección de elementos no utilizados:
+<br/>
+(1)
+Cuando el número de operaciones en una pila supera el límite de la pila, las operaciones se eliminan de la parte inferior de la pila. 
+<br/>
+(2)
+Marca una capa como "capa inútil" si no está en el árbol lógico y no hay cambios, hace referencia a su GUID.
+<br/>
+(3)
+Elimina todo el grupo de instancias de formularios de capa inútiles para la recolección de elementos no utilizados.
+</summary>
+    <typeparam name="T">El tipo de instancia.</typeparam>
+    <typeparam name="U">El tipo de operación (una operación contiene una acción de deshacer y una acción de rehacer).</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>Aplique la acción de rehacer para cambiar la profundidad de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>Aplique la acción de rehacer para cambiar la profundidad de varias capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>Aplique la acción de rehacer para cambiar el estado seleccionado de dos capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>Aplique la acción rehacer para cambiar el estado bloqueado de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>Aplique la acción rehacer para cambiar el estado seleccionado de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>Aplique la acción de rehacer para cambiar el estado seleccionado de varias capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>Aplique la acción rehacer para cambiar el orden de las colecciones de capas.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> u <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>Aplique la acción de rehacer para cambiar la visibilidad de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>Aplique la acción de rehacer para cambiar la visibilidad de varias capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>Aplique la acción de deshacer para cambiar la profundidad de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>Aplique la acción de deshacer para cambiar la profundidad de varias capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>Aplique la acción de deshacer para cambiar el estado seleccionado de dos capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>Aplique la acción de deshacer para cambiar el estado bloqueado de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>Aplique la acción de deshacer para cambiar el estado seleccionado de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>Aplique la acción de deshacer para cambiar el estado seleccionado de varias capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>Aplique la acción de deshacer para cambiar el orden de la colección de capas.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> u <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>.</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>Aplique la acción de deshacer para cambiar la visibilidad de una capa de destino.</summary>
+    <param name="change">El cambio que se va a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>Aplique la acción de deshacer para cambiar la visibilidad de varias capas de destino.</summary>
+    <param name="changes">Los cambios que se van a aplicar.</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>Obtiene un valor que indica si la cola contiene una operación a la que navegar.</summary>
+    <param name="index">Índice de la operación a la que se va a navegar.</param>
+    <returns>
+<see cref="NavigateAction.Undo"/> u <see cref="NavigateAction.UndoRange"/> si el índice especificado es menor que el índice de la operación actual;
+<br/>
+<see cref="NavigateAction.Redo"/> u <see cref="NavigateAction.RedoRange"/> si el índice especificado es mayor que el índice de la operación actual;
+<br/>
+de lo contrario, <see cref="NavigateAction.None"/>.
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>Obtiene un valor que indica si el búfer de puesta al día contiene una acción que se puede rehacer.</summary>
+    <returns>Obtiene un valor que indica si el búfer de puesta al día contiene una acción que se puede rehacer.</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>Obtiene un valor que indica si el búfer de deshacer contiene una acción que se puede deshacer.</summary>
+    <returns>True si el búfer de deshacer contiene una acción que se puede deshacer; de lo contrario, falso.</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>Vacía la cola y, a continuación, destruye todos los cambios de operaciones relacionados con la capa.</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+Elimina todo el grupo de instancias de formularios de capa inútiles para la recolección de elementos no utilizados.
+</summary>
+    <returns>El número de la capa inútil.</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>Crea una copia superficial de un intervalo de elementos en el origen <see cref="T:FanKit.Layers.UndoStack`2"/></summary>
+    <param name="range">El intervalo especificado.</param>
+    <returns>Una copia superficial de un intervalo de elementos en el origen <see cref="T:FanKit.Layers.UndoStack`2"/></returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>Navega a la operación especificada.</summary>
+    <param name="index">Índice de la operación a la que se va a navegar.</param>
+    <returns>Intervalo entre el índice de la operación navegado anteriormente y el índice de la operación al que se va a navegar.</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+Las operaciones de inserción de nuevas operaciones se encuentran en la pila de deshacer.
+Cuando el número de operaciones en una pila supera el límite de la pila, las operaciones se eliminan de la parte inferior de la pila. 
+</summary>
+    <param name="item">La nueva operación.</param>
+    <param name="isGC">Ture si se elimina la capa inútil cuando se eliminan las operaciones; de lo contrario, falso.</param>
+    <returns>El número de la capa inútil.</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>Obtiene la siguiente operación y convierte la siguiente operación en la operación actual.</summary>
+    <returns>La siguiente operación (una operación contiene una acción de rehacer).</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>Obtiene todas las acciones de deshacer del búfer de deshacer.</summary>
+    <returns>Las operaciones desde la actual hasta la primera (una operación contiene una acción de deshacer).</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>Obtiene el índice de la operación seleccionada. El valor predeterminado es -1, lo que indica que no hay ninguna operación seleccionada.</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>Obtiene la operación seleccionada.</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+Sincronice el período con todas las operaciones para actualizar los estados y comportamientos de la interfaz de usuario.
+<br/>
+<br/>
+P ej.
+<br/>
+El índice de la operación pasada debe ser menor que el índice actual;
+<br/>
+El índice de la operación actual debe ser igual al índice actual;
+<br/>
+El índice de la operación futura debe ser mayor que el índice actual.
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+Sincronice el período con todas las operaciones para actualizar los estados y comportamientos de la interfaz de usuario.
+<br/>
+<br/>
+P ej.
+<br/>
+El índice de la operación pasada debe ser menor que el índice especificado;
+<br/>
+El índice de la operación actual debe ser igual al índice especificado;
+<br/>
+El índice de la operación futura debe ser mayor que el índice especificado.
+</summary>
+    <param name="index">Índice de base cero de la operación especificada.</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>Sincronice el pedido con el historial de la interfaz de usuario, de forma similar a los algoritmos diferenciales del DOM HTML.</summary>
+    <param name="items">El historial de la interfaz de usuario como origen de datos (como <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>) en la vista de lista.</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>Obtiene la operación actual y convierte la operación anterior en la operación actual.</summary>
+    <returns>La operación actual (una operación contiene una acción de deshacer).</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>Obtiene todas las acciones de deshacer del búfer de deshacer.</summary>
+    <returns>Las operaciones desde la actual hasta la primera (una operación contiene una acción de deshacer).</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>Obtiene o establece el número máximo de operaciones que se pueden almacenar en la cola.</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.UndoStack`2"/>.</summary>
+    <param name="pool">El grupo de instancias que incluye todas las instancias.</param>
+    <param name="collection">La colección de capas.</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>Proporciona información para la operación de desagrupación.</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>Obtiene el número de capas no agrupadas.</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.Options.Ungrouper"/>.</summary>
+    <param name="items">La colección de capas.</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>Representa un cambio relacionado con la capa que incluye una matriz de cambios de visibilidad.</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>Obtiene o establece una matriz de cambios de visibilidad.</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>Extensiones para crear objetos XML.</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>Guarde la profundidad, el identificador o los elementos secundarios del nodo como un objeto XML.</summary>
+    <param name="node">El nodo especificado.</param>
+    <param name="type">Tipo de estructura del objeto XML.</param>
+    <param name="children">Los nodos secundarios.</param>
+    <returns>
+Atributo XML para <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/> si el tipo es <see cref="F:FanKit.Layers.XmlStructure.List"/>;
+<br/>
+Atributo XML para <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/> si el tipo es <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/>;
+<br/>
+de lo contrario, nodos secundarios.
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary>Especifica el tipo de estructura del objeto XML para guardar un <see cref="T:FanKit.Layers.Core.ITreeNode"/>.</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+Guardar en una lista con profundidad.
+<br />
+<br /> P ej.
+<br /> │
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=0
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Grupo: Profundidad=1
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Mapa de bits: Profundidad=2
+<br /> ├─Grupo: Profundidad=0
+<br /> ├─Mapa de bits: Profundidad=1
+<br /> ├─Grupo: Profundidad=0
+<br /> └─Mapa de bits: Profundidad=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+Guardar en un árbol.
+<br />
+<br /> P ej.
+<br /> │
+<br /> ├─Mapa de bits
+<br /> ├─Mapa de bits
+<br /> ├─Grupo
+<br /> │  ├─Grupo
+<br /> │  │  ├─Mapa de bits
+<br /> │  │  ├─Mapa de bits
+<br /> │  │  └─Mapa de bits
+<br /> ├─Grupo
+<br /> │  └─Mapa de bits
+<br /> ├─Grupo
+<br /> │  └─Mapa de bits
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+Guarde en un árbol compuesto por nodos y una colección de instancias con identificador.
+<br />
+<br /> P ej.
+<br /> │
+<br /> ├─Todos los nodos
+<br /> │  ├─Nodo: id=0
+<br /> │  ├─Nodo: id=1
+<br /> │  ├─Nodo: id=2
+<br /> │  │  ├─Nodo: id=3
+<br /> │  │  │  ├─Nodo: id=4
+<br /> │  │  │  ├─Nodo: id=5
+<br /> │  │  │  └─Nodo: id=6
+<br /> │  ├─Nodo: id=7
+<br /> │  │  └─Nodo: id=8
+<br /> │  ├─Nodo: id=9
+<br /> │  │  └─Nodo: id=10
+<br /> │  │
+<br /> ├─Todas las capas
+<br /> │  ├─Mapa de bits: id=0
+<br /> │  ├─Mapa de bits: id=1
+<br /> │  ├─Grupo: Id=2
+<br /> │  ├─Grupo: Id=3
+<br /> │  ├─Mapa de bits: id=4
+<br /> │  ├─Mapa de bits: id=5
+<br /> │  ├─Mapa de bits: id=6
+<br /> │  ├─Grupo: Id=7
+<br /> │  ├─Mapa de bits: id=8
+<br /> │  ├─Grupo: Id=9
+<br /> │  └─Mapa de bits: id=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>Define un nodo de árbol XML que proyecta cualquier nodo del árbol lógico en un elemento XML.</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>Anexa la cadena al objeto <see cref="T:System.Text.StringBuilder"/> actual.</summary>
+    <param name="stringBuilder">El objeto <see cref="T:System.Text.StringBuilder"/> actual.</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>Guarde el identificador y los elementos secundarios del nodo como un elemento XML.</summary>
+    <param name="elementChildName">Nombre del elemento secundario del elemento XML.</param>
+    <returns>
+Elemento XML con identificador y elementos secundarios si el nodo tiene elementos secundarios;
+<br/>
+de lo contrario, el elemento XML con solo un identificador.
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.XmlTreeNode"/>.</summary>
+    <param name="id">Identificador del nodo.</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary>Construye un objeto <see cref="T:FanKit.Layers.XmlTreeNode"/>.</summary>
+    <param name="element">El elemento XML con identificador y elementos secundarios.</param>
+  </doc>
+</docs>
