@@ -86,7 +86,7 @@
     <summary>Get a value that indicates whether the specified node can be collapsed or expanded.</summary>
     <param name="node">The specified node.</param>
     <returns>
-<see cref="F:FanKit.Layers.ClickOptions.Collapse"/> if <see cref="P:FanKit.Layers.Core.ITree Node.IsExpanded"/> is **True**;
+<see cref="F:FanKit.Layers.ClickOptions.Collapse"/> if <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> is **True**;
 <br/>
 otherwise <see cref="F:FanKit.Layers.ClickOptions.Expand"/>;
 </returns>
