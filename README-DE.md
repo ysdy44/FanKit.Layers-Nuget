@@ -35,5 +35,5 @@ Im Bau...
 ## Wie kann ich die Quellcode-Kommentare anzeigen?
 
 1. Ordner **...\FanKit.Layers\doc** suchen
-2. Überschreiben der Datei **docs.xml** mit der Datei **en\docs.xml**
+2. Überschreiben der Datei **docs.xml** mit der Datei **de\docs.xml**
 3. Bewegen Sie den Mauszeiger über den Code, und eine QuickInfo wird angezeigt
