@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<docs>
+  <doc for="ArrangeType">
+    <summary>オブジェクトが他のオブジェクトの上に表示されるように、オブジェクトのレイヤー順序 (z オーダーとも呼ばれます) を変更する方法を示す定数を定義します。</summary>
+  </doc>
+  <doc for="ArrangeType.BringForward">
+    <summary>オブジェクトを前面に一歩近づけます。</summary>
+  </doc>
+  <doc for="ArrangeType.BringToFront">
+    <summary>オブジェクトを注文の前面に持ってきます。</summary>
+  </doc>
+  <doc for="ArrangeType.SendBackward">
+    <summary>オブジェクトを 1 ステップ後ろに送ります。</summary>
+  </doc>
+  <doc for="ArrangeType.SendToBack">
+    <summary>注文の末尾にオブジェクトを送信します。</summary>
+  </doc>
+  <doc for="BooleanChange">
+    <summary><see cref="bool"/> 形式の種類の値を含む変更を表します。</summary>
+  </doc>
+  <doc for="Change.Id">
+    <summary>操作のターゲットとして使用するレイヤーの識別子。</summary>
+  </doc>
+  <doc for="Change.IsEmpty">
+    <summary>この新しい値が古い値と等しいかどうかを示す値を取得します。</summary>
+  </doc>
+  <doc for="Change.NewValue">
+    <summary>新しい値。</summary>
+  </doc>
+  <doc for="Change.OldValue">
+    <summary>前の値。</summary>
+  </doc>
+  <doc for="ChangesExtensions">
+    <summary>変更を作成するための拡張機能。</summary>
+  </doc>
+  <doc for="ChangesExtensions.ToFalse">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> から変更を作成します。</summary>
+    <param name="item">変更を作成するための <see cref="T:FanKit.Layers.Core.ITreeNode"/>。</param>
+    <returns>新しい値として false を含む変更。</returns>
+  </doc>
+  <doc for="ChangesExtensions.ToTrue">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> から変更を作成します。</summary>
+    <param name="item">変更を作成するための <see cref="T:FanKit.Layers.Core.ITreeNode"/>。</param>
+    <returns>新しい値として true を含む変更。</returns>
+  </doc>
+  <doc for="ClickOptions">
+    <summary>リスト ビューのアイテムがインタラクションを受け取るときのレイヤー関連の操作オプションを指定します。</summary>
+  </doc>
+  <doc for="ClickOptions.Collapse">
+    <summary>論理ツリー内の指定したノードのすべての子ノードにフラグを設定し、ビジュアル ツリーから削除します。</summary>
+  </doc>
+  <doc for="ClickOptions.Deselect">
+    <summary>レイヤー コレクション内の指定したレイヤーとその子孫の選択を解除します。</summary>
+  </doc>
+  <doc for="ClickOptions.Expand">
+    <summary>論理ツリー内の指定したノードのすべての子ノードにフラグを設定し、それらをビジュアル ツリーに追加します。</summary>
+  </doc>
+  <doc for="ClickOptions.Hide">
+    <summary>レイヤーコレクション内の指定したレイヤーを非表示にします。</summary>
+  </doc>
+  <doc for="ClickOptions.Lock">
+    <summary>レイヤー コレクション内の指定したレイヤーをロックします。</summary>
+  </doc>
+  <doc for="ClickOptions.None">
+    <summary>何一つ。</summary>
+  </doc>
+  <doc for="ClickOptions.Select">
+    <summary>レイヤー コレクション内の指定したレイヤーとその子孫を選択します。</summary>
+  </doc>
+  <doc for="ClickOptions.SelectOnly">
+    <summary>レイヤーコレクション内の指定したレイヤーとその子孫のみを選択し、他のレイヤーの選択を解除します。</summary>
+  </doc>
+  <doc for="ClickOptions.SelectRangeOnly">
+    <summary>レイヤーコレクション内の指定した範囲のレイヤーとその子孫のみを選択し、他のレイヤーの選択を解除します。</summary>
+  </doc>
+  <doc for="ClickOptions.Show">
+    <summary>レイヤー コレクション内の指定したレイヤーを表示します。</summary>
+  </doc>
+  <doc for="ClickOptions.Unlock">
+    <summary>レイヤーコレクション内の指定したレイヤーのロックを解除します。</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions">
+    <summary>レイヤー関連のオプションを作成するための拡張機能。</summary>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanExpand">
+    <summary>指定したノードを折りたたむか展開するかを示す値を取得します。</summary>
+    <param name="node">指定したノード。</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Collapse"/> は <see cref="P:FanKit.Layers.Core.ITreeNode.IsExpanded"/> が **True** の場合。
+<br/>
+それ以外の場合は<see cref="F:FanKit.Layers.ClickOptions.Expand"/>。
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanLock">
+    <summary>指定したレイヤーをロックまたはロック解除できるかどうかを示す値を取得します。</summary>
+    <param name="layer">指定したレイヤー。</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Unlock"/> は <see cref="P:FanKit.Layers.ILayerBase.IsLocked"/> が **True** の場合。
+<br/>
+それ以外の場合は<see cref="F:FanKit.Layers.ClickOptions.Lock"/>。
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelect">
+    <summary>指定したレイヤーを選択可能か選択解除できるかを示す値を取得します。</summary>
+    <param name="layer">指定したレイヤー。</param>
+    <returns>
+<see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> が <see cref="F:FanKit.Layers.SelectMode.Selected"/> の場合は <see cref="F:FanKit.Layers.ClickOptions.Select"/>。
+<br/>
+<see cref="P:FanKit.Layers.ILayerBase.SelectMode"/> が <see cref="F:FanKit.Layers.SelectMode.Selected"/> の場合は <see cref="F:FanKit.Layers.ClickOptions.Deselect"/>。
+<br/>
+それ以外の場合は<see cref="F:FanKit.Layers.ClickOptions.None"/>。
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanSelectWithKey">
+    <summary>レイヤーのみを選択するか、レイヤーの範囲のみを選択するかを示す値を取得します。</summary>
+    <param name="layer">指定したレイヤー。</param>
+    <param name="isShiftKeyDown">Shift キーが押された場合は true。それ以外の場合は false。</param>
+    <param name="isControlKeyDown">Ctrl キーが押された場合は true。それ以外の場合は false。</param>
+    <returns>
+Shiftキーが押された場合は<see cref="F:FanKit.Layers.ClickOptions.SelectRangeOnly"/>。
+<br/>
+Ctrl キーが押されていない場合は <see cref="F:FanKit.Layers.ClickOptions.SelectOnly"/>。
+<br/>
+それ以外の場合は<see cref="M:FanKit.Layers.ClickOptionsExtensions.CanSelect(FanKit.Layers.ILayerBase)"/>。
+</returns>
+  </doc>
+  <doc for="ClickOptionsExtensions.CanVisible">
+    <summary>指定したレイヤーを表示または非表示にできるかどうかを示す値を取得します。</summary>
+    <param name="layer">指定したレイヤー。</param>
+    <returns>
+<see cref="F:FanKit.Layers.ClickOptions.Hide"/> <see cref="P:FanKit.Layers.ILayerBase.IsVisible"/> が **True** の場合。
+<br/>
+それ以外の場合は<see cref="F:FanKit.Layers.ClickOptions.Show"/>。
+</returns>
+  </doc>
+  <doc for="Clipboard">
+    <summary>論理ツリー内のノードをコピーして貼り付ける方法を提供します。</summary>
+    <typeparam name="T">インスタンスのタイプ。</typeparam>
+  </doc>
+  <doc for="Clipboard.CanCopy">
+    <summary>選択したアイテムをクリップボードにコピーできるかどうかを決定します。</summary>
+    <returns>クリップボードへのコピーが許可されている場合は true。それ以外の場合は false。</returns>
+  </doc>
+  <doc for="Clipboard.CanPaste">
+    <summary>論理ツリーに貼り付けることができる項目がクリップボードにあるかどうかを決定します。</summary>
+    <returns>論理ツリーに貼り付けることができる項目がクリップボードに選択されている場合は True。それ以外の場合は false。</returns>
+  </doc>
+  <doc for="Clipboard.Clipboard">
+    <summary><see cref="T:FanKit.Layers.Clipboard`1"/> オブジェクトを構築します。</summary>
+    <param name="logicalTree">論理ツリー。</param>
+    <param name="pool">すべてのインスタンスを含むインスタンス・プール。</param>
+    <param name="collection">レイヤー コレクション。</param>
+  </doc>
+  <doc for="Clipboard.CloneSingle">
+    <summary>現在のインスタンスのコピーである新しいノードを作成します。</summary>
+    <returns>このインスタンスのコピーである新しいノード。</returns>
+  </doc>
+  <doc for="Clipboard.CloneSingleWidthDepth">
+    <summary>現在のインスタンスのコピーである新しいノードを作成します。</summary>
+    <param name="depth">ツリーのルート ノードからの新しいノードの深さ。</param>
+    <returns>このインスタンスのコピーである新しいノード。</returns>
+  </doc>
+  <doc for="Clipboard.Copy">
+    <summary>選択した項目を論理ツリーからクリップボードにコピーします。</summary>
+  </doc>
+  <doc for="Clipboard.Count">
+    <summary>選択した項目の数を取得します。</summary>
+  </doc>
+  <doc for="Clipboard.Duplicate">
+    <summary>選択したアイテムを論理ツリーから論理ツリーにコピーします。</summary>
+    <param name="duplicator">複製操作に関する情報を提供します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.DuplicateSelection">
+    <summary>選択したアイテムを論理ツリーから論理ツリーにコピーします。</summary>
+    <param name="selection">レイヤー コレクションの選択状態。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="Clipboard.Paste">
+    <summary>選択したアイテムをクリップボードから論理ツリーにコピーします。</summary>
+    <param name="inserter">挿入操作に関する情報を提供します。</param>
+    <param name="selects">複製操作に関する情報を提供します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="ContainerSizeEventHandler">
+    <summary>リスト ビュー内の指定されたインデックスにある項目のコンテナーの高さを取得するメソッドを表します。</summary>
+    <param name="index">取得する項目のインデックス。</param>
+    <returns>リスト ビュー内の指定されたインデックスにある項目のコンテナーの高さを返します。</returns>
+  </doc>
+  <doc for="CreateAndLoadEventHandler">
+    <summary>指定したデータから新しいレイヤーを作成および初期化するメソッドを表します。</summary>
+    <typeparam name="T">レイヤーのタイプ。</typeparam>
+    <typeparam name="D">データのタイプ。</typeparam>
+    <param name="data">指定されたデータ。</param>
+    <returns>作成されたレイヤー。</returns>
+  </doc>
+  <doc for="CreateAndLoadWithDepthEventHandler">
+    <summary>指定したデータから新しいレイヤーを作成および初期化するメソッドを表します。</summary>
+    <typeparam name="T">レイヤーのタイプ。</typeparam>
+    <typeparam name="D">データのタイプ。</typeparam>
+    <param name="data">指定されたデータ。</param>
+    <param name="depth">ツリーのルート ノードからの新しいノードの深さ。</param>
+    <returns>作成されたレイヤー。</returns>
+  </doc>
+  <doc for="CreateEventHandler">
+    <summary>新しい空のレイヤーを作成する (XML 要素からレイヤーのコンテンツを読み込む前) メソッドを表します。</summary>
+    <typeparam name="T">レイヤーのタイプ。</typeparam>
+    <param name="element">XML 要素。</param>
+    <returns>作成されたレイヤー。</returns>
+  </doc>
+  <doc for="CreateWithDepthEventHandler">
+    <summary>新しい空のレイヤーを作成する (XML 要素からレイヤーのコンテンツを読み込む前) メソッドを表します。</summary>
+    <typeparam name="T">レイヤーのタイプ。</typeparam>
+    <param name="element">XML 要素。</param>
+    <param name="depth">ツリーのルート ノードからの新しいノードの深さ。</param>
+    <returns>作成されたレイヤー。</returns>
+  </doc>
+  <doc for="DepthChanges">
+    <summary>深度の変更の配列を含むレイヤー関連の変更を表します。</summary>
+  </doc>
+  <doc for="DepthChanges.Depths">
+    <summary>深度変更の配列を取得または設定します。</summary>
+  </doc>
+  <doc for="DoubleChange">
+    <summary><see cref="double"/> 形式の種類の値を含む変更を表します。</summary>
+  </doc>
+  <doc for="DoubleSelectChange">
+    <summary>選択した 2 つのステータス変更を含むレイヤー関連の変更を表します。</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select0">
+    <summary>最初に選択したステータス変更を取得または設定します。</summary>
+  </doc>
+  <doc for="DoubleSelectChange.Select1">
+    <summary>2 番目に選択したステータス変更を取得または設定します。</summary>
+  </doc>
+  <doc for="DragOverUIPoint">
+    <summary>リスト ビューの位置を基準としたドラッグ UI の領域を計算するために使用される一連の座標とオフセットが含まれます。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HeaderHeight">
+    <summary>リスト ヘッダーのコンテンツの高さ。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.HorizontalOffset">
+    <summary>リスト ビューのコンテンツが水平方向にスクロールされた距離。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.PositionY">
+    <summary>リスト ビューの位置を基準としたマウス ポインターの Y 座標。</summary>
+  </doc>
+  <doc for="DragOverUIPoint.VerticalOffset">
+    <summary>リスト ビューのコンテンツが垂直方向にスクロールされた距離。</summary>
+  </doc>
+  <doc for="DragOverUIRect">
+    <summary>リスト ビューの位置を基準としたドラッグ UI の領域。</summary>
+  </doc>
+  <doc for="DragOverUIRect.Height">
+    <summary>ドラッグ UI の領域を定義する四角形の高さ。</summary>
+  </doc>
+  <doc for="DragOverUIRect.IsEmpty">
+    <summary>**true** すべての値が 0 の場合。それ以外の場合は、**false**。</summary>
+  </doc>
+  <doc for="DragOverUIRect.Width">
+    <summary>ドラッグ UI の領域を定義する四角形の幅。</summary>
+  </doc>
+  <doc for="DragOverUIRect.X">
+    <summary>四角形の左上隅にある X 座標で、ドラッグ UI の領域を定義します。</summary>
+  </doc>
+  <doc for="DragOverUIRect.Y">
+    <summary>四角形の左上隅にある Y 座標で、ドラッグ UI の領域を定義します。</summary>
+  </doc>
+  <doc for="DragSourceType">
+    <summary>ドラッグ&amp;ドロップ操作のドラッグソースのタイプを指定する定数を定義します。</summary>
+  </doc>
+  <doc for="DragSourceType.None">
+    <summary>ドラッグソースを指定しません。</summary>
+  </doc>
+  <doc for="DragSourceType.Others">
+    <summary>ドラッグ ソースが論理ツリーに存在しません。</summary>
+  </doc>
+  <doc for="DragSourceType.SelectedItems">
+    <summary>ドラッグ ソースは、論理ツリーで選択されたアイテムです。</summary>
+  </doc>
+  <doc for="DragSourceType.UnselectedItems">
+    <summary>ドラッグ ソースは、論理ツリーで選択解除されたアイテムです。</summary>
+  </doc>
+  <doc for="DragUI">
+    <summary>ドラッグ アンド ドロップ UI を配置するためのメソッドを提供します。ドラッグ アンド ドロップ UI は、配置ターゲットのマウス ポインターに最も近い UI ガイドを見つけてスナップします。</summary>
+    <typeparam name="T">インスタンスのタイプ。</typeparam>
+  </doc>
+  <doc for="DragUI.CacheDragOverGuide">
+    <summary>ドラッグ アンド ドロップする前に、各レイヤーの UI ガイドの位置をキャッシュします。</summary>
+    <param name="width">このリストビューの幅は、UIガイドの最大幅でもあります。</param>
+    <param name="zoomFactorForDepth">
+深度スケーリングに使用されるズーム係数。
+<br/>
+たとえば、ズーム係数が 16 の場合、UI ガイドの左余白は 16 * 奥行きになります。
+</param>
+    <param name="containerSizeFromIndex">リスト ビュー内の指定されたインデックスにある項目のコンテナーの高さを取得します。</param>
+  </doc>
+  <doc for="DragUI.DragUI">
+    <summary><see cref="T:FanKit.Layers.DragUI`1"/> オブジェクトを構築します。</summary>
+    <param name="logicalTree">論理ツリー。</param>
+    <param name="visualTree">ビジュアル ツリー。</param>
+  </doc>
+  <doc for="DragUI.GetIndexerPoint">
+    <summary>論理ツリー内のドロップ ターゲットのインデックスを取得するには、マウス ポインターに最も近い UI ガイドを特定します。</summary>
+    <param name="point">リスト ビューの位置を基準としたドラッグ UI の領域を計算するために使用される座標とオフセットのセット。</param>
+    <param name="sourceType">ドラッグ&amp;ドロップ操作でドラッグソースのタイプを指定します。</param>
+    <returns>論理ツリー内のドロップ ターゲットのインデックス。</returns>
+  </doc>
+  <doc for="DragUI.GetIndexerPositionY">
+    <summary>論理ツリー内のドロップ ターゲットのインデックスを取得するには、マウス ポインターに最も近い UI ガイドを特定します。</summary>
+    <param name="positionY">リスト ビューの位置を基準としたマウス ポインターの Y 座標。</param>
+    <param name="sourceType">ドラッグ&amp;ドロップ操作でドラッグソースのタイプを指定します。</param>
+    <returns>論理ツリー内のドロップ ターゲットのインデックス。</returns>
+  </doc>
+  <doc for="DragUI.GetUIRect">
+    <summary>ドラッグ UI の領域を、リスト ビューの位置を基準にして取得します。</summary>
+    <param name="Indexer">論理ツリー内のドロップ ターゲットのインデックス。</param>
+    <returns>リスト ビューの位置を基準としたドラッグ UI の領域。</returns>
+  </doc>
+  <doc for="DragUI.GetUIRectPoint">
+    <summary>ドラッグ UI の領域を、リスト ビューの位置を基準にして取得します。</summary>
+    <param name="point">リスト ビューの位置を基準としたドラッグ UI の領域を計算するために使用される座標とオフセットのセット。</param>
+    <param name="Indexer">論理ツリー内のドロップ ターゲットのインデックス。</param>
+    <returns>リスト ビューの位置を基準としたドラッグ UI の領域。</returns>
+  </doc>
+  <doc for="DragUI.GuideHeight">
+    <summary>UIガイドの高さ。</summary>
+  </doc>
+  <doc for="DropIndexer">
+    <summary>論理ツリー内のドロップ ターゲットのインデックス。</summary>
+  </doc>
+  <doc for="DropIndexer.Index">
+    <summary>
+「<see cref="F:FanKit.Layers.DragDrop.DropIndexer.Placement"/> が <see cref="F:FanKit.Layers.DragDrop.DropPlacement.None"/>、<see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtTop"/>、または <see cref="F:FanKit.Layers.DragDrop.DropPlacement.InsertAtBottom"/> の場合は -1」
+<br/>
+それ以外の場合は、論理ツリー内のドロップ ターゲットの 0 から始まるインデックス。
+</summary>
+  </doc>
+  <doc for="DropIndexer.Placement">
+    <summary>ドラッグ ソースを挿入する位置を、ドロップ ターゲットに対して相対的に指定します。</summary>
+  </doc>
+  <doc for="Dropper">
+    <summary>ドロップ操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Dropper.Depth">
+    <summary>ツリーのルート ノードからの新しいノードの深さ。</summary>
+  </doc>
+  <doc for="Dropper.Dropper">
+    <summary><see cref="T:FanKit.Layers.DragDrop.Dropper"/> オブジェクトを構築します。</summary>
+    <param name="items">論理ツリー内の all ノードのコレクション。</param>
+    <param name="indexer">論理ツリー内のドロップ ターゲットのインデックス。</param>
+  </doc>
+  <doc for="DropPlacement">
+    <summary>ドラッグ ソースをドロップ ターゲットに対して相対的に挿入する場所を指定する定数を定義します。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAbove">
+    <summary>論理ツリー内の指定した兄弟ノードの上にノードを挿入します。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtBottom">
+    <summary>論理ツリーの一番下に新しいノードを挿入します。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertAtTop">
+    <summary>論理ツリーの先頭に新しいノードを挿入します。</summary>
+  </doc>
+  <doc for="DropPlacement.InsertBelow">
+    <summary>論理ツリー内の指定したノードの下に新しいノードを挿入します。</summary>
+  </doc>
+  <doc for="DropPlacement.None">
+    <summary>ドラッグソースは挿入しないでください。</summary>
+  </doc>
+  <doc for="Duplicator">
+    <summary>複製操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Duplicator.Count">
+    <summary>重複したレイヤーの数を取得します。</summary>
+  </doc>
+  <doc for="Duplicator.Duplicator">
+    <summary><see cref="T:FanKit.Layers.Options.Duplicator"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+  </doc>
+  <doc for="Grouper">
+    <summary>グループ化操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Grouper.Count">
+    <summary>グループ化されたレイヤーの数を取得します。</summary>
+  </doc>
+  <doc for="Grouper.Depth">
+    <summary>ツリーのルート ノードからの新しいノードの深さ。</summary>
+  </doc>
+  <doc for="Grouper.DepthOfSingle">
+    <summary>グループ化されたレイヤーの深さの変更(数値が1に等しい場合)。それ以外の場合はデフォルト値です。</summary>
+  </doc>
+  <doc for="Grouper.Grouper">
+    <summary><see cref="T:FanKit.Layers.Options.Grouper"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+  </doc>
+  <doc for="Grouper.SelectingOfSingle">
+    <summary>グループ化されたレイヤーの選択ステータスの変更(数値が1に等しい場合)それ以外の場合はデフォルト値です。</summary>
+  </doc>
+  <doc for="IChange">
+    <summary>レイヤー関連の変更の基本クラスを表します。</summary>
+  </doc>
+  <doc for="IChange.ReferenceGuids">
+    <summary>参照されるレイヤーの GUID のコレクションを取得します。</summary>
+  </doc>
+  <doc for="IChildNode">
+    <summary>
+子を持つノードを定義します。
+<br/>
+例えば。
+<example>
+<code>
+public class A : IChildNode
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public int ChildrenCount => this.Children.Count;
+    &#xA;
+    public IEnumerable&lt;IChildNode&gt; ChildNodes => this.Children;
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="IChildNode.ChildNodes">
+    <summary>現在のノード内の子のコレクションを取得します。</summary>
+  </doc>
+  <doc for="IChildNode.ChildrenCount">
+    <summary>現在のノードの子コレクションに存在する子の数を取得します。</summary>
+  </doc>
+  <doc for="ICloneable">
+    <summary>クローニングをサポートし、既存のインスタンスと同じ値を持つクラスの新しいインスタンスを作成します。</summary>
+    <typeparam name="T">インスタンスのタイプ。</typeparam>
+  </doc>
+  <doc for="ICloneable.Clone">
+    <summary>現在のインスタンスのコピーである新しいノードを作成します。</summary>
+    <returns>このインスタンスのコピーである新しいノード。</returns>
+  </doc>
+  <doc for="ICloneable.CloneWithDepth">
+    <summary>現在のインスタンスのコピーである新しいノードを作成します。</summary>
+    <param name="depth">ツリーのルート ノードからの新しいノードの深さ。</param>
+    <returns>このインスタンスのコピーである新しいノード。</returns>
+  </doc>
+  <doc for="IComposite">
+    <summary>
+複合ノードの構造を定義します。実装するクラスは、UI に通知できる必要があります。
+<br/>
+例えば。
+<example>
+<code>
+public class A : IChildNode&lt;A&gt;
+{
+    public IList&lt;A&gt; Children { get; } = new List&lt;A&gt;();
+    &#xA;
+    public void ChildrenCountChanged()
+    {
+        int count = this.Children.Count;
+        // 通知 UI
+    }
+}
+</code>
+</example>
+</summary>
+    <typeparam name="T">インスタンスのタイプ。</typeparam>
+  </doc>
+  <doc for="IComposite.Children">
+    <summary>現在のノードの子であるノードのコレクションを取得します。</summary>
+  </doc>
+  <doc for="IComposite.OnChildrenCountChanged">
+    <summary>現在のノードの子コレクションに存在する子の数が変更されたときに発生します。</summary>
+  </doc>
+  <doc for="ILayerBase">
+    <summary>
+レイヤー グループ、ビットマップ レイヤー、塗りつぶしレイヤーなど、すべてのレイヤーの基本クラスを表します。
+<br/>
+<see cref="T:FanKit.Layers.Core.ITreeNode"/> および <see cref="T:FanKit.Layers.Core.IChildNode"/> インターフェイスから継承します。
+</summary>
+  </doc>
+  <doc for="ILayerBase.IsGroup">
+    <summary>このレイヤーがレイヤー グループであるかどうかを示す値を取得または設定します。</summary>
+  </doc>
+  <doc for="ILayerBase.IsLocked">
+    <summary>このレイヤーがロックされているかどうかを示す値を取得または設定します。</summary>
+  </doc>
+  <doc for="ILayerBase.IsVisible">
+    <summary>このレイヤーが非表示であるかどうかを示す値を取得または設定します。</summary>
+  </doc>
+  <doc for="ILayerBase.LoadFromXml">
+    <summary>レイヤーのコンテンツを XML 要素から読み込みます。</summary>
+    <param name="content">レイヤーのコンテンツを含む XML 要素。</param>
+  </doc>
+  <doc for="ILayerBase.RenderThumbnail">
+    <summary>サムネイルに影響を与える変更が発生したときに発生します。</summary>
+  </doc>
+  <doc for="ILayerBase.SaveToXml">
+    <summary>レイヤーのコンテンツを XML エレメントに保存します。</summary>
+    <param name="structure">XML オブジェクトの構造体のタイプです。</param>
+    <param name="children">子レイヤー。</param>
+    <returns>レイヤーのコンテンツを保存するための XML 要素。</returns>
+  </doc>
+  <doc for="ILayerBase.SelectMode">
+    <summary>このレイヤーの選択した状態を取得または設定します。</summary>
+  </doc>
+  <doc for="IndexRange">
+    <summary>開始インデックスと終了インデックスを持つ範囲を表します。</summary>
+  </doc>
+  <doc for="IndexRange.EndIndex">
+    <summary>範囲の両端を含む終了インデックスを取得します。</summary>
+  </doc>
+  <doc for="IndexRange.IsNegative">
+    <summary>終了インデックスが srart インデックスより小さいかどうかを示す値を取得します。</summary>
+  </doc>
+  <doc for="IndexRange.IsPositive">
+    <summary>終了インデックスが srart インデックスより大きいかどうかを示す値を取得します。</summary>
+  </doc>
+  <doc for="IndexRange.IsZero">
+    <summary>この終了インデックスが srart インデックスと等しいかどうかを示す値を取得します。</summary>
+  </doc>
+  <doc for="IndexRange.NegativeUnit">
+    <summary>負の範囲 (開始インデックス 0、終了インデックス -1) を取得します。</summary>
+  </doc>
+  <doc for="IndexRange.PositiveUnit">
+    <summary>負の範囲 (開始インデックス 0、終了インデックス 1) を取得します。</summary>
+  </doc>
+  <doc for="IndexRange.StartIndex">
+    <summary>範囲の開始インデックスを含めて取得します。</summary>
+  </doc>
+  <doc for="IndexRange.Zero">
+    <summary>0 の範囲 (開始インデックス 0、終了インデックス 0) を取得します。</summary>
+  </doc>
+  <doc for="IndexSelection">
+    <summary>レイヤー コレクションの選択状態を表します。</summary>
+  </doc>
+  <doc for="IndexSelection.Empty">
+    <summary>空の選択状態を取得します。</summary>
+  </doc>
+  <doc for="IndexSelection.IndexSelection">
+    <summary><see cref="T:FanKit.Layers.Ranges.IndexSelection"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+  </doc>
+  <doc for="IndexSelection.IsEmpty">
+    <summary>現在の選択状態が空であるかどうかを示す値を取得します。</summary>
+  </doc>
+  <doc for="IndexSelection.RemovalCount">
+    <summary>削除する項目の数を取得します。</summary>
+  </doc>
+  <doc for="IndexSelection.SelectionCount">
+    <summary>選択した項目の数を取得します。</summary>
+  </doc>
+  <doc for="Inserter">
+    <summary>挿入操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Inserter.Depth">
+    <summary>ツリーのルート ノードからの新しいノードの深さ。</summary>
+  </doc>
+  <doc for="Inserter.HasSelected">
+    <summary>レイヤー コレクションに選択したアイテムがあるかどうかを示す値を取得します。</summary>
+  </doc>
+  <doc for="Inserter.Index">
+    <summary>論理ツリーで最初に選択した項目のインデックス。</summary>
+  </doc>
+  <doc for="Inserter.Inserter">
+    <summary><see cref="T:FanKit.Layers.Options.Inserter"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+  </doc>
+  <doc for="Inserter.Placement">
+    <summary>選択したアイテムを基準にして新しいノードを挿入する場所を指定します。</summary>
+  </doc>
+  <doc for="InsertPlacement">
+    <summary>選択した項目を基準にして新しいノードを挿入する場所を指定する定数を定義します。</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAbove">
+    <summary>論理ツリー内の指定した兄弟ノードの上にノードを挿入します。</summary>
+  </doc>
+  <doc for="InsertPlacement.InsertAtTop">
+    <summary>論理ツリーの先頭に新しいノードを挿入します。</summary>
+  </doc>
+  <doc for="Int32Change">
+    <summary><see cref="int"/> 形式の種類の値を含む変更を表します。</summary>
+  </doc>
+  <doc for="InvalidateModes">
+    <summary>
+再描画が必要な内容を示す定数を定義します。
+<br/>
+この列挙体は、メンバー値のビットごとの組み合わせをサポートします。
+例えば。
+<example>
+<code>
+this.Invalidate(InvalidateModes.LayersCleared | InvalidateModes.LayersChanged);
+...
+private void Invalidate(InvalidateModes modes)
+{
+    if (modes.HasFlag(InvalidateModes.LayersCleared))
+    {
+        // UI レイヤーをクリアする
+    }
+    if (modes.HasFlag(InvalidateModes.LayersChanged))
+    {
+        // UI レイヤーへの同期
+    }
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.AllThumbnailInvalidate">
+    <summary>レイヤーのすべてのサムネイルを再描画しました。</summary>
+  </doc>
+  <doc for="InvalidateModes.CanvasControlInvalidate">
+    <summary>キャンバス コントロールの内容を再描画しました。</summary>
+  </doc>
+  <doc for="InvalidateModes.Clear">
+    <summary>
+クリア後に再描画する必要があるコンテンツを示すビットごとの組み合わせ。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/> 
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearAndSort">
+    <summary>
+グループ化またはパッケージ化後に再描画する必要があるコンテンツを示すビットごとの組み合わせ。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ClearUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Clear"/>の元に戻す操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.Expand">
+    <summary>
+ノードの展開または展開解除後に再描画する必要があるコンテンツを示すビットごとの組み合わせ。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCanExecuteChanged">
+    <summary>元に戻すコマンドまたはやり直しコマンドを実行するかどうかに影響する内容が変更されました。</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryChanged">
+    <summary>1 つ以上の元に戻す操作が履歴に追加されるか、履歴から削除されます。</summary>
+  </doc>
+  <doc for="InvalidateModes.HistoryCleared">
+    <summary>履歴がクリアされました。</summary>
+  </doc>
+  <doc for="InvalidateModes.HistorySelectionChanged">
+    <summary>現在選択されている項目の履歴が変更されます。</summary>
+  </doc>
+  <doc for="InvalidateModes.LayerCanExecuteChanged">
+    <summary>レイヤーコマンドを実行するかどうかに影響する内容が変更されました。</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersChanged">
+    <summary>レイヤー コレクションが変更されました。</summary>
+  </doc>
+  <doc for="InvalidateModes.LayersCleared">
+    <summary>レイヤー コレクションがクリアされました。</summary>
+  </doc>
+  <doc for="InvalidateModes.Lock">
+    <summary>
+レイヤーをロックまたはロック解除した後に再描画する必要があるコンテンツを示すビットごとの組み合わせ。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.LockUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Lock"/>の元に戻す操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.None">
+    <summary>何一つ。</summary>
+  </doc>
+  <doc for="InvalidateModes.Output">
+    <summary>変更内容 (デバッグ中に変更の結果を出力するために使用)。</summary>
+  </doc>
+  <doc for="InvalidateModes.Reset">
+    <summary>
+リセット後に再描画する必要があるコンテンツを示すビットごとの組み合わせ。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.AllThumbnailInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCleared"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Select">
+    <summary>
+レイヤーを選択または選択解除した後にどのコンテンツを再描画する必要があるかを示すビットごとの組み合わせ。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionChanged">
+    <summary>選択したアイテムが変更されました。</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectionCleared">
+    <summary>選択した項目はクリアされました。</summary>
+  </doc>
+  <doc for="InvalidateModes.SelectUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Select"/>の元に戻す操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.Sort">
+    <summary>
+ソート後に再描画する必要があるコンテンツを示すビットごとの組み合わせ。
+<br/>
+<br/>
+例えば。
+削除、挿入、貼り付け、ドロップ、並べ替え、リリース、グループ化、グループ化解除、または複製。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayersChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.SortUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Sort"/>の元に戻す操作。</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeCompleted">
+    <summary>
+コンテンツの変更が完了したときに発生します。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChanged">
+    <summary>
+コンテンツの値が変更された場合に発生します。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.LayerCanExecuteChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeDelta">
+    <summary>
+変更中に入力デバイスの値が変更されたときに発生します。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangedUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.ValueChanged"/>の元に戻します。</summary>
+  </doc>
+  <doc for="InvalidateModes.ValueChangeStarted">
+    <summary>
+入力デバイスがコンテンツの変更を開始したときに発生します。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.SelectionChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.Visible">
+    <summary>
+レイヤーが表示または非表示になった後に再描画する必要があるコンテンツを示すビットごとの組み合わせ。
+<br/>
+<br/>
+次のメンバー値が含まれます。
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.CanvasControlInvalidate"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistoryCanExecuteChanged"/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.HistorySelectionChanged"/>
+<br/>
+<br/> <see cref="F:FanKit.Layers.InvalidateModes.Output"/>
+</summary>
+  </doc>
+  <doc for="InvalidateModes.VisibleUndo">
+    <summary><see cref="F:FanKit.Layers.InvalidateModes.Visible"/>の元に戻す操作。</summary>
+  </doc>
+  <doc for="ITreeNode">
+    <summary>
+深さを持つノードを定義します。
+<br/>
+例えば。
+<example>
+<code>
+public class A : ITreeNode
+{
+    public Guid Id { get; } = Guid.NewGuid();
+    &#xA;
+    public int Depth { get; set; } = 0;
+    &#xA;
+    public bool IsExpanded { get; set; } = true;
+    &#xA;
+    public NodeSettings Settings { get; } = new NodeSettings();
+}
+</code>
+</example>
+</summary>
+  </doc>
+  <doc for="ITreeNode.Depth">
+    <summary>現在のノードがツリーのルート ノードからどれだけ離れているかを示す値を取得または設定します。</summary>
+  </doc>
+  <doc for="ITreeNode.Id">
+    <summary>現在のノードの識別子を取得します。</summary>
+  </doc>
+  <doc for="ITreeNode.IsExpanded">
+    <summary>cuurent ツリー ビュー ノードが展開されているかどうかを示す値を取得または設定します。</summary>
+  </doc>
+  <doc for="ITreeNode.Settings">
+    <summary>ガベージ コレクション、ドロップ、並べ替え、同期などの動作の計算値を提供するオブジェクトを取得します。</summary>
+  </doc>
+  <doc for="IUndoable">
+    <summary>元に戻す操作とやり直し操作をサポートし、レイヤー関連の変更を作成します。</summary>
+  </doc>
+  <doc for="IUndoable.Change">
+    <summary>レイヤー関連の変更を取得します。</summary>
+  </doc>
+  <doc for="IUndoable.Id">
+    <summary>この <see cref="T:FanKit.Layers.IUndoable"/> の識別子を取得します。</summary>
+  </doc>
+  <doc for="IUndoable.Period">
+    <summary>この <see cref="T:FanKit.Layers.IUndoable"/> の期間を取得または設定します。</summary>
+  </doc>
+  <doc for="LayerCollection">
+    <summary>ビジュアル・ツリーとインスタンス・プールをカプセル化し、削除、挿入、貼り付け、ドロップ、並べ替え、リリース、グループ化、グループ化解除、および複製の方法を提供します。</summary>
+    <typeparam name="T">インスタンスのタイプ。</typeparam>
+  </doc>
+  <doc for="LayerCollection.AssignChildren">
+    <summary>論理ツリー内の各ノードの子ノードをクリアして割り当て、<see cref="M:FanKit.Layers.Core.IComposite`1.OnChildrenCountChanged"/> メソッドを呼び出します。</summary>
+    <param name="updateSelectMode">子ノードの選択状態を <see cref="F:FanKit.Layers.SelectMode.Parent"/> に設定するかどうか。</param>
+  </doc>
+  <doc for="LayerCollection.CanArrange">
+    <summary>レイヤー コレクションが配置をサポートしているかどうかを判断する値を取得します。</summary>
+    <param name="type">オブジェクトのレイヤー順序 (Z オーダーとも呼ばれます) を変更して、オブジェクトが他のオブジェクトの上に表示されるようにする方法を示します。</param>
+    <returns>レイヤー コレクションが配置をサポートしているかどうか。</returns>
+  </doc>
+  <doc for="LayerCollection.CanArrange2">
+    <summary>レイヤー コレクションが配置をサポートしているかどうかを判断する値を取得します。</summary>
+    <param name="type">オブジェクトのレイヤー順序 (Z オーダーとも呼ばれます) を変更して、オブジェクトが他のオブジェクトの上に表示されるようにする方法を示します。</param>
+    <param name="selection">レイヤー コレクションの選択状態。</param>
+    <returns>レイヤー コレクションが配置をサポートしているかどうか。</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems">
+    <summary>挿入する新しいレイヤー。</summary>
+    <param name="indexer">論理ツリー内のドロップ ターゲットのインデックス。</param>
+    <returns>グループ化する新しいレイヤー。</returns>
+  </doc>
+  <doc for="LayerCollection.CanReorderItems2">
+    <summary>レイヤー コレクションが並べ替えをサポートしているかどうかを判断する値を取得します。</summary>
+    <param name="indexer">論理ツリー内のドロップ ターゲットのインデックス。</param>
+    <param name="selection">レイヤー コレクションの選択状態。</param>
+    <returns>レイヤー コレクションが並べ替えをサポートしているかどうか。</returns>
+  </doc>
+  <doc for="LayerCollection.Clear">
+    <summary>レイヤー コレクション内のすべてのレイヤーをクリアします。</summary>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Clear"/></returns>
+  </doc>
+  <doc for="LayerCollection.CollapseAll">
+    <summary>論理ツリー内のすべてのノードの子ノードにフラグを設定し、ビジュアル ツリーから削除します。</summary>
+  </doc>
+  <doc for="LayerCollection.ExpandAll">
+    <summary>論理ツリー内のすべてのノードの子ノードにフラグを設定し、ビジュアル ツリーに追加します。</summary>
+  </doc>
+  <doc for="LayerCollection.GroupMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーをグループ化します。</summary>
+    <param name="grouper">グループ化操作に関する情報を提供します。</param>
+    <param name="newItem">グループ化する新しいレイヤー。</param>
+    <param name="depths">複数のターゲットレイヤーの深さが変化します。</param>
+    <param name="selects">選択したステータスが複数のターゲットレイヤーに変わります。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.GroupSingle">
+    <summary>レイヤー コレクションで選択されているレイヤーをグループ化します。</summary>
+    <param name="grouper">グループ化操作に関する情報を提供します。</param>
+    <param name="newItem">グループ化する新しいレイヤー。</param>
+    <param name="depth">ターゲットレイヤーの深度が変化します。</param>
+    <param name="select">選択したステータスがターゲットレイヤーに変わります。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert">
+    <summary>新しいレイヤーをレイヤーコレクションに挿入します。</summary>
+    <param name="dropper">挿入操作に関する情報を提供します。</param>
+    <param name="newItem">挿入する新しいレイヤー。</param>
+    <param name="selects">選択したステータスが複数のターゲットレイヤーに変わります。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Insert2">
+    <summary>新しいレイヤーをレイヤーコレクションに挿入します。</summary>
+    <param name="inserter">挿入操作に関する情報を提供します。</param>
+    <param name="newItem">挿入する新しいレイヤー。</param>
+    <param name="selects">選択したステータスが複数のターゲットレイヤーに変わります。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop">
+    <summary>レイヤー コレクションの一番上に新しいレイヤーを挿入します。</summary>
+    <param name="newItem">挿入する新しいレイヤー。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.InsertAtTop2">
+    <summary>レイヤー コレクションの一番上に新しいレイヤーを挿入します。</summary>
+    <param name="newItem">挿入する新しいレイヤー。</param>
+    <param name="selects">選択したステータスが複数のターゲットレイヤーに変わります。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.LayerCollection">
+    <summary><see cref="T:FanKit.Layers.LayerCollection`1"/> オブジェクトを構築します。</summary>
+    <param name="logicalTree">論理ツリー。</param>
+    <param name="visualTree">ビジュアル ツリー。</param>
+    <param name="pool">すべてのインスタンスを含むインスタンス・プール。</param>
+  </doc>
+  <doc for="LayerCollection.MoveAboveSibling">
+    <summary>レイヤーコレクションで選択されている複数のレイヤーを、その兄弟レイヤーの上に移動します。</summary>
+    <param name="reorder">並べ替え操作に関する情報を提供します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Package">
+    <summary>レイヤー コレクション内のすべてのレイヤーをパッケージ化します。</summary>
+    <param name="newItem">パッケージ化する新しいレイヤー。</param>
+    <param name="depths">複数のターゲットレイヤーの深さが変化します。</param>
+    <param name="selects">選択したステータスが複数のターゲットレイヤーに変わります。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearAndSort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーを解放します。</summary>
+    <param name="releaser">リリース操作に関する情報を提供します。</param>
+    <param name="depths">複数のターゲットレイヤーの深さが変化します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReleaseSingle">
+    <summary>レイヤー コレクションで選択されているレイヤーを解放します。</summary>
+    <param name="releaser">リリース操作に関する情報を提供します。</param>
+    <param name="depths">複数のターゲットレイヤーの深さが変化します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove">
+    <summary>レイヤー コレクション内のターゲット レイヤーを削除します。</summary>
+    <param name="remover">削除操作に関する情報を提供します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Remove2">
+    <summary>レイヤー コレクション内のターゲット レイヤーを削除します。</summary>
+    <param name="selection">レイヤー コレクションの選択状態。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーを並べ替えます。</summary>
+    <param name="reorder">並べ替え操作に関する情報を提供します。</param>
+    <param name="depths">複数のターゲットレイヤーの深さが変化します。</param>
+    <param name="selectedRanges">レイヤー コレクションで選択されているレイヤーの範囲のコレクション。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingle">
+    <summary>レイヤー コレクションで選択されているレイヤーを並べ替えます。</summary>
+    <param name="reorder">並べ替え操作に関する情報を提供します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.ReorderSingleRange">
+    <summary>レイヤー コレクションで選択されているレイヤーの範囲を並べ替えます。</summary>
+    <param name="reorder">並べ替え操作に関する情報を提供します。</param>
+    <param name="depths">複数のターゲットレイヤーの深さが変化します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.Reset">
+    <summary>ビジュアル ツリー、論理ツリー、インスタンス プールをクリアし、<see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> イベントを発生させます。</summary>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomList">
+    <summary>カスタムデータを使用した<see cref="M:FanKit.Layers.LayerCollection`1.ResetByList(System.Collections.Generic.IEnumerable{`0})"/>。</summary>
+    <typeparam name="D">データのタイプ。</typeparam>
+    <param name="listOfData">要素が論理ツリーにコピーされるコレクション。</param>
+    <param name="creator">指定したデータから新しいレイヤーを作成および初期化するメソッドを表します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByCustomTree">
+    <summary>カスタムデータを使用した<see cref="M:FanKit.Layers.LayerCollection`1.ResetByTree(System.Collections.Generic.IEnumerable{`0})"/>。</summary>
+    <typeparam name="D">指定したデータから新しいレイヤーを作成および初期化するメソッドを表します。</typeparam>
+    <param name="treeOfData">エレメントが論理ツリーにコピーされるツリー。</param>
+    <param name="creator">指定したデータから新しいレイヤーを作成および初期化するメソッドを表します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByList">
+    <summary>
+論理ツリー、ビジュアル ツリー、およびインスタンス プールをクリアして初期化し、<see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> イベントを発生させます。
+<br />
+<br /> 次のように、要素が論理ツリーにコピーされるコレクション。
+<br /> │
+<br /> ├─ビットマップ:深度=0
+<br /> ├─ビットマップ:深度=0
+<br /> ├─グループ: 深さ=0
+<br /> ├─グループ: 深さ=1
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─グループ: 深さ=0
+<br /> ├─ビットマップ:深度=1
+<br /> ├─グループ: 深さ=0
+<br /> └─ビットマップ:深度=1
+</summary>
+    <param name="list">要素が論理ツリーにコピーされるコレクション。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByTree">
+    <summary>
+論理ツリー、ビジュアル ツリー、およびインスタンス プールをクリアして初期化し、<see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> イベントを発生させます。
+<br />
+<br /> 要素が論理ツリーにコピーされるツリーは、次のようにします。
+<br /> │
+<br /> ├─ビットマップ:深度
+<br /> ├─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  ├─グループ: 深さ
+<br /> │  │  ├─ビットマップ:深度
+<br /> │  │  ├─ビットマップ:深度
+<br /> │  │  └─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  └─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  └─ビットマップ:深度
+</summary>
+    <param name="tree">エレメントが論理ツリーにコピーされるツリー。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlList">
+    <summary>
+論理ツリー、ビジュアル ツリー、およびインスタンス プールをクリアして初期化し、<see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> イベントを発生させます。
+<br />
+<br /> 次のように、要素が論理ツリーにコピーされるコレクション。
+<br /> │
+<br /> ├─ビットマップ:深度=0
+<br /> ├─ビットマップ:深度=0
+<br /> ├─グループ: 深さ=0
+<br /> ├─グループ: 深さ=1
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─グループ: 深さ=0
+<br /> ├─ビットマップ:深度=1
+<br /> ├─グループ: 深さ=0
+<br /> └─ビットマップ:深度=1
+</summary>
+    <param name="listOfXml">要素が論理ツリーにコピーされるコレクション。</param>
+    <param name="creator">新しい空のレイヤーを作成する (XML 要素からレイヤーのコンテンツを読み込む前) メソッドを表します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTree">
+    <summary>
+論理ツリー、ビジュアル ツリー、およびインスタンス プールをクリアして初期化し、<see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> イベントを発生させます。
+<br />
+<br /> 要素が論理ツリーにコピーされるツリーは、次のようにします。
+<br /> │
+<br /> ├─ビットマップ:深度
+<br /> ├─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  ├─グループ: 深さ
+<br /> │  │  ├─ビットマップ:深度
+<br /> │  │  ├─ビットマップ:深度
+<br /> │  │  └─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  └─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  └─ビットマップ:深度
+</summary>
+    <param name="treeOfXml">エレメントが論理ツリーにコピーされるツリー。</param>
+    <param name="creator">新しい空のレイヤーを作成する (XML 要素からレイヤーのコンテンツを読み込む前) メソッドを表します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.ResetByXmlTreeNodes">
+    <summary>
+論理ツリー、ビジュアル ツリー、およびインスタンス プールをクリアして初期化し、<see cref="E:FanKit.Layers.LayerCollection`1.Resetted"/> イベントを発生させます。
+<br />
+<br /> 要素が論理ツリーにコピーされるツリーは、次のようにします。
+<br /> │
+<br /> ├─すべてのノード
+<br /> │  ├─ノード: Id=0
+<br /> │  ├─ノード: Id=1
+<br /> │  ├─ノード: Id=2
+<br /> │  │  ├─ノード: Id=3
+<br /> │  │  │  ├─ノード: Id=4
+<br /> │  │  │  ├─ノード: Id=5
+<br /> │  │  │  └─ノード: Id=6
+<br /> │  ├─ノード: Id=7
+<br /> │  │  └─ノード: Id=8
+<br /> │  ├─ノード: Id=9
+<br /> │  │  └─ノード: Id=10
+<br /> │  │
+<br /> ├─すべてのレイヤー
+<br /> │  ├─ビットマップ: ID=0
+<br /> │  ├─ビットマップ: ID=1
+<br /> │  ├─グループ: Id=2
+<br /> │  ├─グループ: Id=3
+<br /> │  ├─ビットマップ: ID=4
+<br /> │  ├─ビットマップ: ID=5
+<br /> │  ├─ビットマップ: ID=6
+<br /> │  ├─グループ: Id=7
+<br /> │  ├─ビットマップ: ID=8
+<br /> │  ├─グループ: Id=9
+<br /> │  └─ビットマップ: ID=10
+</summary>
+    <param name="items">識別子を持つインスタンスのコレクション。</param>
+    <param name="nodes">ノードで構成されるツリー。</param>
+    <param name="creator">新しい空のレイヤーを作成する (XML 要素からレイヤーのコンテンツを読み込む前) メソッドを表します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Reset"/></returns>
+  </doc>
+  <doc for="LayerCollection.Resetted">
+    <summary>レイヤー コレクションをリセットするときに発生します。</summary>
+  </doc>
+  <doc for="LayerCollection.SaveToXml">
+    <summary>指定したレイヤーとその子孫のコンテンツを XML エレメントに保存します。</summary>
+    <param name="treeNode">指定したレイヤーを XML エレメントに投影する XML ツリー ノード。</param>
+    <returns>指定したレイヤーとその子孫のコンテンツを保存するための XML 要素。</returns>
+  </doc>
+  <doc for="LayerCollection.SaveToXml2">
+    <summary>複数のレイヤーとその子孫のコンテンツを XML エレメントのコレクションに保存します。</summary>
+    <param name="treeNode">複数のレイヤーを XML 要素のコレクションに投影する XML ツリー ノードのコレクション。</param>
+    <returns>複数のレイヤーとその子孫のコンテンツを保存するための XML 要素のコレクション。</returns>
+  </doc>
+  <doc for="LayerCollection.Sort">
+    <summary>論理ツリーをディープフラット化する識別子コレクションを使用して、論理ツリー内のすべてのノードをソートします。</summary>
+    <param name="ids">論理ツリーをディープフラット化する識別子コレクション。</param>
+  </doc>
+  <doc for="LayerCollection.SyncToVisualTree">
+    <summary>折りたたまれていないすべてのノードを論理ツリーからビジュアルツリーに同期します。</summary>
+  </doc>
+  <doc for="LayerCollection.UISyncTo">
+    <summary>ビジュアル ツリーを UI レイヤーにディープフラット化する順序を同期します (HTML DOM 差分アルゴリズムに似ています)。</summary>
+    <param name="items">UI は、リストビューでデータソース (<see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> など) としてレイヤー化されます。</param>
+  </doc>
+  <doc for="LayerCollection.UngroupMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーのグループ化を解除します。</summary>
+    <param name="ungrouper">グループ化解除操作に関する情報を提供します。</param>
+    <param name="depths">複数のターゲットレイヤーの深さが変化します。</param>
+    <param name="selects">選択したステータスが複数のターゲットレイヤーに変わります。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerCollection.UngroupSingle">
+    <summary>レイヤー コレクションで選択されているレイヤーのグループ化を解除します。</summary>
+    <param name="ungrouper">グループ化解除操作に関する情報を提供します。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Sort"/></returns>
+  </doc>
+  <doc for="LayerList">
+    <summary>論理ツリーをディープフラット化するコレクションを表し、インデックスによって論理ツリー内のレイヤーに個別にアクセスする方法を提供します (論理ツリーはノードから継承されたレイヤーで構成されます)。</summary>
+    <typeparam name="T">インスタンスのタイプ。</typeparam>
+  </doc>
+  <doc for="LayerList.CanRelease">
+    <summary>レイヤー コレクションで選択されているレイヤーがリリースをサポートしているかどうかを判断する値を取得します。</summary>
+    <param name="selection">レイヤー コレクションの選択状態。</param>
+  </doc>
+  <doc for="LayerList.Deselect">
+    <summary>レイヤー コレクション内の指定したレイヤーとその子孫の選択を解除します。</summary>
+    <param name="item">指定したレイヤー。</param>
+    <returns>選択したレイヤーとその子孫のステータスが変わります。</returns>
+  </doc>
+  <doc for="LayerList.Deselect2">
+    <summary>レイヤー コレクション内の指定したレイヤーとその子孫の選択を解除します。</summary>
+    <param name="indexer">指定したレイヤーのインデックス。</param>
+    <returns>選択したレイヤーとその子孫のステータスが変わります。</returns>
+  </doc>
+  <doc for="LayerList.DeselectAll">
+    <summary>レイヤーコレクション内のすべてのレイヤーの選択を解除します。</summary>
+    <returns>選択したステータスが複数のターゲットレイヤーに変わります。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForGroupMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーをグループ化するために必要な深度の変更を返します。</summary>
+    <param name="grouper">グループ化操作に関する情報を提供します。</param>
+    <returns>レイヤー コレクションで選択されている複数のレイヤーをグループ化するために必要な深度の変更。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForPackage">
+    <summary>レイヤー コレクション内のすべてのレイヤーをパッケージ化するために必要な深度の変更を返します。</summary>
+    <returns>レイヤー コレクションで選択されているすべてのレイヤーをパッケージ化するために必要な深度の変更。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForRelease">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーのグループ化を解除するために必要な深度の変更を返します。</summary>
+    <returns>レイヤー コレクションで選択されている複数のレイヤーのグループ化を解除するために必要な深度の変更。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーを並べ替えるために必要な深度の変更を返します。</summary>
+    <param name="reorder">並べ替え操作に関する情報を提供します。</param>
+    <returns>レイヤー コレクションで選択されている複数のレイヤーを並べ替えるために必要な深度の変更。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForReorderMultiple2">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーを並べ替えるために必要な深度の変更を返します。</summary>
+    <param name="reorder">並べ替え操作に関する情報を提供します。</param>
+    <param name="selectedRanges">レイヤー コレクションで選択されているレイヤーの範囲のコレクション。</param>
+    <returns>レイヤー コレクションで選択されている複数のレイヤーを並べ替えるために必要な深度の変更。</returns>
+  </doc>
+  <doc for="LayerList.GetDepthsForUngroupMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーのグループ化を解除するために必要な深度の変更を返します。</summary>
+    <param name="ungrouper">グループ化解除操作に関する情報を提供します。</param>
+    <returns>レイヤー コレクションで選択されている複数のレイヤーのグループ化を解除するために必要な深度の変更。</returns>
+  </doc>
+  <doc for="LayerList.GetIds">
+    <summary>論理ツリーをディープフラット化するコレクションに属するすべてのノードの一意の識別子を取得します。</summary>
+    <returns>論理ツリーに属するすべてのノードの一意の識別子。</returns>
+  </doc>
+  <doc for="LayerList.GetNodes">
+    <summary>論理ツリーの各ノードを XML ツリーに投影します。</summary>
+    <returns>投影された XML ツリー。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectedRanges">
+    <summary>レイヤー コレクションで選択されているレイヤーの範囲のコレクションを返します。</summary>
+    <returns>レイヤー コレクションで選択されているレイヤーの範囲のコレクション。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForGroupMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーをグループ化するために必要な、選択したステータスの変更を返します。</summary>
+    <param name="grouper">グループ化操作に関する情報を提供します。</param>
+    <returns>選択したステータスの変更は、レイヤー コレクションで選択されている複数のレイヤーをグループ化するために必要です。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForPackage">
+    <summary>レイヤー コレクション内のすべてのレイヤーをパッケージ化するために必要な、選択したステータス変更を返します。</summary>
+    <returns>選択したステータスは、レイヤー コレクションで選択されているすべてのレイヤーをパッケージ化するために必要な変更です。</returns>
+  </doc>
+  <doc for="LayerList.GetSelectsForUngroupMultiple">
+    <summary>レイヤー コレクションで選択されている複数のレイヤーのグループ化を解除するために必要な、選択したステータスの変更を返します。</summary>
+    <param name="ungrouper">グループ化解除操作に関する情報を提供します。</param>
+    <returns>選択したステータスの変更は、レイヤー コレクションで選択されている複数のレイヤーのグループ化を解除するために必要なものです。</returns>
+  </doc>
+  <doc for="LayerList.HideAll">
+    <summary>レイヤー コレクション内のすべてのレイヤーを非表示にします。</summary>
+    <returns>複数のターゲットレイヤーの表示が変わります。</returns>
+  </doc>
+  <doc for="LayerList.IndexerOf">
+    <summary>指定したレイヤーを検索し、レイヤーの最初の出現のインデックスを返します。</summary>
+    <param name="item">検索するレイヤー。</param>
+    <returns>レイヤーの最初の出現のインデックス。</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf">
+    <summary>指定したレイヤーのインデックスと指定したレイヤーの子孫のインデックスの間の範囲を返します。</summary>
+    <param name="item">検索するレイヤー。</param>
+    <returns>指定したレイヤーのインデックスと指定したレイヤーの子孫のインデックスの間の範囲。</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf2">
+    <summary>2 つのレイヤーのインデックス間の範囲を返します。</summary>
+    <param name="newItem">検索する新しいレイヤー。</param>
+    <param name="oldIndexer">検索する古いレイヤーのインデックス。</param>
+    <returns>2 つのレイヤーのインデックス間の範囲。</returns>
+  </doc>
+  <doc for="LayerList.IndexRangeOf3">
+    <summary>2 つのレイヤーのインデックス間の範囲を返します。</summary>
+    <param name="newIndexer">検索する新しいレイヤーのインデックス。</param>
+    <param name="oldIndexer">検索する古いレイヤーのインデックス。</param>
+    <returns>2 つのレイヤーのインデックス間の範囲。</returns>
+  </doc>
+  <doc for="LayerList.LayerList">
+    <summary><see cref="T:FanKit.Layers.LayerList`1"/> オブジェクトを構築します。</summary>
+    <param name="logicalTree">論理ツリー。</param>
+  </doc>
+  <doc for="LayerList.ResetByList">
+    <summary>
+論理ツリーをクリアして初期化します。
+<br />
+<br /> 次のように、要素が論理ツリーにコピーされるコレクション。
+<br /> │
+<br /> ├─ビットマップ:深度=0
+<br /> ├─ビットマップ:深度=0
+<br /> ├─グループ: 深さ=0
+<br /> ├─グループ: 深さ=1
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─グループ: 深さ=0
+<br /> ├─ビットマップ:深度=1
+<br /> ├─グループ: 深さ=0
+<br /> └─ビットマップ:深度=1
+</summary>
+    <param name="list">要素が論理ツリーにコピーされるコレクション。</param>
+  </doc>
+  <doc for="LayerList.ResetByTree">
+    <summary>
+論理ツリーをクリアして初期化します。
+<br />
+<br /> 要素が論理ツリーにコピーされるツリーは、次のようにします。
+<br /> │
+<br /> ├─ビットマップ:深度
+<br /> ├─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  ├─グループ: 深さ
+<br /> │  │  ├─ビットマップ:深度
+<br /> │  │  ├─ビットマップ:深度
+<br /> │  │  └─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  └─ビットマップ:深度
+<br /> ├─グループ: 深さ
+<br /> │  └─ビットマップ:深度
+</summary>
+    <param name="tree">エレメントが論理ツリーにコピーされるツリー。</param>
+  </doc>
+  <doc for="LayerList.Select">
+    <summary>レイヤー コレクション内の指定したレイヤーとその子孫を選択します。</summary>
+    <param name="item">指定したレイヤー。</param>
+    <returns>選択したレイヤーとその子孫のステータスが変わります。</returns>
+  </doc>
+  <doc for="LayerList.Select2">
+    <summary>レイヤー コレクション内の指定したレイヤーとその子孫を選択します。</summary>
+    <param name="indexer">指定したレイヤーのインデックス。</param>
+    <returns>選択したレイヤーとその子孫のステータスが変わります。</returns>
+  </doc>
+  <doc for="LayerList.SelectAll">
+    <summary>レイヤー コレクション内のすべてのレイヤーを選択します。</summary>
+    <returns>選択したステータスが複数のターゲットレイヤーに変わります。</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly">
+    <summary>レイヤーコレクション内の指定したレイヤーとその子孫のみを選択し、他のレイヤーの選択を解除します。</summary>
+    <param name="item">指定したレイヤー。</param>
+    <returns>選択したステータスが複数のターゲットレイヤーに変わります。</returns>
+  </doc>
+  <doc for="LayerList.SelectOnly2">
+    <summary>レイヤーコレクション内の指定したレイヤーとその子孫のみを選択し、他のレイヤーの選択を解除します。</summary>
+    <param name="indexer">指定したレイヤーのインデックス。</param>
+    <returns>選択したステータスが複数のターゲットレイヤーに変わります。</returns>
+  </doc>
+  <doc for="LayerList.SelectRangeOnly">
+    <summary>レイヤーコレクション内の指定した範囲のレイヤーとその子孫のみを選択し、他のレイヤーの選択を解除します。</summary>
+    <param name="range">指定した範囲。</param>
+    <returns>選択したステータスが複数のターゲットレイヤーに変わります。</returns>
+  </doc>
+  <doc for="LayerList.ShowAll">
+    <summary>レイヤー コレクション内のすべてのレイヤーが表示されます。</summary>
+    <returns>複数のターゲットレイヤーの表示が変わります。</returns>
+  </doc>
+  <doc for="LayerManager1">
+    <summary>論理ツリーなどの一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager1.LayerManager1">
+    <summary><see cref="T:FanKit.Layers.LayerManager1`1"/> オブジェクトを構築します。</summary>
+  </doc>
+  <doc for="LayerManager1.List">
+    <summary>論理ツリーなどの一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager2">
+    <summary>論理ツリー、ビジュアルツリー、インスタンスプール、ドラッグアンドドロップUI、UIレイヤーなど、一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager2.Collection">
+    <summary>ビジュアル ツリーやインスタンス プールなど、一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager2.DragUI">
+    <summary>ドラッグ アンド ドロップ UI。</summary>
+  </doc>
+  <doc for="LayerManager2.LayerManager2">
+    <summary><see cref="T:FanKit.Layers.LayerManager2`1"/> オブジェクトを構築します。</summary>
+  </doc>
+  <doc for="LayerManager2.List">
+    <summary>論理ツリーなどの一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager2.UILayers">
+    <summary>リストビューのデータソースとしてのUIレイヤー。</summary>
+  </doc>
+  <doc for="LayerManager3">
+    <summary>論理ツリー、ビジュアルツリー、インスタンスプール、ドラッグアンドドロップUI、UIレイヤーなど、一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager3.Clipboard">
+    <summary>クリップボード。</summary>
+  </doc>
+  <doc for="LayerManager3.Collection">
+    <summary>ビジュアル ツリーやインスタンス プールなど、一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager3.DragUI">
+    <summary>ドラッグ アンド ドロップ UI。</summary>
+  </doc>
+  <doc for="LayerManager3.LayerManager3">
+    <summary><see cref="T:FanKit.Layers.LayerManager3`1"/> オブジェクトを構築します。</summary>
+  </doc>
+  <doc for="LayerManager3.List">
+    <summary>論理ツリーなどの一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager3.UILayers">
+    <summary>リストビューのデータソースとしてのUIレイヤー。</summary>
+  </doc>
+  <doc for="LayerManager4">
+    <summary>論理ツリー、ビジュアルツリー、インスタンスプール、ドラッグアンドドロップUI、クリップボード、元に戻すスタック、UI履歴、UIレイヤーなど、一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager4.Clipboard">
+    <summary>クリップボード。</summary>
+  </doc>
+  <doc for="LayerManager4.Collection">
+    <summary>ビジュアル ツリーやインスタンス プールなど、一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager4.DragUI">
+    <summary>ドラッグ アンド ドロップ UI。</summary>
+  </doc>
+  <doc for="LayerManager4.History">
+    <summary>元に戻すスタック。</summary>
+  </doc>
+  <doc for="LayerManager4.LayerManager4">
+    <summary><see cref="T:FanKit.Layers.LayerManager4`2"/> オブジェクトを構築します。</summary>
+  </doc>
+  <doc for="LayerManager4.List">
+    <summary>論理ツリーなどの一部のツールをカプセル化します。</summary>
+  </doc>
+  <doc for="LayerManager4.UIHistory">
+    <summary>リストビューのデータソースとしてのUI履歴。</summary>
+  </doc>
+  <doc for="LayerManager4.UILayers">
+    <summary>リストビューのデータソースとしてのUIレイヤー。</summary>
+  </doc>
+  <doc for="NavigateAction">
+    <summary>ナビゲートするために呼び出すメソッドを示す定数を定義します</summary>
+  </doc>
+  <doc for="NavigateAction.None">
+    <summary>方法はありません。</summary>
+  </doc>
+  <doc for="NavigateAction.Redo">
+    <summary>やり直すには、<see cref="M:FanKit.Layers.UndoStack`2.Redo"/>または<see cref="M:FanKit.Layers.Collections.NavigateList`1.GoForward"/>に電話してください。</summary>
+  </doc>
+  <doc for="NavigateAction.RedoRange">
+    <summary>やり直すには、<see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/>または<see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>に電話してください。</summary>
+  </doc>
+  <doc for="NavigateAction.Undo">
+    <summary>元に戻すには、<see cref="M:FanKit.Layers.UndoStack`2.Undo"/>または<see cref="M:FanKit.Layers.Collections.NavigateList`1.GoBack"/>に電話してください。</summary>
+  </doc>
+  <doc for="NavigateAction.UndoRange">
+    <summary>元に戻すには、<see cref="M:FanKit.Layers.UndoStack`2.NavigateTo(System.Int32)"/>または<see cref="M:FanKit.Layers.Collections.NavigateList`1.NavigateTo(System.Int32)"/>に電話してください。</summary>
+  </doc>
+  <doc for="NavigateList">
+    <summary>移動先の要素のインデックスを含むリストを表します。前方および後方のナビゲーションの方法を提供します。</summary>
+    <typeparam name="T">リスト内の要素のタイプ。</typeparam>
+  </doc>
+  <doc for="NavigateList.BackStack">
+    <summary>後方ナビゲーション履歴を表すコレクションを取得します。</summary>
+    <returns>後方ナビゲーション スタック。</returns>
+  </doc>
+  <doc for="NavigateList.CanGoBack">
+    <summary>"戻る" ナビゲーション履歴に少なくとも 1 つの項目があるかどうかを示す値を取得します。</summary>
+    <returns>**true** 戻るナビゲーション履歴に少なくとも 1 つの項目がある場合。**false** 戻るナビゲーション履歴に項目がない場合。</returns>
+  </doc>
+  <doc for="NavigateList.CanGoForward">
+    <summary>前方ナビゲーション履歴に少なくとも 1 つの項目があるかどうかを示す値を取得します。</summary>
+    <returns>**true** フォワードナビゲーション履歴に少なくとも 1 つのアイテムがある場合。**false** 前方ナビゲーション履歴に項目がない場合。</returns>
+  </doc>
+  <doc for="NavigateList.ClearCurrent">
+    <summary>ナビゲートする要素を空にし、<see cref="T:FanKit.Layers.Collections.NavigateList`1"/> からすべての要素を削除します。</summary>
+  </doc>
+  <doc for="NavigateList.CurrentIndex">
+    <summary>移動先の要素の 0 から始まるインデックス。デフォルトは -1 です。</summary>
+  </doc>
+  <doc for="NavigateList.CurrentItem">
+    <summary>移動先の要素を取得します。</summary>
+  </doc>
+  <doc for="NavigateList.ForwardStack">
+    <summary>進むナビゲーション履歴を表すコレクションを取得します。</summary>
+    <returns>前方ナビゲーションスタック。</returns>
+  </doc>
+  <doc for="NavigateList.GetRange">
+    <summary>ソース <see cref="T:FanKit.Layers.Collections.NavigateList`1"/> 内の要素の範囲の浅いコピーを作成します。</summary>
+    <param name="range">指定した範囲。</param>
+    <returns>ソース <see cref="T:FanKit.Layers.Collections.NavigateList`1"/> 内の要素の範囲の浅いコピー</returns>
+  </doc>
+  <doc for="NavigateList.GoBack">
+    <summary>「戻る」ナビゲーション履歴の最新の項目に移動します。</summary>
+    <returns>戻るナビゲーション履歴の最新の項目。</returns>
+  </doc>
+  <doc for="NavigateList.GoForward">
+    <summary>前方ナビゲーション履歴の最新の項目に移動します。</summary>
+    <returns>前方ナビゲーション履歴の最新の項目。</returns>
+  </doc>
+  <doc for="NavigateList.NavigateTo">
+    <summary>移動先の要素に移動します。</summary>
+    <param name="index">移動先の要素のインデックス。</param>
+    <returns>以前に移動した要素のインデックスと移動先の要素のインデックスとの間の範囲。</returns>
+  </doc>
+  <doc for="NodeSettings">
+    <summary>ガベージ コレクション、ドロップ、並べ替え、同期などの動作の計算値を提供します。</summary>
+  </doc>
+  <doc for="RangeList">
+    <summary><see cref="T:FanKit.Layers.IndexRange"/> を使用するリストを表します。削除および移動の方法を提供します。</summary>
+    <typeparam name="T">リスト内の要素のタイプ。</typeparam>
+  </doc>
+  <doc for="RangeList.Item">
+    <summary>指定した範囲の要素を取得します。</summary>
+    <param name="range">取得する要素の範囲。</param>
+    <returns>指定した範囲の要素。</returns>
+  </doc>
+  <doc for="RangeList.MoveRange">
+    <summary>要素の範囲をリスト内の新しい位置に移動します。</summary>
+    <param name="range">移動する要素の範囲。</param>
+    <param name="index">要素の範囲の新しい位置を指定する 0 から始まるインデックス。</param>
+  </doc>
+  <doc for="RangeList.MoveRanges">
+    <summary>リストから要素の範囲の一部をターゲット要素の前に移動します。</summary>
+    <param name="ranges">移動する要素の範囲。</param>
+    <param name="target">ターゲット要素。</param>
+    <param name="offset">リスト内の新しい位置のオフセット。</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToFirst">
+    <summary>要素の範囲の一部をリストから最初に移動します。</summary>
+    <param name="ranges">移動する要素の範囲。</param>
+  </doc>
+  <doc for="RangeList.MoveRangesToLast">
+    <summary>要素の一部の範囲をリストから最後に移動します。</summary>
+    <param name="ranges">移動する要素の範囲。</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToFirst">
+    <summary>要素の範囲をリストから最初に移動します。</summary>
+    <param name="range">移動する要素の範囲。</param>
+  </doc>
+  <doc for="RangeList.MoveRangeToLast">
+    <summary>要素の範囲をリストから最後に移動します。</summary>
+    <param name="range">移動する要素の範囲。</param>
+  </doc>
+  <doc for="RangeList.RemoveRange">
+    <summary>リストから要素の範囲を削除します。</summary>
+    <param name="range">削除する要素の範囲。</param>
+  </doc>
+  <doc for="RangeList.RemoveRanges">
+    <summary>要素の範囲の一部をリストから削除します。</summary>
+    <param name="ranges">削除する要素の範囲。</param>
+  </doc>
+  <doc for="Releaser">
+    <summary>リリース操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Releaser.Count">
+    <summary>解放するレイヤーの数を取得します。</summary>
+  </doc>
+  <doc for="Releaser.DepthOfSingle">
+    <summary>数値が1に等しい場合に解放するレイヤーの深さの変更。それ以外の場合はデフォルト値です。</summary>
+  </doc>
+  <doc for="Releaser.Releaser">
+    <summary><see cref="T:FanKit.Layers.Options.Releaser"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+  </doc>
+  <doc for="RemovalCount">
+    <summary>削除する項目の数を示す定数を定義します。</summary>
+  </doc>
+  <doc for="RemovalCount.None">
+    <summary>削除する項目の数が 0 に等しい。</summary>
+  </doc>
+  <doc for="RemovalCount.Remove">
+    <summary>削除するアイテムの数が、すべてのアイテムの数より少なくなっている。</summary>
+  </doc>
+  <doc for="RemovalCount.RemoveAll">
+    <summary>削除するアイテムの数は、すべてのアイテムの数と等しくなければなりません。</summary>
+  </doc>
+  <doc for="Remover">
+    <summary>削除操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Remover.Count">
+    <summary>削除するレイヤーの数を取得します。</summary>
+  </doc>
+  <doc for="Remover.Remover">
+    <summary><see cref="T:FanKit.Layers.Options.Remover"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+  </doc>
+  <doc for="Reorder">
+    <summary>並べ替え操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Reorder.Count">
+    <summary>並べ替えるレイヤーの数を取得します。</summary>
+  </doc>
+  <doc for="Reorder.DepthOfSingle">
+    <summary>数値が1に等しい場合に並べ替えるレイヤーの深さの変更。それ以外の場合はデフォルト値です。</summary>
+  </doc>
+  <doc for="Reorder.IsSibling">
+    <summary>ドロップ ターゲットがドラッグ ソースの兄弟ノードであるかどうかを示す値を取得します。</summary>
+  </doc>
+  <doc for="Reorder.ReorderArrange">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+    <param name="type">オブジェクトのレイヤー順序 (Z オーダーとも呼ばれます) を変更して、オブジェクトが他のオブジェクトの上に表示されるようにする方法を示します。</param>
+  </doc>
+  <doc for="Reorder.ReorderArrangeSelection">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+    <param name="type">オブジェクトのレイヤー順序 (Z オーダーとも呼ばれます) を変更して、オブジェクトが他のオブジェクトの上に表示されるようにする方法を示します。</param>
+    <param name="selection">レイヤー コレクションの選択状態。</param>
+  </doc>
+  <doc for="Reorder.ReorderDrop">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+    <param name="indexer">論理ツリー内のドロップ ターゲットのインデックス。</param>
+  </doc>
+  <doc for="Reorder.ReorderDropSelection">
+    <summary><see cref="T:FanKit.Layers.Reorder"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+    <param name="indexer">論理ツリー内のドロップ ターゲットのインデックス。</param>
+    <param name="selection">レイヤー コレクションの選択状態。</param>
+  </doc>
+  <doc for="ReorderCount">
+    <summary>並べ替える項目の数を示す定数を定義します。</summary>
+  </doc>
+  <doc for="ReorderCount.Multiple">
+    <summary>範囲の数が 1 より大きい (範囲は、並べ替える項目を示します)。</summary>
+  </doc>
+  <doc for="ReorderCount.None">
+    <summary>並べ替えるアイテムの数は 0 に等しくなります。</summary>
+  </doc>
+  <doc for="ReorderCount.Single">
+    <summary>並べ替えるアイテムの数は 1 に等しくなります。</summary>
+  </doc>
+  <doc for="ReorderCount.SingleRange">
+    <summary>範囲の数は 1 に等しくなります (この範囲にはノードとその子孫が含まれます)。</summary>
+  </doc>
+  <doc for="SelectChange">
+    <summary><see cref="T:FanKit.Layers.SelectMode"/> 形式の種類の値を含む変更を表します。</summary>
+  </doc>
+  <doc for="SelectChanges">
+    <summary>選択したステータス変更の配列を含むレイヤー関連の変更を表します。</summary>
+  </doc>
+  <doc for="SelectChanges.Selects">
+    <summary>選択した状態変更の配列を取得または設定します。</summary>
+  </doc>
+  <doc for="SelectIndexer">
+    <summary>論理ツリー内の指定されたレイヤーのインデックス。</summary>
+  </doc>
+  <doc for="SelectionCount">
+    <summary>選択した項目の数を示す定数を定義します。</summary>
+  </doc>
+  <doc for="SelectionCount.Multiple">
+    <summary>選択したアイテムの数が 1 より大きい。</summary>
+  </doc>
+  <doc for="SelectionCount.None">
+    <summary>選択したアイテムの数が 0 に等しいこと。</summary>
+  </doc>
+  <doc for="SelectionCount.Single">
+    <summary>選択したアイテムの数が 1 に等しいこと。</summary>
+  </doc>
+  <doc for="SelectMode">
+    <summary><see cref="T:FanKit.Layers.ILayerBase"/> インスタンスの選択されたステータスを指定します。</summary>
+  </doc>
+  <doc for="SelectMode.Deselected">
+    <summary><see cref="T:FanKit.Layers.ILayerBase"/> インスタンスは選択されていません。</summary>
+  </doc>
+  <doc for="SelectMode.Parent">
+    <summary>論理ツリー内の <see cref="T:FanKit.Layers.ILayerBase"/> インスタンスの親が選択されます。</summary>
+  </doc>
+  <doc for="SelectMode.Selected">
+    <summary><see cref="T:FanKit.Layers.ILayerBase"/> インスタンスが選択されます。</summary>
+  </doc>
+  <doc for="SelectModeExtensions">
+    <summary>選択したステータス拡張メソッドが含まれます。</summary>
+  </doc>
+  <doc for="SelectModeExtensions.IsSelected">
+    <summary>指定した選択ステータスをブール値に変換します。</summary>
+    <param name="mode">変換するモード。</param>
+    <returns>値が <see cref="F:FanKit.Layers.SelectMode.Selected"/> の場合は True。それ以外の場合は false。</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectMode">
+    <summary>指定したブール値を選択したステータスに変換します。</summary>
+    <param name="value">変換するブール値。</param>
+    <returns>
+値が **True** の場合は <see cref="F:FanKit.Layers.SelectMode.Selected"/>。
+<br/>
+それ以外の場合は、<see cref="F:FanKit.Layers.SelectMode.Deselected"/>。
+</returns>
+  </doc>
+  <doc for="SelectModeExtensions.ToSelectOpacity">
+    <summary>指定した選択状態をアクセントカラーテーマブラシの不透明度の値に変換します。</summary>
+    <param name="mode">変換するモード。</param>
+    <returns>
+モードが <see cref="F:FanKit.Layers.SelectMode.Deselected"/> の場合は 0.0d。
+<br/>
+モードが <see cref="F:FanKit.Layers.SelectMode.Parent"/> の場合は 0.5d。
+<br/>
+それ以外の場合は 1.0d です。
+</returns>
+  </doc>
+  <doc for="SingleChange">
+    <summary><see cref="float"/> 形式の種類の値を含む変更を表します。</summary>
+  </doc>
+  <doc for="SortChange">
+    <summary>すべてのレイヤーの識別子の配列を含むレイヤー関連の変更を表します (レイヤー コレクションの順序が変更された場合)。</summary>
+  </doc>
+  <doc for="SortChange.NewIds">
+    <summary>すべてのレイヤーの識別子の配列を取得または設定します (レイヤー コレクションの変更順序の後)。</summary>
+  </doc>
+  <doc for="SortChange.OldIds">
+    <summary>すべてのレイヤーの識別子の配列を取得または設定します (レイヤー コレクションの変更順序の前)。</summary>
+  </doc>
+  <doc for="SyncExists">
+    <summary>特定の <see cref="T:FanKit.Layers.Core.ITreeNode"/> がソース コレクションまたは宛先コレクションに存在するかどうかを確認します。</summary>
+  </doc>
+  <doc for="SyncExists.Both">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> は、ソース コレクションと宛先コレクションの両方に存在します。</summary>
+  </doc>
+  <doc for="SyncExists.Destination">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> は宛先コレクションに存在します。</summary>
+  </doc>
+  <doc for="SyncExists.Source">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> はソース コレクションに存在します。</summary>
+  </doc>
+  <doc for="TimePeriod">
+    <summary>元に戻す操作の期間を指定する定数を定義します。</summary>
+  </doc>
+  <doc for="TimePeriod.Current">
+    <summary>現在の元に戻す操作 (履歴内の指定した元に戻す操作のインデックスが、現在選択されている項目と等しい)。</summary>
+  </doc>
+  <doc for="TimePeriod.Future">
+    <summary>将来の元に戻す操作 (履歴内の指定した元に戻す操作のインデックスが、現在選択されている項目より大きい)。</summary>
+  </doc>
+  <doc for="TimePeriod.Past">
+    <summary>過去の元に戻す操作 (履歴内の指定した元に戻す操作のインデックスが、現在選択されている項目よりも小さい)。</summary>
+  </doc>
+  <doc for="UndoStack">
+    <summary>
+元に戻すアクションとやり直しアクションをサポートし、ガベージ コレクションの概念をサポートするキューを表します。
+<br/>
+<br/>
+ガベージ コレクション:
+<br/>
+(1)
+スタック上のオペレーションの数がスタックの制限を超えると、オペレーションはスタックの一番下から削除されます。
+<br/>
+(2)
+レイヤーが論理ツリーに存在せず、変更がない場合、その GUID を参照する場合に、レイヤーに 'useless layer' のフラグを付けます。
+<br/>
+(3)
+ガベージコレクションのインスタンスプールから不要なレイヤーをすべて削除します。
+</summary>
+    <typeparam name="T">インスタンスのタイプ。</typeparam>
+    <typeparam name="U">操作のタイプ (操作には、元に戻すアクションとやり直しアクションが含まれます)。</typeparam>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepth">
+    <summary>やり直しアクションを適用して、ターゲットレイヤーの奥行きを変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDepths">
+    <summary>やり直しアクションを適用して、複数のターゲットレイヤーの深さを変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoDoubleSelect">
+    <summary>やり直しアクションを適用して、2 つのターゲットレイヤーの選択状態を変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoLock">
+    <summary>やり直しアクションを適用して、ターゲットレイヤーのロック状態を変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelect">
+    <summary>やり直しアクションを適用して、ターゲットレイヤーの選択したステータスを変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSelects">
+    <summary>やり直しアクションを適用して、複数のターゲットレイヤーの選択したステータスを変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoSort">
+    <summary>やり直しアクションを適用して、レイヤー コレクションの順序を変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> または <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>。</returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisible">
+    <summary>やり直しアクションを適用して、ターゲットレイヤーの表示を変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyRedoVisibles">
+    <summary>やり直しアクションを適用して、複数のターゲットレイヤーの表示を変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepth">
+    <summary>元に戻すアクションを適用して、ターゲットレイヤーの奥行きを変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDepths">
+    <summary>元に戻すアクションを適用して、複数のターゲットレイヤーの深さを変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.Output"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoDoubleSelect">
+    <summary>元に戻すアクションを適用して、2 つのターゲットレイヤーの選択状態を変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoLock">
+    <summary>元に戻すアクションを適用して、ターゲットレイヤーのロック状態を変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.LockUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelect">
+    <summary>元に戻すアクションを適用して、ターゲットレイヤーの選択したステータスを変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSelects">
+    <summary>元に戻すアクションを適用して、複数のターゲットレイヤーの選択したステータスを変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.SelectUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoSort">
+    <summary>元に戻すアクションを適用して、レイヤーコレクションの順序を変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.ClearUndo"/> または <see cref="F:FanKit.Layers.InvalidateModes.SortUndo"/>。</returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisible">
+    <summary>元に戻すアクションを適用して、ターゲットレイヤーの表示を変更します。</summary>
+    <param name="change">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.ApplyUndoVisibles">
+    <summary>元に戻すアクションを適用して、複数のターゲットレイヤーの表示を変更します。</summary>
+    <param name="changes">適用する変更。</param>
+    <returns><see cref="F:FanKit.Layers.InvalidateModes.VisibleUndo"/></returns>
+  </doc>
+  <doc for="UndoStack.CanNavigate">
+    <summary>移動先の操作がキューに含まれているかどうかを示す値を取得します。</summary>
+    <param name="index">移動先の操作のインデックス。</param>
+    <returns>
+<see cref="NavigateAction.Undo"/> または <see cref="NavigateAction.UndoRange"/> (指定されたインデックスが現在の操作のインデックスより小さい場合)。
+<br/>
+<see cref="NavigateAction.Redo"/> または <see cref="NavigateAction.RedoRange"/> (指定されたインデックスが現在の操作のインデックスより大きい場合)。
+<br/>
+それ以外の場合は <see cref="NavigateAction.None"/> です。
+</returns>
+  </doc>
+  <doc for="UndoStack.CanRedo">
+    <summary>やり直しバッファーにやり直し可能なアクションが含まれているかどうかを示す値を取得します。</summary>
+    <returns>やり直しバッファーにやり直し可能なアクションが含まれているかどうかを示す値を取得します。</returns>
+  </doc>
+  <doc for="UndoStack.CanUndo">
+    <summary>元に戻すことができるアクションが元に戻すバッファーに含まれているかどうかを示す値を取得します。</summary>
+    <returns>元に戻すバッファーに元に戻すことができるアクションが含まれている場合は True。それ以外の場合は false。</returns>
+  </doc>
+  <doc for="UndoStack.ClearUndoRedoHistory">
+    <summary>キューを空にし、レイヤー関連の操作の変更をすべて破棄します。</summary>
+  </doc>
+  <doc for="UndoStack.GC">
+    <summary>
+ガベージコレクションのインスタンスプールから不要なレイヤーをすべて削除します。
+</summary>
+    <returns>無駄なレイヤーの番号。</returns>
+  </doc>
+  <doc for="UndoStack.GetRange">
+    <summary>ソース <see cref="T:FanKit.Layers.UndoStack`2"/> 内の要素の範囲の浅いコピーを作成します。</summary>
+    <param name="range">指定した範囲。</param>
+    <returns>ソース <see cref="T:FanKit.Layers.UndoStack`2"/> 内の要素の範囲の浅いコピー</returns>
+  </doc>
+  <doc for="UndoStack.NavigateTo">
+    <summary>指定した操作に移動します。</summary>
+    <param name="index">移動先の操作のインデックス。</param>
+    <returns>以前に移動した操作のインデックスと移動先の操作のインデックスとの間の範囲。</returns>
+  </doc>
+  <doc for="UndoStack.Push">
+    <summary>
+新しい操作のプッシュは、元に戻すスタックにあります。
+スタック上のオペレーションの数がスタックの制限を超えると、オペレーションはスタックの一番下から削除されます。
+</summary>
+    <param name="item">新しい操作。</param>
+    <param name="isGC">操作が削除されたときに不要なレイヤーを削除する場合はTure。それ以外の場合は false。</param>
+    <returns>無駄なレイヤーの番号。</returns>
+  </doc>
+  <doc for="UndoStack.Redo">
+    <summary>次の操作を取得し、次の操作を現在の操作にします。</summary>
+    <returns>次の操作 (操作にはやり直しアクションが含まれます)。</returns>
+  </doc>
+  <doc for="UndoStack.RedoBuffer">
+    <summary>元に戻すバッファーからすべての元に戻すアクションを取得します。</summary>
+    <returns>現在の操作から最初の操作までの操作 (操作には元に戻すアクションが含まれます)。</returns>
+  </doc>
+  <doc for="UndoStack.SelectedIndex">
+    <summary>選択した操作のインデックスを取得します。デフォルトは -1 で、操作が選択されていないことを示します。</summary>
+  </doc>
+  <doc for="UndoStack.SelectedItem">
+    <summary>選択した操作を取得します。</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTime">
+    <summary>
+ピリオドをすべての操作に同期して、UI の状態と動作を更新します。
+<br/>
+<br/>
+例えば。
+<br/>
+過去の操作のインデックスが現在のインデックスより小さい。
+<br/>
+現在の操作のインデックスは、現在のインデックスと等しくなります。
+<br/>
+将来の操作のインデックスは、現在のインデックスよりも大きくなります。
+</summary>
+  </doc>
+  <doc for="UndoStack.UISyncTimeIndex">
+    <summary>
+ピリオドをすべての操作に同期して、UI の状態と動作を更新します。
+<br/>
+<br/>
+例えば。
+<br/>
+過去の操作のインデックスが指定されたインデックスより小さい。
+<br/>
+現在の操作のインデックスは、指定されたインデックスと等しくなります。
+<br/>
+将来の操作のインデックスが、指定されたインデックスより大きい。
+</summary>
+    <param name="index">指定した操作の 0 から始まるインデックス。</param>
+  </doc>
+  <doc for="UndoStack.UISyncTo">
+    <summary>HTML DOM 差分アルゴリズムと同様に、順序を UI 履歴に同期します。</summary>
+    <param name="items">リスト ビューのデータソース (<see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> など) としての UI 履歴。</param>
+  </doc>
+  <doc for="UndoStack.Undo">
+    <summary>現在の操作を取得し、前の操作を現在の操作にします。</summary>
+    <returns>現在の操作 (操作には元に戻すアクションが含まれています)。</returns>
+  </doc>
+  <doc for="UndoStack.UndoBuffer">
+    <summary>元に戻すバッファーからすべての元に戻すアクションを取得します。</summary>
+    <returns>現在の操作から最初の操作までの操作 (操作には元に戻すアクションが含まれます)。</returns>
+  </doc>
+  <doc for="UndoStack.UndoLimit">
+    <summary>キューに格納できる操作の最大数を取得または設定します。</summary>
+  </doc>
+  <doc for="UndoStack.UndoStack">
+    <summary><see cref="T:FanKit.Layers.UndoStack`2"/> オブジェクトを構築します。</summary>
+    <param name="pool">すべてのインスタンスを含むインスタンス・プール。</param>
+    <param name="collection">レイヤー コレクション。</param>
+  </doc>
+  <doc for="Ungrouper">
+    <summary>グループ化解除操作に関する情報を提供します。</summary>
+  </doc>
+  <doc for="Ungrouper.Count">
+    <summary>グループ化されていないレイヤーの数を取得します。</summary>
+  </doc>
+  <doc for="Ungrouper.Ungrouper">
+    <summary><see cref="T:FanKit.Layers.Options.Ungrouper"/> オブジェクトを構築します。</summary>
+    <param name="items">レイヤー コレクション。</param>
+  </doc>
+  <doc for="VisibleChanges">
+    <summary>表示設定の変更の配列を含むレイヤー関連の変更を表します。</summary>
+  </doc>
+  <doc for="VisibleChanges.Visibles">
+    <summary>可視性の変更の配列を取得または設定します。</summary>
+  </doc>
+  <doc for="XmlExtensions">
+    <summary>XML オブジェクトを作成するための拡張機能。</summary>
+  </doc>
+  <doc for="XmlExtensions.SaveXmlStructure">
+    <summary>ノードの深さ、識別子、または子をXMLオブジェクトとして保存します。</summary>
+    <param name="node">指定したノード。</param>
+    <param name="type">XML オブジェクトの構造体のタイプです。</param>
+    <param name="children">子ノード。</param>
+    <returns>
+型が <see cref="F:FanKit.Layers.XmlStructure.List"/> の場合は <see cref="P:FanKit.Layers.Core.ITreeNode.Depth"/> の XML 属性。
+<br/>
+型が <see cref="F:FanKit.Layers.XmlStructure.TreeNodes"/> の場合は <see cref="P:FanKit.Layers.Core.ITreeNode.Id"/> の XML 属性。
+<br/>
+それ以外の場合は、子ノード。
+</returns>
+  </doc>
+  <doc for="XmlStructure">
+    <summary><see cref="T:FanKit.Layers.Core.ITreeNode"/> を保存するための XML オブジェクトの構造のタイプを指定します。</summary>
+  </doc>
+  <doc for="XmlStructure.List">
+    <summary>
+深さのあるリストに保存します。
+<br />
+<br /> 例えば。
+<br /> │
+<br /> ├─ビットマップ:深度=0
+<br /> ├─ビットマップ:深度=0
+<br /> ├─グループ: 深さ=0
+<br /> ├─グループ: 深さ=1
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─ビットマップ:深度=2
+<br /> ├─グループ: 深さ=0
+<br /> ├─ビットマップ:深度=1
+<br /> ├─グループ: 深さ=0
+<br /> └─ビットマップ:深度=1
+</summary>
+  </doc>
+  <doc for="XmlStructure.Tree">
+    <summary>
+ツリーに保存します。
+<br />
+<br /> 例えば。
+<br /> │
+<br /> ├─ビットマップ
+<br /> ├─ビットマップ
+<br /> ├─群
+<br /> │  ├─群
+<br /> │  │  ├─ビットマップ
+<br /> │  │  ├─ビットマップ
+<br /> │  │  └─ビットマップ
+<br /> ├─群
+<br /> │  └─ビットマップ
+<br /> ├─群
+<br /> │  └─ビットマップ
+</summary>
+  </doc>
+  <doc for="XmlStructure.TreeNodes">
+    <summary>
+ノードと識別子を持つインスタンスのコレクションで構成されるツリーに保存します。
+<br />
+<br /> 例えば。
+<br /> │
+<br /> ├─すべてのノード
+<br /> │  ├─ノード: Id=0
+<br /> │  ├─ノード: Id=1
+<br /> │  ├─ノード: Id=2
+<br /> │  │  ├─ノード: Id=3
+<br /> │  │  │  ├─ノード: Id=4
+<br /> │  │  │  ├─ノード: Id=5
+<br /> │  │  │  └─ノード: Id=6
+<br /> │  ├─ノード: Id=7
+<br /> │  │  └─ノード: Id=8
+<br /> │  ├─ノード: Id=9
+<br /> │  │  └─ノード: Id=10
+<br /> │  │
+<br /> ├─すべてのレイヤー
+<br /> │  ├─ビットマップ: ID=0
+<br /> │  ├─ビットマップ: ID=1
+<br /> │  ├─グループ: Id=2
+<br /> │  ├─グループ: Id=3
+<br /> │  ├─ビットマップ: ID=4
+<br /> │  ├─ビットマップ: ID=5
+<br /> │  ├─ビットマップ: ID=6
+<br /> │  ├─グループ: Id=7
+<br /> │  ├─ビットマップ: ID=8
+<br /> │  ├─グループ: Id=9
+<br /> │  └─ビットマップ: ID=10
+</summary>
+  </doc>
+  <doc for="XmlTreeNode">
+    <summary>論理ツリーの任意のノードを XML 要素に射影する XML ツリー ノードを定義します。</summary>
+  </doc>
+  <doc for="XmlTreeNode.AppendTo">
+    <summary>現在の <see cref="T:System.Text.StringBuilder"/> オブジェクトに文字列を追加します。</summary>
+    <param name="stringBuilder">現在の <see cref="T:System.Text.StringBuilder"/> オブジェクト。</param>
+  </doc>
+  <doc for="XmlTreeNode.SaveToXml">
+    <summary>ノードの識別子と子を XML 要素として保存します。</summary>
+    <param name="elementChildName">XML 要素の子の名前。</param>
+    <returns>
+ノードに子がある場合は、識別子と子を持つ XML 要素。
+<br/>
+それ以外の場合は、識別子のみを持つ XML 要素。
+</returns>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithGuid">
+    <summary><see cref="T:FanKit.Layers.XmlTreeNode"/> オブジェクトを構築します。</summary>
+    <param name="id">ノードの識別子。</param>
+  </doc>
+  <doc for="XmlTreeNode.XmlTreeNodeWithXml">
+    <summary><see cref="T:FanKit.Layers.XmlTreeNode"/> オブジェクトを構築します。</summary>
+    <param name="element">識別子と子を持つ XML 要素。</param>
+  </doc>
+</docs>
