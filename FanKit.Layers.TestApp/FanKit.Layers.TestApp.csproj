@@ -139,6 +139,9 @@
     <Compile Include="ReorderPage.xaml.cs">
       <DependentUpon>ReorderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RoundedSelectionPage.xaml.cs">
+      <DependentUpon>RoundedSelectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectedRangesPage.xaml.cs">
       <DependentUpon>SelectedRangesPage.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ReorderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RoundedSelectionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
