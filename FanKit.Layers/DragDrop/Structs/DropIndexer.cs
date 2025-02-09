@@ -8,6 +8,7 @@ namespace FanKit.Layers.DragDrop
     {
         /// <include file="doc/docs.xml" path="docs/doc[@for='DropIndexer.Placement']/*" />
         public readonly DropPlacement Placement;
+
         /// <include file="doc/docs.xml" path="docs/doc[@for='DropIndexer.Index']/*" />
         public readonly int Index;
 

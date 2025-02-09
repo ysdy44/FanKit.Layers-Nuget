@@ -6,7 +6,8 @@ namespace FanKit.Layers
     // The Index Location in List
     internal enum IdxLoc : byte
     {
-        Non, // None
+        // None
+        Non,
 
         // IndexOf
         Xof,
