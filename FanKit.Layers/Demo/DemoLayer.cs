@@ -126,6 +126,9 @@ namespace FanKit.Layers.Demo
                 {
                     case "Depth": this.Depth = (int)attribute; break;
 
+                    case "IsGroup": this.IsGroup = (bool)attribute; break;
+                    case "Title": this.Title = attribute.Value; break;
+
                     case "IsExpanded": this.IsExpanded = (bool)attribute; break;
                     case "IsLocked": this.IsLocked = (bool)attribute; break;
                     case "IsVisible": this.IsVisible = (bool)attribute; break;
@@ -142,6 +145,9 @@ namespace FanKit.Layers.Demo
             (
                 "Layer",
                 this.SaveXmlStructure(structure, children),
+
+                new XAttribute("IsGroup", this.IsGroup),
+                new XAttribute("Title", this.Title),
 
                 new XAttribute("IsExpanded", this.IsExpanded),
                 new XAttribute("IsLocked", this.IsLocked),
