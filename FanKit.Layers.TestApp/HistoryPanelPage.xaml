@@ -127,7 +127,7 @@
             </ListView>
         </SplitView.Pane>
 
-        <Canvas Background="{ThemeResource SystemControlBackgroundChromeBlackMediumBrush}">
+        <Canvas Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <TextBlock TextWrapping="WrapWholeWords">
                 <Run>Shortcut keys</Run>
                 <LineBreak/>

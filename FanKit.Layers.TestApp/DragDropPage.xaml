@@ -47,13 +47,13 @@
                 </Grid.ColumnDefinitions>
 
                 <Border x:Name="DragButton" Background="DodgerBlue" CanDrag="True">
-                    <TextBlock Margin="20,2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Margin="20,2" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                         Drag
                     </TextBlock>
                 </Border>
 
                 <Border x:Name="DropButton" Grid.Column="1" Background="Red" AllowDrop="True">
-                    <TextBlock Margin="20,2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Margin="20,2" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                         Drop
                     </TextBlock>
                 </Border>

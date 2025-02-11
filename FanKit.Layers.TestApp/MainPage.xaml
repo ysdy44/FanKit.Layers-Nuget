@@ -128,7 +128,7 @@
 
         <Frame x:Name="ContentFrame" >
             <Page>
-                <TextBlock FontSize="22" Foreground="White"
+                <TextBlock FontSize="22"
                    TextWrapping="Wrap" MaxWidth="700"
                    HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Run FontSize="100" Text="&#xED59;" FontFamily="Segoe MDL2 Assets"/>

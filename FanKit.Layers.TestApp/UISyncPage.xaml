@@ -19,7 +19,6 @@
             Margin="4"
             Width="300"
             SelectionMode="None"
-            RequestedTheme="Dark"
             ItemsSource="{x:Bind UINodes, Mode=OneTime}"
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
             >
@@ -45,6 +44,7 @@
             <ItemsControl.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Margin" Value="1"/>
+                    <Setter Property="RequestedTheme" Value="Dark"/>
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                     <Setter Property="VerticalContentAlignment" Value="Stretch"/>
                 </Style>
