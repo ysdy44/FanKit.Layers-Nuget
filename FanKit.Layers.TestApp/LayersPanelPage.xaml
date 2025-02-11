@@ -142,11 +142,18 @@
             </Style>
         </ItemsControl.ItemContainerStyle>
 
+        <!--Transitions-->
+        <ItemsControl.ItemContainerTransitions>
+            <TransitionCollection>
+                <AddDeleteThemeTransition/>
+            </TransitionCollection>
+        </ItemsControl.ItemContainerTransitions>
+
         <ItemsControl.ItemTemplate>
             <DataTemplate x:DataType="demo:DemoLayer">
                 <Grid>
                     <Grid.Background>
-                        <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{x:Bind SelectOpacity,Mode=OneWay}"/>
+                        <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{x:Bind SelectOpacity, Mode=OneWay}"/>
                     </Grid.Background>
 
                     <Grid.ColumnDefinitions>
