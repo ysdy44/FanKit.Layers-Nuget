@@ -98,9 +98,10 @@
                     </Style>
                 </ItemsControl.ItemContainerStyle>
 
+                <!--Transitions-->
                 <ItemsControl.ItemContainerTransitions>
                     <TransitionCollection>
-
+                        <!--<AddDeleteThemeTransition/>-->
                     </TransitionCollection>
                 </ItemsControl.ItemContainerTransitions>
 
