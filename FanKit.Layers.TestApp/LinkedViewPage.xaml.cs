@@ -21,6 +21,8 @@ namespace FanKit.Layers.TestApp
 
     partial class LinkedLayer
     {
+        public Visibility DepthVisibility => this.depth > 0 ? Visibility.Visible : Visibility.Collapsed;
+
         public Visibility HasChildrenVisibility => this.Children.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
 
         public Visibility NoneVisibility => this.placement == LinkedPlacement.None ? Visibility.Visible : Visibility.Collapsed;

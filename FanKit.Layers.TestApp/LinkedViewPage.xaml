@@ -77,20 +77,22 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Depth-->
-                    <Rectangle Visibility="{x:Bind LinkVisibility, Mode=OneWay}">
-                        <Shape.Fill>
-                            <LinearGradientBrush StartPoint="0,0" EndPoint="32,0" SpreadMethod="Reflect" MappingMode="Absolute">
-                                <GradientStop Offset="0" Color="{ThemeResource SystemAltMediumLowColor}"/>
-                                <GradientStop Offset="0.47" Color="{ThemeResource SystemAltMediumLowColor}"/>
+                    <Border Visibility="{x:Bind DepthVisibility, Mode=OneTime}" Background="{ThemeResource SystemControlBackgroundAltMediumLowBrush}">
+                        <Rectangle Visibility="{x:Bind LinkVisibility, Mode=OneWay}">
+                            <Shape.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="32,0" SpreadMethod="Reflect" MappingMode="Absolute">
+                                    <GradientStop Offset="0" Color="Transparent"/>
+                                    <GradientStop Offset="0.47" Color="Transparent"/>
 
-                                <GradientStop Offset="0.47" Color="{ThemeResource SystemBaseMediumColor}"/>
-                                <GradientStop Offset="0.53" Color="{ThemeResource SystemBaseMediumColor}"/>
+                                    <GradientStop Offset="0.47" Color="{ThemeResource SystemBaseMediumColor}"/>
+                                    <GradientStop Offset="0.53" Color="{ThemeResource SystemBaseMediumColor}"/>
 
-                                <GradientStop Offset="0.53" Color="{ThemeResource SystemAltMediumLowColor}"/>
-                                <GradientStop Offset="1" Color="{ThemeResource SystemAltMediumLowColor}"/>
-                            </LinearGradientBrush>
-                        </Shape.Fill>
-                    </Rectangle>
+                                    <GradientStop Offset="0.53" Color="Transparent"/>
+                                    <GradientStop Offset="1" Color="Transparent"/>
+                                </LinearGradientBrush>
+                            </Shape.Fill>
+                        </Rectangle>
+                    </Border>
 
                     <Canvas Grid.Column="1" Width="32" Height="38">
                         <!-- | -->
@@ -103,18 +105,79 @@
                         <Button
                             Canvas.Left="5"
                             Canvas.Top="8"
-                            Width="22"
-                            Height="22"
-                            Padding="0"
-                            BorderThickness="2"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            BorderBrush="{ThemeResource SystemControlBackgroundBaseMediumBrush}"
-                            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
                             CommandParameter="{x:Bind}"
                             Command="{StaticResource ExpandCommand}"
                             Visibility="{x:Bind HasChildrenVisibility, Mode=OneWay}"
                             >
+                            <FrameworkElement.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Width" Value="22"/>
+                                    <Setter Property="Height" Value="22"/>
+                                    <Setter Property="Padding" Value="0"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="BorderBrush" Value="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
+                                    <Setter Property="Background" Value="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter
+                                                    x:Name="ContentPresenter"
+                                                    Background="{TemplateBinding Background}"
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    Content="{TemplateBinding Content}"
+                                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                    ContentTransitions="{TemplateBinding ContentTransitions}"
+                                                    CornerRadius="{TemplateBinding CornerRadius}"
+                                                    Padding="{TemplateBinding Padding}"
+                                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                    AutomationProperties.AccessibilityView="Raw"
+                                                    >
+                                                    <VisualStateManager.VisualStateGroups>
+                                                        <VisualStateGroup x:Name="CommonStates">
+                                                            <VisualState x:Name="Normal">
+                                                                <Storyboard>
+                                                                    <PointerUpThemeAnimation Storyboard.TargetName="ContentPresenter" />
+                                                                </Storyboard>
+                                                            </VisualState>
+
+                                                            <VisualState x:Name="PointerOver">
+                                                                <Storyboard>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPointerOver}" />
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <PointerUpThemeAnimation Storyboard.TargetName="ContentPresenter" />
+                                                                </Storyboard>
+                                                            </VisualState>
+
+                                                            <VisualState x:Name="Pressed">
+                                                                <Storyboard>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushPressed}" />
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                    <PointerDownThemeAnimation Storyboard.TargetName="ContentPresenter" />
+                                                                </Storyboard>
+                                                            </VisualState>
+
+                                                            <VisualState x:Name="Disabled">
+                                                                <Storyboard>
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="BorderBrush">
+                                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonBorderBrushDisabled}" />
+                                                                    </ObjectAnimationUsingKeyFrames>
+                                                                </Storyboard>
+                                                            </VisualState>
+
+                                                        </VisualStateGroup>
+                                                    </VisualStateManager.VisualStateGroups>
+                                                </ContentPresenter>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </FrameworkElement.Style>
                             <Canvas Width="14" Height="14">
                                 <Rectangle Canvas.Left="0" Canvas.Top="6" Width="14" Height="2" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
                                 <Rectangle Canvas.Left="6" Canvas.Top="0" Width="2" Height="14" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}" Visibility="{x:Bind NoneVisibility, Mode=OneWay}"/>
