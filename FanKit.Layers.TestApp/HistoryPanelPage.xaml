@@ -85,6 +85,9 @@
 
                 <ItemsControl.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
+                        <Setter Property="BorderThickness" Value="0,1"/>
+                        <Setter Property="BorderBrush" Value="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+                        <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
                         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
                         <Setter Property="Padding" Value="0"/>
