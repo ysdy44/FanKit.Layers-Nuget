@@ -132,6 +132,9 @@
     <Compile Include="LayersPanelPage.xaml.cs">
       <DependentUpon>LayersPanelPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LinkedViewPage.xaml.cs">
+      <DependentUpon>LinkedViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -191,6 +194,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="LayersPanelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LinkedViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

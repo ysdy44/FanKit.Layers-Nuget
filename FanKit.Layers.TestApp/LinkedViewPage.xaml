@@ -1,0 +1,176 @@
+﻿<Page
+    x:Class="FanKit.Layers.TestApp.LinkedViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:demo="using:FanKit.Layers.Demo"
+    xmlns:local="using:FanKit.Layers.TestApp"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+
+    <FrameworkElement.Resources>
+        <!--Command-->
+        <local:LinkedOptionCommand x:Key="ExpandCommand" Invoked="ExpandCommand_Invoked"/>
+    </FrameworkElement.Resources>
+
+    <ListView
+        x:Name="ListView"
+        MaxWidth="460"
+        MaxHeight="600"
+        
+        SelectionMode="None"
+        IsItemClickEnabled="True"
+        
+        ItemClick="ListView_ItemClick"
+        Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
+        >
+
+        <ListView.Header>
+            <TextBlock Margin="4,0" FontSize="28" FontWeight="SemiLight">
+                LayerManager2
+            </TextBlock>
+        </ListView.Header>
+
+        <ItemsControl.ItemContainerStyle>
+            <Style TargetType="ListViewItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Transitions">
+                    <Setter.Value>
+                        <TransitionCollection>
+
+                        </TransitionCollection>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListViewItem">
+                            <ContentPresenter BorderThickness="0,1" BorderBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+
+        <!--Transitions-->
+        <ItemsControl.ItemContainerTransitions>
+            <TransitionCollection>
+                <!--<AddDeleteThemeTransition/>-->
+            </TransitionCollection>
+        </ItemsControl.ItemContainerTransitions>
+
+        <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="local:LinkedLayer">
+                <Grid>
+                    <Panel.Background>
+                        <SolidColorBrush Color="{ThemeResource SystemAccentColor}" Opacity="{x:Bind SelectOpacity, Mode=OneWay}"/>
+                    </Panel.Background>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0" MinWidth="{x:Bind DepthWidth, Mode=OneWay}"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Depth-->
+                    <Rectangle Visibility="{x:Bind LinkVisibility, Mode=OneWay}">
+                        <Shape.Fill>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="32,0" SpreadMethod="Reflect" MappingMode="Absolute">
+                                <GradientStop Offset="0" Color="{ThemeResource SystemAltMediumLowColor}"/>
+                                <GradientStop Offset="0.47" Color="{ThemeResource SystemAltMediumLowColor}"/>
+
+                                <GradientStop Offset="0.47" Color="{ThemeResource SystemBaseMediumColor}"/>
+                                <GradientStop Offset="0.53" Color="{ThemeResource SystemBaseMediumColor}"/>
+
+                                <GradientStop Offset="0.53" Color="{ThemeResource SystemAltMediumLowColor}"/>
+                                <GradientStop Offset="1" Color="{ThemeResource SystemAltMediumLowColor}"/>
+                            </LinearGradientBrush>
+                        </Shape.Fill>
+                    </Rectangle>
+
+                    <Canvas Grid.Column="1" Width="32" Height="38">
+                        <!-- | -->
+                        <Rectangle Canvas.Left="15" Canvas.Top="0" Width="2" Height="18" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
+                        <!-- | -->
+                        <Rectangle Canvas.Left="15" Canvas.Top="20" Width="2" Height="18" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}" Visibility="{x:Bind NoneVisibility, Mode=OneWay}"/>
+                        <!-- - -->
+                        <Rectangle Canvas.Left="15" Canvas.Top="18" Width="17" Height="2" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
+                        <!--Expand-->
+                        <Button
+                            Canvas.Left="5"
+                            Canvas.Top="8"
+                            Width="22"
+                            Height="22"
+                            Padding="0"
+                            BorderThickness="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            BorderBrush="{ThemeResource SystemControlBackgroundBaseMediumBrush}"
+                            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}"
+                            CommandParameter="{x:Bind}"
+                            Command="{StaticResource ExpandCommand}"
+                            Visibility="{x:Bind HasChildrenVisibility, Mode=OneWay}"
+                            >
+                            <Canvas Width="14" Height="14">
+                                <Rectangle Canvas.Left="0" Canvas.Top="6" Width="14" Height="2" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}"/>
+                                <Rectangle Canvas.Left="6" Canvas.Top="0" Width="2" Height="14" Fill="{ThemeResource SystemControlBackgroundBaseMediumBrush}" Visibility="{x:Bind NoneVisibility, Mode=OneWay}"/>
+                            </Canvas>
+                        </Button>
+                    </Canvas>
+
+                    <ToggleSwitch Grid.Column="2" IsOn="{x:Bind IsGroup, Mode=OneTime}">
+                        <FrameworkElement.Style>
+                            <Style TargetType="ToggleSwitch">
+                                <Setter Property="MinWidth" Value="32"/>
+                                <Setter Property="MinHeight" Value="32"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleSwitch">
+                                            <Grid>
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="ContentStates">
+                                                        <VisualState x:Name="OffContent">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetName="OffContentPresenter" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="OnContent">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetName="OnContentPresenter" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <ContentPresenter x:Name="OffContentPresenter" Opacity="0" Content="{TemplateBinding OffContent}"/>
+                                                <ContentPresenter x:Name="OnContentPresenter" Opacity="0" Content="{TemplateBinding OnContent}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </FrameworkElement.Style>
+                        <ToggleSwitch.OffContent>
+                            <SymbolIcon Symbol="Page" />
+                        </ToggleSwitch.OffContent>
+                        <ToggleSwitch.OnContent>
+                            <SymbolIcon Symbol="Folder" Foreground="#FFD255" />
+                        </ToggleSwitch.OnContent>
+                    </ToggleSwitch>
+
+                    <TextBlock Grid.Column="3" VerticalAlignment="Center">              
+                        <Run Text="{x:Bind Title}"/>
+                        <Run>Number Layer</Run>
+                    </TextBlock>
+
+                </Grid>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ListView>
+
+</Page>
