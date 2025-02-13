@@ -123,6 +123,9 @@
     <Compile Include="Canvas\Transformer.cs" />
     <Compile Include="History\RectChange.cs" />
     <Compile Include="History\Undo.cs" />
+    <Compile Include="InfoDialog.xaml.cs">
+      <DependentUpon>InfoDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Layers\BitmapLayer.cs" />
     <Compile Include="Layers\FillLayer.cs" />
     <Compile Include="Layers\GroupLayer.cs" />
@@ -163,6 +166,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="InfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
