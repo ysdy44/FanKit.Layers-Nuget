@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!--Separator 0-->
+  <data name='File' xml:space='preserve'> <value>ملف</value> </data>
+  <data name='Edit' xml:space='preserve'> <value>حرر</value> </data>
+  <data name='Layer' xml:space='preserve'> <value>طبقة</value> </data>
+  <data name='Arrange' xml:space='preserve'> <value>نظم</value> </data>
+  <data name='View' xml:space='preserve'> <value>منظر</value> </data>
+  <!--Separator 1-->
+  <data name='GC' xml:space='preserve'> <value>جمع القمامة</value> </data>
+  <data name='NewByList' xml:space='preserve'> <value>جديد حسب القائمة</value> </data>
+  <data name='NewByTree' xml:space='preserve'> <value>جديد حسب الشجرة</value> </data>
+  <data name='NewByCustomList' xml:space='preserve'> <value>جديد حسب القائمة المخصصة</value> </data>
+  <data name='NewByCustomTree' xml:space='preserve'> <value>جديد بواسطة شجرة مخصصة</value> </data>
+  <data name='SaveToXmlList' xml:space='preserve'> <value>حفظ في قائمة xml</value> </data>
+  <data name='LoadFromXmlList' xml:space='preserve'> <value>تحميل من قائمة xml</value> </data>
+  <data name='SaveToXmlTree' xml:space='preserve'> <value>حفظ في شجرة xml</value> </data>
+  <data name='LoadFromXmlTree' xml:space='preserve'> <value>تحميل من شجرة xml</value> </data>
+  <data name='SaveToXmlTreeNodes' xml:space='preserve'> <value>حفظ في عقد شجرة xml</value> </data>
+  <data name='LoadFromXmlTreeNodes' xml:space='preserve'> <value>التحميل من عقد شجرة xml</value> </data>
+  <data name='Cut' xml:space='preserve'> <value>قص</value> </data>
+  <data name='Copy' xml:space='preserve'> <value>نسخ</value> </data>
+  <data name='Paste' xml:space='preserve'> <value>معجون</value> </data>
+  <data name='Duplicate' xml:space='preserve'> <value>مكرره</value> </data>
+  <data name='Remove' xml:space='preserve'> <value>أبعد</value> </data>
+  <data name='Clear' xml:space='preserve'> <value>واضح</value> </data>
+  <data name='InsertAtTop' xml:space='preserve'> <value>إدراج في الأعلى</value> </data>
+  <data name='Insert' xml:space='preserve'> <value>أدخل</value> </data>
+  <data name='Ungroup' xml:space='preserve'> <value>إلغاء التجميع</value> </data>
+  <data name='Group' xml:space='preserve'> <value>مجموعة</value> </data>
+  <data name='Release' xml:space='preserve'> <value>أفرج</value> </data>
+  <data name='Package' xml:space='preserve'> <value>حزمة</value> </data>
+  <data name='BringToFront' xml:space='preserve'> <value>أحضر إلى الأمام</value> </data>
+  <data name='SendToBack' xml:space='preserve'> <value>إرسال إلى الخلف</value> </data>
+  <data name='BringForward' xml:space='preserve'> <value>تقديم</value> </data>
+  <data name='SendBackward' xml:space='preserve'> <value>إرسال للخلف</value> </data>
+  <data name='SelectAll' xml:space='preserve'> <value>حدد الكل</value> </data>
+  <data name='DeselectAll' xml:space='preserve'> <value>إلغاء تحديد الكل</value> </data>
+  <data name='CollapseAll' xml:space='preserve'> <value>طي الكل</value> </data>
+  <data name='ExpandAll' xml:space='preserve'> <value>توسيع الكل</value> </data>
+  <data name='HideAll' xml:space='preserve'> <value>إخفاء الكل</value> </data>
+  <data name='ShowAll' xml:space='preserve'> <value>عرض الكل</value> </data>
+  <!--Separator 2-->
+  <data name='None' xml:space='preserve'> <value>اي</value> </data>
+  <data name='Undo' xml:space='preserve'> <value>تراجع</value> </data>
+  <data name='Redo' xml:space='preserve'> <value>اعاده</value> </data>
+  <!--Separator 3-->
+  <data name='LayerGroup' xml:space='preserve'> <value>مجموعة الطبقات</value> </data>
+  <data name='LayerBitmap' xml:space='preserve'> <value>طبقة الصور النقطية</value> </data>
+  <data name='LayerFill' xml:space='preserve'> <value>طبقة التعبئة</value> </data>
+  <!--Separator 4-->
+  <data name='UITreeView' xml:space='preserve'> <value>إطلالة على الشجرة</value> </data>
+  <data name='UIHistory' xml:space='preserve'> <value>تاريخ</value> </data>
+  <!--Separator 5-->
+  <data name='UICanvas' xml:space='preserve'> <value>قماش</value> </data>
+  <data name='UIDragDrop1' xml:space='preserve'> <value>السحب والإفلات1</value> </data>
+  <data name='UIDragDrop2' xml:space='preserve'> <value>السحب والإفلات 2</value> </data>
+  <data name='UIXml0' xml:space='preserve'> <value>إكس إم إل 0</value> </data>
+  <data name='UIXml1' xml:space='preserve'> <value>إكس إم إل 1</value> </data>
+  <data name='UIXml2' xml:space='preserve'> <value>إكس إم إل 2</value> </data>
+  <!--Separator 6-->
+  <data name='UILayers' xml:space='preserve'> <value>جميع الطبقات</value> </data>
+  <data name='UINodes' xml:space='preserve'> <value>جميع العقد</value> </data>
+  <!--Separator 7-->
+  <data name='UIDrag' xml:space='preserve'> <value>اسحب هنا وأفلته في عرض القائمة</value> </data>
+  <data name='UIDrop' xml:space='preserve'> <value>قم بإسقاط العناصر هنا لإزالتها من عرض القائمة</value> </data>
+  <!--Separator 8-->
+  <data name='UIMore' xml:space='preserve'> <value>أكثر</value> </data>
+  <data name='UIBack' xml:space='preserve'> <value>ظهر</value> </data>
+  <!--Separator 9-->
+  <data name='UIGCSuccess' xml:space='preserve'> <value>نجاح جمع القمامة</value> </data>
+  <data name='UIDispose' xml:space='preserve'> <value>تخلص من طبقات عديمة الفائدة {0}</value> </data>
+  <data name='UIGCFailed' xml:space='preserve'> <value>فشل جمع القمامة</value> </data>
+  <data name='UINotFound' xml:space='preserve'> <value>تعذر العثور على طبقات عديمة الفائدة</value> </data>
+  <!--Separator 10-->
+  <data name='InfoDepth' xml:space='preserve'> <value>عمق:</value> </data>
+  <data name='InfoIsExpanded' xml:space='preserve'> <value>تم توسيعه:</value> </data>
+  <data name='InfoIsLocked' xml:space='preserve'> <value>مقفل:</value> </data>
+  <data name='InfoIsVisible' xml:space='preserve'> <value>مرئي :</value> </data>
+  <data name='InfoSelectMode' xml:space='preserve'> <value>الحالة المختارة :</value> </data>
+  <data name='InfoChildren' xml:space='preserve'> <value>أطفال:</value> </data>
+  <!--Separator 11-->
+  <data name='AddLayer' xml:space='preserve'> <value>إضافة طبقة</value> </data>
+  <data name='AddGroup' xml:space='preserve'> <value>إضافة مجموعة</value> </data>
+  <data name='InsertLayer' xml:space='preserve'> <value>إدراج طبقة</value> </data>
+  <!--Separator 12-->
+  <data name='Language' xml:space='preserve'> <value>لغة</value> </data>
+  <data name='RestartApp' xml:space='preserve'> <value>أعد تشغيل التطبيق لمشاهدة التغييرات.</value> </data>
+  <data name='UseSystemSetting' xml:space='preserve'> <value>استخدم إعدادات النظام</value> </data>
+  <!--Separator 13-->
+  <data name='ToClearAll' xml:space='preserve'> <value>مسح جميع الطبقات</value> </data>
+  <data name='ToDrop' xml:space='preserve'> <value>إسقاط طبقة</value> </data>
+  <!--Separator 14-->
+  <data name='ToDuplicate' xml:space='preserve'> <value>تكرار طبقة</value> </data>
+  <data name='ToDuplicates' xml:space='preserve'> <value>تكرار بعض الطبقات</value> </data>
+  <!--Separator 15-->
+  <data name='ToPaste' xml:space='preserve'> <value>لصق طبقة</value> </data>
+  <data name='ToPastes' xml:space='preserve'> <value>لصق بعض الطبقات</value> </data>
+  <!--Separator 16-->
+  <data name='ToMove' xml:space='preserve'> <value>نقل طبقة</value> </data>
+  <data name='ToMoves' xml:space='preserve'> <value>نقل بعض الطبقات</value> </data>
+  <!--Separator 17-->
+  <data name='ToRemove' xml:space='preserve'> <value>إزالة طبقة</value> </data>
+  <data name='ToRemoves' xml:space='preserve'> <value>قم بإزالة بعض الطبقات</value> </data>
+  <!--Separator 18-->
+  <data name='ToUngroup' xml:space='preserve'> <value>فك تجميع طبقة</value> </data>
+  <data name='ToUngroups' xml:space='preserve'> <value>فك تجميع بعض الطبقات</value> </data>
+  <!--Separator 19-->
+  <data name='ToGroup' xml:space='preserve'> <value>تجميع طبقة</value> </data>
+  <data name='ToGroups' xml:space='preserve'> <value>تجميع بعض الطبقات</value> </data>
+  <!--Separator 20-->
+  <data name='ToRelease' xml:space='preserve'> <value>تحرير طبقة</value> </data>
+  <data name='ToReleases' xml:space='preserve'> <value>حرر بعض الطبقات</value> </data>
+  <!--Separator 21-->
+  <data name='ToPackage' xml:space='preserve'> <value>حزمة طبقة</value> </data>
+  <data name='ToPackageAll' xml:space='preserve'> <value>حزمة جميع الطبقات</value> </data>
+  <!--Separator 22-->
+  <data name='ToUnlock' xml:space='preserve'> <value>فتح طبقة</value> </data>
+  <data name='ToLock' xml:space='preserve'> <value>قفل طبقة</value> </data>
+  <!--Separator 23-->
+  <data name='ToHide' xml:space='preserve'> <value>إخفاء طبقة</value> </data>
+  <data name='ToHideAll' xml:space='preserve'> <value>إخفاء جميع الطبقات</value> </data>
+  <!--Separator 24-->
+  <data name='ToShow' xml:space='preserve'> <value>عرض طبقة</value> </data>
+  <data name='ToShowAll' xml:space='preserve'> <value>عرض جميع الطبقات</value> </data>
+  <!--Separator 25-->
+  <data name='ToDeselect' xml:space='preserve'> <value>إلغاء تحديد طبقة</value> </data>
+  <data name='ToDeselects' xml:space='preserve'> <value>إلغاء تحديد بعض الطبقات</value> </data>
+  <data name='ToDeselectAll' xml:space='preserve'> <value>إلغاء تحديد جميع الطبقات</value> </data>
+  <!--Separator 26-->
+  <data name='ToSelect' xml:space='preserve'> <value>حدد طبقة</value> </data>
+  <data name='ToSelects' xml:space='preserve'> <value>حدد بعض الطبقات</value> </data>
+  <data name='ToSelectAll' xml:space='preserve'> <value>تحديد جميع الطبقات</value> </data>
+</root>

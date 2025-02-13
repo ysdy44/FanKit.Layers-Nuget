@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!--Separator 0-->
+  <data name='File' xml:space='preserve'> <value>Datei</value> </data>
+  <data name='Edit' xml:space='preserve'> <value>Redigieren</value> </data>
+  <data name='Layer' xml:space='preserve'> <value>Schicht</value> </data>
+  <data name='Arrange' xml:space='preserve'> <value>Arrangieren</value> </data>
+  <data name='View' xml:space='preserve'> <value>Ansehen</value> </data>
+  <!--Separator 1-->
+  <data name='GC' xml:space='preserve'> <value>Müllabfuhr</value> </data>
+  <data name='NewByList' xml:space='preserve'> <value>Neu nach Liste</value> </data>
+  <data name='NewByTree' xml:space='preserve'> <value>Neu von Baum</value> </data>
+  <data name='NewByCustomList' xml:space='preserve'> <value>Neu nach benutzerdefinierter Liste</value> </data>
+  <data name='NewByCustomTree' xml:space='preserve'> <value>Neu von benutzerdefiniertem Baum</value> </data>
+  <data name='SaveToXmlList' xml:space='preserve'> <value>In XML-Liste speichern</value> </data>
+  <data name='LoadFromXmlList' xml:space='preserve'> <value>Laden aus XML-Liste</value> </data>
+  <data name='SaveToXmlTree' xml:space='preserve'> <value>In XML-Baum speichern</value> </data>
+  <data name='LoadFromXmlTree' xml:space='preserve'> <value>Laden aus XML-Baum</value> </data>
+  <data name='SaveToXmlTreeNodes' xml:space='preserve'> <value>Speichern in XML-Strukturknoten</value> </data>
+  <data name='LoadFromXmlTreeNodes' xml:space='preserve'> <value>Laden von XML-Baumknoten</value> </data>
+  <data name='Cut' xml:space='preserve'> <value>Schneiden</value> </data>
+  <data name='Copy' xml:space='preserve'> <value>Kopieren</value> </data>
+  <data name='Paste' xml:space='preserve'> <value>Kleister</value> </data>
+  <data name='Duplicate' xml:space='preserve'> <value>Duplikat</value> </data>
+  <data name='Remove' xml:space='preserve'> <value>Entfernen</value> </data>
+  <data name='Clear' xml:space='preserve'> <value>Klar</value> </data>
+  <data name='InsertAtTop' xml:space='preserve'> <value>Oben einfügen</value> </data>
+  <data name='Insert' xml:space='preserve'> <value>Einfügen</value> </data>
+  <data name='Ungroup' xml:space='preserve'> <value>Gruppierung aufheben</value> </data>
+  <data name='Group' xml:space='preserve'> <value>Gruppe</value> </data>
+  <data name='Release' xml:space='preserve'> <value>Loslassen</value> </data>
+  <data name='Package' xml:space='preserve'> <value>Paket</value> </data>
+  <data name='BringToFront' xml:space='preserve'> <value>In den Vordergrund bringen</value> </data>
+  <data name='SendToBack' xml:space='preserve'> <value>Zurück</value> </data>
+  <data name='BringForward' xml:space='preserve'> <value>Vorziehen</value> </data>
+  <data name='SendBackward' xml:space='preserve'> <value>Rückwärts senden</value> </data>
+  <data name='SelectAll' xml:space='preserve'> <value>Alles auswählen</value> </data>
+  <data name='DeselectAll' xml:space='preserve'> <value>Alle abwählen</value> </data>
+  <data name='CollapseAll' xml:space='preserve'> <value>Alle einklappen</value> </data>
+  <data name='ExpandAll' xml:space='preserve'> <value>Alle aufklappen</value> </data>
+  <data name='HideAll' xml:space='preserve'> <value>Alle ausblenden</value> </data>
+  <data name='ShowAll' xml:space='preserve'> <value>Alle anzeigen</value> </data>
+  <!--Separator 2-->
+  <data name='None' xml:space='preserve'> <value>Nichts</value> </data>
+  <data name='Undo' xml:space='preserve'> <value>Aufmachen</value> </data>
+  <data name='Redo' xml:space='preserve'> <value>Noch einmal machen</value> </data>
+  <!--Separator 3-->
+  <data name='LayerGroup' xml:space='preserve'> <value>Layer-Gruppe</value> </data>
+  <data name='LayerBitmap' xml:space='preserve'> <value>Bitmap-Ebene</value> </data>
+  <data name='LayerFill' xml:space='preserve'> <value>Ebene füllen</value> </data>
+  <!--Separator 4-->
+  <data name='UITreeView' xml:space='preserve'> <value>Baumansicht</value> </data>
+  <data name='UIHistory' xml:space='preserve'> <value>Geschichte</value> </data>
+  <!--Separator 5-->
+  <data name='UICanvas' xml:space='preserve'> <value>Leinwand</value> </data>
+  <data name='UIDragDrop1' xml:space='preserve'> <value>Ziehen und Ablegen1</value> </data>
+  <data name='UIDragDrop2' xml:space='preserve'> <value>Ziehen und Ablegen 2</value> </data>
+  <data name='UIXml0' xml:space='preserve'> <value>Xml 0</value> </data>
+  <data name='UIXml1' xml:space='preserve'> <value>Xml 1</value> </data>
+  <data name='UIXml2' xml:space='preserve'> <value>Xml 2</value> </data>
+  <!--Separator 6-->
+  <data name='UILayers' xml:space='preserve'> <value>Alle Schichten</value> </data>
+  <data name='UINodes' xml:space='preserve'> <value>Alle Knoten</value> </data>
+  <!--Separator 7-->
+  <data name='UIDrag' xml:space='preserve'> <value>Ziehen Sie es hier weiter und legen Sie es in der Listenansicht ab</value> </data>
+  <data name='UIDrop' xml:space='preserve'> <value>Legen Sie Elemente hier ab, um sie aus der Listenansicht zu entfernen</value> </data>
+  <!--Separator 8-->
+  <data name='UIMore' xml:space='preserve'> <value>Mehr</value> </data>
+  <data name='UIBack' xml:space='preserve'> <value>Zurück</value> </data>
+  <!--Separator 9-->
+  <data name='UIGCSuccess' xml:space='preserve'> <value>Erfolg bei der Müllabfuhr</value> </data>
+  <data name='UIDispose' xml:space='preserve'> <value>Entsorgen Sie {0} nutzlosen Schichten</value> </data>
+  <data name='UIGCFailed' xml:space='preserve'> <value>Fehler bei der Garbage Collection</value> </data>
+  <data name='UINotFound' xml:space='preserve'> <value>Unbrauchbare Schichten konnten nicht gefunden werden</value> </data>
+  <!--Separator 10-->
+  <data name='InfoDepth' xml:space='preserve'> <value>Tiefe:</value> </data>
+  <data name='InfoIsExpanded' xml:space='preserve'> <value>Wird erweitert :</value> </data>
+  <data name='InfoIsLocked' xml:space='preserve'> <value>Ist gesperrt :</value> </data>
+  <data name='InfoIsVisible' xml:space='preserve'> <value>Ist sichtbar :</value> </data>
+  <data name='InfoSelectMode' xml:space='preserve'> <value>Ausgewählter Status :</value> </data>
+  <data name='InfoChildren' xml:space='preserve'> <value>Kinder:</value> </data>
+  <!--Separator 11-->
+  <data name='AddLayer' xml:space='preserve'> <value>Hinzufügen einer Ebene</value> </data>
+  <data name='AddGroup' xml:space='preserve'> <value>Hinzufügen einer Gruppe</value> </data>
+  <data name='InsertLayer' xml:space='preserve'> <value>Einfügen einer Ebene</value> </data>
+  <!--Separator 12-->
+  <data name='Language' xml:space='preserve'> <value>Sprache</value> </data>
+  <data name='RestartApp' xml:space='preserve'> <value>Starten Sie die App neu, um Ihre Änderungen anzuzeigen.</value> </data>
+  <data name='UseSystemSetting' xml:space='preserve'> <value>Verwenden Sie die Systemeinstellung</value> </data>
+  <!--Separator 13-->
+  <data name='ToClearAll' xml:space='preserve'> <value>Alle Ebenen löschen</value> </data>
+  <data name='ToDrop' xml:space='preserve'> <value>Legen Sie eine Ebene ab</value> </data>
+  <!--Separator 14-->
+  <data name='ToDuplicate' xml:space='preserve'> <value>Duplizieren einer Ebene</value> </data>
+  <data name='ToDuplicates' xml:space='preserve'> <value>Duplizieren einiger Ebenen</value> </data>
+  <!--Separator 15-->
+  <data name='ToPaste' xml:space='preserve'> <value>Einfügen einer Ebene</value> </data>
+  <data name='ToPastes' xml:space='preserve'> <value>Fügen Sie einige Ebenen ein</value> </data>
+  <!--Separator 16-->
+  <data name='ToMove' xml:space='preserve'> <value>Verschieben einer Ebene</value> </data>
+  <data name='ToMoves' xml:space='preserve'> <value>Verschieben einiger Ebenen</value> </data>
+  <!--Separator 17-->
+  <data name='ToRemove' xml:space='preserve'> <value>Entfernen einer Ebene</value> </data>
+  <data name='ToRemoves' xml:space='preserve'> <value>Entfernen Sie einige Schichten</value> </data>
+  <!--Separator 18-->
+  <data name='ToUngroup' xml:space='preserve'> <value>Aufheben der Gruppierung einer Ebene</value> </data>
+  <data name='ToUngroups' xml:space='preserve'> <value>Aufheben der Gruppierung einiger Layer</value> </data>
+  <!--Separator 19-->
+  <data name='ToGroup' xml:space='preserve'> <value>Gruppieren einer Ebene</value> </data>
+  <data name='ToGroups' xml:space='preserve'> <value>Gruppieren einiger Ebenen</value> </data>
+  <!--Separator 20-->
+  <data name='ToRelease' xml:space='preserve'> <value>Lösen einer Ebene</value> </data>
+  <data name='ToReleases' xml:space='preserve'> <value>Lösen Sie einige Schichten</value> </data>
+  <!--Separator 21-->
+  <data name='ToPackage' xml:space='preserve'> <value>Packen eines Layers</value> </data>
+  <data name='ToPackageAll' xml:space='preserve'> <value>Verpacken aller Schichten</value> </data>
+  <!--Separator 22-->
+  <data name='ToUnlock' xml:space='preserve'> <value>Entsperren einer Ebene</value> </data>
+  <data name='ToLock' xml:space='preserve'> <value>Sperren einer Ebene</value> </data>
+  <!--Separator 23-->
+  <data name='ToHide' xml:space='preserve'> <value>Ausblenden einer Ebene</value> </data>
+  <data name='ToHideAll' xml:space='preserve'> <value>Alle Ebenen ausblenden</value> </data>
+  <!--Separator 24-->
+  <data name='ToShow' xml:space='preserve'> <value>Anzeigen eines Layers</value> </data>
+  <data name='ToShowAll' xml:space='preserve'> <value>Alle Layer anzeigen</value> </data>
+  <!--Separator 25-->
+  <data name='ToDeselect' xml:space='preserve'> <value>Aufheben der Auswahl einer Ebene</value> </data>
+  <data name='ToDeselects' xml:space='preserve'> <value>Abwahl einiger Ebenen aufheben</value> </data>
+  <data name='ToDeselectAll' xml:space='preserve'> <value>Auswahl aller Ebenen aufheben</value> </data>
+  <!--Separator 26-->
+  <data name='ToSelect' xml:space='preserve'> <value>Auswählen einer Ebene</value> </data>
+  <data name='ToSelects' xml:space='preserve'> <value>Wählen Sie einige Ebenen aus</value> </data>
+  <data name='ToSelectAll' xml:space='preserve'> <value>Alle Layer auswählen</value> </data>
+</root>

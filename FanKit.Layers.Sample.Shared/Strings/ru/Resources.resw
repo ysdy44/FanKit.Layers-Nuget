@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!--Separator 0-->
+  <data name='File' xml:space='preserve'> <value>Файл</value> </data>
+  <data name='Edit' xml:space='preserve'> <value>Редактировать</value> </data>
+  <data name='Layer' xml:space='preserve'> <value>Слой</value> </data>
+  <data name='Arrange' xml:space='preserve'> <value>Устраивать</value> </data>
+  <data name='View' xml:space='preserve'> <value>Вид</value> </data>
+  <!--Separator 1-->
+  <data name='GC' xml:space='preserve'> <value>Сборка мусора</value> </data>
+  <data name='NewByList' xml:space='preserve'> <value>Новое по списку</value> </data>
+  <data name='NewByTree' xml:space='preserve'> <value>Новое по дереву</value> </data>
+  <data name='NewByCustomList' xml:space='preserve'> <value>Новое по пользовательскому списку</value> </data>
+  <data name='NewByCustomTree' xml:space='preserve'> <value>Новое по пользовательскому дереву</value> </data>
+  <data name='SaveToXmlList' xml:space='preserve'> <value>Сохранить в список xml</value> </data>
+  <data name='LoadFromXmlList' xml:space='preserve'> <value>Загрузка из xml списка</value> </data>
+  <data name='SaveToXmlTree' xml:space='preserve'> <value>Сохранить в xml-дерево</value> </data>
+  <data name='LoadFromXmlTree' xml:space='preserve'> <value>Загрузка из xml дерева</value> </data>
+  <data name='SaveToXmlTreeNodes' xml:space='preserve'> <value>Сохранение в узлах дерева xml</value> </data>
+  <data name='LoadFromXmlTreeNodes' xml:space='preserve'> <value>Загрузка из узлов xml-дерева</value> </data>
+  <data name='Cut' xml:space='preserve'> <value>Резать</value> </data>
+  <data name='Copy' xml:space='preserve'> <value>Копировать</value> </data>
+  <data name='Paste' xml:space='preserve'> <value>Паста</value> </data>
+  <data name='Duplicate' xml:space='preserve'> <value>Дублировать</value> </data>
+  <data name='Remove' xml:space='preserve'> <value>Убирать</value> </data>
+  <data name='Clear' xml:space='preserve'> <value>Ясный</value> </data>
+  <data name='InsertAtTop' xml:space='preserve'> <value>Вставка сверху</value> </data>
+  <data name='Insert' xml:space='preserve'> <value>Вставка</value> </data>
+  <data name='Ungroup' xml:space='preserve'> <value>Разгруппировать</value> </data>
+  <data name='Group' xml:space='preserve'> <value>Группа</value> </data>
+  <data name='Release' xml:space='preserve'> <value>Отпускать</value> </data>
+  <data name='Package' xml:space='preserve'> <value>Пакет</value> </data>
+  <data name='BringToFront' xml:space='preserve'> <value>Выводите на передний план</value> </data>
+  <data name='SendToBack' xml:space='preserve'> <value>Отправить назад</value> </data>
+  <data name='BringForward' xml:space='preserve'> <value>Перенесите вперед</value> </data>
+  <data name='SendBackward' xml:space='preserve'> <value>Отправить назад</value> </data>
+  <data name='SelectAll' xml:space='preserve'> <value>Выбрать все</value> </data>
+  <data name='DeselectAll' xml:space='preserve'> <value>Отмена выбора «Все»</value> </data>
+  <data name='CollapseAll' xml:space='preserve'> <value>Свернуть все</value> </data>
+  <data name='ExpandAll' xml:space='preserve'> <value>Развернуть все</value> </data>
+  <data name='HideAll' xml:space='preserve'> <value>Скрыть все</value> </data>
+  <data name='ShowAll' xml:space='preserve'> <value>Показать все</value> </data>
+  <!--Separator 2-->
+  <data name='None' xml:space='preserve'> <value>Никакой</value> </data>
+  <data name='Undo' xml:space='preserve'> <value>Отменить</value> </data>
+  <data name='Redo' xml:space='preserve'> <value>Повторить</value> </data>
+  <!--Separator 3-->
+  <data name='LayerGroup' xml:space='preserve'> <value>Группа слоев</value> </data>
+  <data name='LayerBitmap' xml:space='preserve'> <value>Растровый слой</value> </data>
+  <data name='LayerFill' xml:space='preserve'> <value>Слой заливки</value> </data>
+  <!--Separator 4-->
+  <data name='UITreeView' xml:space='preserve'> <value>Древовидный вид</value> </data>
+  <data name='UIHistory' xml:space='preserve'> <value>История</value> </data>
+  <!--Separator 5-->
+  <data name='UICanvas' xml:space='preserve'> <value>Холст</value> </data>
+  <data name='UIDragDrop1' xml:space='preserve'> <value>Перетаскивание1</value> </data>
+  <data name='UIDragDrop2' xml:space='preserve'> <value>Перетащите 2</value> </data>
+  <data name='UIXml0' xml:space='preserve'> <value>Xml 0</value> </data>
+  <data name='UIXml1' xml:space='preserve'> <value>Xml 1</value> </data>
+  <data name='UIXml2' xml:space='preserve'> <value>Xml 2</value> </data>
+  <!--Separator 6-->
+  <data name='UILayers' xml:space='preserve'> <value>Все слои</value> </data>
+  <data name='UINodes' xml:space='preserve'> <value>Все узлы</value> </data>
+  <!--Separator 7-->
+  <data name='UIDrag' xml:space='preserve'> <value>Перетащите сюда и перетащите его в вид списка</value> </data>
+  <data name='UIDrop' xml:space='preserve'> <value>Перетащите элементы сюда, чтобы удалить их из представления списка</value> </data>
+  <!--Separator 8-->
+  <data name='UIMore' xml:space='preserve'> <value>Больше</value> </data>
+  <data name='UIBack' xml:space='preserve'> <value>Назад</value> </data>
+  <!--Separator 9-->
+  <data name='UIGCSuccess' xml:space='preserve'> <value>Успешная сборка мусора</value> </data>
+  <data name='UIDispose' xml:space='preserve'> <value>Утилизируйте {0} бесполезные слои</value> </data>
+  <data name='UIGCFailed' xml:space='preserve'> <value>Сбой сборки мусора</value> </data>
+  <data name='UINotFound' xml:space='preserve'> <value>Не смог найти бесполезные слои</value> </data>
+  <!--Separator 10-->
+  <data name='InfoDepth' xml:space='preserve'> <value>Глубина:</value> </data>
+  <data name='InfoIsExpanded' xml:space='preserve'> <value>Расширено:</value> </data>
+  <data name='InfoIsLocked' xml:space='preserve'> <value>Заблокирован :</value> </data>
+  <data name='InfoIsVisible' xml:space='preserve'> <value>Виден:</value> </data>
+  <data name='InfoSelectMode' xml:space='preserve'> <value>Выбранный статус :</value> </data>
+  <data name='InfoChildren' xml:space='preserve'> <value>Дети:</value> </data>
+  <!--Separator 11-->
+  <data name='AddLayer' xml:space='preserve'> <value>Добавление слоя</value> </data>
+  <data name='AddGroup' xml:space='preserve'> <value>Добавить группу</value> </data>
+  <data name='InsertLayer' xml:space='preserve'> <value>Вставка слоя</value> </data>
+  <!--Separator 12-->
+  <data name='Language' xml:space='preserve'> <value>Язык</value> </data>
+  <data name='RestartApp' xml:space='preserve'> <value>Перезапустите приложение, чтобы увидеть изменения.</value> </data>
+  <data name='UseSystemSetting' xml:space='preserve'> <value>Использовать системные настройки</value> </data>
+  <!--Separator 13-->
+  <data name='ToClearAll' xml:space='preserve'> <value>Очистите все слои</value> </data>
+  <data name='ToDrop' xml:space='preserve'> <value>Перетащите слой</value> </data>
+  <!--Separator 14-->
+  <data name='ToDuplicate' xml:space='preserve'> <value>Дублирование слоя</value> </data>
+  <data name='ToDuplicates' xml:space='preserve'> <value>Дублируйте некоторые слои</value> </data>
+  <!--Separator 15-->
+  <data name='ToPaste' xml:space='preserve'> <value>Вставка слоя</value> </data>
+  <data name='ToPastes' xml:space='preserve'> <value>Вставьте несколько слоев</value> </data>
+  <!--Separator 16-->
+  <data name='ToMove' xml:space='preserve'> <value>Перемещение слоя</value> </data>
+  <data name='ToMoves' xml:space='preserve'> <value>Переместите несколько слоев</value> </data>
+  <!--Separator 17-->
+  <data name='ToRemove' xml:space='preserve'> <value>Удаление слоя</value> </data>
+  <data name='ToRemoves' xml:space='preserve'> <value>Удалите некоторые слои</value> </data>
+  <!--Separator 18-->
+  <data name='ToUngroup' xml:space='preserve'> <value>Разгруппировка слоя</value> </data>
+  <data name='ToUngroups' xml:space='preserve'> <value>Разгруппируйте некоторые слои</value> </data>
+  <!--Separator 19-->
+  <data name='ToGroup' xml:space='preserve'> <value>Группировка слоя</value> </data>
+  <data name='ToGroups' xml:space='preserve'> <value>Сгруппируйте несколько слоев</value> </data>
+  <!--Separator 20-->
+  <data name='ToRelease' xml:space='preserve'> <value>Освобождение слоя</value> </data>
+  <data name='ToReleases' xml:space='preserve'> <value>Отпустите несколько слоев</value> </data>
+  <!--Separator 21-->
+  <data name='ToPackage' xml:space='preserve'> <value>Упаковка слоя</value> </data>
+  <data name='ToPackageAll' xml:space='preserve'> <value>Упаковка всех слоев</value> </data>
+  <!--Separator 22-->
+  <data name='ToUnlock' xml:space='preserve'> <value>Разблокировка слоя</value> </data>
+  <data name='ToLock' xml:space='preserve'> <value>Блокировка слоя</value> </data>
+  <!--Separator 23-->
+  <data name='ToHide' xml:space='preserve'> <value>Скрытие слоя</value> </data>
+  <data name='ToHideAll' xml:space='preserve'> <value>Скрыть все слои</value> </data>
+  <!--Separator 24-->
+  <data name='ToShow' xml:space='preserve'> <value>Отображение слоя</value> </data>
+  <data name='ToShowAll' xml:space='preserve'> <value>Отобразить все слои</value> </data>
+  <!--Separator 25-->
+  <data name='ToDeselect' xml:space='preserve'> <value>Отмена выбора слоя</value> </data>
+  <data name='ToDeselects' xml:space='preserve'> <value>Отмена выделения на некоторых слоях</value> </data>
+  <data name='ToDeselectAll' xml:space='preserve'> <value>Отмена выделения для всех слоев</value> </data>
+  <!--Separator 26-->
+  <data name='ToSelect' xml:space='preserve'> <value>Выберите слой</value> </data>
+  <data name='ToSelects' xml:space='preserve'> <value>Выделите несколько слоев</value> </data>
+  <data name='ToSelectAll' xml:space='preserve'> <value>Выделите все слои</value> </data>
+</root>

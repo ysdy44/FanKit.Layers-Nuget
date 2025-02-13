@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <xsd:schema id='root' xmlns='' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'>
+    <xsd:import namespace='http://www.w3.org/XML/1998/namespace' />
+    <xsd:element name='root' msdata:IsDataSet='true'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs='unbounded'>
+          <xsd:element name='metadata'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' />
+              </xsd:sequence>
+              <xsd:attribute name='name' use='required' type='xsd:string' />
+              <xsd:attribute name='type' type='xsd:string' />
+              <xsd:attribute name='mimetype' type='xsd:string' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='assembly'>
+            <xsd:complexType>
+              <xsd:attribute name='alias' type='xsd:string' />
+              <xsd:attribute name='name' type='xsd:string' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='data'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+                <xsd:element name='comment' type='xsd:string' minOccurs='0' msdata:Ordinal='2' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' msdata:Ordinal='1' />
+              <xsd:attribute name='type' type='xsd:string' msdata:Ordinal='3' />
+              <xsd:attribute name='mimetype' type='xsd:string' msdata:Ordinal='4' />
+              <xsd:attribute ref='xml:space' />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name='resheader'>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name='value' type='xsd:string' minOccurs='0' msdata:Ordinal='1' />
+              </xsd:sequence>
+              <xsd:attribute name='name' type='xsd:string' use='required' />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name='resmimetype'>
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name='version'>
+    <value>2.0</value>
+  </resheader>
+  <resheader name='reader'>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name='writer'>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!--Separator 0-->
+  <data name='File' xml:space='preserve'> <value>파일</value> </data>
+  <data name='Edit' xml:space='preserve'> <value>편집하다</value> </data>
+  <data name='Layer' xml:space='preserve'> <value>층</value> </data>
+  <data name='Arrange' xml:space='preserve'> <value>조정하다</value> </data>
+  <data name='View' xml:space='preserve'> <value>보기</value> </data>
+  <!--Separator 1-->
+  <data name='GC' xml:space='preserve'> <value>가비지 콜렉션</value> </data>
+  <data name='NewByList' xml:space='preserve'> <value>목록별 새로 만들기</value> </data>
+  <data name='NewByTree' xml:space='preserve'> <value>나무의 새로운 기능</value> </data>
+  <data name='NewByCustomList' xml:space='preserve'> <value>사용자 지정 목록에 의한 새 항목</value> </data>
+  <data name='NewByCustomTree' xml:space='preserve'> <value>사용자 정의 트리의 새로운 기능</value> </data>
+  <data name='SaveToXmlList' xml:space='preserve'> <value>xml 목록에 저장</value> </data>
+  <data name='LoadFromXmlList' xml:space='preserve'> <value>xml 목록에서 불러오기</value> </data>
+  <data name='SaveToXmlTree' xml:space='preserve'> <value>xml 트리에 저장</value> </data>
+  <data name='LoadFromXmlTree' xml:space='preserve'> <value>xml 트리에서 불러오기</value> </data>
+  <data name='SaveToXmlTreeNodes' xml:space='preserve'> <value>xml 트리 노드에 저장</value> </data>
+  <data name='LoadFromXmlTreeNodes' xml:space='preserve'> <value>xml 트리 노드에서 로드</value> </data>
+  <data name='Cut' xml:space='preserve'> <value>삭감</value> </data>
+  <data name='Copy' xml:space='preserve'> <value>복사</value> </data>
+  <data name='Paste' xml:space='preserve'> <value>붙여넣기</value> </data>
+  <data name='Duplicate' xml:space='preserve'> <value>복사하다</value> </data>
+  <data name='Remove' xml:space='preserve'> <value>제거하다</value> </data>
+  <data name='Clear' xml:space='preserve'> <value>맑다</value> </data>
+  <data name='InsertAtTop' xml:space='preserve'> <value>맨 위에 삽입</value> </data>
+  <data name='Insert' xml:space='preserve'> <value>삽입하다</value> </data>
+  <data name='Ungroup' xml:space='preserve'> <value>그룹 해제</value> </data>
+  <data name='Group' xml:space='preserve'> <value>그룹</value> </data>
+  <data name='Release' xml:space='preserve'> <value>석방</value> </data>
+  <data name='Package' xml:space='preserve'> <value>패키지</value> </data>
+  <data name='BringToFront' xml:space='preserve'> <value>맨 앞으로 가져오기</value> </data>
+  <data name='SendToBack' xml:space='preserve'> <value>맨 뒤로 보내기</value> </data>
+  <data name='BringForward' xml:space='preserve'> <value>앞으로 가져오기</value> </data>
+  <data name='SendBackward' xml:space='preserve'> <value>뒤로 보내기</value> </data>
+  <data name='SelectAll' xml:space='preserve'> <value>모두 선택</value> </data>
+  <data name='DeselectAll' xml:space='preserve'> <value>모두 선택 해제</value> </data>
+  <data name='CollapseAll' xml:space='preserve'> <value>모두 축소</value> </data>
+  <data name='ExpandAll' xml:space='preserve'> <value>모두 확장</value> </data>
+  <data name='HideAll' xml:space='preserve'> <value>모두 숨기기</value> </data>
+  <data name='ShowAll' xml:space='preserve'> <value>모두 보기</value> </data>
+  <!--Separator 2-->
+  <data name='None' xml:space='preserve'> <value>없음</value> </data>
+  <data name='Undo' xml:space='preserve'> <value>취소</value> </data>
+  <data name='Redo' xml:space='preserve'> <value>다시</value> </data>
+  <!--Separator 3-->
+  <data name='LayerGroup' xml:space='preserve'> <value>도면층 그룹</value> </data>
+  <data name='LayerBitmap' xml:space='preserve'> <value>비트맵 레이어</value> </data>
+  <data name='LayerFill' xml:space='preserve'> <value>레이어 채우기</value> </data>
+  <!--Separator 4-->
+  <data name='UITreeView' xml:space='preserve'> <value>트리 뷰</value> </data>
+  <data name='UIHistory' xml:space='preserve'> <value>역사</value> </data>
+  <!--Separator 5-->
+  <data name='UICanvas' xml:space='preserve'> <value>캔버스</value> </data>
+  <data name='UIDragDrop1' xml:space='preserve'> <value>드래그 앤 드롭1</value> </data>
+  <data name='UIDragDrop2' xml:space='preserve'> <value>드래그 앤 드롭 2</value> </data>
+  <data name='UIXml0' xml:space='preserve'> <value>XML 0</value> </data>
+  <data name='UIXml1' xml:space='preserve'> <value>XML 1</value> </data>
+  <data name='UIXml2' xml:space='preserve'> <value>XML 2</value> </data>
+  <!--Separator 6-->
+  <data name='UILayers' xml:space='preserve'> <value>모든 레이어</value> </data>
+  <data name='UINodes' xml:space='preserve'> <value>모든 노드</value> </data>
+  <!--Separator 7-->
+  <data name='UIDrag' xml:space='preserve'> <value>여기로 드래그하여 목록보기에 놓습니다.</value> </data>
+  <data name='UIDrop' xml:space='preserve'> <value>목록 보기에서 제거하려면 여기에 항목을 놓습니다.</value> </data>
+  <!--Separator 8-->
+  <data name='UIMore' xml:space='preserve'> <value>더</value> </data>
+  <data name='UIBack' xml:space='preserve'> <value>뒤로</value> </data>
+  <!--Separator 9-->
+  <data name='UIGCSuccess' xml:space='preserve'> <value>가비지 수집 성공</value> </data>
+  <data name='UIDispose' xml:space='preserve'> <value>쓸모없는 레이어 {0} 처분</value> </data>
+  <data name='UIGCFailed' xml:space='preserve'> <value>가비지 수집 실패</value> </data>
+  <data name='UINotFound' xml:space='preserve'> <value>쓸모없는 레이어를 찾을 수 없습니다.</value> </data>
+  <!--Separator 10-->
+  <data name='InfoDepth' xml:space='preserve'> <value>깊이:</value> </data>
+  <data name='InfoIsExpanded' xml:space='preserve'> <value>확장됨 :</value> </data>
+  <data name='InfoIsLocked' xml:space='preserve'> <value>잠겨 있음 :</value> </data>
+  <data name='InfoIsVisible' xml:space='preserve'> <value>표시됨 :</value> </data>
+  <data name='InfoSelectMode' xml:space='preserve'> <value>선택 상태 :</value> </data>
+  <data name='InfoChildren' xml:space='preserve'> <value>자녀:</value> </data>
+  <!--Separator 11-->
+  <data name='AddLayer' xml:space='preserve'> <value>레이어 추가</value> </data>
+  <data name='AddGroup' xml:space='preserve'> <value>그룹 추가</value> </data>
+  <data name='InsertLayer' xml:space='preserve'> <value>레이어 삽입</value> </data>
+  <!--Separator 12-->
+  <data name='Language' xml:space='preserve'> <value>언어</value> </data>
+  <data name='RestartApp' xml:space='preserve'> <value>앱을 다시 시작하여 변경 내용을 확인하세요.</value> </data>
+  <data name='UseSystemSetting' xml:space='preserve'> <value>시스템 설정 사용</value> </data>
+  <!--Separator 13-->
+  <data name='ToClearAll' xml:space='preserve'> <value>모든 레이어 지우기</value> </data>
+  <data name='ToDrop' xml:space='preserve'> <value>레이어 놓기</value> </data>
+  <!--Separator 14-->
+  <data name='ToDuplicate' xml:space='preserve'> <value>레이어 복제</value> </data>
+  <data name='ToDuplicates' xml:space='preserve'> <value>일부 레이어 복제</value> </data>
+  <!--Separator 15-->
+  <data name='ToPaste' xml:space='preserve'> <value>레이어 붙여넣기</value> </data>
+  <data name='ToPastes' xml:space='preserve'> <value>일부 레이어 붙여넣기</value> </data>
+  <!--Separator 16-->
+  <data name='ToMove' xml:space='preserve'> <value>레이어 이동</value> </data>
+  <data name='ToMoves' xml:space='preserve'> <value>일부 레이어 이동</value> </data>
+  <!--Separator 17-->
+  <data name='ToRemove' xml:space='preserve'> <value>레이어 제거</value> </data>
+  <data name='ToRemoves' xml:space='preserve'> <value>일부 레이어 제거</value> </data>
+  <!--Separator 18-->
+  <data name='ToUngroup' xml:space='preserve'> <value>레이어 그룹 해제</value> </data>
+  <data name='ToUngroups' xml:space='preserve'> <value>일부 레이어 그룹 해제</value> </data>
+  <!--Separator 19-->
+  <data name='ToGroup' xml:space='preserve'> <value>레이어 그룹화</value> </data>
+  <data name='ToGroups' xml:space='preserve'> <value>일부 레이어 그룹화</value> </data>
+  <!--Separator 20-->
+  <data name='ToRelease' xml:space='preserve'> <value>레이어 풀기</value> </data>
+  <data name='ToReleases' xml:space='preserve'> <value>일부 레이어 해제</value> </data>
+  <!--Separator 21-->
+  <data name='ToPackage' xml:space='preserve'> <value>레이어 패키징</value> </data>
+  <data name='ToPackageAll' xml:space='preserve'> <value>모든 레이어 패키징</value> </data>
+  <!--Separator 22-->
+  <data name='ToUnlock' xml:space='preserve'> <value>레이어 잠금 해제</value> </data>
+  <data name='ToLock' xml:space='preserve'> <value>레이어 잠그기</value> </data>
+  <!--Separator 23-->
+  <data name='ToHide' xml:space='preserve'> <value>레이어 숨기기</value> </data>
+  <data name='ToHideAll' xml:space='preserve'> <value>모든 레이어 숨기기</value> </data>
+  <!--Separator 24-->
+  <data name='ToShow' xml:space='preserve'> <value>레이어 표시</value> </data>
+  <data name='ToShowAll' xml:space='preserve'> <value>모든 레이어 표시</value> </data>
+  <!--Separator 25-->
+  <data name='ToDeselect' xml:space='preserve'> <value>레이어 선택 해제</value> </data>
+  <data name='ToDeselects' xml:space='preserve'> <value>일부 레이어 선택 취소</value> </data>
+  <data name='ToDeselectAll' xml:space='preserve'> <value>모든 레이어 선택 해제</value> </data>
+  <!--Separator 26-->
+  <data name='ToSelect' xml:space='preserve'> <value>레이어 선택</value> </data>
+  <data name='ToSelects' xml:space='preserve'> <value>일부 레이어 선택</value> </data>
+  <data name='ToSelectAll' xml:space='preserve'> <value>모든 레이어 선택</value> </data>
+</root>

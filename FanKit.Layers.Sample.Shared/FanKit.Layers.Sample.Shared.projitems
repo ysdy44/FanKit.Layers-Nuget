@@ -20,8 +20,23 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enums\UIType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)History\ChangeGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)History\RectChanges.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Strings\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Images\avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ar\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\de\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\es\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\fr\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\it\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ja\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ko\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\nl\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\pt\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ru\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\zh-CN\Resources.resw" />
   </ItemGroup>
 </Project>
