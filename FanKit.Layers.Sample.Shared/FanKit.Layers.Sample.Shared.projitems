@@ -13,5 +13,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RedoCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\UndoCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\HistoryType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\LayerType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\OptionCatalog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\OptionType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\UIType.cs" />
   </ItemGroup>
 </Project>
