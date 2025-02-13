@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="MainPage.DragUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\CultureInfoCollection.cs" />
     <Compile Include="Strings\LanguageCommand.cs" />
   </ItemGroup>
   <ItemGroup>
