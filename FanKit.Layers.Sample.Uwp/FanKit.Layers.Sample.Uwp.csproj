@@ -119,6 +119,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Canvas\Thumbnail.cs" />
+    <Compile Include="Canvas\Transformer.cs" />
     <Compile Include="History\RectChange.cs" />
     <Compile Include="History\Undo.cs" />
     <Compile Include="Layers\ILayer.cs" />
