@@ -4,6 +4,8 @@ FanKit.Layers은 .NET UWP/WPF/WinUI/Maui를 사용한 개발을 위한 XAML 목�
 
 2D 그래픽 렌더링을 대상으로 하는 Tree View/Layers Panel/History Panel을 구축하는 데 사용되는 노드/레이어/히스토리를 포함합니다.
 
+![](ScreenShot/KO.jpg)
+
 
 ## 개발 환경
 

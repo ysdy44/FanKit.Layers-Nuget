@@ -4,6 +4,8 @@ FanKit.Layers è un'estensione della visualizzazione elenco XAML per lo sviluppo
 
 Include nodi/livelli/cronologia utilizzati per la creazione di visualizzazione ad albero/pannello livelli/pannello cronologia destinati al rendering grafico 2D.
 
+![](ScreenShot/IT.jpg)
+
 
 ## Ambiente di sviluppo
 

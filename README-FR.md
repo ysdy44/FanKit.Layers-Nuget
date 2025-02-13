@@ -4,6 +4,8 @@ FanKit.Layers est une extension de l’affichage de liste XAML pour le développ
 
 Comprend les nœuds/couches/historiques qui sont utilisés pour la construction de l’arborescence/du panneau des couches/du panneau d’historique ciblant le rendu graphique 2D.
 
+![](ScreenShot/FR.jpg)
+
 
 ## Environnement de développement
 

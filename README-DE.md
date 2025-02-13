@@ -4,6 +4,8 @@ FanKit.Layers ist eine Erweiterung der XAML-Listenansicht für die Entwicklung m
 
 Enthält Knoten/Layer/Verlauf, die zum Erstellen der Baumansicht/des Layer-Panels/des Verlaufspanels verwendet werden, die auf das Rendern von 2D-Grafiken abzielen.
 
+![](ScreenShot/DE.jpg)
+
 
 ## Entwicklungsumgebung
 
