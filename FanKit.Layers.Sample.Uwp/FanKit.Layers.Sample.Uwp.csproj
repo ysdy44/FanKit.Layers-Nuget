@@ -123,7 +123,12 @@
     <Compile Include="Canvas\Transformer.cs" />
     <Compile Include="History\RectChange.cs" />
     <Compile Include="History\Undo.cs" />
+    <Compile Include="Layers\BitmapLayer.cs" />
+    <Compile Include="Layers\FillLayer.cs" />
+    <Compile Include="Layers\GroupLayer.cs" />
     <Compile Include="Layers\ILayer.cs" />
+    <Compile Include="Layers\Layer1.cs" />
+    <Compile Include="Layers\Layer2.cs" />
     <Compile Include="MainPage.Click.cs" />
     <Compile Include="MainPage.Create.cs" />
     <Compile Include="MainPage.Canvas.cs" />
