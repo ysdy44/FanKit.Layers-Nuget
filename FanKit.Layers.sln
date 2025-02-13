@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{D346A4EC-9
 		README-ZH.md = README-ZH.md
 	EndProjectSection
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FanKit.Layers.Sample.Shared", "FanKit.Layers.Sample.Shared\FanKit.Layers.Sample.Shared.shproj", "{5A1F63F0-E34D-45FE-B2AA-6397D0DF801C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FanKit.Layers.Sample.Shared\FanKit.Layers.Sample.Shared.projitems*{5a1f63f0-e34d-45fe-b2aa-6397d0df801c}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
