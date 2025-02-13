@@ -20,6 +20,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enums\UIType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)History\ChangeGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)History\RectChanges.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.Command.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.History.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.LayerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.Layers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Strings\StringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\OptionCatalogMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\OptionStrings.cs" />
