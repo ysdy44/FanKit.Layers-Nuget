@@ -18,5 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enums\OptionCatalog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\OptionType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enums\UIType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)History\ChangeGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)History\RectChanges.cs" />
   </ItemGroup>
 </Project>
