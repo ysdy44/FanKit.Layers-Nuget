@@ -21,7 +21,7 @@ Comprend les nœuds/couches/historiques qui sont utilisés pour la construction 
 
 |Cadre|Progrès|
 |:-|:-|
-|UWP|En construction...|
+|UWP|Terminé|
 |WPF|En construction...|
 |WinUI3|En construction...|
 |Maui|En construction...|

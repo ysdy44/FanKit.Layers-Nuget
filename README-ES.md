@@ -21,7 +21,7 @@ Incluye nodos/capas/historial que se utilizan para crear una vista de árbol/pan
 
 |Marco de referencia|Progreso|
 |:-|:-|
-|UWP|En obra...|
+|UWP|Completado|
 |WPF|En obra...|
 |WinUI3|En obra...|
 |Maui|En obra...|

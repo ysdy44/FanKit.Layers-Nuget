@@ -21,7 +21,7 @@ FanKit.Layers은 .NET UWP/WPF/WinUI/Maui를 사용한 개발을 위한 XAML 목�
 
 |틀|진보|
 |:-|:-|
-|UWP|공사중...|
+|UWP|완료|
 |WPF|공사중...|
 |WinUI3|공사중...|
 |Maui|공사중...|

@@ -21,7 +21,7 @@ Include nodi/livelli/cronologia utilizzati per la creazione di visualizzazione a
 
 |Struttura|Progresso|
 |:-|:-|
-|UWP|In costruzione...|
+|UWP|Finito|
 |WPF|In costruzione...|
 |WinUI3|In costruzione...|
 |Maui|In costruzione...|

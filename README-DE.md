@@ -21,7 +21,7 @@ Enthält Knoten/Layer/Verlauf, die zum Erstellen der Baumansicht/des Layer-Panel
 
 |Fachwerk|Fortschritt|
 |:-|:-|
-|UWP|Im Bau...|
+|UWP|Abgeschlossen|
 |WPF|Im Bau...|
 |WinUI3|Im Bau...|
 |Maui|Im Bau...|
