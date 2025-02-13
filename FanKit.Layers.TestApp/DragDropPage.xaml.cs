@@ -235,12 +235,25 @@ namespace FanKit.Layers.TestApp
             {
                 this.Popup.IsOpen = false;
                 e.AcceptedOperation = DataPackageOperation.Copy;
+                e.Handled = true; // Do not raise the ListView.DragOver
             };
 
             this.DropButton.Drop += (s, e) =>
             {
-                InvalidateModes modes = this.Collection.Remove(this.DragSelection);
-                this.Invalidate(modes);
+                switch (this.DragSourceType)
+                {
+                    case DragSourceType.None:
+                        break;
+                    case DragSourceType.Others:
+                        break;
+                    case DragSourceType.UnselectedItems:
+                    case DragSourceType.SelectedItems:
+                        InvalidateModes modes = this.Collection.Remove(this.DragSelection);
+                        this.Invalidate(modes);
+                        break;
+                    default:
+                        break;
+                }
             };
 
             #endregion
