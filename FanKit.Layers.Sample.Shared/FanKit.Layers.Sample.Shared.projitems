@@ -21,6 +21,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)History\ChangeGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)History\RectChanges.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Strings\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\OptionCatalogMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\OptionStrings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\OptionTypeMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\UIStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Images\avatar.jpg" />
