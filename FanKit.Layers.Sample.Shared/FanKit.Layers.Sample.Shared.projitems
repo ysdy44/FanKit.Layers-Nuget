@@ -21,4 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)History\ChangeGroup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)History\RectChanges.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Images\avatar.jpg" />
+  </ItemGroup>
 </Project>
