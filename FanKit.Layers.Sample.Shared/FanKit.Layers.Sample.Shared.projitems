@@ -28,6 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\OptionCatalogMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\OptionStrings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\OptionTypeMenu.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Symbols.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\UIStrings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Xmls\XmlLoadExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Xmls\XmlSaveExtensions.cs" />
