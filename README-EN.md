@@ -24,7 +24,7 @@ Includes nodes/layer/history that are used for building Tree View/Layers Panel/H
 |Framework|Progress|
 |:-|:-|
 |UWP|Completed|
-|WPF|Under construction...|
+|WPF|Completed|
 |WinUI3|Under construction...|
 |Maui|Under construction...|
 

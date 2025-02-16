@@ -24,7 +24,7 @@ Include nodi/livelli/cronologia utilizzati per la creazione di visualizzazione a
 |Struttura|Progresso|
 |:-|:-|
 |UWP|Finito|
-|WPF|In costruzione...|
+|WPF|Finito|
 |WinUI3|In costruzione...|
 |Maui|In costruzione...|
 
