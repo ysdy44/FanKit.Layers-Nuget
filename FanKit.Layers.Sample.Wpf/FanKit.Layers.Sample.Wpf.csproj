@@ -77,6 +77,10 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reorders\DragItemsEventArgs.cs" />
+    <Compile Include="Reorders\ItemClickEventArgs.cs" />
+    <Compile Include="Reorders\ReorderButton.cs" />
+    <Compile Include="Reorders\ReorderScrollViewer.cs" />
     <Compile Include="Resources\ApplicationLanguages.cs" />
     <Compile Include="Resources\ResourceLoader.cs" />
     <Compile Include="Strings\CultureInfoCollection.cs" />
