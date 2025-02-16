@@ -56,6 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Canvas\CanvasControl.cs" />
+    <Compile Include="Canvas\CanvasDpi.cs" />
+    <Compile Include="Canvas\CanvasSize.cs" />
+    <Compile Include="Canvas\CanvasUnits.cs" />
+    <Compile Include="Canvas\Thumbnail.cs" />
+    <Compile Include="Canvas\Transformer.cs" />
     <Compile Include="MainPage.Canvas.cs" />
     <Compile Include="MainPage.Click.cs" />
     <Compile Include="MainPage.Create.cs" />
