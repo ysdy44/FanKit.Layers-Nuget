@@ -11,6 +11,7 @@
         Undo = 57614, // E10E
         Mail = 57625, // E119
         TwoPage = 57630, // E11E
+        Clock = 57633, // E121
         ClosePane = 57639, // E127
         Page = 57650, // E132
         ViewAll = 57656, // E138
