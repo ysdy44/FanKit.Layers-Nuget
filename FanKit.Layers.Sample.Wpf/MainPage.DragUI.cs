@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -69,10 +70,6 @@ namespace FanKit.Layers.Sample
                         CommandParameter = parameter,
                         Command = command,
                         InputGestureText = item.KeyboardAccelerators,
-                        InputBindings =
-                        {
-                            ToKey(split.Single())
-                        }
                     };
                 case 2:
                     return new MenuItem
@@ -82,11 +79,6 @@ namespace FanKit.Layers.Sample
                         CommandParameter = parameter,
                         Command = command,
                         InputGestureText = item.KeyboardAccelerators.Replace("|", ", "),
-                        InputBindings =
-                        {
-                            ToKey(split.First()),
-                            ToKey(split.Last()),
-                        }
                     };
                 default:
                     return new MenuItem
@@ -95,32 +87,6 @@ namespace FanKit.Layers.Sample
                         Header = text,
                         CommandParameter = parameter,
                         Command = command,
-                    };
-            }
-        }
-
-        private static KeyBinding ToKey(string key)
-        {
-            string[] split = key.Split('+');
-
-            switch (split.First())
-            {
-                case "Ctrl":
-                    return new KeyBinding
-                    {
-                        Modifiers = ModifierKeys.Control,
-                        Key = (Key)System.Enum.Parse(typeof(Key), split.Last())
-                    };
-                case "Shift":
-                    return new KeyBinding
-                    {
-                        Modifiers = ModifierKeys.Shift,
-                        Key = (Key)System.Enum.Parse(typeof(Key), split.Last())
-                    };
-                default:
-                    return new KeyBinding
-                    {
-                        Key = (Key)System.Enum.Parse(typeof(Key), split.Last())
                     };
             }
         }
