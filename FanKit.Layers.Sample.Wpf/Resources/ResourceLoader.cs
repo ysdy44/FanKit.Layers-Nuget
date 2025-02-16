@@ -6,6 +6,11 @@
 
         public string GetString(string resource)
         {
+            if (ApplicationLanguages.Instance.ContainsKey(resource))
+            {
+                return ApplicationLanguages.Instance[resource];
+            }
+            else
             {
                 return string.Empty;
             }

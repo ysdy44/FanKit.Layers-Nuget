@@ -74,6 +74,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\ApplicationLanguages.cs" />
     <Compile Include="Resources\ResourceLoader.cs" />
     <Compile Include="Strings\LanguageCommand.cs" />
     <Page Include="MainPage.xaml">
