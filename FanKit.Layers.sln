@@ -24,6 +24,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FanKit.Layers.Sample.Shared
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanKit.Layers.Sample.Uwp", "FanKit.Layers.Sample.Uwp\FanKit.Layers.Sample.Uwp.csproj", "{AD0E587F-DFDB-4C8B-9B8A-5186AF814DBF}"
 EndProject
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "FanKit.Layers.Sample.WinUI3 (Package)", "FanKit.Layers.Sample.WinUI3 (Package)\FanKit.Layers.Sample.WinUI3 (Package).wapproj", "{1CD2CF1E-9652-4258-8CF6-A9A771375EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanKit.Layers.Sample.WinUI3", "FanKit.Layers.Sample.WinUI3\FanKit.Layers.Sample.WinUI3.csproj", "{B449B2B3-A928-4476-8996-CBFF3487B77A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FanKit.Layers.Sample.Wpf", "FanKit.Layers.Sample.Wpf\FanKit.Layers.Sample.Wpf.csproj", "{C81CEB63-37B4-4D6A-958F-1DCF73BF1CF1}"
 EndProject
 Global
@@ -48,6 +52,16 @@ Global
 		{AD0E587F-DFDB-4C8B-9B8A-5186AF814DBF}.Release|Any CPU.ActiveCfg = Release|x64
 		{AD0E587F-DFDB-4C8B-9B8A-5186AF814DBF}.Release|Any CPU.Build.0 = Release|x64
 		{AD0E587F-DFDB-4C8B-9B8A-5186AF814DBF}.Release|Any CPU.Deploy.0 = Release|x64
+		{1CD2CF1E-9652-4258-8CF6-A9A771375EB5}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{1CD2CF1E-9652-4258-8CF6-A9A771375EB5}.Debug|Any CPU.Build.0 = Debug|x64
+		{1CD2CF1E-9652-4258-8CF6-A9A771375EB5}.Debug|Any CPU.Deploy.0 = Debug|x64
+		{1CD2CF1E-9652-4258-8CF6-A9A771375EB5}.Release|Any CPU.ActiveCfg = Release|x64
+		{1CD2CF1E-9652-4258-8CF6-A9A771375EB5}.Release|Any CPU.Build.0 = Release|x64
+		{1CD2CF1E-9652-4258-8CF6-A9A771375EB5}.Release|Any CPU.Deploy.0 = Release|x64
+		{B449B2B3-A928-4476-8996-CBFF3487B77A}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{B449B2B3-A928-4476-8996-CBFF3487B77A}.Debug|Any CPU.Build.0 = Debug|x64
+		{B449B2B3-A928-4476-8996-CBFF3487B77A}.Release|Any CPU.ActiveCfg = Release|x64
+		{B449B2B3-A928-4476-8996-CBFF3487B77A}.Release|Any CPU.Build.0 = Release|x64
 		{C81CEB63-37B4-4D6A-958F-1DCF73BF1CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C81CEB63-37B4-4D6A-958F-1DCF73BF1CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C81CEB63-37B4-4D6A-958F-1DCF73BF1CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +73,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		FanKit.Layers.Sample.Shared\FanKit.Layers.Sample.Shared.projitems*{5a1f63f0-e34d-45fe-b2aa-6397d0df801c}*SharedItemsImports = 13
 		FanKit.Layers.Sample.Shared\FanKit.Layers.Sample.Shared.projitems*{ad0e587f-dfdb-4c8b-9b8a-5186af814dbf}*SharedItemsImports = 4
+		FanKit.Layers.Sample.Shared\FanKit.Layers.Sample.Shared.projitems*{b449b2b3-a928-4476-8996-cbff3487b77a}*SharedItemsImports = 5
 		FanKit.Layers.Sample.Shared\FanKit.Layers.Sample.Shared.projitems*{c81ceb63-37b4-4d6a-958f-1dcf73bf1cf1}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
