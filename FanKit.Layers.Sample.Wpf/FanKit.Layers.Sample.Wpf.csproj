@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Resources\ApplicationLanguages.cs" />
     <Compile Include="Resources\ResourceLoader.cs" />
+    <Compile Include="Strings\CultureInfoCollection.cs" />
     <Compile Include="Strings\LanguageCommand.cs" />
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
