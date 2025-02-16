@@ -62,6 +62,9 @@
     <Compile Include="Canvas\CanvasUnits.cs" />
     <Compile Include="Canvas\Thumbnail.cs" />
     <Compile Include="Canvas\Transformer.cs" />
+    <Compile Include="InfoDialog.xaml.cs">
+      <DependentUpon>InfoDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Layers\BitmapLayer.cs" />
     <Compile Include="Layers\FillLayer.cs" />
     <Compile Include="Layers\GroupLayer.cs" />
@@ -79,6 +82,10 @@
     <Compile Include="Strings\CultureInfoCollection.cs" />
     <Compile Include="Strings\LanguageCommand.cs" />
     <Compile Include="Symbols\SymbolIcon.cs" />
+    <Page Include="InfoDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
