@@ -8,4 +8,672 @@
     mc:Ignorable="d"
     >
 
+    <FrameworkElement.Resources>
+        <!--Command-->
+        <local:RelayCommand x:Key="InfoCommand" Invoked="InfoCommand_Invoked"/>
+        <local:RelayCommand x:Key="ExpandCommand" Invoked="ExpandCommand_Invoked"/>
+        <local:RelayCommand x:Key="LockCommand" Invoked="LockCommand_Invoked"/>
+        <local:RelayCommand x:Key="VisibleCommand" Invoked="VisibleCommand_Invoked"/>
+        <local:RelayCommand x:Key="SelectCommand" Invoked="SelectCommand_Invoked"/>
+        <!--Style-->
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </FrameworkElement.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6"/>
+        </Grid.RowDefinitions>
+
+        <Menu x:Name="MenuBar" Margin="4,0" Background="White" VerticalAlignment="Center">
+            <!--Items-->
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="273"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="273"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Center-->
+            <TabControl Grid.Column="1" Background="White">
+
+                <TabItem Margin="0">
+                    <TabItem.Header>
+                        <local:UIStrings Type="UICanvas"/>
+                    </TabItem.Header>
+                    <local:CanvasControl x:Name="CanvasControl" FlowDirection="LeftToRight" Width="512" Height="512" ClearColor="#EEEEEE"/>
+                </TabItem>
+
+                <TabItem>
+                    <TabItem.Header>
+                        <local:UIStrings Type="UIDragDrop1"/>
+                    </TabItem.Header>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        <Border x:Name="DragButton" Background="DodgerBlue" MinWidth="250" Height="75">
+                            <ContentControl Margin="20,2" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <local:UIStrings Type="UIDrag"/>
+                            </ContentControl>
+                        </Border>
+
+                        <Border x:Name="DropButton" AllowDrop="True" Background="Red" MinWidth="250" Height="75">
+                            <ContentControl Margin="20,2" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <local:UIStrings Type="UIDrop"/>
+                            </ContentControl>
+                        </Border>
+
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem>
+                    <TabItem.Header>
+                        <local:UIStrings Type="UIDragDrop2"/>
+                    </TabItem.Header>
+                    <ListView 
+                        x:Name="DADListView"
+                        SelectionMode="Multiple"
+                        AllowDrop="True" 
+                        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                        >
+
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ListViewItem Height="75" Background="DodgerBlue" Padding="30,2" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <local:UIStrings Type="UIDrag"/>
+                        </ListViewItem>
+
+                        <ListViewItem Height="75" Background="Red" Padding="30,2" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <local:UIStrings Type="UIDrop"/>
+                        </ListViewItem>
+
+                    </ListView>
+                </TabItem>
+
+                <TabItem Margin="0">
+                    <TabItem.Header>
+                        <local:UIStrings Type="UIXml0"/>
+                    </TabItem.Header>
+                    <TextBlock x:Name="Xml0TextBlock" Margin="4,0">
+                        &lt;Root&gt;&lt;/Root&gt;
+                    </TextBlock>
+                </TabItem>
+
+                <TabItem Margin="0">
+                    <TabItem.Header>
+                        <local:UIStrings Type="UIXml1"/>
+                    </TabItem.Header>
+                    <TextBlock x:Name="Xml1TextBlock" Margin="4,0">
+                        &lt;Root&gt;&lt;/Root&gt;
+                    </TextBlock>
+                </TabItem>
+
+                <TabItem Margin="0">
+                    <TabItem.Header>
+                        <local:UIStrings Type="UIXml2"/>
+                    </TabItem.Header>
+                    <TextBlock x:Name="Xml2TextBlock" Margin="4,0">
+                        &lt;Root&gt;&lt;/Root&gt;
+                    </TextBlock>
+                </TabItem>
+
+                <TabItem Margin="0">
+                    <TabItem.Header>
+                        <local:UIStrings Type="UILayers"/>
+                    </TabItem.Header>
+                    <TextBlock x:Name="LayerTextBlock" Margin="4,0">
+                        &lt;Root&gt;&lt;/Root&gt;
+                    </TextBlock>
+                </TabItem>
+
+                <TabItem Margin="0">
+                    <TabItem.Header>
+                        <local:UIStrings Type="UINodes"/>
+                    </TabItem.Header>
+                    <TextBlock x:Name="NodeTextBlock" Margin="4,0">
+                        &lt;Root&gt;&lt;/Root&gt;
+                    </TextBlock>
+                </TabItem>
+
+            </TabControl>
+
+            <!--Left-->
+            <TabControl Background="#EEEEEE">
+
+                <TabItem Margin="0" >
+                    <TabItem.Header>
+                        <local:UIStrings Type="UITreeView"/>
+                    </TabItem.Header>
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="2"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>HideAll</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="HideAll"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Preview"/>
+                            </Button>
+                            <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>ShowAll</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="ShowAll"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Page"/>
+                            </Button>
+                            <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>DeselectAll</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="DeselectAll"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="ViewAll"/>
+                            </Button>
+                            <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>SelectAll</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="SelectAll"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="SelectAll"/>
+                            </Button>
+                            <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>CollapseAll</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="CollapseAll"/>
+                                </ToolTipService.ToolTip>
+                                <Viewbox Margin="8">
+                                    <local:SymbolIcon Margin="8" Symbol="HideBcc"/>
+                                </Viewbox>
+                            </Button>
+                            <Button Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>ExpandAll</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="ExpandAll"/>
+                                </ToolTipService.ToolTip>
+                                <Viewbox Margin="8">
+                                    <local:SymbolIcon Margin="8" Symbol="ShowBcc"/>
+                                </Viewbox>
+                            </Button>
+                        </Grid>
+
+                        <local:ReorderScrollViewer
+                            x:Name="LayerScrollViewer"
+                            Grid.Row="1"
+                            IsItemClickEnabled="True"
+                            ItemClick="LayerScrollViewer_ItemClick"                                
+                            AllowDrop="True"                                
+                            CanDragItems="True"
+                            >
+                            <FrameworkElement.ContextMenu>
+                                <ContextMenu x:Name="MenuFlyout">
+                                    <!--Items-->
+                                </ContextMenu>
+                            </FrameworkElement.ContextMenu>
+                            <ItemsControl x:Name="LayerItemsControl" ItemsSource="{Binding UILayers, Mode=OneTime}">
+
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel VerticalAlignment="Stretch" Background="Transparent"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+
+                                <ItemsControl.ItemContainerStyle>
+                                    <Style TargetType="ContentPresenter">
+                                        <Setter Property="Height" Value="38"/>
+                                    </Style>
+                                </ItemsControl.ItemContainerStyle>
+
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="local:ILayer">
+                                        <Border>
+                                            <Border.Background>
+                                                <SolidColorBrush Color="DodgerBlue" Opacity="{Binding SelectOpacity, Mode=OneWay}"/>
+                                            </Border.Background>
+
+                                            <Grid Margin="4,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0" MinWidth="{Binding DepthWidth, Mode=OneWay}"/>
+                                                    <ColumnDefinition Width="32"/>
+                                                    <ColumnDefinition Width="32"/>
+                                                    <ColumnDefinition Width="4"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="4"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <!--Depth-->
+                                                <Rectangle Fill="#22000000"/>
+
+                                                <local:ReorderButton
+                                                    Grid.Column="1"
+                                                    Width="32"
+                                                    Height="32"
+                                                    Padding="0"
+                                                    CommandParameter="{Binding}"
+                                                    Command="{StaticResource ExpandCommand}"
+                                                    Visibility="{Binding IsGroupVisibility, Mode=OneWay}"
+                                                    Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                    >
+                                                    <Polyline StrokeThickness="2" Stroke="Black">
+                                                        <UIElement.RenderTransformOrigin>
+                                                            0.5,0.5
+                                                        </UIElement.RenderTransformOrigin>
+                                                        <UIElement.RenderTransform>
+                                                            <RotateTransform Angle="{Binding ExpandButtonAngle, Mode=OneWay}" />
+                                                        </UIElement.RenderTransform>
+                                                        <Polyline.Points>
+                                                            0,0
+                                                            5,5
+                                                            0,10
+                                                        </Polyline.Points>
+                                                    </Polyline>
+                                                </local:ReorderButton>
+
+                                                <Rectangle
+                                                    Grid.Column="2"
+                                                    IsHitTestVisible="False"
+                                                    RadiusX="2"
+                                                    RadiusY="2"
+                                                    Width="32"
+                                                    Height="32"
+                                                    StrokeThickness="1"
+                                                    Stroke="Black"
+                                                    Fill="{Binding Thumbnail, Mode=OneWay}"
+                                                    Visibility="{Binding NotGroupVisibility, Mode=OneTime}"
+                                                    />
+
+                                                <local:SymbolIcon
+                                                    Grid.Column="2"
+                                                    IsHitTestVisible="False"
+                                                    Margin="4"
+                                                    Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                    Symbol="{Binding ChildrenSymbol, Mode=OneWay}"
+                                                    Visibility="{Binding IsGroupVisibility, Mode=OneTime}"
+                                                    />
+
+                                                <TextBlock
+                                                    Grid.Column="4"
+                                                    IsHitTestVisible="False"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Center"
+                                                    Text="{Binding Title, Mode=OneTime}"
+                                                    Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                    >
+                                                    <!--Layer-->
+                                                </TextBlock>
+
+                                                <StackPanel Grid.Column="6" Orientation="Horizontal">
+                                                    <local:ReorderButton
+                                                        Width="32"
+                                                        Height="32"
+                                                        Padding="0"
+                                                        CommandParameter="{Binding}"
+                                                        Command="{StaticResource InfoCommand}"
+                                                        Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                        >
+                                                        <local:SymbolIcon Margin="4" Symbol="Important"/>
+                                                    </local:ReorderButton>
+                                                    <local:ReorderButton
+                                                        Width="32"
+                                                        Height="32"
+                                                        Padding="0"
+                                                        CommandParameter="{Binding}"
+                                                        Command="{StaticResource LockCommand}"
+                                                        Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                        >
+                                                        <local:SymbolIcon Margin="4" Symbol="Link" Opacity="{Binding LockButtonOpacity, Mode=OneWay}"/>
+                                                    </local:ReorderButton>
+                                                    <local:ReorderButton
+                                                        Width="32"
+                                                        Height="32"
+                                                        Padding="0"
+                                                        CommandParameter="{Binding}"
+                                                        Command="{StaticResource VisibleCommand}"
+                                                        Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                        >
+                                                        <local:SymbolIcon Margin="4" Symbol="View" Opacity="{Binding VisibleButtonOpacity, Mode=OneWay}"/>
+                                                    </local:ReorderButton>
+                                                </StackPanel>
+
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+
+                            </ItemsControl>
+                        </local:ReorderScrollViewer>
+
+                        <Grid Grid.Row="2" Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Padding="0" Foreground="#E2A747" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>BringToFront</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="BringToFront"/>
+                                </ToolTipService.ToolTip>
+                                <Viewbox>
+                                    <Canvas Width="40" Height="40">
+                                        <Polygon Fill="Gray" Points="35,5 35,17 31,17 31,9 23,9 23,5"/>
+                                        <Polygon Fill="#E2A747" Points="10,10 30,10 30,30 10,30"/>
+                                        <Polygon Fill="Gray" Points="9,31 17,31 17,35 5,35 5,23 9,23"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+
+                            <Button Grid.Column="1" Grid.Row="2" Padding="0" Foreground="#E2A747" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>BringForward</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="BringForward"/>
+                                </ToolTipService.ToolTip>
+                                <Viewbox>
+                                    <Canvas Width="40" Height="40" >
+                                        <Polygon Fill="#E2A747" Points="4,14 25,14 25,35 4,35"/>
+                                        <Polygon Fill="Gray" Points="35,4 35,23 27,23 27,12 16,12 16,4"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+
+                            <Button Grid.Column="2" Grid.Row="2" Padding="0" Foreground="#E2A747" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>SendBackward</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="SendBackward"/>
+                                </ToolTipService.ToolTip>
+                                <Viewbox>
+                                    <Canvas Width="40" Height="40" >
+                                        <Polygon Fill="#E2A747" Points="13,28 24,28 24,36 5,36 5,17 13,17"/>
+                                        <Polygon Fill="Gray" Points="15,5 36,5 36,26 15,26"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+
+                            <Button Grid.Column="3" Grid.Row="2" Padding="0" Foreground="#E2A747" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>SendToBack</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="SendToBack"/>
+                                </ToolTipService.ToolTip>
+                                <Viewbox>
+                                    <Canvas Width="40" Height="40" >
+                                        <Polygon Fill="Gray" Points="24,4 36,4 36,16 24,16"/>
+                                        <Polygon Fill="#E2A747" Points="18,22 10,22 10,10 23,10 23,17 30,17 30,30 18,30"/>
+                                        <Polygon Fill="Gray" Points="5,23 17,23 17,35 5,35"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button>
+
+                            <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding UndoCommand, Mode=OneTime}">
+                                <ToolTipService.ToolTip>
+                                    <local:UIStrings Type="Undo"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Undo"/>
+                            </Button>
+                            <Button Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding RedoCommand, Mode=OneTime}">
+                                <ToolTipService.ToolTip>
+                                    <local:UIStrings Type="Redo"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Redo"/>
+                            </Button>
+                        </Grid>
+
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+
+            <!--Right-->
+            <TabControl Grid.Column="2" Background="White">
+
+                <TabItem Margin="0">
+                    <TabItem.Header>
+                        <local:UIStrings Type="UIHistory"/>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="2"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Cut</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Cut"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Cut"/>
+                            </Button>
+                            <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Copy</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Copy"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Copy"/>
+                            </Button>
+                            <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Paste</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Paste"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Paste"/>
+                            </Button>
+                            <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Duplicate</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Duplicate"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="TwoPage"/>
+                            </Button>
+                            <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Remove</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Remove"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Delete"/>
+                            </Button>
+                            <Button Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Clear</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Clear"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Clear"/>
+                            </Button>
+                        </Grid>
+
+                        <ScrollViewer x:Name="HistoryScrollViewer" Grid.Row="1">
+                            <ItemsControl
+                                x:Name="HistoryListView"
+                                ItemsSource="{Binding UIHistory, Mode=OneTime}"
+                                MouseDown="HistoryListView_MouseDown"
+                                ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                >
+
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel VerticalAlignment="Top"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+
+                                <ItemsControl.ItemContainerStyle>
+                                    <Style TargetType="ContentPresenter">
+                                        <Setter Property="Height" Value="38"/>
+                                    </Style>
+                                </ItemsControl.ItemContainerStyle>
+
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="sample:Undo">
+                                        <Grid>
+                                            <Grid.Background>
+                                                <SolidColorBrush Color="DodgerBlue" Opacity="{Binding SelectOpacity, Mode=OneWay}" />
+                                            </Grid.Background>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <local:SymbolIcon
+                                                Symbol="Clock"
+                                                Margin="8"
+                                                Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                Opacity="{Binding DeprecatedOpacity, Mode=OneWay}"
+                                                />
+
+                                            <TextBlock
+                                                Grid.Column="1"
+                                                VerticalAlignment="Center"
+                                                Text="{Binding Description, Mode=OneTime}"
+                                                Opacity="{Binding DeprecatedOpacity, Mode=OneWay}"
+                                                Foreground="{Binding SelectBrush, Mode=OneWay}"
+                                                />
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+
+                            </ItemsControl>
+                        </ScrollViewer>
+
+                        <Grid Grid.Row="2" Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>InsertAtTop</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="InsertAtTop"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="ImportAll"/>
+                            </Button>
+                            <Button Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Insert</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Insert"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Import"/>
+                            </Button>
+                            <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Ungroup</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Ungroup"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="FullScreen"/>
+                            </Button>
+                            <Button Grid.Column="3" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Group</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Group"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="BackToWindow"/>
+                            </Button>
+                            <Button Grid.Column="4" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Release</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Release"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Read"/>
+                            </Button>
+                            <Button Grid.Column="5" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding Command, Mode=OneTime}">
+                                <ButtonBase.CommandParameter>
+                                    <local:OptionType>Package</local:OptionType>
+                                </ButtonBase.CommandParameter>
+                                <ToolTipService.ToolTip>
+                                    <local:OptionStrings Type="Package"/>
+                                </ToolTipService.ToolTip>
+                                <local:SymbolIcon Margin="8" Symbol="Mail"/>
+                            </Button>
+                        </Grid>
+
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+
+        </Grid>
+    </Grid>
 </Page>
