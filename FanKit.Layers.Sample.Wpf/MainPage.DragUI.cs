@@ -90,5 +90,54 @@ namespace FanKit.Layers.Sample
                     };
             }
         }
+
+        private IEnumerable<InputBinding> ToInputBindings(OptionTypeMenu item)
+        {
+            if (item == null)
+                yield break;
+
+            object parameter = (item.IsUndo || item.IsRedo) ? null : (object)item.Type;
+            ICommand command = item.IsUndo ? this.UndoCommand : item.IsRedo ? this.RedoCommand : this.Command;
+
+            if (item.KeyboardAccelerators == null)
+                yield break;
+
+            string[] split = item.KeyboardAccelerators.Split('|');
+            switch (split.Length)
+            {
+                case 1:
+                    KeyboardAccelerator accelerator = new KeyboardAccelerator(split.Single());
+
+                    yield return new KeyBinding
+                    {
+                        Command = command,
+                        CommandParameter = parameter,
+                        Modifiers = accelerator.Modifiers,
+                        Key = accelerator.Key
+                    };
+                    break;
+                case 2:
+                    KeyboardAccelerator accelerator0 = new KeyboardAccelerator(split.First());
+                    yield return new KeyBinding
+                    {
+                        Command = command,
+                        CommandParameter = parameter,
+                        Modifiers = accelerator0.Modifiers,
+                        Key = accelerator0.Key
+                    };
+
+                    KeyboardAccelerator accelerator1 = new KeyboardAccelerator(split.Last());
+                    yield return new KeyBinding
+                    {
+                        Command = command,
+                        CommandParameter = parameter,
+                        Modifiers = accelerator1.Modifiers,
+                        Key = accelerator1.Key
+                    };
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

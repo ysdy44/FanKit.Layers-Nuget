@@ -91,6 +91,10 @@ namespace FanKit.Layers.Sample
                 foreach (OptionTypeMenu item in catalog.Items)
                 {
                     bar.Items.Add(this.ToMenu(item));
+                    foreach (InputBinding inputBinding in this.ToInputBindings(item))
+                    {
+                        base.InputBindings.Add(inputBinding);
+                    }
                 }
 
                 this.MenuBar.Items.Add(bar);
