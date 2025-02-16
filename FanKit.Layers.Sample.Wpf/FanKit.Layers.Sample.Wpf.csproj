@@ -62,6 +62,11 @@
     <Compile Include="Canvas\CanvasUnits.cs" />
     <Compile Include="Canvas\Thumbnail.cs" />
     <Compile Include="Canvas\Transformer.cs" />
+    <Compile Include="Layers\BitmapLayer.cs" />
+    <Compile Include="Layers\FillLayer.cs" />
+    <Compile Include="Layers\GroupLayer.cs" />
+    <Compile Include="Layers\Layer1.cs" />
+    <Compile Include="Layers\Layer2.cs" />
     <Compile Include="MainPage.Canvas.cs" />
     <Compile Include="MainPage.Click.cs" />
     <Compile Include="MainPage.Create.cs" />
