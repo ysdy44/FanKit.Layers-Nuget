@@ -78,6 +78,7 @@
     <Compile Include="Resources\ResourceLoader.cs" />
     <Compile Include="Strings\CultureInfoCollection.cs" />
     <Compile Include="Strings\LanguageCommand.cs" />
+    <Compile Include="Symbols\SymbolIcon.cs" />
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
