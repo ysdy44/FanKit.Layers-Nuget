@@ -30,6 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="InfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
