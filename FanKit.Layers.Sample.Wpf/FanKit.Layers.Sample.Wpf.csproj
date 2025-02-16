@@ -65,6 +65,7 @@
     <Compile Include="InfoDialog.xaml.cs">
       <DependentUpon>InfoDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Keyboards\KeyboardAccelerator.cs" />
     <Compile Include="Layers\BitmapLayer.cs" />
     <Compile Include="Layers\FillLayer.cs" />
     <Compile Include="Layers\GroupLayer.cs" />
