@@ -6,14 +6,73 @@ using System.Windows.Input;
 
 namespace FanKit.Layers.Sample
 {
-    public class LanguageCommand : ICommand
+    public class LanguageCommand : CultureInfoCollection, ICommand
     {
         public event EventHandler CanExecuteChanged;
 
-        public bool CanExecute(object parameter) => true;
+        public XamlRoot XamlRoot { get; set; }
 
-        public void Execute(object parameter)
+        public bool CanExecute(object parameter) => true;
+        public async void Execute(object parameter)
         {
+            string language = $"{parameter}";
+
+            if (string.IsNullOrEmpty(language))
+            {
+                SetLanguageEmpty();
+
+                await new ContentDialog
+                {
+                    XamlRoot = this.XamlRoot,
+                    CloseButtonText = UIType.UIBack.GetString(),
+                    Title = UIType.RestartApp.GetString(),
+                    Content = UIType.UseSystemSetting.GetString()
+                }.ShowAsync();
+            }
+            else
+            {
+                SetLanguage(language);
+
+                await new ContentDialog
+                {
+                    XamlRoot = this.XamlRoot,
+                    CloseButtonText = UIType.UIBack.GetString(),
+                    Title = UIType.RestartApp.GetString(),
+                    Content = new CultureInfo(language).NativeName
+                }.ShowAsync();
+            }
+
+            await Windows.ApplicationModel.Core.CoreApplication.RequestRestartAsync(string.Empty);
+        }
+
+        public MenuBarItem ToMenuBarItem()
+        {
+            MenuBarItem bar = new MenuBarItem
+            {
+                Title = UIType.Language.GetString(),
+                Items =
+                {
+                    new MenuFlyoutItem
+                    {
+                        Text = UIType.UseSystemSetting.GetString(),
+                        CommandParameter = string.Empty,
+                        Command = this
+                    },
+                    new MenuFlyoutSeparator(),
+                }
+            };
+
+            foreach (CultureInfo item in this)
+            {
+                bar.Items.Add(new MenuFlyoutItem
+                {
+                    Text = item.NativeName,
+                    CommandParameter = item.Name,
+                    Command = this
+                });
+            }
+
+            return bar;
         }
     }
 }
