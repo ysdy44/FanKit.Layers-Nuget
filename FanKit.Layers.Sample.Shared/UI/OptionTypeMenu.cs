@@ -5,7 +5,7 @@
         public bool IsUndo { get; set; }
         public bool IsRedo { get; set; }
 
-        public string Symbol { get; set; }
+        public Symbols? Symbol { get; set; }
         public OptionType Type { get; set; }
         public string KeyboardAccelerators { get; set; }
     }

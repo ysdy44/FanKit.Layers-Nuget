@@ -59,10 +59,10 @@ namespace FanKit.Layers.Sample
             string text = item.IsUndo ? UIType.Undo.GetString() : item.IsRedo ? UIType.Redo.GetString() : item.Type.GetString();
             object parameter = (item.IsUndo || item.IsRedo) ? null : (object)item.Type;
             ICommand command = item.IsUndo ? this.UndoCommand : item.IsRedo ? this.RedoCommand : this.Command;
-            SymbolIcon icon = string.IsNullOrEmpty(item.Symbol) ? null : new SymbolIcon
+            SymbolIcon icon = item.Symbol.HasValue ? new SymbolIcon
             {
-                Symbol = (Symbol)System.Enum.Parse(typeof(Symbol), item.Symbol)
-            };
+                Symbol = (Symbol)System.Enum.Parse(typeof(Symbol), item.Symbol.Value.ToString())
+            } : null;
 
             if (item.KeyboardAccelerators == null)
             {

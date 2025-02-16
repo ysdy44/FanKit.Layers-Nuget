@@ -69,21 +69,21 @@ namespace FanKit.Layers.Sample
 
         private readonly OptionTypeMenu[] Menus = new OptionTypeMenu[]
         {
-            new OptionTypeMenu { Symbol = "Cut", Type = OptionType.Cut, },
-            new OptionTypeMenu { Symbol = "Copy", Type = OptionType.Copy, },
-            new OptionTypeMenu { Symbol = "Paste", Type = OptionType.Paste, },
+            new OptionTypeMenu { Symbol = Symbols.Cut, Type = OptionType.Cut, },
+            new OptionTypeMenu { Symbol = Symbols.Copy, Type = OptionType.Copy, },
+            new OptionTypeMenu { Symbol = Symbols.Paste, Type = OptionType.Paste, },
             null,
-            new OptionTypeMenu { Symbol = "TwoPage", Type = OptionType.Duplicate, },
-            new OptionTypeMenu { Symbol = "Delete", Type = OptionType.Remove, },
+            new OptionTypeMenu { Symbol = Symbols.TwoPage, Type = OptionType.Duplicate, },
+            new OptionTypeMenu { Symbol = Symbols.Delete, Type = OptionType.Remove, },
             null,
-            new OptionTypeMenu { Symbol = "ImportAll", Type = OptionType.InsertAtTop, },
-            new OptionTypeMenu { Symbol = "Import", Type = OptionType.Insert,  },
+            new OptionTypeMenu { Symbol = Symbols.ImportAll, Type = OptionType.InsertAtTop, },
+            new OptionTypeMenu { Symbol = Symbols.Import, Type = OptionType.Insert,  },
             null,
-            new OptionTypeMenu { Symbol = "BackToWindow", Type = OptionType.Group, },
-            new OptionTypeMenu { Symbol = "FullScreen", Type = OptionType.Ungroup, },
+            new OptionTypeMenu { Symbol = Symbols.BackToWindow, Type = OptionType.Group, },
+            new OptionTypeMenu { Symbol = Symbols.FullScreen, Type = OptionType.Ungroup, },
             null,
-            new OptionTypeMenu { Symbol = "ClosePane", Type = OptionType.Release, },
-            new OptionTypeMenu { Symbol = "NewWindow", Type = OptionType.Package, },
+            new OptionTypeMenu { Symbol = Symbols.ClosePane, Type = OptionType.Release, },
+            new OptionTypeMenu { Symbol = Symbols.NewWindow, Type = OptionType.Package, },
         };
 
         private readonly OptionCatalogMenu[] CatalogMenus = new OptionCatalogMenu[]
@@ -93,22 +93,22 @@ namespace FanKit.Layers.Sample
                 Catalog = OptionCatalog.File,
                 Items =
                 {
-                    new OptionTypeMenu { Symbol = "Refresh", Type = OptionType.NewByList, },
-                    new OptionTypeMenu { Symbol = "Refresh", Type = OptionType.NewByTree, },
+                    new OptionTypeMenu { Symbol = Symbols.Refresh, Type = OptionType.NewByList, },
+                    new OptionTypeMenu { Symbol = Symbols.Refresh, Type = OptionType.NewByTree, },
                     null,
-                    new OptionTypeMenu { Symbol = "Refresh", Type = OptionType.NewByCustomList, },
-                    new OptionTypeMenu { Symbol = "Refresh", Type = OptionType.NewByCustomTree, },
+                    new OptionTypeMenu { Symbol = Symbols.Refresh, Type = OptionType.NewByCustomList, },
+                    new OptionTypeMenu { Symbol = Symbols.Refresh, Type = OptionType.NewByCustomTree, },
                     null,
-                    new OptionTypeMenu { Symbol = "Save", Type = OptionType.SaveToXmlList, },
-                    new OptionTypeMenu { Symbol = "OpenFile", Type = OptionType.LoadFromXmlList, },
+                    new OptionTypeMenu { Symbol = Symbols.Save, Type = OptionType.SaveToXmlList, },
+                    new OptionTypeMenu { Symbol = Symbols.OpenFile, Type = OptionType.LoadFromXmlList, },
                     null,
-                    new OptionTypeMenu { Symbol = "Save", Type = OptionType.SaveToXmlTree, },
-                    new OptionTypeMenu { Symbol = "OpenFile", Type = OptionType.LoadFromXmlTree, },
+                    new OptionTypeMenu { Symbol = Symbols.Save, Type = OptionType.SaveToXmlTree, },
+                    new OptionTypeMenu { Symbol = Symbols.OpenFile, Type = OptionType.LoadFromXmlTree, },
                     null,
-                    new OptionTypeMenu { Symbol = "Save", Type = OptionType.SaveToXmlTreeNodes, },
-                    new OptionTypeMenu { Symbol = "OpenFile", Type = OptionType.LoadFromXmlTreeNodes, },
+                    new OptionTypeMenu { Symbol = Symbols.Save, Type = OptionType.SaveToXmlTreeNodes, },
+                    new OptionTypeMenu { Symbol = Symbols.OpenFile, Type = OptionType.LoadFromXmlTreeNodes, },
                     null,
-                    new OptionTypeMenu { Symbol = "Clear", Type = OptionType.GC, },
+                    new OptionTypeMenu { Symbol = Symbols.Clear, Type = OptionType.GC, },
                 }
             },
             new OptionCatalogMenu
@@ -116,15 +116,15 @@ namespace FanKit.Layers.Sample
                 Catalog = OptionCatalog.Edit,
                 Items =
                 {
-                    new OptionTypeMenu { Symbol = "Undo", IsUndo = true, KeyboardAccelerators = "Ctrl+Z", },
-                    new OptionTypeMenu { Symbol = "Redo", IsRedo = true, KeyboardAccelerators = "Ctrl+Y", },
+                    new OptionTypeMenu { Symbol = Symbols.Undo, IsUndo = true, KeyboardAccelerators = "Ctrl+Z", },
+                    new OptionTypeMenu { Symbol = Symbols.Redo, IsRedo = true, KeyboardAccelerators = "Ctrl+Y", },
                     null,
-                    new OptionTypeMenu { Symbol = "Cut", Type = OptionType.Cut, KeyboardAccelerators = "Ctrl+X", },
-                    new OptionTypeMenu { Symbol = "Copy", Type = OptionType.Copy, KeyboardAccelerators = "Ctrl+C", },
-                    new OptionTypeMenu { Symbol = "Paste", Type = OptionType.Paste, KeyboardAccelerators = "Ctrl+V", },
-                    new OptionTypeMenu { Symbol = "TwoPage", Type = OptionType.Duplicate, KeyboardAccelerators = "Ctrl+D", },
-                    new OptionTypeMenu { Symbol = "Delete", Type = OptionType.Remove, KeyboardAccelerators = "Delete|Back", },
-                    new OptionTypeMenu { Symbol = "Clear", Type = OptionType.Clear, },
+                    new OptionTypeMenu { Symbol = Symbols.Cut, Type = OptionType.Cut, KeyboardAccelerators = "Ctrl+X", },
+                    new OptionTypeMenu { Symbol = Symbols.Copy, Type = OptionType.Copy, KeyboardAccelerators = "Ctrl+C", },
+                    new OptionTypeMenu { Symbol = Symbols.Paste, Type = OptionType.Paste, KeyboardAccelerators = "Ctrl+V", },
+                    new OptionTypeMenu { Symbol = Symbols.TwoPage, Type = OptionType.Duplicate, KeyboardAccelerators = "Ctrl+D", },
+                    new OptionTypeMenu { Symbol = Symbols.Delete, Type = OptionType.Remove, KeyboardAccelerators = "Delete|Back", },
+                    new OptionTypeMenu { Symbol = Symbols.Clear, Type = OptionType.Clear, },
                 }
             },
             new OptionCatalogMenu
@@ -132,14 +132,14 @@ namespace FanKit.Layers.Sample
                 Catalog = OptionCatalog.Layer,
                 Items =
                 {
-                    new OptionTypeMenu { Symbol = "ImportAll", Type = OptionType.InsertAtTop, KeyboardAccelerators = "Add", },
-                    new OptionTypeMenu { Symbol = "Import", Type = OptionType.Insert, KeyboardAccelerators = "Insert", },
+                    new OptionTypeMenu { Symbol = Symbols.ImportAll, Type = OptionType.InsertAtTop, KeyboardAccelerators = "Add", },
+                    new OptionTypeMenu { Symbol = Symbols.Import, Type = OptionType.Insert, KeyboardAccelerators = "Insert", },
                     null,
-                    new OptionTypeMenu { Symbol = "BackToWindow", Type = OptionType.Group, KeyboardAccelerators = "Ctrl+G", },
-                    new OptionTypeMenu { Symbol = "FullScreen", Type = OptionType.Ungroup, KeyboardAccelerators = "Shift+G", },
+                    new OptionTypeMenu { Symbol = Symbols.BackToWindow, Type = OptionType.Group, KeyboardAccelerators = "Ctrl+G", },
+                    new OptionTypeMenu { Symbol = Symbols.FullScreen, Type = OptionType.Ungroup, KeyboardAccelerators = "Shift+G", },
                     null,
-                    new OptionTypeMenu { Symbol = "ClosePane", Type = OptionType.Release, },
-                    new OptionTypeMenu { Symbol = "NewWindow", Type = OptionType.Package, },
+                    new OptionTypeMenu { Symbol = Symbols.ClosePane, Type = OptionType.Release, },
+                    new OptionTypeMenu { Symbol = Symbols.NewWindow, Type = OptionType.Package, },
                 }
             },
             new OptionCatalogMenu
@@ -160,14 +160,14 @@ namespace FanKit.Layers.Sample
                 Catalog = OptionCatalog.View,
                 Items =
                 {
-                    new OptionTypeMenu { Symbol = "Preview", Type = OptionType.HideAll, },
-                    new OptionTypeMenu { Symbol = "Page", Type = OptionType.ShowAll, },
+                    new OptionTypeMenu { Symbol = Symbols.Preview, Type = OptionType.HideAll, },
+                    new OptionTypeMenu { Symbol = Symbols.Page, Type = OptionType.ShowAll, },
                     null,
-                    new OptionTypeMenu { Symbol = "ViewAll", Type = OptionType.DeselectAll, },
-                    new OptionTypeMenu { Symbol = "SelectAll", Type = OptionType.SelectAll, },
+                    new OptionTypeMenu { Symbol = Symbols.ViewAll, Type = OptionType.DeselectAll, },
+                    new OptionTypeMenu { Symbol = Symbols.SelectAll, Type = OptionType.SelectAll, },
                     null,
-                    new OptionTypeMenu { Symbol = "HideBcc", Type = OptionType.CollapseAll, },
-                    new OptionTypeMenu { Symbol = "ShowBcc", Type = OptionType.ExpandAll, },
+                    new OptionTypeMenu { Symbol = Symbols.HideBcc, Type = OptionType.CollapseAll, },
+                    new OptionTypeMenu { Symbol = Symbols.ShowBcc, Type = OptionType.ExpandAll, },
                 }
             },
         };
