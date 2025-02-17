@@ -267,7 +267,8 @@ namespace FanKit.Layers.Sample
                 {
                     if (element.DataContext is ILayer item)
                     {
-                        this.Invalidate(this.Click(ClickOptions.SelectOnly, item));
+                        if (item.SelectMode is SelectMode.Deselected)
+                            this.Invalidate(this.Click(ClickOptions.SelectOnly, item));
                         this.MenuFlyout.ShowAt(this, e.GetPosition(this));
                     }
                 }
