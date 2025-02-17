@@ -10,8 +10,6 @@ namespace FanKit.Layers.Sample
     {
         public event EventHandler CanExecuteChanged;
 
-        public XamlRoot XamlRoot { get; set; }
-
         public bool CanExecute(object parameter) => true;
         public async void Execute(object parameter)
         {
@@ -42,7 +40,7 @@ namespace FanKit.Layers.Sample
                 }.ShowAsync();
             }
 
-            await Windows.ApplicationModel.Core.CoreApplication.RequestRestartAsync(string.Empty);
+            Microsoft.Windows.AppLifecycle.AppInstance.Restart(string.Empty);
         }
 
         public MenuBarItem ToMenuBarItem()
