@@ -41,6 +41,22 @@ namespace FanKit.Layers
                     {
                         ChildrenAdd(itemFirst, itemLast);
                         ChildrenClear(itemLast);
+
+                        //switch (itemFirst.SelectMode)
+                        //{
+                        //    case SelectMode.Deselected:
+                        //        itemLast.ParentDeselect();
+                        //        break;
+                        //    case SelectMode.Selected:
+                        //        itemLast.ParentSelect();
+                        //        break;
+                        //    case SelectMode.Parent:
+                        //        itemFirst.SelectMode = SelectMode.Deselected;
+                        //        itemLast.ParentDeselect();
+                        //        break;
+                        //    default:
+                        //        break;
+                        //}
                     }
                     else
                     {
@@ -48,7 +64,7 @@ namespace FanKit.Layers
                         ChildrenClear(itemLast);
 
                         //itemFirst.ParentDeselect();
-                        //itemLast.ParentIsSelected(itemFirst.SelectMode.IsSelected());
+                        //itemLast.ParentDeselect();
                     }
                     break;
                 default:
@@ -56,7 +72,7 @@ namespace FanKit.Layers
 
                     ChildrenClear(this.LogicalTree.Last());
 
-                    //this.LogicalTree.ResetIsParentSelected(this.LogicalTree.First());
+                    //this.LogicalTree.AssignParentSelect(this.LogicalTree.First());
                     break;
             }
         }
