@@ -20,6 +20,63 @@ namespace FanKit.Layers
             }
         }
 
+        internal void AssignChild(int length)
+        {
+            switch (length)
+            {
+                case 0:
+                    break;
+                case 1:
+                    T itemSingle = this.LogicalTree[0];
+
+                    ChildrenClear(itemSingle);
+
+                    //itemSingle.ParentDeselect();
+                    break;
+                case 2:
+                    T itemFirst = this.LogicalTree[0];
+                    T itemLast = this.LogicalTree[1];
+
+                    if (itemFirst.Depth < itemLast.Depth)
+                    {
+                        ChildrenAdd(itemFirst, itemLast);
+                        ChildrenClear(itemLast);
+
+                        //switch (itemFirst.SelectMode)
+                        //{
+                        //    case SelectMode.Deselected:
+                        //        itemLast.ParentDeselect();
+                        //        break;
+                        //    case SelectMode.Selected:
+                        //        itemLast.ParentSelect();
+                        //        break;
+                        //    case SelectMode.Parent:
+                        //        itemFirst.SelectMode = SelectMode.Deselected;
+                        //        itemLast.ParentDeselect();
+                        //        break;
+                        //    default:
+                        //        break;
+                        //}
+                    }
+                    else
+                    {
+                        ChildrenClear(itemFirst);
+                        ChildrenClear(itemLast);
+
+                        //itemFirst.ParentDeselect();
+                        //itemLast.ParentDeselect();
+                    }
+                    break;
+                default:
+                    this.ChildrenReset(length);
+
+                    ChildrenClear(this.LogicalTree[length - 1]);
+
+                    //this.LogicalTree.AssignParentSelect(this.LogicalTree.First());
+                    break;
+            }
+        }
+
         internal void AssignChild()
         {
             switch (this.LogicalTree.Count)
@@ -170,6 +227,63 @@ namespace FanKit.Layers
 
                     itemFirst.OnChildrenCountChanged();
                     break;
+            }
+        }
+
+        private void ChildrenReset(int length)
+        {
+            for (int i = 0; i < length - 1; i++)
+            {
+                T item = this.LogicalTree[i];
+
+                int count = item.Children.Count;
+                item.Children.Clear();
+
+                switch (item.Depth)
+                {
+                    case 0:
+                        for (int j = i + 1; j < length; j++)
+                        {
+                            T jtem = this.LogicalTree[j];
+
+                            if (jtem.Depth == 1)
+                            {
+                                item.Children.Add(jtem);
+                            }
+                            else if (jtem.Depth == 0)
+                            {
+                                break;
+                            }
+                        }
+
+                        if (count == item.Children.Count)
+                            break;
+
+                        item.OnChildrenCountChanged();
+                        break;
+                    default:
+                        int depth = item.Depth + 1;
+
+                        for (int j = i + 1; j < length; j++)
+                        {
+                            T jtem = this.LogicalTree[j];
+
+                            if (jtem.Depth == depth)
+                            {
+                                item.Children.Add(jtem);
+                            }
+                            else if (jtem.Depth < depth)
+                            {
+                                break;
+                            }
+                        }
+
+                        if (count == item.Children.Count)
+                            break;
+
+                        item.OnChildrenCountChanged();
+                        break;
+                }
             }
         }
 

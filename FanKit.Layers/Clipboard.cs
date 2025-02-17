@@ -86,6 +86,7 @@ namespace FanKit.Layers
         {
             foreach (T item in this.Clipbrd)
             {
+                item.Children.Clear();
                 item.Dispose();
             }
             this.Clipbrd.Clear();
@@ -103,10 +104,14 @@ namespace FanKit.Layers
                         relate = new Relation(item);
 
                         T parent = item.Clone(0);
+                        parent.SelectMode = SelectMode.Deselected;
+                        parent.Children.Clear();
                         this.Clipbrd.Add(parent);
                         break;
                     case Relp.Child:
                         T child = item.Clone(item.Depth - relate.Depth);
+                        child.SelectMode = SelectMode.Deselected;
+                        child.Children.Clear();
                         this.Clipbrd.Add(child);
                         break;
                     default:
@@ -130,13 +135,16 @@ namespace FanKit.Layers
                             T item = this.Clipbrd[i];
                             T add = item.Clone(item.Depth + depth);
 
+                            add.SelectMode = add.Depth == 0 ? SelectMode.Selected : SelectMode.Parent;
+                            //add.Children.Clear();
+
                             this.LogicalTree.Insert(i, add);
                             this.Pool.Add(add.Id, add);
                         }
 
                         this.Collection.ApplySelects(selects);
-                        if (inserter.HasSelected)
-                            this.Collection.AssignAll();
+                        //if (inserter.HasSelected)
+                        this.Collection.AssignChild(count);
                         this.Collection.SyncToVisualTree();
                     }
                     return InvalidateModes.Sort;
@@ -149,6 +157,9 @@ namespace FanKit.Layers
                         {
                             T item = this.Clipbrd[i];
                             T add = item.Clone(item.Depth + depth);
+
+                            add.SelectMode = SelectMode.Selected;
+                            //add.Children.Clear();
 
                             this.LogicalTree.Insert(index + i, add);
                             this.Pool.Add(add.Id, add);
