@@ -102,10 +102,12 @@ namespace FanKit.Layers
                     case Relp.Parent:
                         relate = new Relation(item);
 
-                        this.Clipbrd.Add(item.Clone(0));
+                        T parent = item.Clone(0);
+                        this.Clipbrd.Add(parent);
                         break;
                     case Relp.Child:
-                        this.Clipbrd.Add(item.Clone(item.Depth - relate.Depth));
+                        T child = item.Clone(item.Depth - relate.Depth);
+                        this.Clipbrd.Add(child);
                         break;
                     default:
                         break;
@@ -122,7 +124,8 @@ namespace FanKit.Layers
                     {
                         int depth = inserter.Depth;
 
-                        for (int i = 0; i < this.Clipbrd.Count; i++)
+                        int count = this.Clipbrd.Count;
+                        for (int i = 0; i < count; i++)
                         {
                             T item = this.Clipbrd[i];
                             T add = item.Clone(item.Depth + depth);
