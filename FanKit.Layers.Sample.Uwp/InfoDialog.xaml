@@ -60,7 +60,7 @@
                         IsHitTestVisible="False"
                         Margin="6,0"
                         VerticalAlignment="Center"
-                        Text="{x:Bind Type, Mode=OneTime}"
+                        Text="{x:Bind Title, Mode=OneTime}"
                         >
                         <!--Layer-->
                     </TextBlock>
