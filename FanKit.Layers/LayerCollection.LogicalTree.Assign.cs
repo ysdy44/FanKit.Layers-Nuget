@@ -38,14 +38,18 @@ namespace FanKit.Layers
                     T itemLast = this.LogicalTree.Last();
 
                     if (itemFirst.Depth < itemLast.Depth)
+                    {
                         ChildrenAdd(itemFirst, itemLast);
+                        ChildrenClear(itemLast);
+                    }
                     else
+                    {
                         ChildrenClear(itemFirst);
+                        ChildrenClear(itemLast);
 
-                    ChildrenClear(itemLast);
-
-                    //itemFirst.ParentDeselect();
-                    //itemLast.ParentIsSelected(itemFirst.SelectMode.IsSelected());
+                        //itemFirst.ParentDeselect();
+                        //itemLast.ParentIsSelected(itemFirst.SelectMode.IsSelected());
+                    }
                     break;
                 default:
                     this.ChildrenReset();
