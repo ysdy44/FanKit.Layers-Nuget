@@ -68,7 +68,11 @@ namespace FanKit.Layers
                     }
                     break;
                 default:
-                    this.ChildrenReset(length);
+                    for (int i = 0; i < length - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        this.ChildrenReset(i, item, length);
+                    }
 
                     ChildrenClear(this.LogicalTree[length - 1]);
 
@@ -125,7 +129,11 @@ namespace FanKit.Layers
                     }
                     break;
                 default:
-                    this.ChildrenReset();
+                    for (int i = 0; i < this.LogicalTree.Count - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        this.ChildrenReset(i, item);
+                    }
 
                     ChildrenClear(this.LogicalTree.Last());
 
@@ -182,7 +190,11 @@ namespace FanKit.Layers
                     }
                     break;
                 default:
-                    this.ChildrenReset();
+                    for (int i = 0; i < this.LogicalTree.Count - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        this.ChildrenReset(i, item);
+                    }
 
                     ChildrenClear(this.LogicalTree.Last());
 
@@ -230,12 +242,9 @@ namespace FanKit.Layers
             }
         }
 
-        private void ChildrenReset(int length)
+        private void ChildrenReset(int i, T item, int length)
         {
-            for (int i = 0; i < length - 1; i++)
             {
-                T item = this.LogicalTree[i];
-
                 int count = item.Children.Count;
                 item.Children.Clear();
 
@@ -285,12 +294,9 @@ namespace FanKit.Layers
             }
         }
 
-        private void ChildrenReset()
+        private void ChildrenReset(int i, T item)
         {
-            for (int i = 0; i < this.LogicalTree.Count - 1; i++)
             {
-                T item = this.LogicalTree[i];
-
                 int count = item.Children.Count;
                 item.Children.Clear();
 
