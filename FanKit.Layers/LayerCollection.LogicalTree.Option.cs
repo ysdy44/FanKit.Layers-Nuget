@@ -212,11 +212,16 @@ namespace FanKit.Layers
 
             this.LogicalTree.Insert(index, newItem);
 
+            newItem.Children.Clear();
+            newItem.Children.Add(item);
+
+            newItem.OnChildrenCountChanged();
+
             this.VisualTree[vi] = newItem;
 
             this.ApplyDepth(depth);
             this.ApplySelect(select);
-            this.AssignChild();
+            this.AssignAll(index, newItem);
             return InvalidateModes.Sort;
         }
 
