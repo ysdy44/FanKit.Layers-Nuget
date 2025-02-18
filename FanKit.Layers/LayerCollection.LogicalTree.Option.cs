@@ -401,11 +401,11 @@ namespace FanKit.Layers
         {
             this.VisualTree.Clear();
 
-            foreach (T item in this.LogicalTree)
-            {
-                item.SelectMode = SelectMode.Parent;
-                item.Depth++;
-            }
+            //foreach (T item in this.LogicalTree)
+            //{
+            //    item.SelectMode = SelectMode.Parent;
+            //    item.Depth++;
+            //}
 
             this.Pool.Add(newItem.Id, newItem);
             this.LogicalTree.Insert(0, newItem);
