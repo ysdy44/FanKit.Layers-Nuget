@@ -71,6 +71,9 @@ namespace FanKit.Layers.Sample
                         Inserter inserter = new Inserter(this.List);
 
                         ILayer clone = this.Clipboard.CloneSingle(inserter.Depth);
+
+                        clone.SelectMode = SelectMode.Selected;
+
                         return this.TryInsert(inserter, clone);
                     }
                 default:

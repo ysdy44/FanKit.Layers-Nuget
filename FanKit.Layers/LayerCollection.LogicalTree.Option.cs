@@ -99,6 +99,9 @@ namespace FanKit.Layers
                     this.LogicalTree.Insert(inserter.Index, newItem);
 
                     this.ApplySelects(selects);
+
+                    this.AssignAll(inserter.Index, newItem);
+
                     if (inserter.IsParentExpanded)
                         this.SyncToVisualTree();
                     return InvalidateModes.Sort;
