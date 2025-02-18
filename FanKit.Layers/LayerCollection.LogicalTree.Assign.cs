@@ -256,10 +256,9 @@ namespace FanKit.Layers
                             }
                         }
 
-                        if (count == item.Children.Count)
-                            break;
+                        if (count != item.Children.Count)
+                            item.OnChildrenCountChanged();
 
-                        item.OnChildrenCountChanged();
                         break;
                     default:
                         int depth = item.Depth + 1;
@@ -278,10 +277,9 @@ namespace FanKit.Layers
                             }
                         }
 
-                        if (count == item.Children.Count)
-                            break;
+                        if (count != item.Children.Count)
+                            item.OnChildrenCountChanged();
 
-                        item.OnChildrenCountChanged();
                         break;
                 }
             }
@@ -313,10 +311,9 @@ namespace FanKit.Layers
                             }
                         }
 
-                        if (count == item.Children.Count)
-                            break;
+                        if (count != item.Children.Count)
+                            item.OnChildrenCountChanged();
 
-                        item.OnChildrenCountChanged();
                         break;
                     default:
                         int depth = item.Depth + 1;
@@ -335,10 +332,9 @@ namespace FanKit.Layers
                             }
                         }
 
-                        if (count == item.Children.Count)
-                            break;
+                        if (count != item.Children.Count)
+                            item.OnChildrenCountChanged();
 
-                        item.OnChildrenCountChanged();
                         break;
                 }
             }
