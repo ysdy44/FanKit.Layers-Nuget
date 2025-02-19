@@ -1,0 +1,46 @@
+﻿<UserControl
+    x:Name="RootLayout"
+    x:Class="FanKit.Layers.TestApp.SwipeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="200"
+    d:DesignHeight="50"
+    >
+
+    <FrameworkElement.Resources>
+        <!--Transform-->
+        <x:Double x:Key="OpenPaneLength">80</x:Double>
+        <TranslateTransform x:Name="Transform" x:Key="TransformKey"/>
+        <!--Storyboard-->
+        <CubicEase x:Key="CubicEase" EasingMode="EaseOut"/>
+        <Storyboard x:Name="ExecuteStoryboard">
+            <DoubleAnimation To="0" Duration="00:00:0.400" Storyboard.TargetName="Transform" Storyboard.TargetProperty="X" EasingFunction="{StaticResource CubicEase}"/>
+        </Storyboard>
+        <Storyboard x:Name="CloseStoryboard">
+            <DoubleAnimation To="0" Duration="00:00:0.400" Storyboard.TargetName="Transform" Storyboard.TargetProperty="X" EasingFunction="{StaticResource CubicEase}"/>
+        </Storyboard>
+        <Storyboard x:Name="OpenStoryboard">
+            <DoubleAnimation To="{StaticResource OpenPaneLength}" Duration="00:00:0.400" Storyboard.TargetName="Transform" Storyboard.TargetProperty="X" EasingFunction="{StaticResource CubicEase}"/>
+        </Storyboard>
+    </FrameworkElement.Resources>
+
+    <Grid>
+        <ContentPresenter x:Name="Presenter" RenderTransform="{StaticResource TransformKey}">
+            <ContentPresenter.Background>
+                <SolidColorBrush x:Name="Brush" Opacity="0" Color="{StaticResource SystemAccentColor}"/>
+            </ContentPresenter.Background>
+        </ContentPresenter>
+
+        <Border Background="{ThemeResource SystemAccentColorDark1}">
+            <UIElement.Clip>
+                <RectangleGeometry x:Name="Geometry" Transform="{StaticResource TransformKey}"/>
+            </UIElement.Clip>
+            <Button x:Name="Button" Width="{StaticResource OpenPaneLength}" HorizontalAlignment="Left" VerticalAlignment="Stretch" Style="{StaticResource AccentButtonStyle}">
+                <SymbolIcon Symbol="Emoji2"/>
+            </Button>
+        </Border>
+    </Grid>
+</UserControl>

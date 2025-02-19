@@ -148,6 +148,9 @@
     <Compile Include="SelectedRangesPage.xaml.cs">
       <DependentUpon>SelectedRangesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SwipeView.xaml.cs">
+      <DependentUpon>SwipeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TreeView0Page.xaml.cs">
       <DependentUpon>TreeView0Page.xaml</DependentUpon>
     </Compile>
@@ -216,6 +219,10 @@
     <Page Include="SelectedRangesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SwipeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="TreeView0Page.xaml">
       <Generator>MSBuild:Compile</Generator>
