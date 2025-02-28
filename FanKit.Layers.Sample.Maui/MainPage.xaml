@@ -12,4 +12,745 @@
         FanKit.Layers.Sample.Maui
     </Page.Title>
 
+    <VisualElement.Resources>
+        <!--Command-->
+        <local:RelayCommand x:Key="DragStartingCommand" x:Name="DragStarting"/>
+        <local:RelayCommand x:Key="DropCompletedCommand" x:Name="DropCompleted"/>
+
+        <local:RelayCommand x:Key="HistoryCommand" Invoked="HistoryCommand_Invoked"/>
+        <local:RelayCommand x:Key="LayersCommand" Invoked="LayersCommand_Invoked"/>
+
+        <local:RelayCommand x:Key="InfoCommand" Invoked="InfoCommand_Invoked"/>
+        <local:RelayCommand x:Key="ExpandCommand" Invoked="ExpandCommand_Invoked"/>
+
+        <local:RelayCommand x:Key="LockCommand" Invoked="LockCommand_Invoked"/>
+        <local:RelayCommand x:Key="VisibleCommand" Invoked="VisibleCommand_Invoked"/>
+        <local:RelayCommand x:Key="SelectCommand" Invoked="SelectCommand_Invoked"/>
+        <!--Style-->
+        <Style TargetType="Border">
+            <Setter Property="StrokeThickness" Value="0"/>
+            <Setter Property="Stroke" Value="Transparent"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+        </Style>
+    </VisualElement.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="273"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="273"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Center-->
+        <Grid Grid.Column="1" BackgroundColor="#171717">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Orientation="Horizontal"  HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+                <HorizontalStackLayout x:Name="HorizontalStackLayout">
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30" TextDecorations="Underline">
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer0" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        <Label.Text>
+                            <local:UIText Type="UICanvas"/>
+                        </Label.Text>
+                    </Label>
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30">
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer1" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        <Label.Text>
+                            <local:UIText Type="UIDragDrop1"/>
+                        </Label.Text>
+                    </Label>
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30" TextColor="Gray">
+                        <!--
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer2" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        -->
+                        <Label.Text>
+                            <local:UIText Type="UIDragDrop2"/>
+                        </Label.Text>
+                    </Label>
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30">
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer3" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        <Label.Text>
+                            <local:UIText Type="UIXml0"/>
+                        </Label.Text>
+                    </Label>
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30">
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer4" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        <Label.Text>
+                            <local:UIText Type="UIXml1"/>
+                        </Label.Text>
+                    </Label>
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30">
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer5" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        <Label.Text>
+                            <local:UIText Type="UIXml2"/>
+                        </Label.Text>
+                    </Label>
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30">
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer6" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        <Label.Text>
+                            <local:UIText Type="UILayers"/>
+                        </Label.Text>
+                    </Label>
+                    <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30">
+                        <View.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapGestureRecognizer7" NumberOfTapsRequired="1"/>
+                        </View.GestureRecognizers>
+                        <Label.Text>
+                            <local:UIText Type="UINodes"/>
+                        </Label.Text>
+                    </Label>
+                </HorizontalStackLayout>
+            </ScrollView>
+
+            <Grid x:Name="Grid" Grid.Row="1">
+                <Border BackgroundColor="#010101">
+                    <GraphicsView x:Name="CanvasControl" FlowDirection="LeftToRight" WidthRequest="512" HeightRequest="512" Drawable="{Binding Drawable, Mode=OneTime}"/>
+                </Border>
+
+                <VerticalStackLayout IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Border BackgroundColor="DodgerBlue" MinimumWidthRequest="250" HeightRequest="75">
+                        <View.GestureRecognizers>
+                            <DragGestureRecognizer x:Name="DragButton" CanDrag="True"/>
+                        </View.GestureRecognizers>
+                        <Label Margin="20,2" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label.Text>
+                                <local:UIText Type="UIDrag"/>
+                            </Label.Text>
+                        </Label>
+                    </Border>
+
+                    <Border BackgroundColor="Red" MinimumWidthRequest="250" HeightRequest="75">
+                        <View.GestureRecognizers>
+                            <DropGestureRecognizer x:Name="DropButton" AllowDrop="True"/>
+                        </View.GestureRecognizers>
+                        <Label Margin="20,2" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label.Text>
+                                <local:UIText Type="UIDrop"/>
+                            </Label.Text>
+                        </Label>
+                    </Border>
+                </VerticalStackLayout>
+
+                <CollectionView IsVisible="False">
+                </CollectionView>
+
+                <Label x:Name="Xml0TextBlock" Margin="4,0" IsVisible="False">
+                    &lt;Root&gt;&lt;/Root&gt;
+                </Label>
+
+                <Label x:Name="Xml1TextBlock" Margin="4,0" IsVisible="False">
+                    &lt;Root&gt;&lt;/Root&gt;
+                </Label>
+
+                <Label x:Name="Xml2TextBlock" Margin="4,0" IsVisible="False">
+                    &lt;Root&gt;&lt;/Root&gt;
+                </Label>
+
+                <Label x:Name="LayerTextBlock" Margin="4,0" IsVisible="False">
+                    &lt;Root&gt;&lt;/Root&gt;
+                </Label>
+
+                <Label x:Name="NodeTextBlock" Margin="4,0" IsVisible="False">
+                    &lt;Root&gt;&lt;/Root&gt;
+                </Label>
+
+            </Grid>
+        </Grid>
+
+        <!--Left-->
+        <Grid BackgroundColor="#171717">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30" TextDecorations="Underline">
+                <Label.Text>
+                    <local:UIText Type="UITreeView"/>
+                </Label.Text>
+            </Label>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="2"/>
+                </Grid.RowDefinitions>
+
+                <Grid BackgroundColor="#1E1E1E">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Grid.Column="0" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>HideAll</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="HideAll"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Preview"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="1" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>ShowAll</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="ShowAll"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Page"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="2" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>DeselectAll</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="DeselectAll"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="ViewAll"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="3" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>SelectAll</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="SelectAll"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="SelectAll"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="4" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>CollapseAll</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="CollapseAll"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="HideBcc"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="5" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>ExpandAll</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="ExpandAll"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="ShowBcc"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Grid>
+
+                <local:ReorderScrollView
+                    x:Name="LayerScrollView"
+                    Grid.Row="1"
+                    
+                    VerticalScrollBarVisibility="Default"
+                    HorizontalScrollBarVisibility="Never"
+                    >
+                    <!--
+                    <View.GestureRecognizers>
+                        <DropGestureRecognizer x:Name="LayerDropButton" AllowDrop="True"/>
+                    </View.GestureRecognizers>
+                    -->
+
+                    <CollectionView
+                        ItemsSource="{Binding UILayers, Mode=OneTime}"
+                        CanReorderItems="False"
+                        SelectionMode="None"
+                        
+                        VerticalScrollBarVisibility="Never"
+                        HorizontalScrollBarVisibility="Never"
+                        >
+
+                        <ItemsView.ItemTemplate>
+                            <DataTemplate x:DataType="local:ILayer">
+                                <Border HeightRequest="38" StrokeThickness="1" Stroke="Black" BackgroundColor="#1F1F1F">
+                                    <View.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" CommandParameter="{Binding}" Command="{StaticResource LayersCommand}"/>
+                                        <DragGestureRecognizer
+                                            CanDrag="True"
+                                            DragStartingCommandParameter="{Binding}" DragStartingCommand="{StaticResource DragStartingCommand}"
+                                            DropCompletedCommandParameter="{Binding}" DropCompletedCommand="{StaticResource DropCompletedCommand}"
+                                            />
+                                    </View.GestureRecognizers>
+
+                                    <Grid Margin="4,0" BackgroundColor="{Binding SelectColor, Mode=OneWay}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="{Binding DepthWidth, Mode=OneWay}"/>
+                                            <ColumnDefinition Width="32"/>
+                                            <ColumnDefinition Width="32"/>
+                                            <ColumnDefinition Width="4"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="4"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!--Depth-->
+                                        <Rectangle Fill="#66000000"/>
+
+                                        <ImageButton
+                                            Grid.Column="1"
+                                            WidthRequest="28"
+                                            HeightRequest="28"
+                                            MinimumWidthRequest="28"
+                                            MinimumHeightRequest="28"
+                                            Padding="0"
+                                            Aspect="AspectFit"
+                                            Background="#16FFFFFF"
+                                            CommandParameter="{Binding}"
+                                            Command="{StaticResource ExpandCommand}"
+                                            IsVisible="{Binding IsGroupVisibility, Mode=OneWay}"
+                                            >
+                                            <ImageButton.Source>
+                                                <FontImageSource Glyph="{Binding ExpandButtonGlyph, Mode=OneWay}"/>
+                                            </ImageButton.Source>
+                                        </ImageButton>
+
+                                        <Border
+                                            Grid.Column="2"
+                                            WidthRequest="32"
+                                            HeightRequest="32"
+                                            StrokeThickness="1"
+                                            Stroke="Black"
+                                            BackgroundColor="Black"
+                                            IsVisible="{Binding NotGroupVisibility, Mode=OneTime}"
+                                            >
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="2"/>
+                                            </Border.StrokeShape>
+                                            <GraphicsView
+                                                Drawable="{Binding Thumbnail, Mode=OneWay}"
+                                                IsVisible="{Binding NotGroupVisibility, Mode=OneTime}"
+                                                />
+                                        </Border>
+
+                                        <Image
+                                            Grid.Column="2"
+                                            WidthRequest="20"
+                                            HeightRequest="20"
+                                            Aspect="AspectFit"
+                                            IsVisible="{Binding IsGroupVisibility, Mode=OneTime}"
+                                            Source="{Binding ChildrenSymbol, Mode=OneWay}"
+                                            />
+
+                                        <Label
+                                            Grid.Column="4"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"
+                                            LineBreakMode="NoWrap"
+                                            Text="{Binding Title, Mode=OneTime}"
+                                            >
+                                            <!--Layer-->
+                                        </Label>
+
+                                        <HorizontalStackLayout Grid.Column="6">
+                                            <ImageButton
+                                                WidthRequest="28"
+                                                HeightRequest="28"
+                                                MinimumWidthRequest="28"
+                                                MinimumHeightRequest="28"
+                                                Padding="4"
+                                                Aspect="AspectFit"
+                                                CommandParameter="{Binding}"
+                                                Command="{StaticResource InfoCommand}"
+                                                >
+                                                <ImageButton.Source>
+                                                    <local:SymbolIcon Symbol="Important"/>
+                                                </ImageButton.Source>
+                                            </ImageButton>
+                                            <ImageButton
+                                                WidthRequest="28"
+                                                HeightRequest="28"
+                                                MinimumWidthRequest="28"
+                                                MinimumHeightRequest="28"
+                                                Padding="4"
+                                                Aspect="AspectFit"
+                                                CommandParameter="{Binding}"
+                                                Command="{StaticResource LockCommand}"
+                                                Opacity="{Binding LockButtonOpacity, Mode=OneWay}"
+                                                >
+                                                <ImageButton.Source>
+                                                    <local:SymbolIcon Symbol="Link"/>
+                                                </ImageButton.Source>
+                                            </ImageButton>
+                                            <ImageButton
+                                                WidthRequest="28"
+                                                HeightRequest="28"
+                                                MinimumWidthRequest="28"
+                                                MinimumHeightRequest="28"
+                                                Padding="4"
+                                                Aspect="AspectFit"
+                                                CommandParameter="{Binding}"
+                                                Command="{StaticResource VisibleCommand}"
+                                                Opacity="{Binding VisibleButtonOpacity, Mode=OneWay}"
+                                                >
+                                                <ImageButton.Source>
+                                                    <local:SymbolIcon Symbol="View"/>
+                                                </ImageButton.Source>
+                                            </ImageButton>
+                                        </HorizontalStackLayout>
+
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsView.ItemTemplate>
+
+                    </CollectionView>
+
+                </local:ReorderScrollView>
+
+                <AbsoluteLayout x:Name="PopupHost" Grid.Row="1" IsVisible="False" >
+                    <Grid x:Name="Popup" WidthRequest="200" HeightRequest="16">
+                        <Rectangle WidthRequest="16" HeightRequest="16" StrokeThickness="2" HorizontalOptions="Start" VerticalOptions="Start" Stroke="DodgerBlue" Fill="#661E90FF"/>
+                        <Rectangle HeightRequest="3" Margin="16,0,0,0" HorizontalOptions="Fill" VerticalOptions="Fill" Fill="DodgerBlue"/>
+                    </Grid>
+                </AbsoluteLayout>
+
+                <Grid Grid.Row="2" BackgroundColor="#1E1E1E">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Padding="0"
+                            FontSize="20" TextColor="#E2A747" BackgroundColor="Transparent"
+                            MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <Button.CommandParameter>
+                            <local:OptionType>BringToFront</local:OptionType>
+                        </Button.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="BringToFront"/>
+                        </ToolTipProperties.Text>
+                        <Button.Text>
+                            ▲
+                        </Button.Text>
+                    </Button>
+
+                    <Button Grid.Column="1" Grid.Row="2" Padding="0"
+                            FontSize="{OnPlatform WinUI=32, Default=20}" TextColor="#E2A747" BackgroundColor="Transparent"
+                            MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <Button.CommandParameter>
+                            <local:OptionType>BringForward</local:OptionType>
+                        </Button.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="BringForward"/>
+                        </ToolTipProperties.Text>
+                        <Button.Text>
+                            △
+                        </Button.Text>
+                    </Button>
+
+                    <Button Grid.Column="2" Grid.Row="2" Padding="0"
+                            FontSize="{OnPlatform WinUI=32, Default=20}" TextColor="#E2A747" BackgroundColor="Transparent"
+                            MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <Button.CommandParameter>
+                            <local:OptionType>SendBackward</local:OptionType>
+                        </Button.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="SendBackward"/>
+                        </ToolTipProperties.Text>
+                        <Button.Text>
+                            ▽
+                        </Button.Text>
+                    </Button>
+
+                    <Button Grid.Column="3" Grid.Row="2" Padding="0"
+                            FontSize="20" TextColor="#E2A747" BackgroundColor="Transparent"
+                            MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <Button.CommandParameter>
+                            <local:OptionType>SendToBack</local:OptionType>
+                        </Button.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="SendToBack"/>
+                        </ToolTipProperties.Text>
+                        <Button.Text>
+                            ▼
+                        </Button.Text>
+                    </Button>
+
+                    <ImageButton Grid.Column="4" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding UndoCommand, Mode=OneTime}">
+                        <ToolTipProperties.Text>
+                            <local:UIText Type="Undo"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Undo"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="5" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding RedoCommand, Mode=OneTime}">
+                        <ToolTipProperties.Text>
+                            <local:UIText Type="Redo"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Redo"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <!--Right-->
+        <Grid Grid.Column="2" BackgroundColor="#171717">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Margin="12,0" HorizontalOptions="Start" BackgroundColor="Transparent" FontSize="30" TextDecorations="Underline">
+                <Label.Text>
+                    <local:UIText Type="UIHistory"/>
+                </Label.Text>
+            </Label>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="2"/>
+                </Grid.RowDefinitions>
+
+                <Grid BackgroundColor="#1E1E1E">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Cut</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Cut"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Cut"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="1" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Copy</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Copy"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Copy"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="2" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Paste</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Paste"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Paste"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="3" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Duplicate</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Duplicate"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="TwoPage"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="4" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Remove</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Remove"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Delete"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="5" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Clear</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Clear"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Clear"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Grid>
+
+                <CollectionView 
+                    x:Name="HistoryListView"
+                    Grid.Row="1"
+                    
+                    ItemsSource="{Binding UIHistory, Mode=OneWay}"
+                    CanReorderItems="False"
+                    SelectionMode="None"
+                    
+                    VerticalScrollBarVisibility="Default"
+                    HorizontalScrollBarVisibility="Never"
+                    >
+
+                    <ItemsView.ItemTemplate>
+                        <DataTemplate x:DataType="local:Undo">
+                            <Grid HeightRequest="38" BackgroundColor="{Binding SelectColor, Mode=OneWay}">
+                                <View.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" CommandParameter="{Binding}" Command="{StaticResource HistoryCommand}"/>
+                                </View.GestureRecognizers>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    WidthRequest="24"
+                                    HeightRequest="24"
+                                    Aspect="AspectFit"
+                                    Opacity="{Binding DeprecatedOpacity, Mode=OneWay}"
+                                    >
+                                    <Image.Source>
+                                        <local:SymbolIcon Symbol="Clock"/>
+                                    </Image.Source>
+                                </Image>
+
+                                <Label
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Text="{Binding Description, Mode=OneTime}"
+                                    Opacity="{Binding DeprecatedOpacity, Mode=OneWay}"
+                                    />
+
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsView.ItemTemplate>
+
+                </CollectionView>
+
+                <Grid Grid.Row="2" BackgroundColor="#1E1E1E">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>InsertAtTop</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="InsertAtTop"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="ImportAll"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="1" Grid.Row="2" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Insert</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Insert"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Import"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="2" Grid.Row="2" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Ungroup</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Ungroup"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="FullScreen"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="3" Grid.Row="2" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Group</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Group"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="BackToWindow"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="4" Grid.Row="2" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Release</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Release"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Read"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <ImageButton Grid.Column="5" Grid.Row="2" Padding="10" Aspect="AspectFit" MinimumWidthRequest="28" MinimumHeightRequest="28" Command="{Binding Command, Mode=OneTime}">
+                        <ImageButton.CommandParameter>
+                            <local:OptionType>Package</local:OptionType>
+                        </ImageButton.CommandParameter>
+                        <ToolTipProperties.Text>
+                            <local:OptionText Type="Package"/>
+                        </ToolTipProperties.Text>
+                        <ImageButton.Source>
+                            <local:SymbolIcon Symbol="Mail"/>
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
 </ContentPage>
