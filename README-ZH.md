@@ -26,7 +26,7 @@ FanKit.Layers 是 XAML 列表视图的扩展，用于 .NET UWP/WPF/WinUI/Maui �
 |UWP|已完成|
 |WPF|已完成|
 |WinUI3|已完成|
-|Maui|正在施工...|
+|Maui|已完成|
 
 
 ## Nuget

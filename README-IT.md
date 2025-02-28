@@ -26,7 +26,7 @@ Include nodi/livelli/cronologia utilizzati per la creazione di visualizzazione a
 |UWP|Finito|
 |WPF|Finito|
 |WinUI3|Finito|
-|Maui|In costruzione...|
+|Maui|Finito|
 
 
 ## Nuget

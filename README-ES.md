@@ -26,7 +26,7 @@ Incluye nodos/capas/historial que se utilizan para crear una vista de árbol/pan
 |UWP|Completado|
 |WPF|Completado|
 |WinUI3|Completado|
-|Maui|En obra...|
+|Maui|Completado|
 
 
 ## Nuget
