@@ -187,7 +187,7 @@ namespace FanKit.Layers
             {
                 this.PoolAdd(child, creator(child));
             }
-            this.AssignChild2();
+            this.AssignChild3();
 
             this.SyncToVisualTree();
             return InvalidateModes.Reset;

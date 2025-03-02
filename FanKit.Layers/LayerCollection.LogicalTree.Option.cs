@@ -100,7 +100,7 @@ namespace FanKit.Layers
 
                     this.ApplySelects(selects);
 
-                    this.AssignChild2(inserter.Index, newItem);
+                    this.AssignChild3(inserter.Index, newItem);
 
                     if (inserter.IsParentExpanded)
                         this.SyncToVisualTree();
@@ -221,7 +221,7 @@ namespace FanKit.Layers
 
             this.ApplyDepth(depth);
             this.ApplySelect(select);
-            this.AssignChild2(index, newItem);
+            this.AssignChild3(index, newItem);
             return InvalidateModes.Sort;
         }
 

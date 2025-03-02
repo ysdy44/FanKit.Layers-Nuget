@@ -166,7 +166,7 @@ namespace FanKit.Layers
                         }
 
                         this.Collection.ApplySelects(selects);
-                        this.Collection.AssignChild2();
+                        this.Collection.AssignChild3();
                         this.Collection.SyncToVisualTree();
                     }
                     return InvalidateModes.Sort;
