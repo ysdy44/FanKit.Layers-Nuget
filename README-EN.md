@@ -31,7 +31,9 @@ Includes nodes/layer/history that are used for building Tree View/Layers Panel/H
 
 ## Nuget
 
-Under construction...
+1. Access [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. Search **FanKit.Layers** in **Nuget Packages Manager** and download it.
+![](ScreenShot/nuget.jpg)
 
 
 ## How to view the source code comments?

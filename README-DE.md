@@ -31,7 +31,9 @@ Enthält Knoten/Layer/Verlauf, die zum Erstellen der Baumansicht/des Layer-Panel
 
 ## Nuget
 
-Im Bau...
+1. Zugriff [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. Suchen Sie **FanKit.Layers** im NuGet-Paket-Manager, und laden Sie es herunter.
+![](ScreenShot/nuget.jpg)
 
 
 ## Wie kann ich die Quellcode-Kommentare anzeigen?

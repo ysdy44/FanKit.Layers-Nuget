@@ -31,7 +31,9 @@ Include nodi/livelli/cronologia utilizzati per la creazione di visualizzazione a
 
 ## Nuget
 
-In costruzione...
+1. Accesso [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. Cercare **FanKit.Layers** in Gestione pacchetti NuGet e scaricarlo.
+![](ScreenShot/nuget.jpg)
 
 
 ## Come visualizzare i commenti del codice sorgente?

@@ -31,7 +31,9 @@ Incluye nodos/capas/historial que se utilizan para crear una vista de árbol/pan
 
 ## Nuget
 
-En obra...
+1. Acceso [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. Busque **FanKit.Layers** en **Administrador de paquetes Nuget** y descárguelo.
+![](ScreenShot/nuget.jpg)
 
 
 ## ¿Cómo ver los comentarios del código fuente?

@@ -31,7 +31,9 @@ FanKit.Layers 是 XAML 列表视图的扩展，用于 .NET UWP/WPF/WinUI/Maui �
 
 ## Nuget
 
-正在施工...
+1. 访问 [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. 在 **Nuget 程序包管理器** 中搜索 **FanKit.Layers** 并下载。
+![](ScreenShot/nuget.jpg)
 
 
 ## 如何查看源代码注释？

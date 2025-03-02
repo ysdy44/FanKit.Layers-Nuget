@@ -31,7 +31,9 @@ FanKit.Layers — это расширение XAML List View для разраб
 
 ## Nuget
 
-В процессе строительства...
+1. Доступ [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. Найдите **FanKit.Layers** в **Nuget Менеджер пакетов** и загрузите его.
+![](ScreenShot/nuget.jpg)
 
 
 ## Как посмотреть комментарии к исходному коду?

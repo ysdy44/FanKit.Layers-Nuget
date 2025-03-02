@@ -31,7 +31,9 @@ FanKit.Layers は、.NET UWP/WPF/WinUI/Maui を使用した開発用の XAML リ
 
 ## Nuget
 
-工事中。。。
+1. アクセス[Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. **Nuget パッケージ マネージャー** で **FanKit.Layers** を検索し、ダウンロードします。
+![](ScreenShot/nuget.jpg)
 
 
 ## ソースコードのコメントを表示する方法は?

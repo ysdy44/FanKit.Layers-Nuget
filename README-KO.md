@@ -31,7 +31,9 @@ FanKit.Layers은 .NET UWP/WPF/WinUI/Maui를 사용한 개발을 위한 XAML 목�
 
 ## Nuget
 
-공사중...
+1. 액세스 [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. **Nuget 패키지 관리자** 에서 **FanKit.Layers** 를 검색하여 다운로드합니다.
+![](ScreenShot/nuget.jpg)
 
 
 ## 소스 코드 주석을 보는 방법은 무엇입니까?

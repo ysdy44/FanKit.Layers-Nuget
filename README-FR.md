@@ -31,7 +31,9 @@ Comprend les nœuds/couches/historiques qui sont utilisés pour la construction 
 
 ## Nuget
 
-En construction...
+1. Accès [Nuget Gallery | FanKit.Layers](https://www.nuget.org/packages/FanKit.Layers)
+2. Recherchez **FanKit.Layers** dans **Nuget Packages Manager** et téléchargez-le.
+![](ScreenShot/nuget.jpg)
 
 
 ## Comment afficher les commentaires du code source ?
