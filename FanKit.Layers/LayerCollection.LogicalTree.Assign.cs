@@ -16,11 +16,11 @@ namespace FanKit.Layers
             }
             else
             {
-                this.AssignChild();
+                this.AssignChild1();
             }
         }
 
-        internal void AssignChild(int length)
+        internal void AssignChild1(int length)
         {
             switch (length)
             {
@@ -81,7 +81,7 @@ namespace FanKit.Layers
             }
         }
 
-        internal void AssignChild()
+        internal void AssignChild1()
         {
             switch (this.LogicalTree.Count)
             {
@@ -142,7 +142,7 @@ namespace FanKit.Layers
             }
         }
 
-        internal void AssignChild(int newIndex, T newItem)
+        internal void AssignChild1(int newIndex, T newItem)
         {
             for (int i = newIndex - 1; i >= 0; i--)
             {

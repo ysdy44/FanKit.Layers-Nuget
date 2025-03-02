@@ -42,7 +42,7 @@ namespace FanKit.Layers
                 this.Pool.Add(key, item);
             }
 
-            this.AssignChild();
+            this.AssignChild1();
             this.SyncToVisualTree();
             return InvalidateModes.Reset;
         }
@@ -95,7 +95,7 @@ namespace FanKit.Layers
                 this.Pool.Add(key, item);
             }
 
-            this.AssignChild();
+            this.AssignChild1();
             this.SyncToVisualTree();
             return InvalidateModes.Reset;
         }
@@ -114,7 +114,7 @@ namespace FanKit.Layers
                 this.Pool.Add(key, item);
             }
 
-            this.AssignChild();
+            this.AssignChild1();
             this.SyncToVisualTree();
             return InvalidateModes.Reset;
         }
