@@ -1,5 +1,4 @@
-﻿using FanKit.Layers.Core;
-using System.Linq;
+﻿using System.Linq;
 
 namespace FanKit.Layers
 {
@@ -20,6 +19,11 @@ namespace FanKit.Layers
             }
         }
 
+        #endregion
+
+        #region Depth -> Children
+
+        // Range: 0 ~ length
         internal void AssignChild1(int length)
         {
             switch (length)
@@ -76,11 +80,13 @@ namespace FanKit.Layers
 
                     ChildrenClear(this.LogicalTree[length - 1]);
 
-                    //this.LogicalTree.AssignParentSelect(this.LogicalTree.First());
+                    //T item0 = this.LogicalTree.First();
+                    //this.LogicalTree.AssignParentSelect(item0, length);
                     break;
             }
         }
 
+        // Range: All
         internal void AssignChild1()
         {
             switch (this.LogicalTree.Count)
@@ -137,11 +143,13 @@ namespace FanKit.Layers
 
                     ChildrenClear(this.LogicalTree.Last());
 
-                    //this.LogicalTree.AssignParentSelect(this.LogicalTree.First());
+                    //T item0 = this.LogicalTree.First();
+                    //this.LogicalTree.AssignParentSelect(item0);
                     break;
             }
         }
 
+        // Range: The children of the parent of the item
         internal void AssignChild1(int newIndex, T newItem)
         {
             for (int i = newIndex - 1; i >= 0; i--)
@@ -174,6 +182,11 @@ namespace FanKit.Layers
             }
         }
 
+        #endregion
+
+        #region Depth -> Children, Children -> SelectMode
+
+        // Range: All
         internal void AssignChild2()
         {
             switch (this.LogicalTree.Count)
@@ -230,11 +243,13 @@ namespace FanKit.Layers
 
                     ChildrenClear(this.LogicalTree.Last());
 
-                    this.LogicalTree.AssignParentSelect(this.LogicalTree.First());
+                    T item0 = this.LogicalTree.First();
+                    this.LogicalTree.AssignParentSelect(item0);
                     break;
             }
         }
 
+        // Range: The children of the parent of the item
         internal void AssignChild2(int newIndex, T newItem)
         {
             for (int i = newIndex - 1; i >= 0; i--)
@@ -308,8 +323,7 @@ namespace FanKit.Layers
 
         private void ChildrenReset(int i, T item, int length)
         {
-            {
-                int count = item.Children.Count;
+            int count = item.Children.Count;
             item.Children.Clear();
 
             switch (item.Depth)
@@ -356,57 +370,54 @@ namespace FanKit.Layers
                     break;
             }
         }
-        }
 
         private void ChildrenReset(int i, T item)
         {
+            int count = item.Children.Count;
+            item.Children.Clear();
+
+            switch (item.Depth)
             {
-                int count = item.Children.Count;
-                item.Children.Clear();
+                case 0:
+                    for (int j = i + 1; j < this.LogicalTree.Count; j++)
+                    {
+                        T jtem = this.LogicalTree[j];
 
-                switch (item.Depth)
-                {
-                    case 0:
-                        for (int j = i + 1; j < this.LogicalTree.Count; j++)
+                        if (jtem.Depth == 1)
                         {
-                            T jtem = this.LogicalTree[j];
-
-                            if (jtem.Depth == 1)
-                            {
-                                item.Children.Add(jtem);
-                            }
-                            else if (jtem.Depth == 0)
-                            {
-                                break;
-                            }
+                            item.Children.Add(jtem);
                         }
-
-                        if (count != item.Children.Count)
-                            item.OnChildrenCountChanged();
-
-                        break;
-                    default:
-                        int depth = item.Depth + 1;
-
-                        for (int j = i + 1; j < this.LogicalTree.Count; j++)
+                        else if (jtem.Depth == 0)
                         {
-                            T jtem = this.LogicalTree[j];
-
-                            if (jtem.Depth == depth)
-                            {
-                                item.Children.Add(jtem);
-                            }
-                            else if (jtem.Depth < depth)
-                            {
-                                break;
-                            }
+                            break;
                         }
+                    }
 
-                        if (count != item.Children.Count)
-                            item.OnChildrenCountChanged();
+                    if (count != item.Children.Count)
+                        item.OnChildrenCountChanged();
 
-                        break;
-                }
+                    break;
+                default:
+                    int depth = item.Depth + 1;
+
+                    for (int j = i + 1; j < this.LogicalTree.Count; j++)
+                    {
+                        T jtem = this.LogicalTree[j];
+
+                        if (jtem.Depth == depth)
+                        {
+                            item.Children.Add(jtem);
+                        }
+                        else if (jtem.Depth < depth)
+                        {
+                            break;
+                        }
+                    }
+
+                    if (count != item.Children.Count)
+                        item.OnChildrenCountChanged();
+
+                    break;
             }
         }
 
