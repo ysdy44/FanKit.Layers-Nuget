@@ -59,7 +59,7 @@ namespace FanKit.Layers
                     this.LogicalTree.Insert(reorder.InsertIndex, this.Pool[reorder.DepthOfSingle.Id]);
 
                     this.ApplyDepth(reorder.DepthOfSingle);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SSL:
@@ -67,7 +67,7 @@ namespace FanKit.Layers
                     this.LogicalTree.Add(this.Pool[reorder.DepthOfSingle.Id]);
 
                     this.ApplyDepth(reorder.DepthOfSingle);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SSF:
@@ -75,25 +75,25 @@ namespace FanKit.Layers
                     this.LogicalTree.Insert(0, this.Pool[reorder.DepthOfSingle.Id]);
 
                     this.ApplyDepth(reorder.DepthOfSingle);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SSRX:
                     this.LogicalTree.MoveRange(reorder.RemoveRange, reorder.InsertIndex);
 
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SSRL:
                     this.LogicalTree.MoveRangeToLast(reorder.RemoveRange);
 
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SSRF:
                     this.LogicalTree.MoveRangeToFirst(reorder.RemoveRange);
 
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
 
@@ -162,7 +162,7 @@ namespace FanKit.Layers
                         }
                     }
 
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 default:
@@ -186,7 +186,7 @@ namespace FanKit.Layers
                     this.LogicalTree.Insert(reorder.InsertIndex, this.Pool[reorder.DepthOfSingle.Id]);
 
                     this.ApplyDepth(reorder.DepthOfSingle);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SL:
@@ -194,7 +194,7 @@ namespace FanKit.Layers
                     this.LogicalTree.Add(this.Pool[reorder.DepthOfSingle.Id]);
 
                     this.ApplyDepth(reorder.DepthOfSingle);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SF:
@@ -202,7 +202,7 @@ namespace FanKit.Layers
                     this.LogicalTree.Insert(0, this.Pool[reorder.DepthOfSingle.Id]);
 
                     this.ApplyDepth(reorder.DepthOfSingle);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 default:
@@ -221,21 +221,21 @@ namespace FanKit.Layers
                     this.LogicalTree.MoveRange(reorder.RemoveRange, reorder.InsertIndex);
 
                     this.ApplyDepths(depths);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SRL:
                     this.LogicalTree.MoveRangeToLast(reorder.RemoveRange);
 
                     this.ApplyDepths(depths);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.SRF:
                     this.LogicalTree.MoveRangeToFirst(reorder.RemoveRange);
 
                     this.ApplyDepths(depths);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 default:
@@ -257,21 +257,21 @@ namespace FanKit.Layers
                     this.LogicalTree.MoveRanges(selectedRanges, drop, descendant);
 
                     this.ApplyDepths(depths);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.ML:
                     this.LogicalTree.MoveRangesToLast(selectedRanges);
 
                     this.ApplyDepths(depths);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case ReoLoc.MF:
                     this.LogicalTree.MoveRangesToFirst(selectedRanges);
 
                     this.ApplyDepths(depths);
-                    this.AssignAll();
+                    this.AssignChild2();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 default:

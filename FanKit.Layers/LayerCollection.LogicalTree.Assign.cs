@@ -12,7 +12,7 @@ namespace FanKit.Layers
         {
             if (updateSelectMode)
             {
-                this.AssignAll();
+                this.AssignChild2();
             }
             else
             {
@@ -174,7 +174,7 @@ namespace FanKit.Layers
             }
         }
 
-        internal void AssignAll()
+        internal void AssignChild2()
         {
             switch (this.LogicalTree.Count)
             {
@@ -235,7 +235,7 @@ namespace FanKit.Layers
             }
         }
 
-        internal void AssignAll(int newIndex, T newItem)
+        internal void AssignChild2(int newIndex, T newItem)
         {
             for (int i = newIndex - 1; i >= 0; i--)
             {

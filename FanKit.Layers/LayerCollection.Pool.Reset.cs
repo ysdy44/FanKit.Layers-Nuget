@@ -187,7 +187,7 @@ namespace FanKit.Layers
             {
                 this.PoolAdd(child, creator(child));
             }
-            this.AssignAll();
+            this.AssignChild2();
 
             this.SyncToVisualTree();
             return InvalidateModes.Reset;
@@ -203,7 +203,7 @@ namespace FanKit.Layers
                 this.AddRecursion(child, 0, creator);
             }
 
-            this.AssignAll();
+            this.AssignChild2();
 
             this.SyncToVisualTree();
             return InvalidateModes.Reset;
@@ -235,7 +235,7 @@ namespace FanKit.Layers
                 this.Pool.Add(key, item);
             }
 
-            this.AssignAll();
+            this.AssignChild2();
 
             this.SyncToVisualTree();
             return InvalidateModes.Reset;
