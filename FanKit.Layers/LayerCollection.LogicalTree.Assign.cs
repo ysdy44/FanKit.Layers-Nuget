@@ -447,6 +447,219 @@ namespace FanKit.Layers
 
         #endregion
 
+        #region Depth -> Children, Children -> SelectMode, Children -> Depth
+
+        // Range: 0 ~ length
+        internal void AssignChild3(int length)
+        {
+            switch (length)
+            {
+                case 0:
+                    break;
+                case 1:
+                    T itemSingle = this.LogicalTree[0];
+
+                    ChildrenClear(itemSingle);
+
+                    itemSingle.ParentDeselect();
+
+                    itemSingle.Depth = 0;
+                    break;
+                case 2:
+                    T itemFirst = this.LogicalTree[0];
+                    T itemLast = this.LogicalTree[1];
+
+                    if (itemFirst.Depth < itemLast.Depth)
+                    {
+                        ChildrenAdd(itemFirst, itemLast);
+                        ChildrenClear(itemLast);
+
+                        switch (itemFirst.SelectMode)
+                        {
+                            case SelectMode.Deselected:
+                                itemLast.ParentDeselect();
+                                break;
+                            case SelectMode.Selected:
+                                itemLast.ParentSelect();
+                                break;
+                            case SelectMode.Parent:
+                                itemFirst.SelectMode = SelectMode.Deselected;
+                                itemLast.ParentDeselect();
+                                break;
+                            default:
+                                break;
+                        }
+
+                        itemFirst.Depth = 0;
+                        itemLast.Depth = 1;
+                    }
+                    else
+                    {
+                        ChildrenClear(itemFirst);
+                        ChildrenClear(itemLast);
+
+                        itemFirst.ParentDeselect();
+                        itemLast.ParentDeselect();
+
+                        itemFirst.Depth = 0;
+                        itemLast.Depth = 0;
+                    }
+                    break;
+                default:
+                    for (int i = 0; i < length - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        this.ChildrenReset(i, item, length);
+                    }
+
+                    ChildrenClear(this.LogicalTree[length - 1]);
+
+                    T item0 = this.LogicalTree.First();
+                    this.LogicalTree.AssignParentSelect(item0, length);
+
+                    item0.Depth = 0;
+                    AssignD1(item0);
+
+                    for (int i = 1; i < length - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        switch (item.Depth)
+                        {
+                            case 0:
+                                AssignD1(item);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        // Range: All
+        internal void AssignChild3()
+        {
+            switch (this.LogicalTree.Count)
+            {
+                case 0:
+                    break;
+                case 1:
+                    T itemSingle = this.LogicalTree.Single();
+
+                    ChildrenClear(itemSingle);
+
+                    itemSingle.ParentDeselect();
+
+                    itemSingle.Depth = 0;
+                    break;
+                case 2:
+                    T itemFirst = this.LogicalTree.First();
+                    T itemLast = this.LogicalTree.Last();
+
+                    if (itemFirst.Depth < itemLast.Depth)
+                    {
+                        ChildrenAdd(itemFirst, itemLast);
+                        ChildrenClear(itemLast);
+
+                        switch (itemFirst.SelectMode)
+                        {
+                            case SelectMode.Deselected:
+                                itemLast.ParentDeselect();
+                                break;
+                            case SelectMode.Selected:
+                                itemLast.ParentSelect();
+                                break;
+                            case SelectMode.Parent:
+                                itemFirst.SelectMode = SelectMode.Deselected;
+                                itemLast.ParentDeselect();
+                                break;
+                            default:
+                                break;
+                        }
+
+                        itemFirst.Depth = 0;
+                        itemLast.Depth = 1;
+                    }
+                    else
+                    {
+                        ChildrenClear(itemFirst);
+                        ChildrenClear(itemLast);
+
+                        itemFirst.ParentDeselect();
+                        itemLast.ParentDeselect();
+
+                        itemFirst.Depth = 0;
+                        itemLast.Depth = 0;
+                    }
+                    break;
+                default:
+                    for (int i = 0; i < this.LogicalTree.Count - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        this.ChildrenReset(i, item);
+                    }
+
+                    ChildrenClear(this.LogicalTree.Last());
+
+                    T item0 = this.LogicalTree.First();
+                    this.LogicalTree.AssignParentSelect(item0);
+
+                    item0.Depth = 0;
+                    AssignD1(item0);
+
+                    for (int i = 1; i < this.LogicalTree.Count - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        switch (item.Depth)
+                        {
+                            case 0:
+                                AssignD1(item);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        // Range: The children of the parent of the item
+        internal void AssignChild3(int newIndex, T newItem)
+        {
+            for (int i = newIndex - 1; i >= 0; i--)
+            {
+                T item = this.LogicalTree[i];
+
+                if (item.Depth < newItem.Depth)
+                {
+                    switch (item.SelectMode)
+                    {
+                        case SelectMode.Selected:
+                        case SelectMode.Parent:
+                            newItem.SelectMode = SelectMode.Parent;
+                            break;
+                        default:
+                            switch (newItem.SelectMode)
+                            {
+                                case SelectMode.Parent:
+                                    newItem.SelectMode = SelectMode.Deselected;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                    }
+
+                    this.ChildrenReset(i, item);
+
+                    AssignDepth(item, item.Depth + 1);
+                    break;
+                }
+            }
+        }
+
+        #endregion
+
         #region Children
 
         private static void ChildrenClear(T item)
