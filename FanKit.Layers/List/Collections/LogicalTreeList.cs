@@ -244,6 +244,39 @@ namespace FanKit.Layers.Collections
 
         #region Assign
 
+        public void AssignParentSelect(T itemFirst, int length)
+        {
+            itemFirst.ParentDeselect();
+            int index = 1;
+            bool select = itemFirst.SelectMode.IsSelected();
+
+            while (index < length)
+            {
+                T item = this.LogicalTree[index];
+
+                switch (item.Depth)
+                {
+                    case 0:
+                        item.ParentDeselect();
+                        index++;
+                        select = item.SelectMode.IsSelected();
+                        break;
+                    default:
+                        if (select)
+                        {
+                            item.ParentSelect();
+                            index++;
+                        }
+                        else
+                        {
+                            item.ParentDeselect();
+                            index = this.AssignParentSelect(index + 1, item.Depth, item.SelectMode.IsSelected());
+                        }
+                        break;
+                }
+            }
+        }
+
         public void AssignParentSelect(T itemFirst)
         {
             itemFirst.ParentDeselect();

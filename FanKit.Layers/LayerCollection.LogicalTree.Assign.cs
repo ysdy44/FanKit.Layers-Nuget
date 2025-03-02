@@ -186,6 +186,69 @@ namespace FanKit.Layers
 
         #region Depth -> Children, Children -> SelectMode
 
+        // Range: 0 ~ length
+        internal void AssignChild2(int length)
+        {
+            switch (length)
+            {
+                case 0:
+                    break;
+                case 1:
+                    T itemSingle = this.LogicalTree[0];
+
+                    ChildrenClear(itemSingle);
+
+                    itemSingle.ParentDeselect();
+                    break;
+                case 2:
+                    T itemFirst = this.LogicalTree[0];
+                    T itemLast = this.LogicalTree[1];
+
+                    if (itemFirst.Depth < itemLast.Depth)
+                    {
+                        ChildrenAdd(itemFirst, itemLast);
+                        ChildrenClear(itemLast);
+
+                        switch (itemFirst.SelectMode)
+                        {
+                            case SelectMode.Deselected:
+                                itemLast.ParentDeselect();
+                                break;
+                            case SelectMode.Selected:
+                                itemLast.ParentSelect();
+                                break;
+                            case SelectMode.Parent:
+                                itemFirst.SelectMode = SelectMode.Deselected;
+                                itemLast.ParentDeselect();
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        ChildrenClear(itemFirst);
+                        ChildrenClear(itemLast);
+
+                        itemFirst.ParentDeselect();
+                        itemLast.ParentDeselect();
+                    }
+                    break;
+                default:
+                    for (int i = 0; i < length - 1; i++)
+                    {
+                        T item = this.LogicalTree[i];
+                        this.ChildrenReset(i, item, length);
+                    }
+
+                    ChildrenClear(this.LogicalTree[length - 1]);
+
+                    T item0 = this.LogicalTree.First();
+                    this.LogicalTree.AssignParentSelect(item0, length);
+                    break;
+            }
+        }
+
         // Range: All
         internal void AssignChild2()
         {
