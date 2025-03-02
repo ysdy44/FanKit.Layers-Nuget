@@ -422,5 +422,41 @@ namespace FanKit.Layers
         }
 
         #endregion
+
+        #region Depth
+
+        private static void AssignD1(T parent)
+        {
+            foreach (T item in parent.Children)
+            {
+                item.Depth = 1;
+
+                if (item.Children is null)
+                    continue;
+
+                if (item.Children.Count is 0)
+                    continue;
+
+                AssignDepth(item, 2);
+            }
+        }
+
+        private static void AssignDepth(T parent, int depth)
+        {
+            foreach (T item in parent.Children)
+            {
+                item.Depth = depth;
+
+                if (item.Children is null)
+                    continue;
+
+                if (item.Children.Count is 0)
+                    continue;
+
+                AssignDepth(item, depth + 1);
+            }
+        }
+
+        #endregion
     }
 }
