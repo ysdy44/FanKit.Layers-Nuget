@@ -44,6 +44,15 @@ namespace FanKit.Layers
         /// <inheritdoc cref="IReadOnlyCollection{T}.Count"/>
         public int Count => this.LogicalTree.Count;
 
+        /// <inheritdoc cref="List{T}.IndexOf(T)"/>
+        public int IndexOf(T item) => this.LogicalTree.IndexOf(item);
+
+        /// <inheritdoc cref="List{T}.IndexOf(T, int, int)"/>
+        public int IndexOf(T item, int index, int count) => this.LogicalTree.IndexOf(item, index, count);
+
+        /// <inheritdoc cref="List{T}.IndexOf(T, int)"/>
+        public int IndexOf(T item, int index) => this.LogicalTree.IndexOf(item, index);
+
         /// <inheritdoc cref="IEnumerable.GetEnumerator"/>
         IEnumerator IEnumerable.GetEnumerator() => this.LogicalTree.GetEnumerator();
 
