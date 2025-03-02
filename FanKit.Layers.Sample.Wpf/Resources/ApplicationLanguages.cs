@@ -32,7 +32,24 @@ namespace FanKit.Layers.Sample
 
         private static string Language;
 
-        public static IEnumerable<string> ManifestLanguages => Manifest.Keys;
+        public static IEnumerable<string> ManifestLanguages
+        {
+            get
+            {
+                yield return "ar";
+                yield return "de";
+                yield return "en-US";
+                yield return "es";
+                yield return "fr";
+                yield return "it";
+                yield return "ja";
+                yield return "ko";
+                yield return "nl";
+                yield return "pt";
+                yield return "ru";
+                yield return "zh-CN";
+            }
+        }
 
         public static string PrimaryLanguageOverride
         {
