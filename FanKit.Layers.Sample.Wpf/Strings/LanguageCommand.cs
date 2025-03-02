@@ -34,7 +34,7 @@ namespace FanKit.Layers.Sample
                     );
             }
 
-            System.Diagnostics.Process.Start(ApplicationLanguages.Execute);
+            System.Diagnostics.Process.Start(ResourceLoader.Execute);
             System.Environment.Exit(0);
         }
 
