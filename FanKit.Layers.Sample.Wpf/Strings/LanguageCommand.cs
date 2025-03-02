@@ -34,6 +34,12 @@ namespace FanKit.Layers.Sample
                     );
             }
 
+            // Hide self before Restart
+            foreach (Window item in App.Current.Windows)
+            {
+                item.Hide();
+            }
+
             System.Diagnostics.Process.Start(ResourceLoader.Execute);
             System.Environment.Exit(0);
         }
