@@ -42,7 +42,7 @@ namespace FanKit.Layers
                 default: this.LogicalTree.Remove(); break;
             }
 
-            this.AssignChild1();
+            this.AssignChild3();
             this.SyncToVisualTree();
             return InvalidateModes.Sort;
         }
@@ -73,7 +73,7 @@ namespace FanKit.Layers
                     this.LogicalTree.Insert(index, newItem);
 
                     this.ApplySelects(selects);
-                    this.AssignChild1();
+                    this.AssignChild3();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case IdxLoc.Lst:
@@ -161,7 +161,7 @@ namespace FanKit.Layers
         {
             this.LogicalTree.RemoveAt(ungrouper.Source.Source.StartIndex);
 
-            this.AssignChild1();
+            this.AssignChild3();
             this.SyncToVisualTree();
             return InvalidateModes.Sort;
         }
@@ -182,7 +182,7 @@ namespace FanKit.Layers
 
                     this.ApplyDepths(depths);
                     this.ApplySelects(selects);
-                    this.AssignChild1();
+                    this.AssignChild3();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 case UngroupMode.MultipleRanges:
@@ -190,7 +190,7 @@ namespace FanKit.Layers
 
                     this.ApplyDepths(depths);
                     this.ApplySelects(selects);
-                    this.AssignChild1();
+                    this.AssignChild3();
                     this.SyncToVisualTree();
                     return InvalidateModes.Sort;
                 default:
@@ -240,7 +240,7 @@ namespace FanKit.Layers
 
                     this.ApplyDepths(depths);
                     this.ApplySelects(selects);
-                    this.AssignChild1();
+                    this.AssignChild3();
                     this.SyncToVisualTree();
                     return InvalidateModes.ClearAndSort;
                 case SelTyp2.M:
@@ -250,7 +250,7 @@ namespace FanKit.Layers
 
                     this.ApplyDepths(depths);
                     this.ApplySelects(selects);
-                    this.AssignChild1();
+                    this.AssignChild3();
                     this.SyncToVisualTree();
                     return InvalidateModes.ClearAndSort;
                 case SelTyp2.AS:
@@ -291,7 +291,7 @@ namespace FanKit.Layers
 
                                 this.ApplyDepth(releaser.DepthOfSingle);
 
-                                this.AssignChild1();
+                                this.AssignChild3();
                                 this.SyncToVisualTree();
                                 return InvalidateModes.Sort;
                             }
@@ -343,7 +343,7 @@ namespace FanKit.Layers
 
                                 this.ApplyDepths(depths);
 
-                                this.AssignChild1();
+                                this.AssignChild3();
                                 this.SyncToVisualTree();
                                 return InvalidateModes.Sort;
                             }
@@ -385,7 +385,7 @@ namespace FanKit.Layers
 
                     this.ApplyDepths(depths);
 
-                    this.AssignChild1();
+                    this.AssignChild3();
                     this.SyncToVisualTree();
                     return (InvalidateModes.Sort);
                 case SelTyp2.AS:
@@ -418,7 +418,7 @@ namespace FanKit.Layers
 
             this.ApplySelects(selects);
             this.ApplyDepths(depths);
-            this.AssignChild1();
+            this.AssignChild3();
 
             switch (selects.Length)
             {

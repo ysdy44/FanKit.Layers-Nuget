@@ -144,7 +144,7 @@ namespace FanKit.Layers
 
                         this.Collection.ApplySelects(selects);
                         //if (inserter.HasSelected)
-                        this.Collection.AssignChild1(count);
+                        this.Collection.AssignChild3(count);
                         this.Collection.SyncToVisualTree();
                     }
                     return InvalidateModes.Sort;
@@ -207,7 +207,7 @@ namespace FanKit.Layers
                         this.Pool.Add(clone.Id, clone);
                         this.LogicalTree.Insert(index, clone);
 
-                        this.Collection.AssignChild1();
+                        this.Collection.AssignChild3();
                         this.Collection.SyncToVisualTree();
                     }
                     return InvalidateModes.Sort;
@@ -222,7 +222,7 @@ namespace FanKit.Layers
                             this.LogicalTree.Insert(i + range.EndIndex + 1, clone);
                         }
 
-                        this.Collection.AssignChild1();
+                        this.Collection.AssignChild3();
                         this.Collection.SyncToVisualTree();
                     }
                     return InvalidateModes.Sort;
@@ -303,7 +303,7 @@ namespace FanKit.Layers
 
                         if (ran.IsNegative)
                         {
-                            this.Collection.AssignChild1();
+                            this.Collection.AssignChild3();
                             this.Collection.SyncToVisualTree();
                             return InvalidateModes.Sort;
                         }
@@ -317,7 +317,7 @@ namespace FanKit.Layers
                             this.LogicalTree.Insert(j + ran.EndIndex + 1, clone);
                         }
 
-                        this.Collection.AssignChild1();
+                        this.Collection.AssignChild3();
                         this.Collection.SyncToVisualTree();
                     }
                     return InvalidateModes.Sort;
@@ -335,7 +335,7 @@ namespace FanKit.Layers
                             this.LogicalTree.Add(clone);
                         }
 
-                        this.Collection.AssignChild1();
+                        this.Collection.AssignChild3();
                         this.Collection.SyncToVisualTree();
                     }
                     return InvalidateModes.Sort;
