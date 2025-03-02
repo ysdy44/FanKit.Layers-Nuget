@@ -36,6 +36,8 @@ namespace FanKit.Layers
                     ChildrenClear(itemSingle);
 
                     //itemSingle.ParentDeselect();
+
+                    //itemSingle.Depth = 0;
                     break;
                 case 2:
                     T itemFirst = this.LogicalTree[0];
@@ -61,6 +63,9 @@ namespace FanKit.Layers
                         //    default:
                         //        break;
                         //}
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 1;
                     }
                     else
                     {
@@ -69,6 +74,9 @@ namespace FanKit.Layers
 
                         //itemFirst.ParentDeselect();
                         //itemLast.ParentDeselect();
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 0;
                     }
                     break;
                 default:
@@ -82,6 +90,22 @@ namespace FanKit.Layers
 
                     //T item0 = this.LogicalTree.First();
                     //this.LogicalTree.AssignParentSelect(item0, length);
+
+                    //item0.Depth = 0;
+                    //AssignD1(item0);
+
+                    //for (int i = 1; i < length - 1; i++)
+                    //{
+                    //    T item = this.LogicalTree[i];
+                    //    switch (item.Depth)
+                    //    {
+                    //        case 0:
+                    //            AssignD1(item);
+                    //            break;
+                    //        default:
+                    //            break;
+                    //    }
+                    //}
                     break;
             }
         }
@@ -99,6 +123,8 @@ namespace FanKit.Layers
                     ChildrenClear(itemSingle);
 
                     //itemSingle.ParentDeselect();
+
+                    //itemSingle.Depth = 0;
                     break;
                 case 2:
                     T itemFirst = this.LogicalTree.First();
@@ -124,6 +150,9 @@ namespace FanKit.Layers
                         //    default:
                         //        break;
                         //}
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 1;
                     }
                     else
                     {
@@ -132,6 +161,9 @@ namespace FanKit.Layers
 
                         //itemFirst.ParentDeselect();
                         //itemLast.ParentDeselect();
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 0;
                     }
                     break;
                 default:
@@ -145,6 +177,22 @@ namespace FanKit.Layers
 
                     //T item0 = this.LogicalTree.First();
                     //this.LogicalTree.AssignParentSelect(item0);
+
+                    //item0.Depth = 0;
+                    //AssignD1(item0);
+
+                    //for (int i = 1; i < this.LogicalTree.Count - 1; i++)
+                    //{
+                    //    T item = this.LogicalTree[i];
+                    //    switch (item.Depth)
+                    //    {
+                    //        case 0:
+                    //            AssignD1(item);
+                    //            break;
+                    //        default:
+                    //            break;
+                    //    }
+                    //}
                     break;
             }
         }
@@ -177,6 +225,8 @@ namespace FanKit.Layers
                     //}
 
                     this.ChildrenReset(i, item);
+
+                    //AssignDepth(item, item.Depth + 1);
                     break;
                 }
             }
@@ -199,6 +249,8 @@ namespace FanKit.Layers
                     ChildrenClear(itemSingle);
 
                     itemSingle.ParentDeselect();
+
+                    //itemSingle.Depth = 0;
                     break;
                 case 2:
                     T itemFirst = this.LogicalTree[0];
@@ -224,6 +276,9 @@ namespace FanKit.Layers
                             default:
                                 break;
                         }
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 1;
                     }
                     else
                     {
@@ -232,6 +287,9 @@ namespace FanKit.Layers
 
                         itemFirst.ParentDeselect();
                         itemLast.ParentDeselect();
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 0;
                     }
                     break;
                 default:
@@ -245,6 +303,22 @@ namespace FanKit.Layers
 
                     T item0 = this.LogicalTree.First();
                     this.LogicalTree.AssignParentSelect(item0, length);
+
+                    //item0.Depth = 0;
+                    //AssignD1(item0);
+
+                    //for (int i = 1; i < length - 1; i++)
+                    //{
+                    //    T item = this.LogicalTree[i];
+                    //    switch (item.Depth)
+                    //    {
+                    //        case 0:
+                    //            AssignD1(item);
+                    //            break;
+                    //        default:
+                    //            break;
+                    //    }
+                    //}
                     break;
             }
         }
@@ -262,6 +336,8 @@ namespace FanKit.Layers
                     ChildrenClear(itemSingle);
 
                     itemSingle.ParentDeselect();
+
+                    //itemSingle.Depth = 0;
                     break;
                 case 2:
                     T itemFirst = this.LogicalTree.First();
@@ -287,6 +363,9 @@ namespace FanKit.Layers
                             default:
                                 break;
                         }
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 1;
                     }
                     else
                     {
@@ -295,6 +374,9 @@ namespace FanKit.Layers
 
                         itemFirst.ParentDeselect();
                         itemLast.ParentDeselect();
+
+                        //itemFirst.Depth = 0;
+                        //itemLast.Depth = 0;
                     }
                     break;
                 default:
@@ -308,6 +390,22 @@ namespace FanKit.Layers
 
                     T item0 = this.LogicalTree.First();
                     this.LogicalTree.AssignParentSelect(item0);
+
+                    //item0.Depth = 0;
+                    //AssignD1(item0);
+
+                    //for (int i = 1; i < this.LogicalTree.Count - 1; i++)
+                    //{
+                    //    T item = this.LogicalTree[i];
+                    //    switch (item.Depth)
+                    //    {
+                    //        case 0:
+                    //            AssignD1(item);
+                    //            break;
+                    //        default:
+                    //            break;
+                    //    }
+                    //}
                     break;
             }
         }
@@ -340,6 +438,8 @@ namespace FanKit.Layers
                     }
 
                     this.ChildrenReset(i, item);
+
+                    //AssignDepth(item, item.Depth + 1);
                     break;
                 }
             }
