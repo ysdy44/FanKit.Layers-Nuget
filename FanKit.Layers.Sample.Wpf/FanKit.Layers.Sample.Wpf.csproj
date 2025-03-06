@@ -83,6 +83,7 @@
     <Compile Include="Reorders\ReorderButton.cs" />
     <Compile Include="Reorders\ReorderScrollViewer.cs" />
     <Compile Include="Resources\ApplicationLanguages.cs" />
+    <Compile Include="Resources\ApplicationModel.cs" />
     <Compile Include="Resources\ResourceLoader.cs" />
     <Compile Include="Strings\CultureInfoCollection.cs" />
     <Compile Include="Strings\LanguageCommand.cs" />

@@ -26,8 +26,6 @@ namespace FanKit.Layers.Sample
 
         private static readonly string Config = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config.ini");
 
-        public static readonly string Execute = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FanKit.Layers.Sample.Wpf.exe");
-
         public Dictionary<string, string> Instance = new Dictionary<string, string>();
 
         public string Language { get; private set; }
