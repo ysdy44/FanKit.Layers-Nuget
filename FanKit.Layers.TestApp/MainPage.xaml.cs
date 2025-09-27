@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using System.Windows.Input;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -9,70 +10,104 @@ using Windows.UI.Xaml.Documents;
 
 namespace FanKit.Layers.TestApp
 {
-    internal sealed class MainGrouping : List<string>, IList<string>, IGrouping<char, string>
+    internal sealed class Kvp
     {
-        public char Key { get; }
-        public MainGrouping(char key, IEnumerable<string> collection) : base(collection) => this.Key = key;
-        public override string ToString() => this.Key.ToString();
+        public readonly string Key1;
+        public readonly string Key2;
+        public readonly Type PageType;
+
+        public Kvp(string text, string key, Type value)
+        {
+            this.Key1 = text;
+            this.Key2 = key;
+            this.PageType = value;
+        }
     }
 
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage : Page, ICommand
     {
         //@Instance
+        private readonly Lazy<SystemNavigationManager> ManagerLazy = new Lazy<SystemNavigationManager>(() => SystemNavigationManager.GetForCurrentView());
         private readonly Lazy<ApplicationView> ViewLazy = new Lazy<ApplicationView>(() => ApplicationView.GetForCurrentView());
+        private SystemNavigationManager Manager => this.ManagerLazy.Value;
         private ApplicationView View => this.ViewLazy.Value;
 
-        readonly IDictionary<string, Type> Dictionary = CreatePages(typeof(MainPage)).ToDictionary(x => x.Name);
-        private IEnumerable<MainGrouping> Groupings => this.Dictionary.Keys.GroupBy(Enumerable.First).Select(c => new MainGrouping(c.Key, c.OrderBy(d => d.Replace("Page", string.Empty)))).OrderBy(c => c.Key);
+        readonly IDictionary<string, Kvp> Dictionary1 = (
+            from item in Tree
+            from kvp in item.Value
+            where kvp != null
+            select kvp).ToDictionary(c => c.Key2);
+        readonly IDictionary<string, Kvp> Dictionary2 = (
+            from item in Tree
+            from kvp in item.Value
+            where kvp != null
+            select kvp).ToDictionary(c => c.Key1);
 
         public MainPage()
         {
             this.InitializeComponent();
-            base.Loaded += (s, e) => this.AutoSuggestBox.Focus(FocusState.Keyboard);
+            foreach (KeyValuePair<string, Kvp[]> item in Tree)
+            {
+                MenuFlyoutSubItem subItem = new MenuFlyoutSubItem
+                {
+                    Text = item.Key,
+                };
+
+                foreach (Kvp type in item.Value)
+                {
+                    if (type == null)
+                        subItem.Items.Add(new MenuFlyoutSeparator());
+                    else
+                        subItem.Items.Add(new MenuFlyoutItem
+                        {
+                            Text = type.Key1,
+                            CommandParameter = type.Key2,
+                            Command = this,
+                        });
+                }
+
+                this.MenuFlyout.Items.Add(subItem);
+            }
+
+            // Register a handler for BackRequested events
+            base.Unloaded += delegate { this.Manager.BackRequested -= this.OnBackRequested; };
+            base.Loaded += delegate
+            {
+                this.Manager.BackRequested += this.OnBackRequested;
+                this.AutoSuggestBox.Focus(FocusState.Keyboard);
+            };
 
             this.Hyperlink0.Inlines.Add(new Run { Text = nameof(LayersPanelPage) });
-            this.Hyperlink0.Click += (s, e) => this.Navigate(nameof(LayersPanelPage));
+            this.Hyperlink0.Click += delegate { this.Navigate1("LayersPanel"); };
 
             this.Hyperlink1.Inlines.Add(new Run { Text = nameof(TreeView2Page) });
-            this.Hyperlink1.Click += (s, e) => this.Navigate(nameof(TreeView2Page));
+            this.Hyperlink1.Click += delegate { this.Navigate1("TreeView2"); };
 
             this.Hyperlink2.Inlines.Add(new Run { Text = nameof(HistoryPanelPage) });
-            this.Hyperlink2.Click += (s, e) => this.Navigate(nameof(HistoryPanelPage));
+            this.Hyperlink2.Click += delegate { this.Navigate1("HistoryPanel"); };
 
             this.Hyperlink3.Inlines.Add(new Run { Text = nameof(UISyncPage) });
-            this.Hyperlink3.Click += (s, e) => this.Navigate(nameof(UISyncPage));
+            this.Hyperlink3.Click += delegate { this.Navigate1("UISync"); };
 
             this.Hyperlink4.Inlines.Add(new Run { Text = nameof(SelectedRangesPage) });
-            this.Hyperlink4.Click += (s, e) => this.Navigate(nameof(SelectedRangesPage));
+            this.Hyperlink4.Click += delegate { this.Navigate1("SelectedRanges"); };
 
-            this.SplitButton.Unchecked += (s, e) =>
+            this.ListView.ItemsSource = this.Overlay.Children.Select(c => ((FrameworkElement)c).Tag).ToArray();
+            this.ListView.SelectionChanged += delegate
             {
-                this.SplitView.IsPaneOpen = false;
-                this.AutoSuggestBox.Visibility = Visibility.Collapsed;
-            };
-            this.SplitButton.Checked += (s, e) =>
-            {
-                this.SplitView.IsPaneOpen = true;
-                this.AutoSuggestBox.Visibility = Visibility.Visible;
-            };
+                int index = this.ListView.SelectedIndex;
 
-            this.ListView.ItemClick += (s, e) =>
-            {
-                if (e.ClickedItem is string item)
+                for (int i = 0; i < this.Overlay.Children.Count; i++)
                 {
-                    this.Navigate(item);
-                }
-            };
-            this.AutoSuggestBox.SuggestionChosen += (s, e) =>
-            {
-                this.ListView.SelectedItem = e.SelectedItem;
-                this.TextBlock.Text = "Pages";
+                    UIElement item = this.Overlay.Children[i];
 
-                if (e.SelectedItem is string item)
-                {
-                    this.Navigate(item);
+                    item.Visibility = index == i ? Visibility.Visible : Visibility.Collapsed;
                 }
+                this.Overlay.Visibility = index < 0 ? Visibility.Collapsed : Visibility.Visible;
             };
+
+            this.Overlay.Tapped += delegate { this.ListView.SelectedIndex = -1; };
+            this.AutoSuggestBox.SuggestionChosen += (s, e) => this.Navigate2($"{e.SelectedItem}");
             this.AutoSuggestBox.TextChanged += (sender, args) =>
             {
                 switch (args.Reason)
@@ -84,23 +119,23 @@ namespace FanKit.Layers.TestApp
                         if (string.IsNullOrEmpty(sender.Text))
                         {
                             sender.ItemsSource = null;
-                            this.TextBlock.Text = "Pages";
+                            this.View.Title = "Pages";
                         }
                         else
                         {
                             string text = sender.Text.ToLower();
-                            IEnumerable<string> suitableItems = this.Dictionary.Keys.Where(x => x.ToLower().Contains(text));
+                            IEnumerable<string> suitableItems = this.Dictionary2.Keys.Where(x => x.ToLower().Contains(text));
 
                             int count = suitableItems.Count();
                             if (count is 0)
                             {
                                 sender.ItemsSource = null;
-                                this.TextBlock.Text = "No results found";
+                                this.View.Title = "No results found";
                             }
                             else
                             {
                                 sender.ItemsSource = suitableItems;
-                                this.TextBlock.Text = $"{count} results";
+                                this.View.Title = $"{count} results";
                             }
                         }
                         break;
@@ -108,28 +143,94 @@ namespace FanKit.Layers.TestApp
             };
         }
 
-        private void Navigate(string item)
-        {
-            this.View.Title = item;
-            this.ContentFrame.Navigate(this.Dictionary[item]);
-        }
+        // Command
+        public ICommand Command => this;
+        public event EventHandler CanExecuteChanged;
+        public bool CanExecute(object parameter) => true;
+        public void Execute(object parameter) => this.Navigate1($"{parameter}");
 
-        private static IEnumerable<Type> CreatePages(Type assemblyType)
+        private void Navigate1(string key)
         {
-            Assembly assembly = assemblyType.GetTypeInfo().Assembly;
-            IEnumerable<TypeInfo> typeInfos = assembly.DefinedTypes;
-
-            foreach (TypeInfo typeInfo in typeInfos)
+            if (this.Dictionary1.ContainsKey(key))
             {
-                Type type = typeInfo.AsType();
-                if (type == assemblyType) continue;
+                Kvp item = this.Dictionary1[key];
 
-                if (type.Name.EndsWith("Page"))
-                {
-                    yield return type;
-                }
+                this.ListView.SelectedIndex = -1;
+                this.ContentFrame.Navigate(item.PageType);
+
+                this.Manager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+                this.View.Title = item.Key1;
+            }
+        }
+        private void Navigate2(string key)
+        {
+            if (this.Dictionary2.ContainsKey(key))
+            {
+                Kvp item = this.Dictionary2[key];
+
+                this.ListView.SelectedIndex = -1;
+                this.ContentFrame.Navigate(item.PageType);
+
+                this.Manager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+                this.View.Title = item.Key1;
             }
         }
 
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            e.Handled = true;
+
+            if (this.ContentFrame.CanGoBack)
+            {
+                this.ListView.SelectedIndex = -1;
+                this.ContentFrame.GoBack();
+
+                this.Manager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+                this.View.Title = this.ContentFrame.Content.GetType().Name;
+            }
+            else
+            {
+                this.ListView.SelectedIndex = -1;
+                this.ContentFrame.Content = this.ContentPage;
+
+                this.Manager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+                this.View.Title = string.Empty;
+            }
+        }
+
+        static readonly IDictionary<string, Kvp[]> Tree = new Dictionary<string, Kvp[]>
+        {
+            ["Tree View"] = new Kvp[]
+            {
+                new Kvp("Tree View 0", "TreeView0", typeof(TreeView0Page)),
+                new Kvp("Tree View 1", "TreeView1", typeof(TreeView1Page)),
+                new Kvp("Tree View 2", "TreeView2", typeof(TreeView2Page)),
+            },
+            ["History Panel"] = new Kvp[]
+            {
+                new Kvp("History Panel", "HistoryPanel", typeof(HistoryPanelPage)),
+            },
+            ["Nodes View"] = new Kvp[]
+            {
+                new Kvp("Clipboard", "Clipboard", typeof(ClipboardPage)),
+                new Kvp("Drag & Drop", "DragDrop", typeof(DragDropPage)),
+                new Kvp("Reorder", "Reorder", typeof(ReorderPage)),
+            },
+            ["Layers Panel"] = new Kvp[]
+            {
+                new Kvp("Layers Panel", "LayersPanel", typeof(LayersPanelPage)),
+            },
+            ["UI/UE"] = new Kvp[]
+            {
+                new Kvp("Linked View", "LinkedView", typeof(LinkedViewPage)),
+                new Kvp("Rounded Selection", "RoundedSelection", typeof(RoundedSelectionPage)),
+                new Kvp("Swipe", "Swipe", typeof(SwipePage)),
+            },
+            ["Others"] = new Kvp[]
+            {
+                new Kvp("Selected Ranges", "SelectedRanges", typeof(SelectedRangesPage)),
+                new Kvp("UI Synchronization", "UISync", typeof(UISyncPage)),
+            },
+        };
     }
 }

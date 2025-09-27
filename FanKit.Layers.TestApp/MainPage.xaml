@@ -9,128 +9,27 @@
     >
 
     <FrameworkElement.Resources>
-        <CollectionViewSource x:Name="Collection" IsSourceGrouped="True" Source="{x:Bind Groupings}">
-            <!--Source-->
-        </CollectionViewSource>
+        <TransitionCollection x:Key="Entrance">
+            <EntranceThemeTransition IsStaggeringEnabled="True"/>
+        </TransitionCollection>
     </FrameworkElement.Resources>
 
-    <SplitView x:Name="SplitView" DisplayMode="CompactInline" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-
-        <!--VisualState-->
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-
-                <!--Phone-->
-                <VisualState x:Name="Phone">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="SplitView.DisplayMode" Value="CompactOverlay"/>
-                        <Setter Target="SplitView.IsPaneOpen" Value="False"/>
-                    </VisualState.Setters>
-                </VisualState>
-
-                <!--Pad-->
-                <VisualState x:Name="Pad">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="600"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="SplitView.DisplayMode" Value="CompactOverlay"/>
-                        <Setter Target="SplitView.IsPaneOpen" Value="False"/>
-                    </VisualState.Setters>
-                </VisualState>
-
-                <!--PC-->
-                <VisualState x:Name="PC">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="900"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="SplitView.DisplayMode" Value="CompactInline"/>
-                        <Setter Target="SplitView.IsPaneOpen" Value="True"/>
-                    </VisualState.Setters>
-                </VisualState>
-
-
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-
-
-        <SplitView.Pane>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <StackPanel Height="50" Orientation="Horizontal">
-                    <ToggleButton x:Name="SplitButton" IsChecked="True" Width="50" Style="{StaticResource TextBlockButtonStyle}">
-                        <SymbolIcon Symbol="GlobalNavigationButton" />
-                    </ToggleButton>
-                    <TextBlock x:Name="TextBlock" Margin="12,0" Style="{StaticResource SubheaderTextBlockStyle}" >
-                        Pages
-                    </TextBlock>
-                </StackPanel>
-                <AutoSuggestBox x:Name="AutoSuggestBox" Grid.Row="1" Margin="12,0" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
-                    <!--ItemsSource-->
-                </AutoSuggestBox>
-                <SemanticZoom x:Name="SemanticZoom" Grid.Row="2" >
-                    <SemanticZoom.ZoomedInView>
-                        <ListView ItemsSource="{x:Bind Collection.View}" x:Name="ListView" IsItemClickEnabled="True" >
-                            <ListViewBase.Footer>
-                                <Image Width="50" Height="50" HorizontalAlignment="Left">
-                                    <Image.Source>
-                                        ms-appx:///Assets/SplashScreen.scale-200.png
-                                    </Image.Source>
-                                </Image>
-                            </ListViewBase.Footer>
-                            <ItemsControl.ItemContainerStyle>
-                                <Style TargetType="ListViewItem" >
-                                    <Setter Property="Height" Value="50" />
-                                </Style>
-                            </ItemsControl.ItemContainerStyle>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate x:DataType="x:String" >
-                                    <StackPanel Height="50" Orientation="Horizontal" >
-                                        <Border CornerRadius="18" Width="26" Height="26" Background="{ThemeResource SystemColorControlAccentBrush}" >
-                                            <TextBlock Margin="8,2,0,0" Text="{x:Bind}" CharacterSpacing="1024" FontWeight="Bold" Foreground="White" />
-                                        </Border>
-                                        <ContentControl Width="12" />
-                                        <TextBlock LineHeight="12" VerticalAlignment="Center" Style="{StaticResource SubtitleTextBlockStyle}" >
-                                            <Run Text="{x:Bind}" />
-                                            <LineBreak/>
-                                            <Run FontSize="10" Text="{x:Bind}" Foreground="{ThemeResource SystemControlBackgroundBaseMediumLowBrush}" />
-                                        </TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                            <ItemsControl.GroupStyle>
-                                <GroupStyle/>
-                            </ItemsControl.GroupStyle>
-                        </ListView>
-                    </SemanticZoom.ZoomedInView>
-                    <SemanticZoom.ZoomedOutView>
-                        <GridView FontSize="122" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{x:Bind Collection.View.CollectionGroups}" >
-                            <ItemsControl.ItemContainerStyle>
-                                <Style TargetType="GridViewItem" >
-                                    <Setter Property="FontSize" Value="22" />
-                                </Style>
-                            </ItemsControl.ItemContainerStyle>
-                        </GridView>
-                    </SemanticZoom.ZoomedOutView>
-                </SemanticZoom>
-            </Grid>
-        </SplitView.Pane>
-
-
-        <Frame x:Name="ContentFrame" >
-            <Page>
-                <TextBlock FontSize="22"
-                   TextWrapping="Wrap" MaxWidth="700"
-                   HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Frame x:Name="ContentFrame" Grid.Row="1">
+            <Page x:Name="ContentPage">
+                <TextBlock
+                    FontSize="22"
+                    Foreground="White"
+                    TextWrapping="Wrap"
+                    MaxWidth="700"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    >
                     <Run FontSize="100" Text="&#xED59;" FontFamily="Segoe MDL2 Assets"/>
                     <LineBreak/>
                     <LineBreak/>
@@ -168,6 +67,509 @@
             </Page>
         </Frame>
 
+        <ListView
+            x:Name="ListView"
+            ScrollViewer.VerticalScrollMode="Disabled"
+            ScrollViewer.HorizontalScrollMode="Enabled"
+            ScrollViewer.VerticalScrollBarVisibility="Disabled"
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ItemContainerTransitions="{StaticResource Entrance}"
+            Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"
+            >
+            <ListView.Header>
+                <Button Width="50" Style="{StaticResource TextBlockButtonStyle}">
+                    <Button.Flyout>
+                        <MenuFlyout x:Name="MenuFlyout">
+                            <!--Items-->
+                        </MenuFlyout>
+                    </Button.Flyout>
+                    <SymbolIcon Symbol="GlobalNavigationButton"/>
+                </Button>
+            </ListView.Header>
+            <ListView.Footer>
+                <AutoSuggestBox x:Name="AutoSuggestBox" Margin="12,0" MinWidth="220" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
+                    <AutoSuggestBox.PlaceholderText>
+                        Search
+                    </AutoSuggestBox.PlaceholderText>
+                </AutoSuggestBox>
+            </ListView.Footer>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="MinWidth" Value="64"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <!--ItemsSource-->
+        </ListView>
 
-    </SplitView>
+        <Grid x:Name="Overlay" Grid.Row="1" Visibility="Collapsed" Background="#44000000">
+            <ScrollViewer Visibility="Collapsed" MinHeight="178" MaxHeight="338" VerticalAlignment="Top" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <FrameworkElement.Tag>
+                    Tree View
+                </FrameworkElement.Tag>
+                <StackPanel Margin="8">
+
+                    <TextBlock Margin="14,4" Transitions="{StaticResource Entrance}">
+                        General
+                    </TextBlock>
+
+                    <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="156" ItemHeight="134" ChildrenTransitions="{StaticResource Entrance}">
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                TreeView0
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="32" X2="38" Y2="32" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="48" X2="48" Y2="48" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="66" X2="48" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" Fill="Gray"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="64" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="28" Width="54" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="44" Width="44" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="62" Width="44" Height="8" Fill="Gray"/>
+
+                                    <Rectangle Canvas.Left="100" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="28" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="44" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="62" Width="8" Height="8" Fill="Gray"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Tree View 0
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                TreeView1
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="32" X2="38" Y2="32" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="48" X2="48" Y2="48" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="66" X2="48" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" Fill="Gray"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="64" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="28" Width="54" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="44" Width="44" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="62" Width="44" Height="8" Fill="#881E90FF"/>
+
+                                    <Rectangle Canvas.Left="100" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="28" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="44" Width="8" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="62" Width="8" Height="8" Fill="#881E90FF"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Tree View 1
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                TreeView2
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="32" X2="38" Y2="32" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="48" X2="48" Y2="48" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="66" X2="48" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" Fill="Gray"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="64" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="28" Width="54" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="44" Width="44" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="62" Width="44" Height="8" Fill="#881E90FF"/>
+
+                                    <Rectangle Canvas.Left="100" Canvas.Top="12" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="28" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="44" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="62" Width="8" Height="8" Fill="DodgerBlue"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Tree View 2
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                    </VariableSizedWrapGrid>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer Visibility="Collapsed" MinHeight="178" MaxHeight="338" VerticalAlignment="Top" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <FrameworkElement.Tag>
+                    History Panel
+                </FrameworkElement.Tag>
+                <StackPanel Margin="8">
+
+                    <TextBlock Margin="14,4" Transitions="{StaticResource Entrance}">
+                        History
+                    </TextBlock>
+
+                    <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                        <ButtonBase.CommandParameter>
+                            HistoryPanel
+                        </ButtonBase.CommandParameter>
+                        <StackPanel>
+                            <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                <Polyline StrokeThickness="2" Stroke="DodgerBlue">
+                                    <Polyline.Points>
+                                        10,45
+                                        10,75
+                                        80,75
+
+                                        70,70
+                                    </Polyline.Points>
+                                </Polyline>
+                                <Polyline StrokeThickness="2" Stroke="OrangeRed">
+                                    <Polyline.Points>
+                                        118,37
+                                        118,7
+                                        48,7
+
+                                        58,12
+                                    </Polyline.Points>
+                                </Polyline>
+
+                                <Rectangle Canvas.Left="8" Canvas.Top="5" Width="32" Height="32" Fill="OrangeRed"/>
+                                <Rectangle Canvas.Left="48" Canvas.Top="25" Width="32" Height="32" Fill="Gray"/>
+                                <Rectangle Canvas.Left="88" Canvas.Top="45" Width="32" Height="32" Fill="DodgerBlue"/>
+                            </Canvas>
+                            <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                History Panel
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer Visibility="Collapsed" MinHeight="178" MaxHeight="338" VerticalAlignment="Top" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <FrameworkElement.Tag>
+                    Nodes View
+                </FrameworkElement.Tag>
+                <StackPanel Margin="8">
+
+                    <TextBlock Margin="14,4" Transitions="{StaticResource Entrance}">
+                        General
+                    </TextBlock>
+
+                    <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="156" ItemHeight="134" ChildrenTransitions="{StaticResource Entrance}">
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                Clipboard
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="32" X2="38" Y2="32" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="48" X2="48" Y2="48" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="66" X2="48" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="8" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="#88FF4500"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="#88FF4500"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="64" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="28" Width="54" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="44" Width="44" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="#88FF4500"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="62" Width="44" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="#88FF4500"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Clipboard
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                DragDrop
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="47" StrokeThickness="2" Stroke="Gray"/>
+                                    <Line X1="24" Y1="32" X2="38" Y2="32" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="48" X2="48" Y2="48" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="66" X2="48" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" Fill="Gray"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="64" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="28" Width="54" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="42" Width="44" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="53" Width="44" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="64" Width="44" Height="8" Fill="#881E90FF"/>
+
+                                    <Line X1="24" Y1="57" X2="52" Y2="57" StrokeThickness="2" Stroke="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="16" Canvas.Top="53" Width="8" Height="8" StrokeThickness="2" Stroke="DodgerBlue"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Drag &amp; Drop
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                Reorder
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+                                    <Line X1="24" Y1="32" X2="48" Y2="32" StrokeThickness="2" Stroke="Gray"/>
+                                    <Line X1="24" Y1="48" X2="38" Y2="48" StrokeThickness="2" Stroke="Gray"/>
+                                    <Line X1="24" Y1="66" X2="48" Y2="66" StrokeThickness="3" Stroke="Gray"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="28" Width="8" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="44" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" Fill="Gray"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="64" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="28" Width="44" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="44" Width="54" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="62" Width="44" Height="8" Fill="Gray"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Reorder
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                    </VariableSizedWrapGrid>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer Visibility="Collapsed" MinHeight="178" MaxHeight="338" VerticalAlignment="Top" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <FrameworkElement.Tag>
+                    Layers Panel
+                </FrameworkElement.Tag>
+                <StackPanel Margin="8">
+
+                    <TextBlock Margin="14,4" Transitions="{StaticResource Entrance}">
+                        Advance
+                    </TextBlock>
+
+                    <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="156" ItemHeight="134" ChildrenTransitions="{StaticResource Entrance}">
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                LayersPanel
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="66" StrokeThickness="3" Stroke="DodgerBlue"/>
+                                    <Line X1="24" Y1="32" X2="38" Y2="32" StrokeThickness="3" Stroke="DodgerBlue"/>
+                                    <Line X1="24" Y1="48" X2="48" Y2="48" StrokeThickness="3" Stroke="DodgerBlue"/>
+                                    <Line X1="24" Y1="66" X2="48" Y2="66" StrokeThickness="3" Stroke="DodgerBlue"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="8" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" Fill="DodgerBlue"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="52" Height="8" StrokeThickness="1" Stroke="OrangeRed" Fill="#88FF4500"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="28" Width="42" Height="8" StrokeThickness="1" Stroke="OrangeRed" Fill="#88FF4500"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="44" Width="32" Height="8" StrokeThickness="1" Stroke="OrangeRed" Fill="#88FF4500"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="62" Width="32" Height="8" StrokeThickness="1" Stroke="OrangeRed" Fill="#88FF4500"/>
+
+                                    <Rectangle Canvas.Left="88" Canvas.Top="12" Width="8" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="88" Canvas.Top="28" Width="8" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="88" Canvas.Top="44" Width="8" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="88" Canvas.Top="62" Width="8" Height="8" Fill="OrangeRed"/>
+
+                                    <Rectangle Canvas.Left="100" Canvas.Top="12" Width="8" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="28" Width="8" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="44" Width="8" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="100" Canvas.Top="62" Width="8" Height="8" Fill="OrangeRed"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Layers Panel
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                    </VariableSizedWrapGrid>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer Visibility="Collapsed" MinHeight="178" MaxHeight="338" VerticalAlignment="Top" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <FrameworkElement.Tag>
+                    UI/UE
+                </FrameworkElement.Tag>
+                <StackPanel Margin="8">
+
+                    <TextBlock Margin="14,4" Transitions="{StaticResource Entrance}">
+                        UI/UE
+                    </TextBlock>
+
+                    <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="156" ItemHeight="134" ChildrenTransitions="{StaticResource Entrance}">
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                LinkedView
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Line X1="24" Y1="16" X2="24" Y2="66" StrokeThickness="3" Stroke="OrangeRed"/>
+                                    <Line X1="24" Y1="32" X2="38" Y2="32" StrokeThickness="3" Stroke="OrangeRed"/>
+
+                                    <Line X1="34" Y1="32" X2="34" Y2="66" StrokeThickness="2" Stroke="OrangeRed"/>
+                                    <Line X1="34" Y1="48" X2="48" Y2="48" StrokeThickness="2" Stroke="OrangeRed"/>
+                                    <Line X1="34" Y1="66" X2="48" Y2="66" StrokeThickness="2" Stroke="OrangeRed"/>
+
+                                    <Rectangle Canvas.Left="19" Canvas.Top="27" Width="10" Height="10" StrokeThickness="2" Stroke="OrangeRed" Fill="LightGray"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="8" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="LightGray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="8" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="LightGray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="8" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="LightGray"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="8" Height="8" StrokeThickness="2" Stroke="OrangeRed" Fill="LightGray"/>
+
+                                    <Rectangle Canvas.Left="32" Canvas.Top="12" Width="76" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="42" Canvas.Top="28" Width="66" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="44" Width="56" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="52" Canvas.Top="62" Width="56" Height="8" Fill="#881E90FF"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Linked View
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                RoundedSelection
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Rectangle RadiusX="8" RadiusY="8" Canvas.Left="16" Canvas.Top="23" Width="88" Height="52" StrokeThickness="2" Stroke="OrangeRed"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="76" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="66" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="56" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="56" Height="8" Fill="#881E90FF"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Rounded Selection
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                Swipe
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="76" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="66" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="20" Canvas.Top="44" Width="56" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="76" Canvas.Top="44" Width="20" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="56" Height="8" Fill="#881E90FF"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Swipe
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                    </VariableSizedWrapGrid>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer Visibility="Collapsed" MinHeight="178" MaxHeight="338" VerticalAlignment="Top" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                <FrameworkElement.Tag>
+                    Others
+                </FrameworkElement.Tag>
+                <StackPanel Margin="8">
+
+                    <TextBlock Margin="14,4" Transitions="{StaticResource Entrance}">
+                        Others
+                    </TextBlock>
+
+                    <VariableSizedWrapGrid Orientation="Horizontal" ItemWidth="156" ItemHeight="134" ChildrenTransitions="{StaticResource Entrance}">
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                SelectedRanges
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Rectangle Canvas.Left="16" Canvas.Top="23" Width="88" Height="52" StrokeThickness="2" Stroke="DodgerBlue"/>
+
+                                    <Rectangle Canvas.Left="20" Canvas.Top="12" Width="76" Height="8" Fill="Gray"/>
+                                    <Rectangle Canvas.Left="30" Canvas.Top="28" Width="66" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="44" Width="56" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="40" Canvas.Top="62" Width="56" Height="8" Fill="#881E90FF"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    Selected Ranges
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="156" Height="134" BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Command="{x:Bind Command}">
+                            <ButtonBase.CommandParameter>
+                                UISync
+                            </ButtonBase.CommandParameter>
+                            <StackPanel>
+                                <Canvas IsHitTestVisible="False" Width="128" Height="82" Background="#D2D2D2">
+                                    <Rectangle Canvas.Left="7" Canvas.Top="5" Width="54" Height="72" StrokeThickness="2" Stroke="OrangeRed"/>
+                                    <Rectangle Canvas.Left="67" Canvas.Top="5" Width="54" Height="72" StrokeThickness="2" Stroke="DodgerBlue"/>
+
+                                    <Rectangle Canvas.Left="14" Canvas.Top="13" Width="38" Height="8" Fill="#88FF4500"/>
+                                    <Rectangle Canvas.Left="19" Canvas.Top="29" Width="33" Height="8" Fill="#88FF4500"/>
+                                    <Rectangle Canvas.Left="24" Canvas.Top="45" Width="28" Height="8" Fill="OrangeRed"/>
+                                    <Rectangle Canvas.Left="24" Canvas.Top="62" Width="28" Height="8" Fill="#88FF4500"/>
+
+                                    <Rectangle Canvas.Left="74" Canvas.Top="13" Width="38" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="79" Canvas.Top="29" Width="33" Height="8" Fill="DodgerBlue"/>
+                                    <Rectangle Canvas.Left="84" Canvas.Top="45" Width="28" Height="8" Fill="#881E90FF"/>
+                                    <Rectangle Canvas.Left="84" Canvas.Top="62" Width="28" Height="8" Fill="#881E90FF"/>
+                                </Canvas>
+                                <TextBlock Margin="0,8,0,0" TextWrapping="Wrap" VerticalAlignment="Center">
+                                    UI Synchronization
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+
+                    </VariableSizedWrapGrid>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        
+    </Grid>
 </Page>
