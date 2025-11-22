@@ -12,14 +12,14 @@ namespace FanKit.Layers.TestApp
 {
     internal sealed class Kvp
     {
-        public readonly string Key1;
-        public readonly string Key2;
+        public readonly string Key;
+        public readonly string Text;
         public readonly Type PageType;
 
-        public Kvp(string text, string key, Type value)
+        public Kvp(string key, string text, Type value)
         {
-            this.Key1 = text;
-            this.Key2 = key;
+            this.Key = key;
+            this.Text = text;
             this.PageType = value;
         }
     }
@@ -32,16 +32,16 @@ namespace FanKit.Layers.TestApp
         private SystemNavigationManager Manager => this.ManagerLazy.Value;
         private ApplicationView View => this.ViewLazy.Value;
 
-        readonly IDictionary<string, Kvp> Dictionary1 = (
+        readonly IDictionary<string, Kvp> DictionaryKey = (
             from item in Tree
             from kvp in item.Value
             where kvp != null
-            select kvp).ToDictionary(c => c.Key2);
-        readonly IDictionary<string, Kvp> Dictionary2 = (
+            select kvp).ToDictionary(c => c.Key);
+        readonly IDictionary<string, Kvp> DictionaryText = (
             from item in Tree
             from kvp in item.Value
             where kvp != null
-            select kvp).ToDictionary(c => c.Key1);
+            select kvp).ToDictionary(c => c.Text);
 
         public MainPage()
         {
@@ -60,8 +60,8 @@ namespace FanKit.Layers.TestApp
                     else
                         subItem.Items.Add(new MenuFlyoutItem
                         {
-                            Text = type.Key1,
-                            CommandParameter = type.Key2,
+                            Text = type.Text,
+                            CommandParameter = type.Key,
                             Command = this,
                         });
                 }
@@ -78,19 +78,19 @@ namespace FanKit.Layers.TestApp
             };
 
             this.Hyperlink0.Inlines.Add(new Run { Text = nameof(LayersPanelPage) });
-            this.Hyperlink0.Click += delegate { this.Navigate1("LayersPanel"); };
+            this.Hyperlink0.Click += delegate { this.NavigateKey("LayersPanel"); };
 
             this.Hyperlink1.Inlines.Add(new Run { Text = nameof(TreeView2Page) });
-            this.Hyperlink1.Click += delegate { this.Navigate1("TreeView2"); };
+            this.Hyperlink1.Click += delegate { this.NavigateKey("TreeView2"); };
 
             this.Hyperlink2.Inlines.Add(new Run { Text = nameof(HistoryPanelPage) });
-            this.Hyperlink2.Click += delegate { this.Navigate1("HistoryPanel"); };
+            this.Hyperlink2.Click += delegate { this.NavigateKey("HistoryPanel"); };
 
             this.Hyperlink3.Inlines.Add(new Run { Text = nameof(UISyncPage) });
-            this.Hyperlink3.Click += delegate { this.Navigate1("UISync"); };
+            this.Hyperlink3.Click += delegate { this.NavigateKey("UISync"); };
 
             this.Hyperlink4.Inlines.Add(new Run { Text = nameof(SelectedRangesPage) });
-            this.Hyperlink4.Click += delegate { this.Navigate1("SelectedRanges"); };
+            this.Hyperlink4.Click += delegate { this.NavigateKey("SelectedRanges"); };
 
             this.ListView.ItemsSource = this.Overlay.Children.Select(c => ((FrameworkElement)c).Tag).ToArray();
             this.ListView.SelectionChanged += delegate
@@ -107,7 +107,7 @@ namespace FanKit.Layers.TestApp
             };
 
             this.Overlay.Tapped += delegate { this.ListView.SelectedIndex = -1; };
-            this.AutoSuggestBox.SuggestionChosen += (s, e) => this.Navigate2($"{e.SelectedItem}");
+            this.AutoSuggestBox.SuggestionChosen += (s, e) => this.NavigateText($"{e.SelectedItem}");
             this.AutoSuggestBox.TextChanged += (sender, args) =>
             {
                 switch (args.Reason)
@@ -124,7 +124,7 @@ namespace FanKit.Layers.TestApp
                         else
                         {
                             string text = sender.Text.ToLower();
-                            IEnumerable<string> suitableItems = this.Dictionary2.Keys.Where(x => x.ToLower().Contains(text));
+                            IEnumerable<string> suitableItems = this.DictionaryText.Keys.Where(x => x.ToLower().Contains(text));
 
                             int count = suitableItems.Count();
                             if (count is 0)
@@ -147,32 +147,32 @@ namespace FanKit.Layers.TestApp
         public ICommand Command => this;
         public event EventHandler CanExecuteChanged;
         public bool CanExecute(object parameter) => true;
-        public void Execute(object parameter) => this.Navigate1($"{parameter}");
+        public void Execute(object parameter) => this.NavigateKey($"{parameter}");
 
-        private void Navigate1(string key)
+        private void NavigateKey(string key)
         {
-            if (this.Dictionary1.ContainsKey(key))
+            if (this.DictionaryKey.ContainsKey(key))
             {
-                Kvp item = this.Dictionary1[key];
+                Kvp item = this.DictionaryKey[key];
 
                 this.ListView.SelectedIndex = -1;
                 this.ContentFrame.Navigate(item.PageType);
 
                 this.Manager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-                this.View.Title = item.Key1;
+                this.View.Title = item.Text;
             }
         }
-        private void Navigate2(string key)
+        private void NavigateText(string text)
         {
-            if (this.Dictionary2.ContainsKey(key))
+            if (this.DictionaryText.ContainsKey(text))
             {
-                Kvp item = this.Dictionary2[key];
+                Kvp item = this.DictionaryText[text];
 
                 this.ListView.SelectedIndex = -1;
                 this.ContentFrame.Navigate(item.PageType);
 
                 this.Manager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-                this.View.Title = item.Key1;
+                this.View.Title = item.Text;
             }
         }
 
@@ -202,34 +202,34 @@ namespace FanKit.Layers.TestApp
         {
             ["Tree View"] = new Kvp[]
             {
-                new Kvp("Tree View 0", "TreeView0", typeof(TreeView0Page)),
-                new Kvp("Tree View 1", "TreeView1", typeof(TreeView1Page)),
-                new Kvp("Tree View 2", "TreeView2", typeof(TreeView2Page)),
+                new Kvp("TreeView0", "Tree View 0", typeof(TreeView0Page)),
+                new Kvp("TreeView1", "Tree View 1", typeof(TreeView1Page)),
+                new Kvp("TreeView2", "Tree View 2", typeof(TreeView2Page)),
             },
             ["History Panel"] = new Kvp[]
             {
-                new Kvp("History Panel", "HistoryPanel", typeof(HistoryPanelPage)),
+                new Kvp("HistoryPanel", "History Panel", typeof(HistoryPanelPage)),
             },
             ["Nodes View"] = new Kvp[]
             {
                 new Kvp("Clipboard", "Clipboard", typeof(ClipboardPage)),
-                new Kvp("Drag & Drop", "DragDrop", typeof(DragDropPage)),
+                new Kvp("DragDrop", "Drag & Drop", typeof(DragDropPage)),
                 new Kvp("Reorder", "Reorder", typeof(ReorderPage)),
             },
             ["Layers Panel"] = new Kvp[]
             {
-                new Kvp("Layers Panel", "LayersPanel", typeof(LayersPanelPage)),
+                new Kvp("LayersPanel", "Layers Panel", typeof(LayersPanelPage)),
             },
             ["UI/UE"] = new Kvp[]
             {
-                new Kvp("Linked View", "LinkedView", typeof(LinkedViewPage)),
-                new Kvp("Rounded Selection", "RoundedSelection", typeof(RoundedSelectionPage)),
+                new Kvp("LinkedView", "Linked View", typeof(LinkedViewPage)),
+                new Kvp("RoundedSelection", "Rounded Selection", typeof(RoundedSelectionPage)),
                 new Kvp("Swipe", "Swipe", typeof(SwipePage)),
             },
             ["Others"] = new Kvp[]
             {
-                new Kvp("Selected Ranges", "SelectedRanges", typeof(SelectedRangesPage)),
-                new Kvp("UI Synchronization", "UISync", typeof(UISyncPage)),
+                new Kvp("SelectedRanges", "Selected Ranges", typeof(SelectedRangesPage)),
+                new Kvp("UISync", "UI Synchronization", typeof(UISyncPage)),
             },
         };
     }
